@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Line?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="521.0" prefWidth="430.0" styleClass="normal-text" stylesheets="@../design.css" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Label alignment="CENTER_RIGHT" layoutX="47.0" layoutY="70.0" prefHeight="17.0" prefWidth="133.0" text="Förnamn:" textAlignment="RIGHT" AnchorPane.rightAnchor="250.0" AnchorPane.topAnchor="70.0" />
+      <Label alignment="CENTER_RIGHT" layoutX="94.0" layoutY="115.0" text="Efternamn:" AnchorPane.rightAnchor="250.0" AnchorPane.topAnchor="115.0" />
+      <Label alignment="CENTER_RIGHT" layoutX="60.0" layoutY="205.0" prefHeight="27.0" prefWidth="120.0" text="Adress:" AnchorPane.rightAnchor="250.0" AnchorPane.topAnchor="225.0" />
+      <Label alignment="CENTER_RIGHT" layoutX="47.0" layoutY="250.0" prefHeight="27.0" prefWidth="133.0" text="Postnummer:" AnchorPane.rightAnchor="250.0" AnchorPane.topAnchor="270.0" />
+      <Label alignment="CENTER_RIGHT" layoutX="86.0" layoutY="295.0" prefHeight="17.0" prefWidth="94.0" text="Postort:" AnchorPane.rightAnchor="250.0" AnchorPane.topAnchor="315.0" />
+      <Label alignment="CENTER_RIGHT" layoutX="47.0" layoutY="340.0" prefHeight="27.0" prefWidth="133.0" text="Telefonnummer:" AnchorPane.rightAnchor="250.0" AnchorPane.topAnchor="360.0" />
+      <Label alignment="CENTER_RIGHT" layoutX="47.0" layoutY="160.0" prefHeight="27.0" prefWidth="133.0" text="E-postadress:" AnchorPane.rightAnchor="250.0" AnchorPane.topAnchor="160.0" />
+      <TextField layoutX="184.0" layoutY="70.0" AnchorPane.rightAnchor="30.0" AnchorPane.topAnchor="70.0" />
+      <TextField layoutX="184.0" layoutY="115.0" AnchorPane.rightAnchor="30.0" AnchorPane.topAnchor="115.0" />
+      <TextField layoutX="184.0" layoutY="160.0" AnchorPane.rightAnchor="30.0" AnchorPane.topAnchor="160.0" />
+      <TextField layoutX="184.0" layoutY="205.0" AnchorPane.rightAnchor="30.0" AnchorPane.topAnchor="225.0" />
+      <TextField layoutX="184.0" layoutY="250.0" AnchorPane.rightAnchor="30.0" AnchorPane.topAnchor="270.0" />
+      <TextField layoutX="184.0" layoutY="295.0" AnchorPane.rightAnchor="30.0" AnchorPane.topAnchor="315.0" />
+      <TextField layoutX="184.0" layoutY="340.0" AnchorPane.rightAnchor="30.0" AnchorPane.topAnchor="360.0" />
+      <Button layoutX="339.0" layoutY="388.0" mnemonicParsing="false" text="Spara" AnchorPane.topAnchor="410.0" />
+      <Button layoutX="10.0" layoutY="7.0" mnemonicParsing="false" text="&lt;-- tillbaka" />
+      <Label layoutX="133.0" layoutY="5.0" styleClass="big-text" text="Redigera dina uppgifter" />
+      <Line endX="110.0" layoutX="305.0" layoutY="211.0" opacity="0.1" startX="-280.0" AnchorPane.topAnchor="210.5" />
+   </children>
+</AnchorPane>

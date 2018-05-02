@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="40.0" prefWidth="221.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Pane prefHeight="40.0" prefWidth="221.0" style="-fx-border-color: #800044; -fx-border-width: 3;">
+         <children>
+            <ImageView fitHeight="40.0" fitWidth="34.0" layoutX="190.0" layoutY="3.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/icon-ios7-arrow-forward-512.png" />
+               </image>
+            </ImageView>
+         </children>
+      </Pane>
+      <ImageView fitHeight="40.0" fitWidth="52.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/Cooking_apple_detail.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="55.0" layoutY="7.0" styleClass="big-text" stylesheets="@../design.css" text="Kategori" />
+   </children>
+</AnchorPane>

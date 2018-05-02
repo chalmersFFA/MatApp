@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="313.0" prefWidth="430.0" styleClass="normal-text" stylesheets="@../design.css" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Label alignment="CENTER_RIGHT" layoutX="47.0" layoutY="70.0" prefHeight="17.0" prefWidth="133.0" text="Kortnummer:" textAlignment="RIGHT" AnchorPane.rightAnchor="250.0" AnchorPane.topAnchor="70.0" />
+      <Label alignment="CENTER_RIGHT" layoutX="94.0" layoutY="115.0" text="Kortets innehavare:" AnchorPane.rightAnchor="250.0" AnchorPane.topAnchor="115.0" />
+      <Label alignment="CENTER_RIGHT" layoutX="49.0" layoutY="209.0" prefHeight="27.0" prefWidth="133.0" text="cvc/cvv:" AnchorPane.rightAnchor="248.0" AnchorPane.topAnchor="205.0" />
+      <TextField layoutX="184.0" layoutY="70.0" AnchorPane.rightAnchor="30.0" AnchorPane.topAnchor="70.0" />
+      <TextField layoutX="184.0" layoutY="115.0" AnchorPane.rightAnchor="30.0" AnchorPane.topAnchor="115.0" />
+      <TextField layoutX="184.0" layoutY="160.0" prefHeight="35.0" prefWidth="61.0" AnchorPane.rightAnchor="185.0" AnchorPane.topAnchor="205.0" />
+      <Button layoutX="339.0" layoutY="388.0" mnemonicParsing="false" text="Spara" AnchorPane.topAnchor="260.0" />
+      <Button layoutX="10.0" layoutY="7.0" mnemonicParsing="false" text="&lt;-- tillbaka" />
+      <Label layoutX="133.0" layoutY="5.0" styleClass="big-text" text="Redigera ditt kort" />
+      <Label alignment="CENTER_RIGHT" layoutX="47.0" layoutY="169.0" prefHeight="27.0" prefWidth="133.0" text="Giltigt till:" AnchorPane.topAnchor="160.0" />
+      <ComboBox layoutX="184.0" layoutY="161.0" prefHeight="35.0" prefWidth="76.0" promptText="MM" />
+      <ComboBox layoutX="269.0" layoutY="161.0" prefHeight="35.0" prefWidth="76.0" promptText="YY" />
+      <Label alignment="CENTER_RIGHT" layoutX="260.0" layoutY="165.0" prefHeight="27.0" prefWidth="9.0" text="-" />
+      <Label layoutX="256.0" layoutY="209.0" text="?" textFill="BLUE" underline="true" />
+   </children>
+</AnchorPane>
