@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="135.0" prefWidth="564.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <ImageView fitHeight="109.0" fitWidth="108.0" layoutX="26.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/milk.jpg" />
+         </image>
+      </ImageView>
+      <Label layoutX="151.0" layoutY="14.0" prefHeight="37.0" prefWidth="256.0" text="ARLA MJÖLK 1,5 L">
+         <font>
+            <Font size="29.0" />
+         </font>
+      </Label>
+      <Label layoutX="151.0" layoutY="51.0" text="jfr-pris 10kr/l">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <ImageView fitHeight="37.0" fitWidth="58.0" layoutX="513.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/stareboi.png" />
+         </image>
+      </ImageView>
+      <TextField alignment="CENTER" layoutX="469.0" layoutY="95.0" prefHeight="27.0" prefWidth="55.0" text="1" />
+      <Button layoutX="444.0" layoutY="95.0" mnemonicParsing="false" text="-" />
+      <Button layoutX="524.0" layoutY="95.0" mnemonicParsing="false" text="+" />
+      <Label layoutX="383.0" layoutY="94.0" text="15kr">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <ImageView fitHeight="37.0" fitWidth="37.0" layoutX="151.0" layoutY="68.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/svanishboye.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="151.0" layoutY="101.0" prefHeight="23.0" prefWidth="75.0" text="Läs mer" textFill="#5700d9" underline="true">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>
