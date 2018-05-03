@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<fx:root type="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="40.0" prefWidth="40" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <ImageView fx:id="productImageView" fitHeight="40.0" fitWidth="40.0" layoutX="0.0" layoutY="0.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@layout/images/Cooking_apple_detail.png" />
+         </image>
+      </ImageView>
+   </children>
+</fx:root>

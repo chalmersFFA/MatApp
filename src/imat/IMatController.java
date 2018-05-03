@@ -8,6 +8,7 @@ import se.chalmers.cse.dat216.project.IMatDataHandler;
 import se.chalmers.cse.dat216.project.Product;
 
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.ResourceBundle;
 
 /**
@@ -26,14 +27,14 @@ public class IMatController  extends VBox implements Initializable {
 
     private void updateRecipeList() {
         mainFlowPane.getChildren().clear();
-        StoreListItem s;
-        for (Product p : db.getProducts()) {
-            s = new StoreListItem(p);
+        ArrayList<StoreListItem> storeListItems = new ArrayList<>();
+        for (Product p : db.getProducts()){
+            storeListItems.add(new StoreListItem(p));
+        }
+        for(StoreListItem s : storeListItems){
             mainFlowPane.getChildren().add(s);
         }
+
     }
 
-    public void yo() {
-        System.out.println("yoooooooo");
-    }
 }

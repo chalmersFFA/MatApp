@@ -6,7 +6,7 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="313.0" prefWidth="430.0" styleClass="normal-text" stylesheets="@../design.css" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="313.0" prefWidth="430.0" styleClass="normal-text" stylesheets="@layout/design.css" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <Label alignment="CENTER_RIGHT" layoutX="47.0" layoutY="70.0" prefHeight="17.0" prefWidth="133.0" text="Kortnummer:" textAlignment="RIGHT" AnchorPane.rightAnchor="250.0" AnchorPane.topAnchor="70.0" />
       <Label alignment="CENTER_RIGHT" layoutX="94.0" layoutY="115.0" text="Kortets innehavare:" AnchorPane.rightAnchor="250.0" AnchorPane.topAnchor="115.0" />

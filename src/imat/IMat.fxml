@@ -9,13 +9,12 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.FlowPane?>
-<?import javafx.scene.layout.VBox?>
 <?import javafx.scene.paint.Color?>
 <?import javafx.scene.text.Font?>
 
-<VBox prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="imat.IMatController">
+<AnchorPane prefHeight="600.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="imat.IMatController">
   <children>
-      <AnchorPane prefHeight="78.0" prefWidth="900.0" style="-fx-background-color: #ffa550;">
+      <AnchorPane prefHeight="78.0" prefWidth="900.0" style="-fx-background-color: #ffa550;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
             <TextField layoutX="336.0" layoutY="15.0" AnchorPane.topAnchor="15.0" />
             <Label contentDisplay="TOP" layoutX="516.0" layoutY="10.0" text="Favoritvaror" AnchorPane.topAnchor="8.0">
@@ -25,7 +24,8 @@
                         <Image url="@layout/images/stareboi.png" />
                      </image>
                   </ImageView>
-               </graphic></Label>
+               </graphic>
+            </Label>
             <Label contentDisplay="TOP" layoutX="602.0" layoutY="10.0" text="Orderhistorik" AnchorPane.topAnchor="8.0">
                <graphic>
                   <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
@@ -33,7 +33,8 @@
                         <Image url="@layout/images/silkeboi.png" />
                      </image>
                   </ImageView>
-               </graphic></Label>
+               </graphic>
+            </Label>
             <Label contentDisplay="TOP" layoutX="691.0" layoutY="10.0" text="Mitt konto" AnchorPane.topAnchor="8.0">
                <graphic>
                   <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
@@ -41,7 +42,8 @@
                         <Image url="@layout/images/blackboi.png" />
                      </image>
                   </ImageView>
-               </graphic></Label>
+               </graphic>
+            </Label>
             <ImageView fitHeight="17.0" fitWidth="23.0" layoutX="462.0" layoutY="19.0" opacity="0.76" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@layout/images/search.png" />
@@ -55,7 +57,8 @@
                         <Image url="@layout/images/help.png" />
                      </image>
                   </ImageView>
-               </graphic></Label>
+               </graphic>
+            </Label>
             <ImageView fitHeight="40.0" fitWidth="157.0" layoutX="8.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true" AnchorPane.topAnchor="8.0">
                <image>
                   <Image url="@layout/images/iMat.png" />
@@ -63,7 +66,7 @@
             </ImageView>
          </children>
       </AnchorPane>
-    <SplitPane dividerPositions="0.2505567928730512, 0.7505567928730512" focusTraversable="true" prefHeight="-1.0" prefWidth="-1.0" VBox.vgrow="ALWAYS">
+    <SplitPane dividerPositions="0.2505567928730512, 0.7505567928730512" focusTraversable="true" layoutY="73.0" prefHeight="528.0" prefWidth="900.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="73.0">
       <items>
         <AnchorPane>
           <children>
@@ -87,7 +90,7 @@
                         <Color blue="0.624" green="0.624" red="0.624" fx:id="x6" />
                      </textFill>
                   </Label>
-                  <FlowPane fx:id="mainFlowPane" layoutY="-1.0" onDragDetected="#yo" prefHeight="526.0" prefWidth="443.0" />
+                  <FlowPane fx:id="mainFlowPane" prefHeight="526.0" prefWidth="443.0" />
         </children>
       </AnchorPane>
         <ScrollPane prefHeight="-1.0" prefWidth="-1.0">
@@ -115,4 +118,4 @@
       </items>
     </SplitPane>
   </children>
-</VBox>
+</AnchorPane>

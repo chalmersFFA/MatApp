@@ -13,16 +13,16 @@
          <children>
             <ImageView fitHeight="40.0" fitWidth="34.0" layoutX="190.0" layoutY="3.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../images/icon-ios7-arrow-forward-512.png" />
+                  <Image url="@layout/images/icon-ios7-arrow-forward-512.png" />
                </image>
             </ImageView>
          </children>
       </Pane>
       <ImageView fitHeight="40.0" fitWidth="52.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../images/Cooking_apple_detail.png" />
+            <Image url="@layout/images/Cooking_apple_detail.png" />
          </image>
       </ImageView>
-      <Label layoutX="55.0" layoutY="7.0" styleClass="big-text" stylesheets="@../design.css" text="Kategori" />
+      <Label layoutX="55.0" layoutY="7.0" styleClass="big-text" stylesheets="@layout/design.css" text="Kategori" />
    </children>
 </AnchorPane>

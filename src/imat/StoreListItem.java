@@ -16,7 +16,6 @@ import java.io.IOException;
  */
 public class StoreListItem extends AnchorPane {
     private Product product;
-    IMatDataHandler db = IMatDataHandler.getInstance();
     @FXML
     ImageView ecoImageView;
     @FXML
@@ -27,11 +26,12 @@ public class StoreListItem extends AnchorPane {
     Label priceLabel;
 
     public StoreListItem(Product product) {
-        this.product = product;
 
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("shopping_item_square.fxml"));
-        //fxmlLoader.setRoot(this);
-        //fxmlLoader.setController(this);
+
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("store_item_test.fxml"));
+        fxmlLoader.setRoot(this);
+        fxmlLoader.setController(this);
+
 
         try {
             fxmlLoader.load();
@@ -39,14 +39,19 @@ public class StoreListItem extends AnchorPane {
             throw new RuntimeException(exception);
         }
 
+        this.product = product;
+
+
+        IMatDataHandler db = IMatDataHandler.getInstance();
+
 
         String ecoImagePath = "layout/images/svanen.png";
         if(product.isEcological()){
-            ecoImageView.setImage(new Image(getClass().getClassLoader().getResourceAsStream(ecoImagePath)));
+//            ecoImageView.setImage(new Image("imat/layout/images/svanen.png"));
         }
         productImageView.setImage(db.getFXImage(this.product));
 
-        productNameLabel.setText(product.getName());
-        priceLabel.setText(Double.toString(product.getPrice()));
+//        productNameLabel.setText(product.getName());
+        //priceLabel.setText(Double.toString(product.getPrice()));
     }
 }
