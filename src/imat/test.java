@@ -1,3 +1,5 @@
+package imat;
+
 import se.chalmers.cse.dat216.project.IMatDataHandler;
 import se.chalmers.cse.dat216.project.Product;
 
@@ -6,7 +8,7 @@ import se.chalmers.cse.dat216.project.Product;
  */
 public class test {
     public static void main(String[] args) {
-        //Bara en thicc test jag gjorde
+        //Bara en thicc imat.test jag gjorde
         System.out.println(System.getProperty("user.home"));
         IMatDataHandler db = IMatDataHandler.getInstance();
         Product p = db.getProduct(87);

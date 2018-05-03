@@ -8,12 +8,11 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="265.0" prefWidth="190.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="265.0" prefWidth="190.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="imat.StoreListItem">
    <children>
-      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="20.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="15.0">
+      <ImageView fx:id="productImageView" fitHeight="150.0" fitWidth="200.0" layoutX="20.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="15.0">
          <image>
-            <Image url="@../images/milk.jpg" />
+            <Image url="@layout/images/milk.jpg" />
          </image>
       </ImageView>
       <TextField alignment="CENTER" layoutX="130.0" layoutY="224.0" prefHeight="27.0" prefWidth="27.0" text="2" />
@@ -24,17 +23,17 @@
             <Font size="14.0" />
          </font>
       </Label>
-      <Label layoutX="14.0" layoutY="165.0" prefHeight="37.0" prefWidth="256.0" text="ARLA MJÖLK 1,5 L">
+      <Label fx:id="productNameLabel" layoutX="14.0" layoutY="165.0" prefHeight="37.0" prefWidth="256.0" text="ARLA MJÖLK 1,5 L">
          <font>
             <Font size="18.0" />
          </font>
       </Label>
-      <ImageView fitHeight="37.0" fitWidth="27.0" layoutX="7.0" layoutY="224.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="ecoImageView" fitHeight="37.0" fitWidth="27.0" layoutX="7.0" layoutY="224.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../images/stareboi.png" />
+            <Image url="@layout/images/stareboi.png" />
          </image>
       </ImageView>
-      <Label layoutX="50.0" layoutY="224.0" text="15kr">
+      <Label fx:id="priceLabel" layoutX="50.0" layoutY="224.0" text="15kr">
          <font>
             <Font size="22.0" />
          </font>

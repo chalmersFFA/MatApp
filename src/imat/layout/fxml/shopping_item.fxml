@@ -41,7 +41,7 @@
       </Label>
       <ImageView fitHeight="37.0" fitWidth="37.0" layoutX="151.0" layoutY="68.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../images/svanishboye.png" />
+            <Image url="@../images/svanen.png" />
          </image>
       </ImageView>
       <Label layoutX="151.0" layoutY="101.0" prefHeight="23.0" prefWidth="75.0" text="Läs mer" textFill="#5700d9" underline="true">
