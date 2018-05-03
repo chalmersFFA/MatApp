@@ -67,5 +67,7 @@
         </content>
       </ScrollPane>
       <Button layoutX="535.0" layoutY="803.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="153.0" text="Tillbaka till betalningssätt" />
+      <Label layoutX="472.0" layoutY="592.0" styleClass="big-text" text="Totalt:" />
+      <Label layoutX="700.0" layoutY="597.0" styleClass="big-text" text="555kr" />
    </children>
 </AnchorPane>
