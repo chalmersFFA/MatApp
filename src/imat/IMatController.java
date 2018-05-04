@@ -25,8 +25,7 @@ public class IMatController  extends VBox implements Initializable {
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         myDetails = new MyDetails();
-        //updateRecipeList();
-        showDetailScreen();
+        updateRecipeList();
     }
 
     private void updateRecipeList() {
@@ -43,8 +42,7 @@ public class IMatController  extends VBox implements Initializable {
     private void showDetailScreen() {
         mainFlowPane.getChildren().clear();
         mainFlowPane.getChildren().add(myDetails);
-        db.getCustomer().setFirstName("Rune Scimitar");
-        myDetails.loadDetails();
+        myDetails.initDetails();
 
 
     }

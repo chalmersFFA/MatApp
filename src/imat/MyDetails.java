@@ -7,6 +7,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
+import se.chalmers.cse.dat216.project.Customer;
 import se.chalmers.cse.dat216.project.IMatDataHandler;
 
 import java.io.IOException;
@@ -17,7 +18,8 @@ import java.io.IOException;
 public class MyDetails extends AnchorPane {
 
     private IMatDataHandler db = IMatDataHandler.getInstance();
-    private boolean editing = false;
+    private boolean editingDetails = false;
+    private Customer customer = db.getCustomer();
 
     @FXML
     Label firstNameLabel, lastNameLabel, emailLabel, phoneNumberLabel, addressLabel, postAddressLabel, postCodeLabel,
@@ -44,18 +46,31 @@ public class MyDetails extends AnchorPane {
         } catch (IOException exception) {
             throw new RuntimeException(exception);
         }
+        initDetails();
+    }
 
-
+    public void initDetails() {
+        setDetailTextFieldsVisibility(false);
+        loadDetails();
     }
 
     public void loadDetails() {
-        firstNameLabel.setText(db.getCustomer().getFirstName());
-        lastNameLabel.setText(db.getCustomer().getLastName());
-        emailLabel.setText(db.getCustomer().getEmail());
-        addressLabel.setText(db.getCustomer().getAddress());
-        postAddressLabel.setText(db.getCustomer().getPostAddress()); //Vilket måste vara Orten?
-        postCodeLabel.setText(db.getCustomer().getPostCode());
-        phoneNumberLabel.setText(db.getCustomer().getMobilePhoneNumber());
+
+        firstNameLabel.setText(customer.getFirstName());
+        lastNameLabel.setText(customer.getLastName());
+        emailLabel.setText(customer.getEmail());
+        addressLabel.setText(customer.getAddress());
+        postAddressLabel.setText(customer.getPostAddress()); //Vilket måste vara Orten?
+        postCodeLabel.setText(customer.getPostCode());
+        phoneNumberLabel.setText(customer.getMobilePhoneNumber());
+
+        firstNameTextField.setText(customer.getFirstName());
+        lastNameTextField.setText(customer.getLastName());
+        emailTextField.setText(customer.getEmail());
+        addressTextField.setText(customer.getAddress());
+        postAddressTextField.setText(customer.getPostAddress()); //Vilket måste vara Orten?
+        postCodeTextField.setText(customer.getPostCode());
+        phoneNumberTextField.setText(customer.getMobilePhoneNumber());
 
 
         //TODO
@@ -67,23 +82,39 @@ public class MyDetails extends AnchorPane {
 
     @FXML
     public void editDetails() {
-        if(editing) {
-            setDetailTextFieldsVisibility(true);
-            editDetailsButton.setText("Spara Ändringar");
-            editing = false;
-        }
-        else {
+        if(editingDetails) {
             setDetailTextFieldsVisibility(false);
             editDetailsButton.setText("Redigera Uppgifter");
-            editing = true;
+            editingDetails = false;
+            saveDetails();
+        }
+        else {
+            setDetailTextFieldsVisibility(true);
+            editDetailsButton.setText("Spara Ändringar");
+            editingDetails = true;
         }
 
 
     }
     @FXML
     public void editCard() {
-        firstNameLabel.setDisable(true);
-        firstNameTextField.setDisable(false);
+
+    }
+
+    private void saveDetails() {
+        customer.setFirstName(firstNameTextField.getText());
+        customer.setLastName(lastNameTextField.getText());
+        customer.setEmail(emailTextField.getText());
+        customer.setAddress(addressTextField.getText());
+        customer.setPostAddress(postAddressTextField.getText());
+        db.getCustomer().setPostCode(postCodeTextField.getText());
+
+        // TODO: 2018-05-04
+        // Tänka angående om de ska ha mobilnummer eller vanligt telefonnummer?
+
+        customer.setMobilePhoneNumber(phoneNumberTextField.getText());
+
+        loadDetails();
     }
 
     private void setDetailTextFieldsVisibility(boolean b) {
