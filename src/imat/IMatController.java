@@ -18,6 +18,8 @@ import java.util.ResourceBundle;
 public class IMatController  extends VBox implements Initializable {
     IMatDataHandler db = IMatDataHandler.getInstance();
 
+    MyDetails myDetails;
+
     @FXML
     FlowPane mainFlowPane;
 
@@ -26,6 +28,7 @@ public class IMatController  extends VBox implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+        myDetails = new MyDetails();
         updateRecipeList();
     }
 
@@ -38,6 +41,13 @@ public class IMatController  extends VBox implements Initializable {
         for(StoreListItem s : storeListItems){
             mainFlowPane.getChildren().add(s);
         }
+    }
+
+    private void showDetailScreen() {
+        mainFlowPane.getChildren().clear();
+        mainFlowPane.getChildren().add(myDetails);
+        myDetails.initDetails();
+
 
     }
 
