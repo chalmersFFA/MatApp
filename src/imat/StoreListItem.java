@@ -50,7 +50,7 @@ public class StoreListItem extends AnchorPane {
         }
         productImageView.setImage(db.getFXImage(this.product));
 
-//        productNameLabel.setText(product.getName());
+        productNameLabel.setText(this.product.getName());
         //priceLabel.setText(Double.toString(product.getPrice()));
     }
 }
