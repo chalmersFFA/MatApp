@@ -7,3 +7,17 @@
 .bold-text {
     -fx-font-weight: bold;
 }
+.red{
+    -fx-background-color: red;
+}
+.green{
+    -fx-background-color: green;
+}
+.storeListItem{
+    -fx-padding: 10px;
+    -fx-background-color: #FFFFFF;
+}
+
+.mainFlowPane{
+    -fx-background-color: #F0F0F0;
+}
