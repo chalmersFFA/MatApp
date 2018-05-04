@@ -79,6 +79,7 @@
                 <Color blue="0.624" green="0.624" red="0.624" fx:id="x2" />
               </textFill>
             </Label>
+                  <FlowPane fx:id="categoryFlowPane" layoutY="48.0" prefHeight="538.0" prefWidth="246.0" />
           </children>
         </AnchorPane>
             <VBox HBox.hgrow="ALWAYS">
