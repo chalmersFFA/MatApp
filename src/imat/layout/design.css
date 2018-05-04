@@ -21,3 +21,7 @@
 .mainFlowPane{
     -fx-background-color: #F0F0F0;
 }
+
+.categoriesAnchorPane{
+    -fx-background-color: #3F3F3F;
+}
