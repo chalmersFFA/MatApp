@@ -2,6 +2,8 @@ package imat;
 
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Label;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.FlowPane;
 import javafx.scene.layout.VBox;
@@ -26,12 +28,20 @@ public class IMatController  extends VBox implements Initializable {
     @FXML
     AnchorPane categoriesAnchorPane;
 
+    @FXML
+    Label myDetailsLabel;
+
+    @FXML
+    ImageView logoImageView;
+
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         myDetails = new MyDetails();
-        updateRecipeList();
+        //updateRecipeList();
+        showDetailsScreen();
     }
 
+    @FXML
     private void updateRecipeList() {
         mainFlowPane.getChildren().clear();
         ArrayList<StoreListItem> storeListItems = new ArrayList<>();
@@ -43,12 +53,11 @@ public class IMatController  extends VBox implements Initializable {
         }
     }
 
-    private void showDetailScreen() {
+    @FXML
+    private void showDetailsScreen() {
         mainFlowPane.getChildren().clear();
         mainFlowPane.getChildren().add(myDetails);
         myDetails.initDetails();
-
-
     }
 
 }
