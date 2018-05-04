@@ -1,15 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<fx:root type="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="40.0" prefWidth="40" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1">
+<fx:root maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="300.0" prefWidth="250.0" styleClass="storeListItem" stylesheets="@layout/design.css" type="AnchorPane" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/9.0.1">
    <children>
-      <ImageView fx:id="productImageView" fitHeight="40.0" fitWidth="40.0" layoutX="0.0" layoutY="0.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="productImageView" fitWidth="200.0" layoutX="40.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="15.0">
          <image>
             <Image url="@layout/images/Cooking_apple_detail.png" />
          </image>
       </ImageView>
+      <Label fx:id="productNameLabel" layoutX="15.0" layoutY="171.0" prefHeight="84.0" prefWidth="144.0" styleClass="big-text" text="REEEEEEEEEEEEEEEEEEEEE" wrapText="true" />
    </children>
 </fx:root>
