@@ -9,6 +9,7 @@ import javafx.scene.layout.FlowPane;
 import javafx.scene.layout.VBox;
 import se.chalmers.cse.dat216.project.IMatDataHandler;
 import se.chalmers.cse.dat216.project.Product;
+import se.chalmers.cse.dat216.project.ProductCategory;
 
 import java.net.URL;
 import java.util.ArrayList;
@@ -23,7 +24,7 @@ public class IMatController  extends VBox implements Initializable {
     MyDetails myDetails;
 
     @FXML
-    FlowPane mainFlowPane;
+    FlowPane mainFlowPane, categoryFlowPane;
 
     @FXML
     AnchorPane categoriesAnchorPane;
@@ -39,6 +40,7 @@ public class IMatController  extends VBox implements Initializable {
         myDetails = new MyDetails();
         //updateRecipeList();
         showDetailsScreen();
+        showCategories();
     }
 
     @FXML
@@ -58,6 +60,14 @@ public class IMatController  extends VBox implements Initializable {
         mainFlowPane.getChildren().clear();
         mainFlowPane.getChildren().add(myDetails);
         myDetails.initDetails();
+    }
+
+    private void showCategories() {
+        categoryFlowPane.getChildren().clear();
+        for(ProductCategory p : ProductCategory.values()) {
+            categoryFlowPane.getChildren().add(new CategoryItem(p));
+        }
+
     }
 
 }
