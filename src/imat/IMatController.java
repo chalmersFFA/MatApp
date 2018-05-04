@@ -2,6 +2,7 @@ package imat;
 
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.FlowPane;
 import javafx.scene.layout.VBox;
 import se.chalmers.cse.dat216.project.IMatDataHandler;
@@ -21,6 +22,9 @@ public class IMatController  extends VBox implements Initializable {
 
     @FXML
     FlowPane mainFlowPane;
+
+    @FXML
+    AnchorPane categoriesAnchorPane;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {

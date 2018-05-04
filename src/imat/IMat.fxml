@@ -69,7 +69,7 @@
       </AnchorPane>
       <HBox VBox.vgrow="ALWAYS">
          <children>
-        <AnchorPane prefHeight="586.0" prefWidth="246.0">
+        <AnchorPane fx:id="categoriesAnchorPane" prefHeight="586.0" prefWidth="246.0" styleClass="categoriesAnchorPane">
           <children>
             <Label alignment="CENTER" layoutX="14.0" layoutY="14.0" minWidth="60.0" prefWidth="-1.0" style="&#10;" text="Kategorier" textAlignment="CENTER" wrapText="false">
               <font>
@@ -83,14 +83,6 @@
         </AnchorPane>
             <VBox HBox.hgrow="ALWAYS">
                <children>
-          <Label alignment="CENTER" style="&#10;" text="View" textAlignment="CENTER" wrapText="false">
-                     <font>
-                        <Font size="18.0" fx:id="x5" />
-                     </font>
-                     <textFill>
-                        <Color blue="0.624" green="0.624" red="0.624" fx:id="x6" />
-                     </textFill>
-                  </Label>
                   <ScrollPane fitToHeight="true" fitToWidth="true" hbarPolicy="NEVER" vbarPolicy="ALWAYS" VBox.vgrow="ALWAYS">
                      <content>
                         <FlowPane fx:id="mainFlowPane" alignment="CENTER" columnHalignment="CENTER" hgap="15.0" maxWidth="1.7976931348623157E308" minWidth="-Infinity" nodeOrientation="LEFT_TO_RIGHT" prefWrapLength="1000.0" styleClass="mainFlowPane" vgap="15.0" />
