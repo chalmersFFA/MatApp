@@ -3,7 +3,6 @@ package imat;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Label;
-import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import se.chalmers.cse.dat216.project.IMatDataHandler;
@@ -28,7 +27,7 @@ public class StoreListItem extends AnchorPane {
     public StoreListItem(Product product) {
 
 
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("store_item_test.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("storeListItem.fxml"));
         fxmlLoader.setRoot(this);
         fxmlLoader.setController(this);
 

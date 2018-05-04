@@ -17,7 +17,7 @@
       </ImageView>
       <TextField alignment="CENTER" layoutX="130.0" layoutY="224.0" prefHeight="27.0" prefWidth="27.0" text="2" />
       <Button layoutX="105.0" layoutY="224.0" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" text="-" />
-      <Button layoutX="157.0" layoutY="224.0" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" text="+" />
+      <Button layoutX="157.0" layoutY="224.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="27.0" text="+" />
       <Label layoutX="14.0" layoutY="193.0" text="jfr-pris 10kr/l">
          <font>
             <Font size="14.0" />

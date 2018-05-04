@@ -1,8 +1,8 @@
 .normal-text {
-    -fx-font-size: 1.5em;
+    -fx-font-size: 1.5rem;
 }
 .big-text {
-    -fx-font-size: 1.55em;
+    -fx-font-size: 1.55rem;
 }
 .bold-text {
     -fx-font-weight: bold;
