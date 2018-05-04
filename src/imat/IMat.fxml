@@ -36,7 +36,7 @@
                   </ImageView>
                </graphic>
             </Label>
-            <Label contentDisplay="TOP" layoutX="980.0" layoutY="9.0" styleClass="big-text" text="Mitt konto" AnchorPane.topAnchor="9.0">
+            <Label fx:id="myDetailsLabel" contentDisplay="TOP" layoutX="980.0" layoutY="9.0" onMouseClicked="#showDetailsScreen" styleClass="big-text" text="Mitt konto" AnchorPane.topAnchor="9.0">
                <graphic>
                   <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true" styleClass="big-text">
                      <image>
@@ -60,7 +60,7 @@
                </image>
             </ImageView>
             <Label layoutX="341.0" layoutY="20.0" opacity="0.4" text="Sök efter din vara" />
-            <ImageView fitHeight="40.0" fitWidth="157.0" layoutX="8.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true" AnchorPane.topAnchor="8.0">
+            <ImageView fx:id="logoImageView" fitHeight="40.0" fitWidth="157.0" layoutX="8.0" layoutY="6.0" onMouseClicked="#updateRecipeList" pickOnBounds="true" preserveRatio="true" AnchorPane.topAnchor="8.0">
                <image>
                   <Image url="@layout/images/iMat.png" />
                </image>
