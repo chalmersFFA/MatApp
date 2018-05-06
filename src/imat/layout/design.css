@@ -31,12 +31,6 @@
 #greeno {
     -fx-background-color: green;
 }
-.upper_border {
-    -fx-border-width: 1 1 1 0;
-}
-.lower_border {
-    -fx-border-width: 0 0 0 0;
-}
 .subCategorySelected {
     -fx-background-color: green;
 }
@@ -47,4 +41,5 @@
 }
 .subCategoryStandard {
     -fx-background-color: black;
+    -fx-border-style: hidden solid hidden solid;
 }

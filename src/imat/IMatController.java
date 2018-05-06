@@ -129,7 +129,6 @@ public class IMatController extends VBox implements Initializable {
     public void selectCategory(CategoryItem c) {
         c.getBackgroundPane().getStyleClass().remove(c.getStandardClass());
         c.getBackgroundPane().getStyleClass().add(c.getSelectedClass());
-        System.out.println(c.getStandardClass());
     }
 
     public void deSelectCategory(CategoryItem c) {
