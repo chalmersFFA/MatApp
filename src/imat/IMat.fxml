@@ -60,7 +60,7 @@
                </image>
             </ImageView>
             <Label layoutX="341.0" layoutY="20.0" opacity="0.4" text="Sök efter din vara" />
-            <ImageView fx:id="logoImageView" fitHeight="40.0" fitWidth="157.0" layoutX="8.0" layoutY="6.0" onMouseClicked="#updateRecipeList" pickOnBounds="true" preserveRatio="true" AnchorPane.topAnchor="8.0">
+            <ImageView fx:id="logoImageView" fitHeight="40.0" fitWidth="157.0" layoutX="8.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true" AnchorPane.topAnchor="8.0">
                <image>
                   <Image url="@layout/images/iMat.png" />
                </image>

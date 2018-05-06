@@ -1,5 +1,6 @@
 package imat;
 
+import javafx.scene.image.Image;
 import javafx.scene.layout.Background;
 
 /**
@@ -17,6 +18,7 @@ public class MainCategoryStrategy implements CategoryStrategy {
             for(CategoryItem s : c.getSubCategories()) {
                 s.getBackgroundPane().getStyleClass().remove("side_borders");
             }
+            c.getArrowImageView().setImage(new Image("imat/layout/images/arrow_forward.png"));
         }
         else {
             c.setExpanded(true);
@@ -25,6 +27,7 @@ public class MainCategoryStrategy implements CategoryStrategy {
             for(CategoryItem s : c.getSubCategories()) {
                 s.getBackgroundPane().getStyleClass().add("side_borders");
             }
+            c.getArrowImageView().setImage(new Image("imat/layout/images/arrow_downward.png"));
         }
 
     }

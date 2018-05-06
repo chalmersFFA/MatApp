@@ -87,4 +87,12 @@ public class CategoryItem extends AnchorPane {
     public Pane getBackgroundPane() {
         return backgroundPane;
     }
+
+    public ProductCategory getProductCategory() {
+        return productCategory;
+    }
+
+    public ImageView getArrowImageView() {
+        return arrowImageView;
+    }
 }
