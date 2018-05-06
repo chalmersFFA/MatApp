@@ -27,7 +27,7 @@
 }
 .side_borders {
     -fx-border-style: hidden solid hidden solid;
-    -fx-background-color: #000000;
+    -fx-background-color: black;
 }
 .upper_border {
     -fx-border-width: 1 1 1 0;

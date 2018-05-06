@@ -6,6 +6,14 @@ package imat;
 public class SubCategoryStrategy implements CategoryStrategy {
     @Override
     public void click(CategoryItem c, IMatController parentController) {
-        System.out.println("Sub");
+        if(c != parentController.getCurrentExpandedSub()) {
+            if(parentController.getCurrentExpandedSub() != null)
+                parentController.getCurrentExpandedSub().getBackgroundPane().getStyleClass().remove("green");
+
+            parentController.setCurrentExpandedSub(c);
+            c.getBackgroundPane().getStyleClass().add("green");
+            parentController.updateRecipeList(c.getProductCategory());
+        }
+
     }
 }

@@ -13,6 +13,8 @@ import se.chalmers.cse.dat216.project.ProductCategory;
 
 import java.net.URL;
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.ResourceBundle;
 
 /**
@@ -21,6 +23,8 @@ import java.util.ResourceBundle;
 public class IMatController extends VBox implements Initializable {
     IMatDataHandler db = IMatDataHandler.getInstance();
     static ArrayList<CategoryItem> cList = new ArrayList<>();
+    private Map<String, StoreListItem> storeListItemMap = new HashMap<String, StoreListItem>();
+    private CategoryItem currentExpandedSub;
 
     MyDetails myDetails;
 
@@ -42,21 +46,23 @@ public class IMatController extends VBox implements Initializable {
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         myDetails = new MyDetails();
-        updateRecipeList();
         //showDetailsScreen();
+        initProducts();
         initCategories();
+        updateRecipeList(ProductCategory.BERRY);
+    }
+
+    private void initProducts() {
+        for (Product p : db.getProducts()){
+            storeListItemMap.put(p.getName(), new StoreListItem(p));
+        }
     }
 
 
-    @FXML
-    private void updateRecipeList() {
+    public void updateRecipeList(ProductCategory category) {
         mainFlowPane.getChildren().clear();
-        ArrayList<StoreListItem> storeListItems = new ArrayList<>();
-        for (Product p : db.getProducts()){
-            storeListItems.add(new StoreListItem(p));
-        }
-        for(StoreListItem s : storeListItems){
-            mainFlowPane.getChildren().add(s);
+        for (Product p : db.getProducts(category)){
+            mainFlowPane.getChildren().add(storeListItemMap.get(p.getName()));
         }
     }
 
@@ -81,7 +87,18 @@ public class IMatController extends VBox implements Initializable {
         c.addSubCategory(ProductCategory.VEGETABLE_FRUIT);
         cList.add(c);
 
+        c = new CategoryItem("Drycker", this);
+        c.addSubCategory(ProductCategory.COLD_DRINKS);
+        c.addSubCategory(ProductCategory.HOT_DRINKS);
+        cList.add(c);
+
         c = new CategoryItem(ProductCategory.FISH, this);
+        cList.add(c);
+
+        c = new CategoryItem(ProductCategory.BREAD, this);
+        cList.add(c);
+
+        c = new CategoryItem(ProductCategory.SWEET, this);
         cList.add(c);
 
         categoryFlowPane.getChildren().clear();
@@ -101,7 +118,11 @@ public class IMatController extends VBox implements Initializable {
         categoryFlowPane.getChildren().remove(index, index + c.getSubCategories().size());
     }
 
-    
+    public CategoryItem getCurrentExpandedSub() {
+        return currentExpandedSub;
+    }
 
-
+    public void setCurrentExpandedSub(CategoryItem currentExpandedSub) {
+        this.currentExpandedSub = currentExpandedSub;
+    }
 }

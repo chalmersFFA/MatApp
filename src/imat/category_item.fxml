@@ -6,13 +6,13 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Pane?>
 
-<fx:root maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseClicked="#onClick" prefHeight="40.0" prefWidth="221.0" type="AnchorPane" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<fx:root maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseClicked="#onClick" prefHeight="40.0" prefWidth="221.0" stylesheets="@layout/design.css" type="AnchorPane" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/9.0.1">
    <children>
       <Pane fx:id="backgroundPane" prefHeight="40.0" prefWidth="221.0" style="-fx-border-color: #800044; -fx-border-width: 3;">
          <children>
             <ImageView fx:id="arrowImageView" fitHeight="40.0" fitWidth="34.0" layoutX="190.0" layoutY="3.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@layout/images/icon-ios7-arrow-forward-512.png" />
+                  <Image url="@layout/images/arrow_forward.png" />
                </image>
             </ImageView>
             <ImageView fx:id="categoryImageView" fitHeight="27.0" fitWidth="34.0" layoutX="14.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true">
