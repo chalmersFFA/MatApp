@@ -22,6 +22,8 @@ public class CategoryItem extends AnchorPane {
     private CategoryStrategy categoryStrategy;
     private String displayName;
     private boolean isExpanded = false;
+    private String selectedClass;
+    private String standardClass = "mainCategoryStandard";
 
     @FXML
     ImageView categoryImageView, arrowImageView;
@@ -36,6 +38,7 @@ public class CategoryItem extends AnchorPane {
         this(Translator.swe(productCategory), parentController);
         this.productCategory = productCategory;
         categoryStrategy = new SubCategoryStrategy();
+        selectedClass = "subCategorySelected";
     }
 
     public CategoryItem(String displayName, IMatController parentController) {
@@ -44,6 +47,8 @@ public class CategoryItem extends AnchorPane {
         this.parentController = parentController;
         categoryStrategy = new MainCategoryStrategy();
         nameLabel.setText(displayName);
+        selectedClass = "mainCategorySelected";
+        backgroundPane.getStyleClass().add(standardClass);
     }
 
 
@@ -60,7 +65,11 @@ public class CategoryItem extends AnchorPane {
     }
 
     public void addSubCategory(ProductCategory p) {
-        subCategories.add(new CategoryItem(p, parentController));
+        CategoryItem c = new CategoryItem(p, parentController);
+        c.setStandardClass("subCategoryStandard");
+        c.getBackgroundPane().getStyleClass().clear();
+        c.getBackgroundPane().getStyleClass().add(c.getStandardClass());
+        subCategories.add(c);
     }
 
     @FXML
@@ -95,4 +104,21 @@ public class CategoryItem extends AnchorPane {
     public ImageView getArrowImageView() {
         return arrowImageView;
     }
+
+    public String getSelectedClass() {
+        return selectedClass;
+    }
+
+    public void setSelectedClass(String selectedClass) {
+        this.selectedClass = selectedClass;
+    }
+
+    public String getStandardClass() {
+        return standardClass;
+    }
+
+    public void setStandardClass(String standardClass) {
+        this.standardClass = standardClass;
+    }
+
 }
