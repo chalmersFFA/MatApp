@@ -25,3 +25,13 @@
 .categoriesAnchorPane{
     -fx-background-color: #3F3F3F;
 }
+.side_borders {
+    -fx-border-style: hidden solid hidden solid;
+    -fx-background-color: #000000;
+}
+.upper_border {
+    -fx-border-width: 1 1 1 0;
+}
+.lower_border {
+    -fx-border-width: 0 0 0 0;
+}
