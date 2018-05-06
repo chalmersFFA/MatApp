@@ -7,11 +7,11 @@ public class SubCategoryStrategy implements CategoryStrategy {
     @Override
     public void click(CategoryItem c, IMatController parentController) {
         if(c != parentController.getCurrentExpandedSub()) {
-            if(parentController.getCurrentExpandedSub() != null)
-                parentController.getCurrentExpandedSub().getBackgroundPane().getStyleClass().remove("green");
-
+            if(parentController.getCurrentExpandedSub() != null) {
+                parentController.deSelectCategory(parentController.getCurrentExpandedSub());
+            }
+            parentController.selectCategory(c);
             parentController.setCurrentExpandedSub(c);
-            c.getBackgroundPane().getStyleClass().add("green");
             parentController.updateRecipeList(c.getProductCategory());
         }
 
