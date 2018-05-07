@@ -37,7 +37,7 @@ public class StoreListItem extends AnchorPane {
     public StoreListItem(Product product, IMatController parentController) {
 
 
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("shopping_item_square.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("fxml/shopping_item_square.fxml"));
         fxmlLoader.setRoot(this);
         fxmlLoader.setController(this);
 

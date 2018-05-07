@@ -8,7 +8,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.shape.Line?>
 
-<fx:root maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="441.0" styleClass="normal-text" stylesheets="@layout/design.css" type="AnchorPane" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<fx:root maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="441.0" styleClass="normal-text" stylesheets="@../layout/design.css" type="AnchorPane" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <Label alignment="CENTER_RIGHT" layoutX="47.0" layoutY="70.0" prefHeight="17.0" prefWidth="133.0" text="Förnamn:" textAlignment="RIGHT" AnchorPane.rightAnchor="270.0" AnchorPane.topAnchor="70.0" />
       <Label alignment="CENTER_RIGHT" layoutX="94.0" layoutY="115.0" text="Efternamn:" AnchorPane.rightAnchor="270.0" AnchorPane.topAnchor="115.0" />
@@ -30,12 +30,12 @@
       <Label fx:id="phoneNumberLabel" layoutX="220.0" layoutY="365.0" styleClass="bold-text" AnchorPane.leftAnchor="180.0" AnchorPane.topAnchor="360.0" />
       <ImageView fitHeight="56.0" fitWidth="57.0" layoutX="47.0" layoutY="484.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@layout/images/payment.png" />
+            <Image url="@../layout/images/payment.png" />
          </image>
       </ImageView>
       <Line endX="110.0" layoutX="315.0" layoutY="221.0" opacity="0.1" startX="-280.0" AnchorPane.topAnchor="460.0" />
       <Label layoutX="113.0" layoutY="499.0" text="Mitt Betalkort" />
-      <AnchorPane layoutX="2.0" layoutY="484.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="313.0" prefWidth="441.0" styleClass="normal-text" stylesheets="@layout/design.css">
+      <AnchorPane layoutX="2.0" layoutY="484.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="313.0" prefWidth="441.0" styleClass="normal-text" stylesheets="@../layout/design.css">
          <children>
             <Label alignment="CENTER_RIGHT" layoutX="47.0" layoutY="70.0" prefHeight="17.0" prefWidth="133.0" text="Kortnummer:" textAlignment="RIGHT" AnchorPane.rightAnchor="270.0" AnchorPane.topAnchor="115.0" />
             <Label alignment="CENTER_RIGHT" layoutX="94.0" layoutY="115.0" text="Kortets innehavare:" AnchorPane.rightAnchor="270.0" AnchorPane.topAnchor="70.0" />

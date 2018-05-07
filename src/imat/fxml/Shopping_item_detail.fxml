@@ -13,7 +13,7 @@
    <children>
       <ImageView fitHeight="238.0" fitWidth="249.0" layoutX="14.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@layout/images/milk.jpg" />
+            <Image url="@../layout/images/milk.jpg" />
          </image>
       </ImageView>
       <Label layoutX="315.0" layoutY="25.0" text="Arla mjölk 1,5 liter">
@@ -24,7 +24,7 @@
       <Line endY="300.0" layoutX="300.0" layoutY="75.0" opacity="0.36" startY="-50.0" />
       <ImageView fitHeight="39.0" fitWidth="50.0" layoutX="252.0" layoutY="213.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@layout/images/svanen.png" />
+            <Image url="@../layout/images/svanen.png" />
          </image>
       </ImageView>
       <Label layoutX="315.0" layoutY="84.0" prefHeight="17.0" prefWidth="139.0" text="jfr-pris 10kr/l">
@@ -39,7 +39,7 @@
       </Label>
       <ImageView fitHeight="39.0" fitWidth="34.0" layoutX="437.0" layoutY="77.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@layout/images/stareboi.png" />
+            <Image url="@../layout/images/stareboi.png" />
          </image>
       </ImageView>
       <Button layoutX="573.0" layoutY="-2.0" mnemonicParsing="false" text="X" />

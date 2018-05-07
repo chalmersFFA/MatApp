@@ -13,7 +13,7 @@
 <?import javafx.scene.paint.Color?>
 <?import javafx.scene.text.Font?>
 
-<VBox stylesheets="@layout/design.css" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="imat.IMatController">
+<VBox stylesheets="@../layout/design.css" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="imat.IMatController">
    <children>
       <AnchorPane>
          <children>
@@ -22,7 +22,7 @@
                <graphic>
                   <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@layout/images/stareboi.png" />
+                        <Image url="@../layout/images/stareboi.png" />
                      </image>
                   </ImageView>
                </graphic>
@@ -31,7 +31,7 @@
                <graphic>
                   <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@layout/images/silkeboi.png" />
+                        <Image url="@../layout/images/silkeboi.png" />
                      </image>
                   </ImageView>
                </graphic>
@@ -40,7 +40,7 @@
                <graphic>
                   <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true" styleClass="big-text">
                      <image>
-                        <Image url="@layout/images/blackboi.png" />
+                        <Image url="@../layout/images/blackboi.png" />
                      </image>
                   </ImageView>
                </graphic>
@@ -49,20 +49,20 @@
                <graphic>
                   <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@layout/images/help.png" />
+                        <Image url="@../layout/images/help.png" />
                      </image>
                   </ImageView>
                </graphic>
             </Label>
             <ImageView fitHeight="17.0" fitWidth="23.0" layoutX="462.0" layoutY="19.0" opacity="0.76" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@layout/images/search.png" />
+                  <Image url="@../layout/images/search.png" />
                </image>
             </ImageView>
             <Label layoutX="341.0" layoutY="20.0" opacity="0.4" text="Sök efter din vara" />
             <ImageView fx:id="logoImageView" fitHeight="40.0" fitWidth="157.0" layoutX="8.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true" AnchorPane.topAnchor="8.0">
                <image>
-                  <Image url="@layout/images/iMat.png" />
+                  <Image url="@../layout/images/iMat.png" />
                </image>
             </ImageView>
          </children>

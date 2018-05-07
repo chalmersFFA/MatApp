@@ -9,7 +9,7 @@
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="854.0" prefWidth="900.0" stylesheets="@layout/design.css" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="854.0" prefWidth="900.0" stylesheets="@../layout/design.css" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <Label layoutX="133.0" layoutY="39.0" opacity="0.7" styleClass="normal-text" text="Varukorg" />
       <Label layoutX="240.0" layoutY="39.0" prefHeight="27.0" prefWidth="120.0" styleClass="normal-text" text="Betalningssätt" />
@@ -17,7 +17,7 @@
       <Label layoutX="213.0" layoutY="39.0" styleClass="normal-text" text="-&gt;" />
       <Label layoutX="355.0" layoutY="39.0" styleClass="normal-text" text="-&gt;" />
       <Button layoutX="7.0" layoutY="14.0" mnemonicParsing="false" text="Tillbaka till shopping" />
-      <AnchorPane layoutX="20.0" layoutY="107.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="470.0" prefWidth="441.0" style="-fx-border-color: #d3d3d3;" styleClass="normal-text" stylesheets="@layout/design.css">
+      <AnchorPane layoutX="20.0" layoutY="107.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="470.0" prefWidth="441.0" style="-fx-border-color: #d3d3d3;" styleClass="normal-text" stylesheets="@../layout/design.css">
          <children>
             <Label alignment="CENTER_RIGHT" layoutX="47.0" layoutY="70.0" prefHeight="17.0" prefWidth="133.0" text="Förnamn:" textAlignment="RIGHT" AnchorPane.rightAnchor="270.0" AnchorPane.topAnchor="70.0" />
             <Label alignment="CENTER_RIGHT" layoutX="94.0" layoutY="115.0" text="Efternamn:" AnchorPane.rightAnchor="270.0" AnchorPane.topAnchor="95.0" />
@@ -34,7 +34,7 @@
             <Label layoutX="234.0" layoutY="320.0" styleClass="bold-text" text="Göteborg" AnchorPane.leftAnchor="180.0" AnchorPane.topAnchor="195.0" />
             <Label layoutX="220.0" layoutY="365.0" styleClass="bold-text" text="073 133 1337" AnchorPane.leftAnchor="180.0" AnchorPane.topAnchor="220.0" />
             <Line endX="110.0" layoutX="315.0" layoutY="221.0" opacity="0.1" startX="-280.0" AnchorPane.topAnchor="270.0" />
-            <AnchorPane layoutY="484.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="198.0" prefWidth="441.0" styleClass="normal-text" stylesheets="@layout/design.css" AnchorPane.topAnchor="290.0">
+            <AnchorPane layoutY="484.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="198.0" prefWidth="441.0" styleClass="normal-text" stylesheets="@../layout/design.css" AnchorPane.topAnchor="290.0">
                <children>
                   <Label alignment="CENTER_RIGHT" layoutX="47.0" layoutY="70.0" prefHeight="17.0" prefWidth="133.0" text="Kortnummer:" textAlignment="RIGHT" AnchorPane.rightAnchor="270.0" AnchorPane.topAnchor="115.0" />
                   <Label alignment="CENTER_RIGHT" layoutX="94.0" layoutY="115.0" text="Kortets innehavare:" AnchorPane.rightAnchor="270.0" AnchorPane.topAnchor="70.0" />
@@ -42,7 +42,7 @@
                   <Label layoutX="215.0" layoutY="120.0" styleClass="bold-text" text="Rune Svensson" AnchorPane.leftAnchor="180.0" AnchorPane.topAnchor="70.0" />
                   <ImageView fitHeight="56.0" fitWidth="57.0" layoutX="38.0" layoutY="1.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@layout/images/payment.png" />
+                        <Image url="@../layout/images/payment.png" />
                      </image>
                   </ImageView>
                   <Label layoutX="105.0" layoutY="15.0" text="Mitt Betalkort" />
@@ -51,7 +51,7 @@
             <Label layoutX="112.0" layoutY="14.0" styleClass="big-text" text="Sparade Uppgifter" />
             <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="50.0" layoutY="19.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@layout/images/blackboi.png" />
+                  <Image url="@../layout/images/blackboi.png" />
                </image>
             </ImageView>
          </children>

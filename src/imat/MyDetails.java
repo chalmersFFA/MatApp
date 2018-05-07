@@ -36,7 +36,7 @@ public class MyDetails extends AnchorPane {
     Button editDetailsButton, editCardNumber;
 
     public MyDetails() {
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("my_details.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("fxml/my_details.fxml"));
         fxmlLoader.setRoot(this);
         fxmlLoader.setController(this);
 

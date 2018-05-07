@@ -13,7 +13,7 @@ public class ShoppingCartItem extends AnchorPane {
     ShoppingCartController parentController;
 
     public ShoppingCartItem(ShoppingItem shoppingItem, ShoppingCartController parentController) {
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("steg1_betalning_item.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("fxml/steg1_betalning_item.fxml"));
         fxmlLoader.setRoot(this);
         fxmlLoader.setController(this);
 

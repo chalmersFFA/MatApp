@@ -26,7 +26,7 @@ public class ShoppingCartController extends AnchorPane implements ShoppingCartLi
     FlowPane shoppingCartFlowPane;
 
     public ShoppingCartController(IMatController parentController) {
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("shopping_cart_controller.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("fxml/shopping_cart_controller.fxml"));
         fxmlLoader.setRoot(this);
         fxmlLoader.setController(this);
 
