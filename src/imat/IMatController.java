@@ -3,6 +3,7 @@ package imat;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.FlowPane;
@@ -76,29 +77,29 @@ public class IMatController extends VBox implements Initializable {
 
     private void initCategories() {
 
-        CategoryItem c = new CategoryItem("Frukt och grönt", this);
-        c.addSubCategory(ProductCategory.BERRY);
-        c.addSubCategory(ProductCategory.CABBAGE);
-        c.addSubCategory(ProductCategory.CITRUS_FRUIT);
-        c.addSubCategory(ProductCategory.EXOTIC_FRUIT);
-        c.addSubCategory(ProductCategory.FRUIT);
-        c.addSubCategory(ProductCategory.MELONS);
-        c.addSubCategory(ProductCategory.ROOT_VEGETABLE);
-        c.addSubCategory(ProductCategory.VEGETABLE_FRUIT);
+        CategoryItem c = new CategoryItem("Frukt och grönt", this, new Image("imat/layout/images/categoryIcons/fruitvegetable.png"));
+        c.addSubCategory(new CategoryItem(ProductCategory.BERRY, this, new Image("imat/layout/images/categoryIcons/berry.png")));
+        c.addSubCategory(new CategoryItem(ProductCategory.CABBAGE, this, new Image("imat/layout/images/categoryIcons/cabbage.png")));
+        c.addSubCategory(new CategoryItem(ProductCategory.CITRUS_FRUIT, this, new Image("imat/layout/images/categoryIcons/citrus.png")));
+        c.addSubCategory(new CategoryItem(ProductCategory.EXOTIC_FRUIT, this, new Image("imat/layout/images/categoryIcons/exotic.png")));
+        c.addSubCategory(new CategoryItem(ProductCategory.FRUIT, this, new Image("imat/layout/images/categoryIcons/fruit.png")));
+        c.addSubCategory(new CategoryItem(ProductCategory.MELONS, this, new Image("imat/layout/images/categoryIcons/melon.png")));
+        c.addSubCategory(new CategoryItem(ProductCategory.ROOT_VEGETABLE, this, new Image("imat/layout/images/categoryIcons/root.png")));
+        c.addSubCategory(new CategoryItem(ProductCategory.VEGETABLE_FRUIT, this, new Image("imat/layout/images/categoryIcons/miscfruit.png")));
         cList.add(c);
 
-        c = new CategoryItem("Drycker", this);
-        c.addSubCategory(ProductCategory.COLD_DRINKS);
-        c.addSubCategory(ProductCategory.HOT_DRINKS);
+        c = new CategoryItem("Drycker", this, new Image("imat/layout/images/categoryIcons/drink.png"));
+        c.addSubCategory(new CategoryItem(ProductCategory.COLD_DRINKS, this, new Image("imat/layout/images/categoryIcons/colddrink.png")));
+        c.addSubCategory(new CategoryItem(ProductCategory.HOT_DRINKS, this, new Image("imat/layout/images/categoryIcons/hotdrink.png")));
         cList.add(c);
 
-        c = new CategoryItem(ProductCategory.FISH, this);
+        c = new CategoryItem(ProductCategory.FISH, this, new Image("imat/layout/images/categoryIcons/fish.png"));
         cList.add(c);
 
-        c = new CategoryItem(ProductCategory.BREAD, this);
+        c = new CategoryItem(ProductCategory.BREAD, this, new Image("imat/layout/images/categoryIcons/bread.png"));
         cList.add(c);
 
-        c = new CategoryItem(ProductCategory.SWEET, this);
+        c = new CategoryItem(ProductCategory.SWEET, this, new Image("imat/layout/images/categoryIcons/sweet.png"));
         cList.add(c);
 
         categoryFlowPane.getChildren().clear();
