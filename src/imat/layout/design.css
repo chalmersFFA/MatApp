@@ -40,6 +40,6 @@
 .mainCategoryStandard {
 }
 .subCategoryStandard {
-    -fx-background-color: black;
+    -fx-background-color: #666666;
     -fx-border-style: hidden solid hidden solid;
 }
