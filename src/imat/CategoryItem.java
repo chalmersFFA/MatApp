@@ -53,7 +53,7 @@ public class CategoryItem extends AnchorPane {
 
 
     private void initFxml() {
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("category_item.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("fxml/category_item.fxml"));
         fxmlLoader.setRoot(this);
         fxmlLoader.setController(this);
 

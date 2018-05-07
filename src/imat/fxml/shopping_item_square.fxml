@@ -12,7 +12,7 @@
    <children>
       <ImageView fx:id="productImageView" fitHeight="150.0" fitWidth="200.0" layoutX="20.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="15.0">
          <image>
-            <Image url="@layout/images/milk.jpg" />
+            <Image url="@../layout/images/milk.jpg" />
          </image>
       </ImageView>
       <TextField fx:id="amountTextField" alignment="CENTER" layoutX="130.0" layoutY="224.0" prefHeight="27.0" prefWidth="27.0" />
@@ -30,7 +30,7 @@
       </Label>
       <ImageView fx:id="ecoImageView" fitHeight="37.0" fitWidth="27.0" layoutX="7.0" layoutY="224.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@layout/images/stareboi.png" />
+            <Image url="@../layout/images/stareboi.png" />
          </image>
       </ImageView>
       <Label fx:id="priceLabel" layoutX="50.0" layoutY="224.0" text="15kr">
