@@ -84,30 +84,16 @@
         </AnchorPane>
             <VBox HBox.hgrow="ALWAYS">
                <children>
-                  <ScrollPane fitToHeight="true" fitToWidth="true" hbarPolicy="NEVER" vbarPolicy="ALWAYS" VBox.vgrow="ALWAYS">
+                  <ScrollPane fitToHeight="true" fitToWidth="true" hbarPolicy="NEVER" prefWidth="616.0" vbarPolicy="ALWAYS" VBox.vgrow="ALWAYS">
                      <content>
                         <FlowPane fx:id="mainFlowPane" alignment="CENTER" columnHalignment="CENTER" hgap="15.0" maxWidth="1.7976931348623157E308" minWidth="-Infinity" nodeOrientation="LEFT_TO_RIGHT" prefWrapLength="1000.0" styleClass="mainFlowPane" vgap="15.0" />
                      </content>
                   </ScrollPane>
                </children>
             </VBox>
-        <AnchorPane HBox.hgrow="ALWAYS">
+        <AnchorPane fx:id="shoppingCartAnchorPane" prefHeight="587.0" prefWidth="118.0" HBox.hgrow="ALWAYS">
           <children>
-            <Label alignment="CENTER" prefHeight="46.0" prefWidth="167.0" style="&#10;" text="Kundvagn" textAlignment="CENTER" wrapText="false" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
-                     <graphic>
-                        <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@layout/images/Screen_Shot_2018-04-27_at_10.24.33.png" />
-                           </image>
-                        </ImageView>
-                     </graphic>
-                     <font>
-                        <Font size="18.0" fx:id="x7" />
-                     </font>
-                     <textFill>
-                        <Color blue="0.624" green="0.624" red="0.624" fx:id="x8" />
-                     </textFill>
-                  </Label>
+                  <FlowPane fx:id="shoppingCartFlowPane" layoutX="-2.0" prefHeight="587.0" prefWidth="268.0" />
                   <Button mnemonicParsing="false" style="-fx-background-color: #2020c0;" text="Till Kassan" textFill="WHITE" AnchorPane.bottomAnchor="10.0" AnchorPane.rightAnchor="15.0" />
           </children>
         </AnchorPane>
