@@ -8,10 +8,7 @@ import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.FlowPane;
 import javafx.scene.layout.VBox;
-import se.chalmers.cse.dat216.project.IMatDataHandler;
-import se.chalmers.cse.dat216.project.Product;
-import se.chalmers.cse.dat216.project.ProductCategory;
-import se.chalmers.cse.dat216.project.ShoppingCart;
+import se.chalmers.cse.dat216.project.*;
 
 import java.net.URL;
 import java.util.ArrayList;
@@ -59,7 +56,9 @@ public class IMatController extends VBox implements Initializable {
 
     private void initProducts() {
         for (Product p : db.getProducts(ProductCategory.BERRY)){
-            storeListItemMap.put(p.getName(), new StoreListItem(p, this));
+            ItemHandler itemHandler = new ItemHandler(new ShoppingItem(p,0));
+            storeListItemMap.put(p.getName(), new StoreListItem(itemHandler, this));
+            shoppingCartController.addToHashMap(new ShoppingCartItem(itemHandler, shoppingCartController));
         }
     }
 

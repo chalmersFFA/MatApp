@@ -9,8 +9,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
-import se.chalmers.cse.dat216.project.IMatDataHandler;
-import se.chalmers.cse.dat216.project.ShoppingItem;
+import se.chalmers.cse.dat216.project.*;
 
 import java.io.IOException;
 
@@ -19,7 +18,7 @@ import java.io.IOException;
  */
 public class ShoppingCartItem extends AnchorPane {
     ShoppingCartController parentController;
-    ShoppingItem shoppingItem;
+    ItemHandler itemHandler;
     IMatDataHandler db = IMatDataHandler.getInstance();
 
     @FXML
@@ -35,7 +34,7 @@ public class ShoppingCartItem extends AnchorPane {
     @FXML
     TextField amountTextField;
 
-    public ShoppingCartItem(ShoppingItem shoppingItem, ShoppingCartController parentController) {
+    public ShoppingCartItem(ItemHandler itemHandler, ShoppingCartController parentController) {
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("fxml/steg1_betalning_item.fxml"));
         fxmlLoader.setRoot(this);
         fxmlLoader.setController(this);
@@ -46,39 +45,37 @@ public class ShoppingCartItem extends AnchorPane {
             throw new RuntimeException(exception);
         }
         this.parentController = parentController;
-        this.shoppingItem = shoppingItem;
-        priceLabel.setText(Double.toString(shoppingItem.getProduct().getPrice()));
-        productImageView.setImage(db.getFXImage(this.shoppingItem.getProduct()));
-        productLabel.setText(this.shoppingItem.getProduct().getName());
-
+        productImageView.setImage(db.getFXImage(itemHandler.getShoppingItem().getProduct()));
+        productLabel.setText(itemHandler.getShoppingItem().getProduct().getName());
+        this.itemHandler = itemHandler;
+        itemHandler.setShoppingCartItem(this);
         amountTextField.textProperty().addListener(new ChangeListener<String>() {
 
             @Override
             public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue) {
-                setAmount(Double.parseDouble(newValue));
+                //setAmount(Double.parseDouble(newValue));
             }
         });
-        updateTextField();
+        update();
     }
 
-    public void updateTextField() {
-        amountTextField.setText(Double.toString(shoppingItem.getAmount()));
-        priceLabel.setText(Double.toString(shoppingItem.getTotal()));
+    public void update() {
+        amountTextField.setText(Double.toString(itemHandler.getShoppingItem().getAmount()));
+        priceLabel.setText(Double.toString(itemHandler.getShoppingItem().getTotal()));
     }
-    @FXML
-    public void increaseAmount() {
-        setAmount(shoppingItem.getAmount() + 1);
+
+    public void remove() {
+        parentController.remove(this);
     }
-    @FXML
+    public void increaseAmount(){
+        itemHandler.increaseAmount();
+
+    }
     public void decreaseAmount() {
-        setAmount(shoppingItem.getAmount()-1);
+        itemHandler.decreaseAmount();
     }
 
-    public void setAmount(double i) {
-        if (i < 0)
-            shoppingItem.setAmount(0);
-        else
-            shoppingItem.setAmount(i);
-        updateTextField();
+    public ItemHandler getItemHandler() {
+        return itemHandler;
     }
 }
