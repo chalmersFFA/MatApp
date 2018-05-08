@@ -48,14 +48,7 @@ public class StoreListItem extends AnchorPane {
         this.itemHandler = item;
         this.parentController = parentController;
 
-        amountTextField.textProperty().addListener(new ChangeListener<String>() {
-
-            @Override
-            public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue) {
-                //TODO
-                //Fixa responsmetoden på amountTextField
-            }
-        });
+        amountTextField.textProperty().addListener(itemHandler.getChangeListener());
 
         String ecoImagePath = "layout/images/svanen.png";
         if (item.getShoppingItem().getProduct().isEcological()) {
@@ -70,24 +63,6 @@ public class StoreListItem extends AnchorPane {
     }
 
 
-    /*public void update() {
-        amountTextField.setText(Integer.toString(amount));
-        if(shoppingCart.getItems().contains(shoppingItem)) {
-            if(amount > 0)
-                shoppingItem.setAmount(amount);
-            else
-                shoppingCart.removeItem(shoppingItem);
-        }
-        else {
-            if(amount > 0)
-                shoppingCart.addItem(shoppingItem);
-        }
-
-        for(ShoppingItem s : shoppingCart.getItems()) {
-            System.out.println(s.getProduct().getName() + ": " + s.getAmount());
-        }
-
-    }*/
 
     public void update() {
         amountTextField.setText(Double.toString(itemHandler.getShoppingItem().getAmount()));

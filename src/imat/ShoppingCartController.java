@@ -41,21 +41,18 @@ public class ShoppingCartController extends AnchorPane implements ShoppingCartLi
 
     }
 
-    /*private void initShoppingCartItems() {
-        for (Product p : db.getProducts(ProductCategory.BERRY)){
-            shoppingCartItemMap.put(p.getName(), new ShoppingCartItem(new ShoppingItem(p), this));
-        }
-    }*/
 
     @Override
     public void shoppingCartChanged(CartEvent cartEvent) {
-        if(cartEvent.isAddEvent())
+        if(cartEvent.isAddEvent() && !item_list.contains(shoppingCartItemMap.get(cartEvent.getShoppingItem().getProduct().getName())))
             add(shoppingCartItemMap.get(cartEvent.getShoppingItem().getProduct().getName()));
-        else
-            remove(shoppingCartItemMap.get(cartEvent.getShoppingItem().getProduct().getName()));
+        /*else
+            remove(shoppingCartItemMap.get(cartEvent.getShoppingItem().getProduct().getName()));*/
     }
     public void remove(ShoppingCartItem s) {
         item_list.remove(s);
+        s.getItemHandler().getShoppingItem().setAmount(0);
+        s.getItemHandler().update();
         update();
     }
     public void add(ShoppingCartItem s) {

@@ -1,6 +1,11 @@
 package imat;
 
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
 import se.chalmers.cse.dat216.project.*;
+
+import java.awt.event.FocusListener;
+
 
 /**
  * Created by Jonathan Köre on 2018-05-08.
@@ -9,6 +14,14 @@ public class ItemHandler {
     private ShoppingItem shoppingItem;
     private StoreListItem storeListItem;
     private ShoppingCartItem shoppingCartItem;
+    private ChangeListener<String>  changeListener = new ChangeListener<String>() {
+        @Override
+        public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue) {
+            setAmount(Double.parseDouble(newValue));
+        }
+    };
+
+
 
 
     public ItemHandler(ShoppingItem shoppingItem) {
@@ -32,7 +45,7 @@ public class ItemHandler {
 
     }
 
-    private void update() {
+    public void update() {
         if(shoppingItem.getAmount() > 0 && !IMatDataHandler.getInstance().getShoppingCart().getItems().contains(shoppingItem))
             IMatDataHandler.getInstance().getShoppingCart().addItem(shoppingItem);
         else if(shoppingItem.getAmount() <= 0)
@@ -45,21 +58,6 @@ public class ItemHandler {
         return shoppingItem;
     }
 
-    public void setShoppingItem(ShoppingItem shoppingItem) {
-        this.shoppingItem = shoppingItem;
-    }
-
-    /*@Override
-    public void shoppingCartChanged(CartEvent cartEvent) {
-        if(cartEvent.getShoppingItem().equals(shoppingItem)) {
-            if(shoppingItem.getAmount() <= 0) {
-                shoppingCartItem.remove();
-            }
-            else {
-
-            }
-        }
-    }*/
 
     public void setStoreListItem(StoreListItem storeListItem) {
         this.storeListItem = storeListItem;
@@ -68,4 +66,9 @@ public class ItemHandler {
     public void setShoppingCartItem(ShoppingCartItem shoppingCartItem) {
         this.shoppingCartItem = shoppingCartItem;
     }
+
+    public ChangeListener<String> getChangeListener() {
+        return changeListener;
+    }
+
 }
