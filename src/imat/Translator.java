@@ -11,7 +11,7 @@ public class Translator {
             case BERRY:
                 return "Bär";
             case POD:
-                return " ";
+                return "Baljväxter";
             case BREAD:
                 return "Bröd";
             case CITRUS_FRUIT:
@@ -25,7 +25,7 @@ public class Translator {
             case FISH:
                 return "Fisk";
             case VEGETABLE_FRUIT:
-                return "GrönsaksFrukt?";
+                return "Övrigt";
             case CABBAGE:
                 return "Kål";
             case MEAT:
@@ -35,21 +35,21 @@ public class Translator {
             case MELONS:
                 return "Meloner";
             case FLOUR_SUGAR_SALT:
-                return "Mjöl_Socker_Salt";
+                return "Mjöl, Socker & Salt";
             case NUTS_AND_SEEDS:
-                return "Nötter och Fröer";
+                return "Nötter & Frön";
             case PASTA:
                 return "Pasta";
             case POTATO_RICE:
-                return "Potatis och ris";
+                return "Potatis & ris";
             case ROOT_VEGETABLE:
                 return "Rotfrukter";
             case FRUIT:
                 return "Frukt";
             case SWEET:
-                return "Sött";
+                return "Sötsaker";
             case HERB:
-                return "Örter";
+                return "Örter & Kryddor";
             default:
                 return p.toString();
         }
