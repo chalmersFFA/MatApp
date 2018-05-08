@@ -49,13 +49,7 @@ public class ShoppingCartItem extends AnchorPane {
         productLabel.setText(itemHandler.getShoppingItem().getProduct().getName());
         this.itemHandler = itemHandler;
         itemHandler.setShoppingCartItem(this);
-        amountTextField.textProperty().addListener(new ChangeListener<String>() {
-
-            @Override
-            public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue) {
-                //setAmount(Double.parseDouble(newValue));
-            }
-        });
+        amountTextField.textProperty().addListener(itemHandler.getChangeListener());
         update();
     }
 

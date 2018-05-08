@@ -32,5 +32,10 @@
             <!--<Image url="@../../Downloads/Lab2/RecipeSearch/src/recipesearch/resources/icon_close.png" />-->
          </image>
       </ImageView>
+      <ImageView fitHeight="17.0" fitWidth="21.0" layoutX="282.0" layoutY="2.0" onMouseClicked="#remove" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../layout/images/x.jpg" />
+         </image>
+      </ImageView>
    </children>
 </fx:root>
