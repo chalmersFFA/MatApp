@@ -11,6 +11,7 @@ import javafx.scene.layout.VBox;
 import se.chalmers.cse.dat216.project.IMatDataHandler;
 import se.chalmers.cse.dat216.project.Product;
 import se.chalmers.cse.dat216.project.ProductCategory;
+import se.chalmers.cse.dat216.project.ShoppingCart;
 
 import java.net.URL;
 import java.util.ArrayList;
@@ -26,8 +27,10 @@ public class IMatController extends VBox implements Initializable {
     static ArrayList<CategoryItem> cList = new ArrayList<>();
     private Map<String, StoreListItem> storeListItemMap = new HashMap<String, StoreListItem>();
     private CategoryItem currentExpandedSub;
+    private ShoppingCart shoppingCart = db.getShoppingCart();
 
     MyDetails myDetails;
+    ShoppingCartController shoppingCartController;
 
     @FXML
     FlowPane mainFlowPane;
@@ -36,7 +39,7 @@ public class IMatController extends VBox implements Initializable {
     FlowPane categoryFlowPane;
 
     @FXML
-    AnchorPane categoriesAnchorPane;
+    AnchorPane categoriesAnchorPane, shoppingCartAnchorPane;
 
     @FXML
     Label myDetailsLabel;
@@ -47,15 +50,16 @@ public class IMatController extends VBox implements Initializable {
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         myDetails = new MyDetails();
+        shoppingCartController = new ShoppingCartController(this);
         //showDetailsScreen();
+        showShoppingCart();
         initProducts();
         initCategories();
-        updateRecipeList(ProductCategory.BERRY);
     }
 
     private void initProducts() {
-        for (Product p : db.getProducts()){
-            storeListItemMap.put(p.getName(), new StoreListItem(p));
+        for (Product p : db.getProducts(ProductCategory.BERRY)){
+            storeListItemMap.put(p.getName(), new StoreListItem(p, this));
         }
     }
 
@@ -142,4 +146,10 @@ public class IMatController extends VBox implements Initializable {
         c.getBackgroundPane().getStyleClass().remove(c.getSelectedClass());
         c.getBackgroundPane().getStyleClass().add(c.getStandardClass());
     }
+
+    public void showShoppingCart() {
+        shoppingCartAnchorPane.getChildren().clear();
+        shoppingCartAnchorPane.getChildren().add(shoppingCartController);
+    }
+
 }

@@ -13,7 +13,7 @@
 <?import javafx.scene.paint.Color?>
 <?import javafx.scene.text.Font?>
 
-<VBox stylesheets="@layout/design.css" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="imat.IMatController">
+<VBox stylesheets="@../layout/design.css" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="imat.IMatController">
    <children>
       <AnchorPane>
          <children>
@@ -22,7 +22,7 @@
                <graphic>
                   <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@layout/images/stareboi.png" />
+                        <Image url="@../layout/images/stareboi.png" />
                      </image>
                   </ImageView>
                </graphic>
@@ -31,7 +31,7 @@
                <graphic>
                   <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@layout/images/silkeboi.png" />
+                        <Image url="@../layout/images/silkeboi.png" />
                      </image>
                   </ImageView>
                </graphic>
@@ -40,7 +40,7 @@
                <graphic>
                   <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true" styleClass="big-text">
                      <image>
-                        <Image url="@layout/images/blackboi.png" />
+                        <Image url="@../layout/images/blackboi.png" />
                      </image>
                   </ImageView>
                </graphic>
@@ -49,20 +49,20 @@
                <graphic>
                   <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@layout/images/help.png" />
+                        <Image url="@../layout/images/help.png" />
                      </image>
                   </ImageView>
                </graphic>
             </Label>
             <ImageView fitHeight="17.0" fitWidth="23.0" layoutX="462.0" layoutY="19.0" opacity="0.76" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@layout/images/search.png" />
+                  <Image url="@../layout/images/search.png" />
                </image>
             </ImageView>
             <Label layoutX="341.0" layoutY="20.0" opacity="0.4" text="Sök efter din vara" />
             <ImageView fx:id="logoImageView" fitHeight="40.0" fitWidth="157.0" layoutX="8.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true" AnchorPane.topAnchor="8.0">
                <image>
-                  <Image url="@layout/images/iMat.png" />
+                  <Image url="@../layout/images/iMat.png" />
                </image>
             </ImageView>
          </children>
@@ -84,30 +84,16 @@
         </AnchorPane>
             <VBox HBox.hgrow="ALWAYS">
                <children>
-                  <ScrollPane fitToHeight="true" fitToWidth="true" hbarPolicy="NEVER" vbarPolicy="ALWAYS" VBox.vgrow="ALWAYS">
+                  <ScrollPane fitToHeight="true" fitToWidth="true" hbarPolicy="NEVER" prefWidth="616.0" vbarPolicy="ALWAYS" VBox.vgrow="ALWAYS">
                      <content>
                         <FlowPane fx:id="mainFlowPane" alignment="CENTER" columnHalignment="CENTER" hgap="15.0" maxWidth="1.7976931348623157E308" minWidth="-Infinity" nodeOrientation="LEFT_TO_RIGHT" prefWrapLength="1000.0" styleClass="mainFlowPane" vgap="15.0" />
                      </content>
                   </ScrollPane>
                </children>
             </VBox>
-        <AnchorPane HBox.hgrow="ALWAYS">
+        <AnchorPane fx:id="shoppingCartAnchorPane" prefHeight="587.0" prefWidth="118.0" HBox.hgrow="ALWAYS">
           <children>
-            <Label alignment="CENTER" prefHeight="46.0" prefWidth="167.0" style="&#10;" text="Kundvagn" textAlignment="CENTER" wrapText="false" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
-                     <graphic>
-                        <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@layout/images/Screen_Shot_2018-04-27_at_10.24.33.png" />
-                           </image>
-                        </ImageView>
-                     </graphic>
-                     <font>
-                        <Font size="18.0" fx:id="x7" />
-                     </font>
-                     <textFill>
-                        <Color blue="0.624" green="0.624" red="0.624" fx:id="x8" />
-                     </textFill>
-                  </Label>
+                  <FlowPane fx:id="shoppingCartFlowPane" layoutX="-2.0" prefHeight="587.0" prefWidth="268.0" />
                   <Button mnemonicParsing="false" style="-fx-background-color: #2020c0;" text="Till Kassan" textFill="WHITE" AnchorPane.bottomAnchor="10.0" AnchorPane.rightAnchor="15.0" />
           </children>
         </AnchorPane>

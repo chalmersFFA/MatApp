@@ -25,7 +25,7 @@
       <Button layoutX="128.0" layoutY="23.0" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" text="+" />
       <ImageView fitHeight="41.0" fitWidth="51.0" layoutX="14.0" layoutY="11.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@layout/images/milk.jpg" />
+            <Image url="@../layout/images/milk.jpg" />
          </image>
       </ImageView>
       <Label layoutX="178.0" layoutY="23.0" prefHeight="27.0" prefWidth="41.0" text="30 kr" />
