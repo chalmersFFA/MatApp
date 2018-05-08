@@ -9,7 +9,7 @@ public class Translator {
     static String swe(ProductCategory p) {
         switch(p) {
             case BERRY:
-                return "bär";
+                return "Bär";
             case POD:
                 return " ";
             case BREAD:

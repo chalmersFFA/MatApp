@@ -90,6 +90,7 @@ public class IMatController extends VBox implements Initializable {
         c.addSubCategory(new CategoryItem(ProductCategory.MELONS, this, new Image("imat/layout/images/categoryIcons/melon.png")));
         c.addSubCategory(new CategoryItem(ProductCategory.ROOT_VEGETABLE, this, new Image("imat/layout/images/categoryIcons/root.png")));
         c.addSubCategory(new CategoryItem(ProductCategory.VEGETABLE_FRUIT, this, new Image("imat/layout/images/categoryIcons/miscfruit.png")));
+        c.addSubCategory(new CategoryItem(ProductCategory.POD, this, new Image("imat/layout/images/categoryIcons/pod.png")));
         cList.add(c);
 
         c = new CategoryItem("Drycker", this, new Image("imat/layout/images/categoryIcons/drink.png"));
@@ -105,6 +106,11 @@ public class IMatController extends VBox implements Initializable {
 
         c = new CategoryItem(ProductCategory.SWEET, this, new Image("imat/layout/images/categoryIcons/sweet.png"));
         cList.add(c);
+
+        c = new CategoryItem(ProductCategory.DAIRIES, this, new Image("imat/layout/images/categoryIcons/dairy.png"));
+        cList.add(c);
+
+
 
         categoryFlowPane.getChildren().clear();
         for(CategoryItem ci : cList)
