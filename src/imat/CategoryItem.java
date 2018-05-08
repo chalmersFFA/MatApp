@@ -3,6 +3,7 @@ package imat;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Label;
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
@@ -34,14 +35,14 @@ public class CategoryItem extends AnchorPane {
     @FXML
     private Pane backgroundPane;
 
-    public CategoryItem(ProductCategory productCategory, IMatController parentController) {
-        this(Translator.swe(productCategory), parentController);
+    public CategoryItem(ProductCategory productCategory, IMatController parentController, Image image) {
+        this(Translator.swe(productCategory), parentController, image);
         this.productCategory = productCategory;
         categoryStrategy = new SubCategoryStrategy();
         selectedClass = "subCategorySelected";
     }
 
-    public CategoryItem(String displayName, IMatController parentController) {
+    public CategoryItem(String displayName, IMatController parentController, Image image) {
         initFxml();
         this.displayName = displayName;
         this.parentController = parentController;
@@ -49,6 +50,7 @@ public class CategoryItem extends AnchorPane {
         nameLabel.setText(displayName);
         selectedClass = "mainCategorySelected";
         backgroundPane.getStyleClass().add(standardClass);
+        categoryImageView.setImage(image);
     }
 
 
@@ -64,8 +66,7 @@ public class CategoryItem extends AnchorPane {
         }
     }
 
-    public void addSubCategory(ProductCategory p) {
-        CategoryItem c = new CategoryItem(p, parentController);
+    public void addSubCategory(CategoryItem c) {
         c.setStandardClass("subCategoryStandard");
         c.getBackgroundPane().getStyleClass().clear();
         c.getBackgroundPane().getStyleClass().add(c.getStandardClass());

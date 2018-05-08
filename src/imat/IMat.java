@@ -13,6 +13,7 @@ public class IMat extends Application {
 
     @Override
     public void start(Stage stage) throws Exception {
+        System.out.println(System.getProperty("user.home"));
 
         ResourceBundle bundle = java.util.ResourceBundle.getBundle("imat/IMat");
 
