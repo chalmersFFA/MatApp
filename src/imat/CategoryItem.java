@@ -40,6 +40,7 @@ public class CategoryItem extends AnchorPane {
         this.productCategory = productCategory;
         categoryStrategy = new SubCategoryStrategy();
         selectedClass = "subCategorySelected";
+        arrowImageView.setVisible(false);
     }
 
     public CategoryItem(String displayName, IMatController parentController, Image image) {
