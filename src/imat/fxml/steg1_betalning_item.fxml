@@ -9,19 +9,19 @@
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="70.0" prefWidth="304.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1">
+<fx:root maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="70.0" prefWidth="304.0" type="AnchorPane" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <ImageView fitHeight="48.0" fitWidth="54.0" layoutX="14.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="productImageView" fitHeight="48.0" fitWidth="54.0" layoutX="14.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../layout/images/milk.jpg" />
          </image>
       </ImageView>
-      <Label layoutX="62.0" layoutY="13.0" text="ARLA mjölk 1.5dl" />
-      <Button layoutX="69.0" layoutY="31.0" mnemonicParsing="false" text="-" />
-      <Button layoutX="131.0" layoutY="31.0" mnemonicParsing="false" text="+" />
-      <TextField alignment="CENTER" layoutX="94.0" layoutY="31.0" prefHeight="27.0" prefWidth="37.0" text="1" />
+      <Label fx:id="productLabel" layoutX="73.0" layoutY="13.0" text="ARLA mjölk 1.5dl" />
+      <Button fx:id="decreaseButton" layoutX="73.0" layoutY="31.0" mnemonicParsing="false" onAction="#decreaseAmount" text="-" />
+      <Button fx:id="increaseButton" layoutX="131.0" layoutY="31.0" mnemonicParsing="false" onAction="#increaseAmount" text="+" />
+      <TextField fx:id="amountTextField" alignment="CENTER" layoutX="94.0" layoutY="31.0" prefHeight="27.0" prefWidth="37.0" text="1" />
       <Line endX="-65.0" endY="70.0" layoutX="350.0" opacity="0.0" startX="-65.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="280.0" AnchorPane.topAnchor="0.0" />
-      <Label layoutX="247.0" layoutY="34.0" prefHeight="23.0" prefWidth="48.0" text="15kr">
+      <Label fx:id="priceLabel" layoutX="247.0" layoutY="34.0" prefHeight="23.0" prefWidth="48.0" text="15kr">
          <font>
             <Font size="20.0" />
          </font>
@@ -33,4 +33,4 @@
          </image>
       </ImageView>
    </children>
-</AnchorPane>
+</fx:root>
