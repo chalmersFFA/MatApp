@@ -17,12 +17,9 @@ import java.io.IOException;
  * Created by Jonathan Köre on 2018-05-03.
  */
 public class StoreListItem extends AnchorPane {
-    private ShoppingItem shoppingItem;
-    private Product product;
     private IMatController parentController;
+    ItemHandler itemHandler;
     IMatDataHandler db = IMatDataHandler.getInstance();
-    private ShoppingCart shoppingCart = db.getShoppingCart();
-    private int amount;
     @FXML
     ImageView ecoImageView;
     @FXML
@@ -34,7 +31,7 @@ public class StoreListItem extends AnchorPane {
     @FXML
     TextField amountTextField;
 
-    public StoreListItem(Product product, IMatController parentController) {
+    public StoreListItem(ItemHandler item, IMatController parentController) {
 
 
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("fxml/shopping_item_square.fxml"));
@@ -48,9 +45,8 @@ public class StoreListItem extends AnchorPane {
             throw new RuntimeException(exception);
         }
 
-        this.product = product;
+        this.itemHandler = item;
         this.parentController = parentController;
-        shoppingItem = new ShoppingItem(product);
 
         amountTextField.textProperty().addListener(new ChangeListener<String>() {
 
@@ -58,38 +54,23 @@ public class StoreListItem extends AnchorPane {
             public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue) {
                 //TODO
                 //Fixa responsmetoden på amountTextField
-                setAmount(Integer.parseInt(newValue));
             }
         });
 
         String ecoImagePath = "layout/images/svanen.png";
-        if (product.isEcological()) {
+        if (item.getShoppingItem().getProduct().isEcological()) {
             ecoImageView.setImage(new Image("imat/layout/images/svanen.png"));
         }
-        productImageView.setImage(db.getFXImage(this.product));
+        productImageView.setImage(db.getFXImage(item.getShoppingItem().getProduct()));
 
-        productNameLabel.setText(this.product.getName());
-        amountTextField.setText(Integer.toString(amount));
-        priceLabel.setText(Double.toString(product.getPrice()));
+        productNameLabel.setText(item.getShoppingItem().getProduct().getName());
+        //amountTextField.setText(Integer.toString(amount));
+        priceLabel.setText(Double.toString(item.getShoppingItem().getProduct().getPrice()));
+        itemHandler.setStoreListItem(this);
     }
 
-    public void increaseAmount() {
-        setAmount(amount + 1);
-    }
 
-    public void lowerAmount() {
-        setAmount(amount - 1);
-    }
-
-    public void setAmount(int i) {
-        if (i < 0)
-            amount = 0;
-        else
-            amount = i;
-        update();
-    }
-
-    public void update() {
+    /*public void update() {
         amountTextField.setText(Integer.toString(amount));
         if(shoppingCart.getItems().contains(shoppingItem)) {
             if(amount > 0)
@@ -106,8 +87,18 @@ public class StoreListItem extends AnchorPane {
             System.out.println(s.getProduct().getName() + ": " + s.getAmount());
         }
 
+    }*/
+
+    public void update() {
+        amountTextField.setText(Double.toString(itemHandler.getShoppingItem().getAmount()));
     }
 
+    public void increaseAmount(){
+        itemHandler.increaseAmount();
 
+    }
+    public void decreaseAmount() {
+        itemHandler.decreaseAmount();
+    }
 }
 
