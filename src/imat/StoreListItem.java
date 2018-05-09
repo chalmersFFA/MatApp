@@ -68,12 +68,16 @@ public class StoreListItem extends AnchorPane {
         amountTextField.setText(Double.toString(itemHandler.getShoppingItem().getAmount()));
     }
 
+    @FXML
     public void increaseAmount(){
         itemHandler.increaseAmount();
-
     }
+    @FXML
     public void decreaseAmount() {
         itemHandler.decreaseAmount();
+        if(itemHandler.getShoppingItem().getAmount() == 0){
+            itemHandler.getShoppingCartItem().remove();
+        }
     }
 }
 
