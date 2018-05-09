@@ -26,9 +26,9 @@
             <Color blue="0.624" green="0.624" red="0.624" fx:id="x8" />
          </textFill>
       </Label>
-      <Button mnemonicParsing="false" style="-fx-background-color: #2020c0;" text="Till Kassan" textFill="WHITE" AnchorPane.bottomAnchor="10.0" AnchorPane.rightAnchor="15.0" />
+      <Button fx:id="checkoutButton" mnemonicParsing="false" onAction="#toCheckout" style="-fx-background-color: #2020c0;" text="Till Kassan" textFill="WHITE" AnchorPane.bottomAnchor="10.0" AnchorPane.rightAnchor="15.0" />
       <FlowPane fx:id="shoppingCartFlowPane" layoutY="46.0" prefHeight="452.0" prefWidth="200.0" />
       <Label layoutX="44.0" layoutY="518.0" text="Total:" />
-      <Label layoutX="114.0" layoutY="518.0" text="35 Spänn" />
+      <Label fx:id="totalLabel" layoutX="114.0" layoutY="518.0" text="35 Spänn" />
    </children>
 </fx:root>
