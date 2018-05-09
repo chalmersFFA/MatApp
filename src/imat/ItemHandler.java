@@ -21,9 +21,6 @@ public class ItemHandler {
         }
     };
 
-
-
-
     public ItemHandler(ShoppingItem shoppingItem) {
         this.shoppingItem = shoppingItem;
     }
@@ -58,7 +55,6 @@ public class ItemHandler {
         return shoppingItem;
     }
 
-
     public void setStoreListItem(StoreListItem storeListItem) {
         this.storeListItem = storeListItem;
     }
@@ -71,4 +67,7 @@ public class ItemHandler {
         return changeListener;
     }
 
+    public ShoppingCartItem getShoppingCartItem() {
+        return shoppingCartItem;
+    }
 }

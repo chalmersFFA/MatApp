@@ -61,10 +61,12 @@ public class ShoppingCartItem extends AnchorPane {
     public void remove() {
         parentController.remove(this);
     }
+    @FXML
     public void increaseAmount(){
         itemHandler.increaseAmount();
 
     }
+    @FXML
     public void decreaseAmount() {
         itemHandler.decreaseAmount();
     }
