@@ -28,6 +28,8 @@ public class IMatController extends VBox implements Initializable {
 
     MyDetails myDetails;
     ShoppingCartController shoppingCartController;
+    CheckoutController checkoutController;
+
 
     @FXML
     FlowPane mainFlowPane;
@@ -48,10 +50,12 @@ public class IMatController extends VBox implements Initializable {
     public void initialize(URL location, ResourceBundle resources) {
         myDetails = new MyDetails();
         shoppingCartController = new ShoppingCartController(this);
+        checkoutController = new CheckoutController(shoppingCartController);
         //showDetailsScreen();
         showShoppingCart();
         initProducts();
         initCategories();
+        updateRecipeList(ProductCategory.BERRY);
     }
 
     private void initProducts() {
@@ -163,4 +167,9 @@ public class IMatController extends VBox implements Initializable {
         shoppingCartAnchorPane.getChildren().add(shoppingCartController);
     }
 
+    public void showCheckoutScreen() {
+        mainFlowPane.getChildren().clear();
+        checkoutController.initCheckoutController();
+        mainFlowPane.getChildren().add(checkoutController);
+    }
 }

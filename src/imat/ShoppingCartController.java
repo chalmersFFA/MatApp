@@ -2,6 +2,8 @@ package imat;
 
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.FlowPane;
 import se.chalmers.cse.dat216.project.*;
@@ -19,11 +21,15 @@ public class ShoppingCartController extends AnchorPane implements ShoppingCartLi
     private IMatController parentController;
     private IMatDataHandler db = IMatDataHandler.getInstance();
     private ShoppingCart shoppingCart = db.getShoppingCart();
-    private ArrayList<ShoppingCartItem> item_list = new ArrayList<>();
+    private ArrayList<ShoppingCartItem> visualItems = new ArrayList<>();
     private Map<String, ShoppingCartItem> shoppingCartItemMap = new HashMap<String, ShoppingCartItem>();
 
     @FXML
     FlowPane shoppingCartFlowPane;
+    @FXML
+    Button checkoutButton;
+    @FXML
+    Label totalLabel;
 
     public ShoppingCartController(IMatController parentController) {
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("fxml/shopping_cart_controller.fxml"));
@@ -44,25 +50,25 @@ public class ShoppingCartController extends AnchorPane implements ShoppingCartLi
 
     @Override
     public void shoppingCartChanged(CartEvent cartEvent) {
-        if(cartEvent.isAddEvent() && !item_list.contains(shoppingCartItemMap.get(cartEvent.getShoppingItem().getProduct().getName())))
+        if(cartEvent.isAddEvent() && !visualItems.contains(shoppingCartItemMap.get(cartEvent.getShoppingItem().getProduct().getName())))
             add(shoppingCartItemMap.get(cartEvent.getShoppingItem().getProduct().getName()));
         /*else
             remove(shoppingCartItemMap.get(cartEvent.getShoppingItem().getProduct().getName()));*/
     }
     public void remove(ShoppingCartItem s) {
-        item_list.remove(s);
+        visualItems.remove(s);
         s.getItemHandler().getShoppingItem().setAmount(0);
         s.getItemHandler().update();
         update();
     }
     public void add(ShoppingCartItem s) {
-        item_list.add(s);
+        visualItems.add(s);
         update();
     }
 
     public void update() {
         shoppingCartFlowPane.getChildren().clear();
-        for(ShoppingCartItem s : item_list) {
+        for(ShoppingCartItem s : visualItems) {
             shoppingCartFlowPane.getChildren().add(s);
         }
     }
@@ -79,5 +85,18 @@ public class ShoppingCartController extends AnchorPane implements ShoppingCartLi
     }
     public boolean isInCart(ItemHandler itemHandler) {
         return shoppingCart.getItems().contains(itemHandler.getShoppingItem());
+    }
+
+    @FXML
+    public void toCheckout() {
+        parentController.showCheckoutScreen();
+    }
+
+    public ArrayList<ShoppingCartItem> getVisualItems() {
+        return visualItems;
+    }
+
+    public FlowPane getShoppingCartFlowPane() {
+        return shoppingCartFlowPane;
     }
 }
