@@ -80,4 +80,8 @@ public class ShoppingCartController extends AnchorPane implements ShoppingCartLi
     public boolean isInCart(ItemHandler itemHandler) {
         return shoppingCart.getItems().contains(itemHandler.getShoppingItem());
     }
+
+    public FXMLLoader getFXMLLoader() {
+        return parentController.getFxmlLoader();
+    }
 }

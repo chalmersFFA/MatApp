@@ -1,6 +1,7 @@
 package imat;
 
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
@@ -25,6 +26,7 @@ public class IMatController extends VBox implements Initializable {
     private Map<String, StoreListItem> storeListItemMap = new HashMap<String, StoreListItem>();
     private CategoryItem currentExpandedSub;
     private ShoppingCart shoppingCart = db.getShoppingCart();
+    private FXMLLoader fxmlLoader = new FXMLLoader();
 
     MyDetails myDetails;
     ShoppingCartController shoppingCartController;
@@ -55,7 +57,7 @@ public class IMatController extends VBox implements Initializable {
     }
 
     private void initProducts() {
-        for (Product p : db.getProducts(ProductCategory.BERRY)){
+        for (Product p : db.getProducts()){
             ItemHandler itemHandler = new ItemHandler(new ShoppingItem(p,0));
             storeListItemMap.put(p.getName(), new StoreListItem(itemHandler, this));
             shoppingCartController.addToHashMap(new ShoppingCartItem(itemHandler, shoppingCartController));
@@ -163,4 +165,7 @@ public class IMatController extends VBox implements Initializable {
         shoppingCartAnchorPane.getChildren().add(shoppingCartController);
     }
 
+    public FXMLLoader getFxmlLoader() {
+        return fxmlLoader;
+    }
 }

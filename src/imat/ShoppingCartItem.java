@@ -35,7 +35,8 @@ public class ShoppingCartItem extends AnchorPane {
     TextField amountTextField;
 
     public ShoppingCartItem(ItemHandler itemHandler, ShoppingCartController parentController) {
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("fxml/steg1_betalning_item.fxml"));
+        FXMLLoader fxmlLoader = parentController.getFXMLLoader();
+        fxmlLoader.setLocation(getClass().getResource("fxml/steg1_betalning_item.fxml"));
         fxmlLoader.setRoot(this);
         fxmlLoader.setController(this);
 
