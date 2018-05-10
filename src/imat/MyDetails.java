@@ -20,6 +20,7 @@ public class MyDetails extends AnchorPane {
     private IMatDataHandler db = IMatDataHandler.getInstance();
     private boolean editingDetails = false;
     private Customer customer = db.getCustomer();
+    private IMatController parentController;
 
     @FXML
     Label firstNameLabel, lastNameLabel, emailLabel, phoneNumberLabel, addressLabel, postAddressLabel, postCodeLabel,
@@ -35,7 +36,8 @@ public class MyDetails extends AnchorPane {
     @FXML
     Button editDetailsButton, editCardNumber;
 
-    public MyDetails() {
+    public MyDetails(IMatController parentController) {
+        this.parentController = parentController;
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("fxml/my_details.fxml"));
         fxmlLoader.setRoot(this);
         fxmlLoader.setController(this);
@@ -125,6 +127,11 @@ public class MyDetails extends AnchorPane {
         addressTextField.setVisible(b);
         postAddressTextField.setVisible(b);
         postCodeTextField.setVisible(b);
+    }
+    @FXML
+    public void backButton() {
+        parentController.changeMode(IMatController.Mode.SHOPPING);
+        System.out.println("RREEEEEEEEEEEEEE");
     }
 
 }
