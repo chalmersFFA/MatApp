@@ -43,3 +43,9 @@
     -fx-background-color: #666666;
     -fx-border-style: hidden solid hidden solid;
 }
+.shoppingCart{
+    -fx-background-color: #EEE9D1;
+}
+.paymentPane{
+    -fx-background-color: #EEE9D1;
+}
