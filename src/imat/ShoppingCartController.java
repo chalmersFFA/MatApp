@@ -89,7 +89,7 @@ public class ShoppingCartController extends AnchorPane implements ShoppingCartLi
 
     @FXML
     public void toCheckout() {
-        parentController.showCheckoutScreen();
+        parentController.changeMode(IMatController.Mode.CHECKOUT);
     }
 
     public ArrayList<ShoppingCartItem> getVisualItems() {

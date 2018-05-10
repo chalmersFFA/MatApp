@@ -2,11 +2,13 @@ package imat;
 
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.geometry.Pos;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.FlowPane;
+import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import se.chalmers.cse.dat216.project.*;
 
@@ -25,6 +27,11 @@ public class IMatController extends VBox implements Initializable {
     private Map<String, StoreListItem> storeListItemMap = new HashMap<String, StoreListItem>();
     private CategoryItem currentExpandedSub;
     private ShoppingCart shoppingCart = db.getShoppingCart();
+    public enum Mode {
+        SHOPPING,
+        CHECKOUT
+    }
+    private Mode currentMode = Mode.SHOPPING;
 
     MyDetails myDetails;
     ShoppingCartController shoppingCartController;
@@ -46,12 +53,17 @@ public class IMatController extends VBox implements Initializable {
     @FXML
     ImageView logoImageView;
 
+    @FXML
+    HBox bigHBox;
+
+    @FXML
+    VBox mainVBox;
+
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         myDetails = new MyDetails();
         shoppingCartController = new ShoppingCartController(this);
-        checkoutController = new CheckoutController(shoppingCartController);
-        //showDetailsScreen();
+        checkoutController = new CheckoutController(this, shoppingCartController);
         showShoppingCart();
         initProducts();
         initCategories();
@@ -167,9 +179,34 @@ public class IMatController extends VBox implements Initializable {
         shoppingCartAnchorPane.getChildren().add(shoppingCartController);
     }
 
-    public void showCheckoutScreen() {
-        mainFlowPane.getChildren().clear();
+    public void changeMode(Mode m) {
+        switch (m) {
+            case SHOPPING:
+                toggleShoppingMode();
+                return;
+            case CHECKOUT:
+                toggleCheckoutMode();
+
+        }
+    }
+
+    private void toggleCheckoutMode() {
+        bigHBox.getChildren().clear();
         checkoutController.initCheckoutController();
-        mainFlowPane.getChildren().add(checkoutController);
+        bigHBox.setAlignment(Pos.CENTER);
+        bigHBox.getChildren().add(checkoutController);
+    }
+
+    private void toggleShoppingMode() {
+        bigHBox.getChildren().clear();
+        shoppingCartController.update();
+        bigHBox.setAlignment(Pos.CENTER_LEFT);
+        bigHBox.getChildren().add(categoriesAnchorPane);
+        bigHBox.getChildren().add(mainVBox);
+        bigHBox.getChildren().add(shoppingCartAnchorPane);
+    }
+
+    public Mode getCurrentMode() {
+        return currentMode;
     }
 }
