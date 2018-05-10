@@ -16,6 +16,7 @@ import java.io.IOException;
 public class CheckoutController extends AnchorPane{
 
     private ShoppingCartController shoppingCartController;
+    private IMatController parentController;
     private IMatDataHandler db = IMatDataHandler.getInstance();
     private ShoppingCart shoppingCart = db.getShoppingCart();
 
@@ -24,8 +25,9 @@ public class CheckoutController extends AnchorPane{
     @FXML
     Label totalLabel;
 
-    public CheckoutController(ShoppingCartController shoppingCartController) {
+    public CheckoutController(IMatController parentController, ShoppingCartController shoppingCartController) {
         this.shoppingCartController = shoppingCartController;
+        this.parentController = parentController;
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("fxml/Steg1_betalning.fxml"));
         fxmlLoader.setRoot(this);
         fxmlLoader.setController(this);
@@ -36,12 +38,11 @@ public class CheckoutController extends AnchorPane{
             throw new RuntimeException(exception);
         }
 
-        //orderFlowPane = shoppingCartController.getShoppingCartFlowPane();
     }
 
     @FXML
     public void backButton() {
-
+        parentController.changeMode(IMatController.Mode.SHOPPING);
     }
 
     @FXML
@@ -55,7 +56,7 @@ public class CheckoutController extends AnchorPane{
             orderFlowPane.getChildren().add(s);
     }
 
-
-
-
+    public FlowPane getOrderFlowPane() {
+        return orderFlowPane;
+    }
 }

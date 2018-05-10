@@ -66,7 +66,7 @@
             </ImageView>
          </children>
       </AnchorPane>
-      <HBox VBox.vgrow="ALWAYS">
+      <HBox fx:id="bigHBox" VBox.vgrow="ALWAYS">
          <children>
         <AnchorPane fx:id="categoriesAnchorPane" prefHeight="586.0" prefWidth="246.0" styleClass="categoriesAnchorPane">
           <children>
@@ -81,7 +81,7 @@
                   <FlowPane fx:id="categoryFlowPane" layoutY="48.0" prefHeight="538.0" prefWidth="246.0" />
           </children>
         </AnchorPane>
-            <VBox HBox.hgrow="ALWAYS">
+            <VBox fx:id="mainVBox" HBox.hgrow="ALWAYS">
                <children>
                   <ScrollPane fitToHeight="true" fitToWidth="true" hbarPolicy="NEVER" prefWidth="616.0" vbarPolicy="ALWAYS" VBox.vgrow="ALWAYS">
                      <content>
