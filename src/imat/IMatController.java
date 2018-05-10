@@ -1,15 +1,13 @@
 package imat;
 
+import javafx.event.Event;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.geometry.Pos;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import javafx.scene.layout.AnchorPane;
-import javafx.scene.layout.FlowPane;
-import javafx.scene.layout.HBox;
-import javafx.scene.layout.VBox;
+import javafx.scene.layout.*;
 import se.chalmers.cse.dat216.project.*;
 
 import java.net.URL;
@@ -22,7 +20,7 @@ import java.util.ResourceBundle;
  * Created by Jonathan Köre on 2018-05-03.
  */
 public class IMatController extends VBox implements Initializable {
-    IMatDataHandler db = IMatDataHandler.getInstance();
+    private IMatDataHandler db = IMatDataHandler.getInstance();
     static ArrayList<CategoryItem> cList = new ArrayList<>();
     private Map<String, StoreListItem> storeListItemMap = new HashMap<String, StoreListItem>();
     private CategoryItem currentExpandedSub;
@@ -59,9 +57,18 @@ public class IMatController extends VBox implements Initializable {
     @FXML
     VBox mainVBox;
 
+    @FXML
+    StackPane browsingStackPane;
+
+    @FXML
+    StackPane mainStackPane;
+
+    @FXML
+    HBox displayPane;
+
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        myDetails = new MyDetails();
+        myDetails = new MyDetails(this);
         shoppingCartController = new ShoppingCartController(this);
         checkoutController = new CheckoutController(this, shoppingCartController);
         showShoppingCart();
@@ -88,8 +95,10 @@ public class IMatController extends VBox implements Initializable {
 
     @FXML
     private void showDetailsScreen() {
-        mainFlowPane.getChildren().clear();
-        mainFlowPane.getChildren().add(myDetails);
+        displayPane.toFront();
+        displayPane.getChildren().clear();
+        displayPane.getChildren().add(myDetails);
+        displayPane.setAlignment(Pos.CENTER);
         myDetails.initDetails();
     }
 
@@ -191,22 +200,36 @@ public class IMatController extends VBox implements Initializable {
     }
 
     private void toggleCheckoutMode() {
-        bigHBox.getChildren().clear();
+        //bigHBox.getChildren().clear();
         checkoutController.initCheckoutController();
-        bigHBox.setAlignment(Pos.CENTER);
-        bigHBox.getChildren().add(checkoutController);
+        displayPane.setAlignment(Pos.CENTER);
+        //bigHBox.getChildren().add(checkoutController);
+        displayPane.getChildren().add(checkoutController);
+        bigHBox.toBack();
+        displayPane.toFront();
     }
 
-    private void toggleShoppingMode() {
-        bigHBox.getChildren().clear();
+    public void toggleShoppingMode() {
+
         shoppingCartController.update();
+        displayPane.toBack();
+        bigHBox.toFront();
+        displayPane.getChildren().clear();
+        //ska prova lägga in betalsteget i en stackpane istället.
+        /*bigHBox.getChildren().clear();
         bigHBox.setAlignment(Pos.CENTER_LEFT);
         bigHBox.getChildren().add(categoriesAnchorPane);
         bigHBox.getChildren().add(mainVBox);
         bigHBox.getChildren().add(shoppingCartAnchorPane);
+        */
     }
 
     public Mode getCurrentMode() {
         return currentMode;
+    }
+
+    @FXML
+    public void mouseTrap(Event event){
+        event.consume();
     }
 }

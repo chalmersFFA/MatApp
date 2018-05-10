@@ -8,7 +8,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<fx:root maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="265.0" prefWidth="190.0" type="AnchorPane" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<fx:root maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="265.0" prefWidth="190.0" type="AnchorPane" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <ImageView fx:id="productImageView" fitHeight="150.0" fitWidth="200.0" layoutX="20.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="15.0">
          <image>
@@ -28,7 +28,7 @@
             <Font size="18.0" />
          </font>
       </Label>
-      <ImageView fx:id="ecoImageView" fitHeight="37.0" fitWidth="27.0" layoutX="7.0" layoutY="224.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="favouriteImageView" fitHeight="37.0" fitWidth="27.0" layoutX="7.0" layoutY="224.0" onMouseClicked="#favourite" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../layout/images/stareboi.png" />
          </image>
@@ -38,5 +38,10 @@
             <Font size="22.0" />
          </font>
       </Label>
+      <ImageView fx:id="ecoImageView" fitHeight="35.0" fitWidth="35.0" layoutX="21.0" layoutY="133.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../layout/images/svanen.png" />
+         </image>
+      </ImageView>
    </children>
 </fx:root>

@@ -23,6 +23,8 @@ public class StoreListItem extends AnchorPane {
     @FXML
     ImageView ecoImageView;
     @FXML
+    ImageView favouriteImageView;
+    @FXML
     ImageView productImageView;
     @FXML
     Label productNameLabel;
@@ -31,8 +33,10 @@ public class StoreListItem extends AnchorPane {
     @FXML
     TextField amountTextField;
 
-    public StoreListItem(ItemHandler item, IMatController parentController) {
+    Image favouriteImage = new Image("imat/layout/images/favourite.png");
+    Image notFavouriteImage = new Image("imat/layout/images/notFavourite.png");
 
+    public StoreListItem(ItemHandler item, IMatController parentController) {
 
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("fxml/shopping_item_square.fxml"));
         fxmlLoader.setRoot(this);
@@ -54,6 +58,9 @@ public class StoreListItem extends AnchorPane {
         if (item.getShoppingItem().getProduct().isEcological()) {
             ecoImageView.setImage(new Image("imat/layout/images/svanen.png"));
         }
+
+        updateFavourite();
+
         productImageView.setImage(db.getFXImage(item.getShoppingItem().getProduct()));
 
         productNameLabel.setText(item.getShoppingItem().getProduct().getName());
@@ -63,6 +70,13 @@ public class StoreListItem extends AnchorPane {
     }
 
 
+    public void updateFavourite(){
+        if (db.isFavorite(itemHandler.getShoppingItem().getProduct())){
+            favouriteImageView.setImage(favouriteImage);
+        }else{
+            favouriteImageView.setImage(notFavouriteImage);
+        }
+    }
 
     public void update() {
         amountTextField.setText(Double.toString(itemHandler.getShoppingItem().getAmount()));
@@ -78,6 +92,16 @@ public class StoreListItem extends AnchorPane {
         if(itemHandler.getShoppingItem().getAmount() == 0){
             itemHandler.getShoppingCartItem().remove();
         }
+    }
+
+    @FXML
+    public void favourite(){
+        if(db.isFavorite(itemHandler.getShoppingItem().getProduct())){
+            db.removeFavorite(itemHandler.getShoppingItem().getProduct());
+        }else{
+            db.addFavorite(itemHandler.getShoppingItem().getProduct());
+        }
+        updateFavourite();
     }
 }
 

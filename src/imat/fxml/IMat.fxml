@@ -8,11 +8,12 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.FlowPane?>
 <?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.paint.Color?>
 <?import javafx.scene.text.Font?>
 
-<VBox stylesheets="@../layout/design.css" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="imat.IMatController">
+<VBox stylesheets="@../layout/design.css" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="imat.IMatController">
    <children>
       <AnchorPane>
          <children>
@@ -66,32 +67,49 @@
             </ImageView>
          </children>
       </AnchorPane>
-      <HBox fx:id="bigHBox" VBox.vgrow="ALWAYS">
+      <AnchorPane VBox.vgrow="ALWAYS">
          <children>
-        <AnchorPane fx:id="categoriesAnchorPane" prefHeight="586.0" prefWidth="246.0" styleClass="categoriesAnchorPane">
-          <children>
-            <Label alignment="CENTER" layoutX="14.0" layoutY="14.0" minWidth="60.0" prefWidth="-1.0" style="&#10;" text="Kategorier" textAlignment="CENTER" wrapText="false">
-              <font>
-                <Font size="18.0" fx:id="x1" />
-              </font>
-              <textFill>
-                <Color blue="0.624" green="0.624" red="0.624" fx:id="x2" />
-              </textFill>
-            </Label>
-                  <FlowPane fx:id="categoryFlowPane" layoutY="48.0" prefHeight="538.0" prefWidth="246.0" />
-          </children>
-        </AnchorPane>
-            <VBox fx:id="mainVBox" HBox.hgrow="ALWAYS">
+            <StackPane fx:id="mainStackPane" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                <children>
-                  <ScrollPane fitToHeight="true" fitToWidth="true" hbarPolicy="NEVER" prefWidth="616.0" vbarPolicy="ALWAYS" VBox.vgrow="ALWAYS">
-                     <content>
-                        <FlowPane fx:id="mainFlowPane" alignment="CENTER" columnHalignment="CENTER" hgap="15.0" maxWidth="1.7976931348623157E308" minWidth="-Infinity" nodeOrientation="LEFT_TO_RIGHT" prefWrapLength="1000.0" styleClass="mainFlowPane" vgap="15.0" />
-                     </content>
-                  </ScrollPane>
+                  <HBox fx:id="displayPane" prefHeight="100.0" prefWidth="200.0" styleClass="paymentPane" StackPane.alignment="CENTER" />
+                  <HBox fx:id="bigHBox">
+                     <children>
+                    <AnchorPane fx:id="categoriesAnchorPane" prefHeight="586.0" prefWidth="246.0" styleClass="categoriesAnchorPane">
+                      <children>
+                        <Label alignment="CENTER" layoutX="14.0" layoutY="14.0" minWidth="60.0" prefWidth="-1.0" style="&#10;" text="Kategorier" textAlignment="CENTER" wrapText="false">
+                          <font>
+                            <Font size="18.0" fx:id="x1" />
+                          </font>
+                          <textFill>
+                            <Color blue="0.624" green="0.624" red="0.624" fx:id="x2" />
+                          </textFill>
+                        </Label>
+                              <FlowPane fx:id="categoryFlowPane" layoutY="48.0" prefHeight="538.0" prefWidth="246.0" />
+                      </children>
+                    </AnchorPane>
+                        <AnchorPane HBox.hgrow="ALWAYS">
+                           <children>
+                              <StackPane fx:id="browsingStackPane" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                 <children>
+                                    <VBox fx:id="mainVBox">
+                                       <children>
+                                          <ScrollPane fitToHeight="true" fitToWidth="true" hbarPolicy="NEVER" prefWidth="616.0" vbarPolicy="ALWAYS" VBox.vgrow="ALWAYS">
+                                             <content>
+                                                <FlowPane fx:id="mainFlowPane" alignment="CENTER" columnHalignment="CENTER" hgap="15.0" maxWidth="1.7976931348623157E308" minWidth="-Infinity" nodeOrientation="LEFT_TO_RIGHT" prefWrapLength="1000.0" styleClass="mainFlowPane" vgap="15.0" />
+                                             </content>
+                                          </ScrollPane>
+                                       </children>
+                                    </VBox>
+                                 </children>
+                              </StackPane>
+                           </children>
+                        </AnchorPane>
+                    <AnchorPane fx:id="shoppingCartAnchorPane" maxWidth="-Infinity" prefHeight="587.0" prefWidth="265.0" styleClass="shoppingCart" HBox.hgrow="ALWAYS" />
+                     </children>
+                  </HBox>
                </children>
-            </VBox>
-        <AnchorPane fx:id="shoppingCartAnchorPane" prefHeight="587.0" prefWidth="118.0" HBox.hgrow="ALWAYS" />
+            </StackPane>
          </children>
-      </HBox>
+      </AnchorPane>
    </children>
 </VBox>
