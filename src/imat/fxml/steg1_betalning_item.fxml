@@ -19,7 +19,7 @@
       <Label fx:id="productLabel" layoutX="97.0" layoutY="13.0" text="ARLA mjölk 1.5dl" />
       <Button fx:id="decreaseButton" layoutX="90.0" layoutY="58.0" mnemonicParsing="false" onAction="#decreaseAmount" text="-" />
       <Button fx:id="increaseButton" layoutX="148.0" layoutY="58.0" mnemonicParsing="false" onAction="#increaseAmount" text="+" />
-      <TextField fx:id="amountTextField" alignment="CENTER" layoutX="111.0" layoutY="58.0" prefHeight="27.0" prefWidth="37.0" text="1" />
+      <TextField fx:id="amountTextField" alignment="CENTER" layoutX="111.0" layoutY="58.0" prefHeight="25.0" prefWidth="37.0" text="1" />
       <Line endX="-65.0" endY="70.0" layoutX="350.0" opacity="0.0" startX="-65.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="280.0" AnchorPane.topAnchor="0.0" />
       <Label fx:id="priceLabel" layoutX="207.0" layoutY="58.0" prefHeight="23.0" prefWidth="48.0" text="15kr">
          <font>

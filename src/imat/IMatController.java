@@ -49,6 +49,9 @@ public class IMatController extends VBox implements Initializable {
     Label myDetailsLabel;
 
     @FXML
+    Label favouriteLabel;
+
+    @FXML
     ImageView logoImageView;
 
     @FXML
@@ -74,7 +77,7 @@ public class IMatController extends VBox implements Initializable {
         showShoppingCart();
         initProducts();
         initCategories();
-        updateRecipeList(ProductCategory.BERRY);
+        updateProductList(ProductCategory.BERRY);
     }
 
     private void initProducts() {
@@ -86,11 +89,19 @@ public class IMatController extends VBox implements Initializable {
     }
 
 
-    public void updateRecipeList(ProductCategory category) {
+    public void updateProductList(ProductCategory category) {
         mainFlowPane.getChildren().clear();
         for (Product p : db.getProducts(category)){
             mainFlowPane.getChildren().add(storeListItemMap.get(p.getName()));
         }
+    }
+
+    public void displayFavourites(){
+        mainFlowPane.getChildren().clear();
+        for (Product p: db.favorites()){
+            mainFlowPane.getChildren().add(storeListItemMap.get(p.getName()));
+        }
+        //favouriteLabel.setId("current");
     }
 
     @FXML

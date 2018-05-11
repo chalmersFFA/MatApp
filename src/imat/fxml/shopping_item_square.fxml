@@ -15,9 +15,9 @@
             <Image url="@../layout/images/milk.jpg" />
          </image>
       </ImageView>
-      <TextField fx:id="amountTextField" alignment="CENTER" layoutX="130.0" layoutY="224.0" prefHeight="27.0" prefWidth="27.0" />
+      <TextField fx:id="amountTextField" alignment="CENTER" layoutX="122.0" layoutY="224.0" prefHeight="25.0" prefWidth="43.0" />
       <Button layoutX="105.0" layoutY="224.0" mnemonicParsing="false" onAction="#decreaseAmount" prefHeight="20.0" prefWidth="20.0" text="-" />
-      <Button layoutX="163.0" layoutY="225.0" mnemonicParsing="false" onAction="#increaseAmount" prefHeight="25.0" prefWidth="27.0" text="+" />
+      <Button layoutX="163.0" layoutY="224.0" mnemonicParsing="false" onAction="#increaseAmount" prefHeight="25.0" prefWidth="27.0" text="+" />
       <Label layoutX="14.0" layoutY="193.0" text="jfr-pris 10kr/l">
          <font>
             <Font size="14.0" />
