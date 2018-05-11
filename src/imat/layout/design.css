@@ -49,3 +49,7 @@
 .paymentPane{
     -fx-background-color: #EEE9D1;
 }
+#current{
+    -fx-background-color: #AAFFAA;
+    -fx-opacity: 1;
+}
