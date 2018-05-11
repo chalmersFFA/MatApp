@@ -72,7 +72,12 @@ public class ShoppingCartItem extends AnchorPane implements ShoppingCartListener
     }
 
     public void remove() {
-        parentController.remove(this);
+        for(ShoppingItem s : shoppingCart.getItems()){
+            if(s.getProduct().getName().equals(product.getName())){
+                shoppingCart.removeItem(s);
+            }
+        }
+        shoppingCart.fireShoppingCartChanged(null, false);
     }
     @FXML
     public void increaseAmount(){
