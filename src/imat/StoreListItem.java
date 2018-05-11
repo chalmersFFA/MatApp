@@ -16,10 +16,11 @@ import java.io.IOException;
 /**
  * Created by Jonathan Köre on 2018-05-03.
  */
-public class StoreListItem extends AnchorPane {
+public class StoreListItem extends AnchorPane implements ShoppingCartListener {
+    private IMatDataHandler db = IMatDataHandler.getInstance();
+    private ShoppingCart shoppingCart = db.getShoppingCart();
     private IMatController parentController;
-    ItemHandler itemHandler;
-    IMatDataHandler db = IMatDataHandler.getInstance();
+    Product product;
     @FXML
     ImageView ecoImageView;
     @FXML
@@ -36,7 +37,7 @@ public class StoreListItem extends AnchorPane {
     Image favouriteImage = new Image("imat/layout/images/favourite.png");
     Image notFavouriteImage = new Image("imat/layout/images/notFavourite.png");
 
-    public StoreListItem(ItemHandler item, IMatController parentController) {
+    public StoreListItem(Product product, IMatController parentController) {
 
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("fxml/shopping_item_square.fxml"));
         fxmlLoader.setRoot(this);
@@ -49,29 +50,33 @@ public class StoreListItem extends AnchorPane {
             throw new RuntimeException(exception);
         }
 
-        this.itemHandler = item;
+        this.product = product;
         this.parentController = parentController;
-
-        amountTextField.textProperty().addListener(itemHandler.getChangeListener());
+        //TODO fixa så att textfältet tar in hur många det finns av den i varukorgen ifrån varukorgen
+        //amountTextField.textProperty().addListener(itemHandler.getChangeListener());
 
         String ecoImagePath = "layout/images/svanen.png";
-        if (item.getShoppingItem().getProduct().isEcological()) {
+        if (product.isEcological()) {
             ecoImageView.setImage(new Image("imat/layout/images/svanen.png"));
         }
 
         updateFavourite();
 
-        productImageView.setImage(db.getFXImage(item.getShoppingItem().getProduct()));
+        productImageView.setImage(db.getFXImage(product));
 
-        productNameLabel.setText(item.getShoppingItem().getProduct().getName());
+        productNameLabel.setText(product.getName());
         //amountTextField.setText(Integer.toString(amount));
-        priceLabel.setText(Double.toString(item.getShoppingItem().getProduct().getPrice()));
-        itemHandler.setStoreListItem(this);
+        priceLabel.setText(Double.toString(product.getPrice()));
+        //itemHandler.setStoreListItem(this);
+
+        shoppingCart.addShoppingCartListener(this);
+        update();
+
     }
 
 
     public void updateFavourite(){
-        if (db.isFavorite(itemHandler.getShoppingItem().getProduct())){
+        if (db.isFavorite(product)){
             favouriteImageView.setImage(favouriteImage);
         }else{
             favouriteImageView.setImage(notFavouriteImage);
@@ -79,29 +84,66 @@ public class StoreListItem extends AnchorPane {
     }
 
     public void update() {
-        amountTextField.setText(Double.toString(itemHandler.getShoppingItem().getAmount()));
+        //TODO fixa så att den här tar in ifrån shoppingcart, kanske ska den vara en listener?
+        amountTextField.setText("0");
+        for(ShoppingItem s : shoppingCart.getItems()){
+            if(s.getProduct().getName().equals(product.getName())){
+                amountTextField.setText(Double.toString(s.getAmount()));
+                break;
+            }
+        }
     }
 
     @FXML
     public void increaseAmount(){
-        itemHandler.increaseAmount();
+        //itemHandler.increaseAmount();
+        boolean finns = false;
+        for(ShoppingItem s : shoppingCart.getItems()){
+            if(s.getProduct().getName().equals(product.getName())){
+                s.setAmount(s.getAmount()+1);
+                finns = true;
+                shoppingCart.fireShoppingCartChanged(null, false); //bara för att meddela att något hänt till övriga världen
+            }
+        }
+        if(!finns){
+            shoppingCart.addProduct(product);
+        }
+        update();
+
     }
     @FXML
     public void decreaseAmount() {
-        itemHandler.decreaseAmount();
+        /*itemHandler.decreaseAmount();
         if(itemHandler.getShoppingItem().getAmount() == 0){
             itemHandler.getShoppingCartItem().remove();
+        }*/
+        for(ShoppingItem s : shoppingCart.getItems()){
+            if(s.getProduct().getName().equals(product.getName())){
+                s.setAmount(s.getAmount()-1);
+                shoppingCart.fireShoppingCartChanged(null, false); //bara för att meddela att
+                //TODO bestäm vad som ska hända med vagnen om det finns 0 av en vara
+                if(s.getAmount() < 0){
+                    shoppingCart.removeItem(s);
+                }
+            }
         }
+        update();
     }
 
     @FXML
     public void favourite(){
-        if(db.isFavorite(itemHandler.getShoppingItem().getProduct())){
-            db.removeFavorite(itemHandler.getShoppingItem().getProduct());
+        if(db.isFavorite(product)){
+            db.removeFavorite(product);
         }else{
-            db.addFavorite(itemHandler.getShoppingItem().getProduct());
+            db.addFavorite(product);
         }
         updateFavourite();
+    }
+
+    @Override
+    public void shoppingCartChanged(CartEvent cartEvent) {
+        //TODO fixa så att den kollar på hur många saker av sig själv som finns i vagnen
+        update();
     }
 }
 

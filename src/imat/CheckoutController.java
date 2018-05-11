@@ -5,20 +5,22 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Label;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.FlowPane;
-import se.chalmers.cse.dat216.project.IMatDataHandler;
-import se.chalmers.cse.dat216.project.ShoppingCart;
+import se.chalmers.cse.dat216.project.*;
 
 import java.io.IOException;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * Created by Jonathan Köre on 2018-05-09.
  */
-public class CheckoutController extends AnchorPane{
+public class CheckoutController extends AnchorPane implements ShoppingCartListener{
 
     private ShoppingCartController shoppingCartController;
     private IMatController parentController;
     private IMatDataHandler db = IMatDataHandler.getInstance();
     private ShoppingCart shoppingCart = db.getShoppingCart();
+    private Map<String, ShoppingCartItem> shoppingCartItemMap = new HashMap<String, ShoppingCartItem>();
 
     @FXML
     FlowPane orderFlowPane;
@@ -50,13 +52,31 @@ public class CheckoutController extends AnchorPane{
 
     }
 
-    public void initCheckoutController() {
+    public void update() {
         orderFlowPane.getChildren().clear();
-        for(ShoppingCartItem s : shoppingCartController.getVisualItems())
-            orderFlowPane.getChildren().add(s);
+        for(ShoppingItem s : shoppingCart.getItems()) {
+            System.out.println(s.getProduct().getName());
+            orderFlowPane.getChildren().add(shoppingCartItemMap.get(s.getProduct().getName()));
+        }
     }
 
     public FlowPane getOrderFlowPane() {
         return orderFlowPane;
+    }
+
+    @Override
+    public void shoppingCartChanged(CartEvent cartEvent) {
+        update();
+    }
+    public void addToHashMap(ShoppingCartItem s) {
+        shoppingCartItemMap.put(s.getProduct().getName(), s);
+    }
+    public void remove(ShoppingCartItem item) {
+        for(ShoppingItem s : shoppingCart.getItems()){
+            if(s.getProduct().getName().equals(item.getProduct().getName())){
+                shoppingCart.removeItem(s);
+            }
+        }
+        update();
     }
 }

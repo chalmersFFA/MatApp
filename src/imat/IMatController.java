@@ -78,13 +78,15 @@ public class IMatController extends VBox implements Initializable {
         initProducts();
         initCategories();
         updateProductList(ProductCategory.BERRY);
+        shoppingCart.clear();
     }
 
     private void initProducts() {
         for (Product p : db.getProducts(ProductCategory.BERRY)){
-            ItemHandler itemHandler = new ItemHandler(new ShoppingItem(p,0));
-            storeListItemMap.put(p.getName(), new StoreListItem(itemHandler, this));
-            shoppingCartController.addToHashMap(new ShoppingCartItem(itemHandler, shoppingCartController));
+            //ItemHandler itemHandler = new ItemHandler(new ShoppingItem(p,0));
+            storeListItemMap.put(p.getName(), new StoreListItem(p, this));
+            shoppingCartController.addToHashMap(new ShoppingCartItem(p, shoppingCartController));
+            checkoutController.addToHashMap(new ShoppingCartItem(p, shoppingCartController));
         }
     }
 
@@ -212,7 +214,7 @@ public class IMatController extends VBox implements Initializable {
 
     private void toggleCheckoutMode() {
         //bigHBox.getChildren().clear();
-        checkoutController.initCheckoutController();
+        checkoutController.update();
         displayPane.setAlignment(Pos.CENTER);
         //bigHBox.getChildren().add(checkoutController);
         displayPane.getChildren().add(checkoutController);
