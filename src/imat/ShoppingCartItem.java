@@ -16,10 +16,11 @@ import java.io.IOException;
 /**
  * Created by Jonathan Köre on 2018-05-07.
  */
-public class ShoppingCartItem extends AnchorPane {
+public class ShoppingCartItem extends AnchorPane implements ShoppingCartListener{
     ShoppingCartController parentController;
-    ItemHandler itemHandler;
+    private Product product;
     IMatDataHandler db = IMatDataHandler.getInstance();
+    private ShoppingCart shoppingCart = db.getShoppingCart();
 
     @FXML
     ImageView productImageView;
@@ -34,7 +35,7 @@ public class ShoppingCartItem extends AnchorPane {
     @FXML
     TextField amountTextField;
 
-    public ShoppingCartItem(ItemHandler itemHandler, ShoppingCartController parentController) {
+    public ShoppingCartItem(Product product, ShoppingCartController parentController) {
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("fxml/steg1_betalning_item.fxml"));
         fxmlLoader.setRoot(this);
         fxmlLoader.setController(this);
@@ -45,17 +46,29 @@ public class ShoppingCartItem extends AnchorPane {
             throw new RuntimeException(exception);
         }
         this.parentController = parentController;
-        productImageView.setImage(db.getFXImage(itemHandler.getShoppingItem().getProduct()));
-        productLabel.setText(itemHandler.getShoppingItem().getProduct().getName());
-        this.itemHandler = itemHandler;
-        itemHandler.setShoppingCartItem(this);
-        amountTextField.textProperty().addListener(itemHandler.getChangeListener());
+        productImageView.setImage(db.getFXImage(product));
+        productLabel.setText(product.getName());
+        this.product = product;
+        //TODO lista ut vad fan den här grejen under här gör
+        //itemHandler.setShoppingCartItem(this);
+        //TODO återigen fixa så att den här hämtar antalet ifrån shoppingcart
+        //amountTextField.textProperty().addListener(itemHandler.getChangeListener());
         update();
+        shoppingCart.addShoppingCartListener(this);
     }
 
     public void update() {
-        amountTextField.setText(Double.toString(itemHandler.getShoppingItem().getAmount()));
-        priceLabel.setText(Double.toString(itemHandler.getShoppingItem().getTotal()));
+        //TODO fixa så att det här fungerar från shoppingcart istället
+        amountTextField.setText("0");
+        for(ShoppingItem s : shoppingCart.getItems()){
+            if(s.getProduct().getName().equals(product.getName())){
+                amountTextField.setText(Double.toString(s.getAmount()));
+                priceLabel.setText(Double.toString(s.getTotal()));
+                break;
+            }
+        }
+        //amountTextField.setText(Double.toString(itemHandler.getShoppingItem().getAmount()));
+        //priceLabel.setText(Double.toString(itemHandler.getShoppingItem().getTotal()));
     }
 
     public void remove() {
@@ -63,15 +76,40 @@ public class ShoppingCartItem extends AnchorPane {
     }
     @FXML
     public void increaseAmount(){
-        itemHandler.increaseAmount();
-
+        boolean finns = false;
+        for(ShoppingItem s : shoppingCart.getItems()){
+            if(s.getProduct().getName().equals(product.getName())){
+                s.setAmount(s.getAmount()+1);
+                finns = true;
+                shoppingCart.fireShoppingCartChanged(null, false); //bara för att meddela att något hänt till övriga världen
+            }
+        }
+        if(!finns){
+            shoppingCart.addProduct(product);
+        }
+        update();
     }
     @FXML
     public void decreaseAmount() {
-        itemHandler.decreaseAmount();
+        for(ShoppingItem s : shoppingCart.getItems()){
+            if(s.getProduct().getName().equals(product.getName())){
+                s.setAmount(s.getAmount()-1);
+                shoppingCart.fireShoppingCartChanged(null, false); //bara för att meddela att
+                //TODO bestäm vad som ska hända med vagnen om det finns 0 av en vara
+                if(s.getAmount() < 0){
+                    shoppingCart.removeItem(s);
+                }
+            }
+        }
+        update();
     }
 
-    public ItemHandler getItemHandler() {
-        return itemHandler;
+    public Product getProduct() {
+        return product;
+    }
+
+    @Override
+    public void shoppingCartChanged(CartEvent cartEvent) {
+        update();
     }
 }
