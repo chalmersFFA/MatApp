@@ -44,45 +44,42 @@ public class ShoppingCartController extends AnchorPane implements ShoppingCartLi
 
         this.parentController = parentController;
         shoppingCart.addShoppingCartListener(this);
-
     }
 
 
     @Override
     public void shoppingCartChanged(CartEvent cartEvent) {
-        if(cartEvent.isAddEvent() && !visualItems.contains(shoppingCartItemMap.get(cartEvent.getShoppingItem().getProduct().getName())))
+        update();
+        /*if(cartEvent.isAddEvent())
             add(shoppingCartItemMap.get(cartEvent.getShoppingItem().getProduct().getName()));
         /*else
             remove(shoppingCartItemMap.get(cartEvent.getShoppingItem().getProduct().getName()));*/
     }
-    public void remove(ShoppingCartItem s) {
-        visualItems.remove(s);
-        s.getItemHandler().getShoppingItem().setAmount(0);
-        s.getItemHandler().update();
+    public void remove(ShoppingCartItem item) {
+        //visualItems.remove(item);
+        for(ShoppingItem s : shoppingCart.getItems()){
+            if(s.getProduct().getName().equals(item.getProduct().getName())){
+                shoppingCart.removeItem(s);
+            }
+        }
         update();
     }
-    public void add(ShoppingCartItem s) {
+    /*public void add(ShoppingCartItem s) {
         visualItems.add(s);
         update();
-    }
+    }*/
 
     public void update() {
         shoppingCartFlowPane.getChildren().clear();
-        for(ShoppingCartItem s : visualItems) {
-            shoppingCartFlowPane.getChildren().add(s);
+        for(ShoppingItem s : shoppingCart.getItems()) {
+            shoppingCartFlowPane.getChildren().add(shoppingCartItemMap.get(s.getProduct().getName()));
         }
     }
 
     public void addToHashMap(ShoppingCartItem s) {
-        shoppingCartItemMap.put(s.getItemHandler().getShoppingItem().getProduct().getName(), s);
+        shoppingCartItemMap.put(s.getProduct().getName(), s);
     }
 
-    public void addToCart(ItemHandler itemHandler) {
-        shoppingCart.addItem(itemHandler.getShoppingItem());
-    }
-    public void removeFromCart(ItemHandler itemHandler) {
-        shoppingCart.removeItem(itemHandler.getShoppingItem());
-    }
     public boolean isInCart(ItemHandler itemHandler) {
         return shoppingCart.getItems().contains(itemHandler.getShoppingItem());
     }
