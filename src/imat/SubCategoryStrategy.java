@@ -12,7 +12,7 @@ public class SubCategoryStrategy implements CategoryStrategy {
             }
             parentController.selectCategory(c);
             parentController.setCurrentExpandedSub(c);
-            parentController.updateRecipeList(c.getProductCategory());
+            parentController.updateProductList(c.getProductCategory());
         }
 
     }

@@ -34,7 +34,7 @@ public class ItemHandler {
     }
 
     public void setAmount(double i) {
-        if (i < 0)
+        if (i <= 0)
             shoppingItem.setAmount(0);
         else
             shoppingItem.setAmount(i);

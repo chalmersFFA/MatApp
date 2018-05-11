@@ -8,7 +8,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.shape.Line?>
 
-<fx:root maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="441.0" styleClass="normal-text" stylesheets="@../layout/design.css" type="AnchorPane" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<fx:root maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="441.0" styleClass="normal-text" stylesheets="@../layout/design.css" type="AnchorPane" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <Label alignment="CENTER_RIGHT" layoutX="47.0" layoutY="70.0" prefHeight="17.0" prefWidth="133.0" text="Förnamn:" textAlignment="RIGHT" AnchorPane.rightAnchor="270.0" AnchorPane.topAnchor="70.0" />
       <Label alignment="CENTER_RIGHT" layoutX="94.0" layoutY="115.0" text="Efternamn:" AnchorPane.rightAnchor="270.0" AnchorPane.topAnchor="115.0" />
@@ -18,7 +18,7 @@
       <Label alignment="CENTER_RIGHT" layoutX="47.0" layoutY="340.0" prefHeight="27.0" prefWidth="133.0" text="Telefonnummer:" AnchorPane.rightAnchor="270.0" AnchorPane.topAnchor="360.0" />
       <Label alignment="CENTER_RIGHT" layoutX="47.0" layoutY="160.0" prefHeight="27.0" prefWidth="133.0" text="E-postadress:" AnchorPane.rightAnchor="270.0" AnchorPane.topAnchor="160.0" />
       <Button fx:id="editDetailsButton" layoutX="273.0" layoutY="410.0" mnemonicParsing="false" onAction="#editDetails" text="Redigera Uppgifter" AnchorPane.topAnchor="410.0" />
-      <Button layoutX="10.0" layoutY="7.0" mnemonicParsing="false" text="&lt;-- tillbaka" />
+      <Button layoutX="10.0" layoutY="7.0" mnemonicParsing="false" onAction="#backButton" text="&lt;-- tillbaka" />
       <Label layoutX="133.0" layoutY="5.0" styleClass="big-text" text="Mina Uppgifter" />
       <Line endX="110.0" layoutX="305.0" layoutY="211.0" opacity="0.1" startX="-280.0" AnchorPane.topAnchor="210.5" />
       <Label fx:id="firstNameLabel" layoutX="206.0" layoutY="84.0" styleClass="bold-text" AnchorPane.leftAnchor="180.0" AnchorPane.topAnchor="70.0" />
