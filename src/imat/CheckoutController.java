@@ -40,6 +40,8 @@ public class CheckoutController extends AnchorPane implements ShoppingCartListen
             throw new RuntimeException(exception);
         }
 
+        shoppingCart.addShoppingCartListener(this);
+
     }
 
     @FXML
@@ -55,7 +57,6 @@ public class CheckoutController extends AnchorPane implements ShoppingCartListen
     public void update() {
         orderFlowPane.getChildren().clear();
         for(ShoppingItem s : shoppingCart.getItems()) {
-            System.out.println(s.getProduct().getName());
             orderFlowPane.getChildren().add(shoppingCartItemMap.get(s.getProduct().getName()));
         }
     }
