@@ -10,7 +10,7 @@
 <?import javafx.scene.layout.FlowPane?>
 <?import javafx.scene.text.Font?>
 
-<fx:root fx:id="shoppingCartAnchorPane" prefHeight="900.0" prefWidth="285.0" stylesheets="@../layout/design.css" type="AnchorPane" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<fx:root fx:id="shoppingCartAnchorPane" prefHeight="900.0" prefWidth="400.0" stylesheets="@../layout/design.css" type="AnchorPane" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <Label alignment="CENTER" prefHeight="62.0" prefWidth="200.0" style="&#10;" styleClass="big-text" text="Kundvagn" textAlignment="CENTER" wrapText="false" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
          <font>
