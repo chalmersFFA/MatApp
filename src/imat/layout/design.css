@@ -43,6 +43,9 @@
     -fx-background-color: #666666;
     -fx-border-style: hidden solid hidden solid;
 }
+.subCategoryStandard:hover{
+    -fx-background-color: #EEE9D1;
+}
 .shoppingCart{
     -fx-background-color: #EEE9D1;
 }
@@ -52,4 +55,17 @@
 #current{
     -fx-background-color: #AAFFAA;
     -fx-opacity: 1;
+}
+
+.static_object_hinting{
+    -fx-border-width: 1px;
+    -fx-border-color: #999999;
+    -fx-border-radius: 1px;
+    -fx-background-radius: 1px;
+}
+.static_object_hinting:hover{
+    -fx-background-color: #FCFCFC;
+}
+.static_object_hinting:pressed{
+    -fx-background-color: #D0D0D0;
 }
