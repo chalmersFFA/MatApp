@@ -19,7 +19,7 @@
       <Label layoutX="213.0" layoutY="39.0" styleClass="normal-text" text="-&gt;" />
       <Label layoutX="355.0" layoutY="39.0" styleClass="normal-text" text="-&gt;" />
       <Button layoutX="7.0" layoutY="14.0" mnemonicParsing="false" text="Tillbaka till shopping" />
-      <Button layoutX="335.0" layoutY="890.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="186.0" styleClass="nextButton" text="Vidare till betalningssätt" textFill="WHITE">
+      <Button layoutX="335.0" layoutY="890.0" mnemonicParsing="false" onAction="#toFinalPaymentStep" prefHeight="27.0" prefWidth="186.0" styleClass="nextButton" text="Färdigställ order" textFill="WHITE">
          <font>
             <Font size="14.0" />
          </font>
