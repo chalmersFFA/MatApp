@@ -15,7 +15,7 @@
 <?import javafx.scene.paint.Color?>
 <?import javafx.scene.text.Font?>
 
-<VBox stylesheets="@../layout/design.css" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="imat.IMatController">
+<VBox stylesheets="@../layout/design.css" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="imat.IMatController">
    <children>
       <AnchorPane prefHeight="75.0" prefWidth="1127.0">
          <children>
@@ -108,7 +108,7 @@
                   <HBox fx:id="displayPane" prefHeight="100.0" prefWidth="200.0" styleClass="paymentPane" StackPane.alignment="CENTER" />
                   <HBox fx:id="bigHBox">
                      <children>
-                    <AnchorPane fx:id="categoriesAnchorPane" prefHeight="586.0" prefWidth="246.0" styleClass="categoriesAnchorPane">
+                    <AnchorPane fx:id="categoriesAnchorPane" prefHeight="586.0" prefWidth="400.0" styleClass="categoriesAnchorPane">
                       <children>
                         <Label alignment="CENTER" layoutX="14.0" layoutY="14.0" minWidth="60.0" prefWidth="-1.0" style="&#10;" text="Kategorier" textAlignment="CENTER" wrapText="false">
                           <font>
@@ -138,7 +138,7 @@
                               </StackPane>
                            </children>
                         </AnchorPane>
-                    <AnchorPane fx:id="shoppingCartAnchorPane" maxWidth="-Infinity" prefHeight="587.0" prefWidth="265.0" styleClass="shoppingCart" HBox.hgrow="ALWAYS" />
+                    <AnchorPane fx:id="shoppingCartAnchorPane" maxWidth="-Infinity" prefHeight="587.0" prefWidth="400.0" styleClass="shoppingCart" HBox.hgrow="ALWAYS" />
                      </children>
                   </HBox>
                </children>
