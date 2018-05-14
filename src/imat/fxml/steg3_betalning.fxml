@@ -9,7 +9,7 @@
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="854.0" prefWidth="900.0" stylesheets="@../layout/design.css" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<fx:root type="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="854.0" prefWidth="900.0" stylesheets="@../layout/design.css" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <Label layoutX="133.0" layoutY="39.0" opacity="0.7" styleClass="normal-text" text="Varukorg" />
       <Label layoutX="240.0" layoutY="39.0" prefHeight="27.0" prefWidth="120.0" styleClass="normal-text" text="Betalningssätt" />
@@ -74,4 +74,4 @@
       <Label layoutX="700.0" layoutY="597.0" styleClass="big-text" text="555kr" />
       <Label layoutX="42.0" layoutY="597.0" styleClass="big-text" text="Tidsbokning" />
    </children>
-</AnchorPane>
+</fx:root>
