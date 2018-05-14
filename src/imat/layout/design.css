@@ -73,3 +73,7 @@
 .static_object_hinting:pressed{
     -fx-background-color: #D0D0D0;
 }
+.nextButton{
+    -fx-background-color:  #55CC55;
+    -fx-font-color: #FFFFFF;
+}
