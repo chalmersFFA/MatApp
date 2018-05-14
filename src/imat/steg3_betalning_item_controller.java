@@ -29,8 +29,6 @@ public class steg3_betalning_item_controller extends AnchorPane implements Shopp
     @FXML
     Label amount;
     @FXML
-    Label unit;
-    @FXML
     Label unitPrice;
 
     public steg3_betalning_item_controller(Product product, ShoppingCartController parentController) {
@@ -61,7 +59,8 @@ public class steg3_betalning_item_controller extends AnchorPane implements Shopp
         for(ShoppingItem s : shoppingCart.getItems()){
             if(s.getProduct().getName().equals(product.getName())){
                 amount.setText(Double.toString(s.getAmount()) + s.getProduct().getUnitSuffix());
-                totalPrice.setText(Double.toString(s.getTotal()));
+                totalPrice.setText(Double.toString(s.getTotal()) + " kr");
+                unitPrice.setText("à " + Double.toString(s.getProduct().getPrice()) + s.getProduct().getUnit());
                 break;
             }
         }
