@@ -32,10 +32,10 @@
     -fx-background-color: green;
 }
 .subCategorySelected {
-    -fx-background-color: green;
+    -fx-background-color: #2f2f2f;
 }
 .mainCategorySelected {
-    -fx-background-color: red;
+    -fx-background-color: #A9A9A9;
 }
 .mainCategoryStandard {
 

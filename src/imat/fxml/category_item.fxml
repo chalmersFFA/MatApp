@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
@@ -22,6 +23,9 @@
             </ImageView>
             <Label fx:id="nameLabel" layoutX="89.0" layoutY="7.0" styleClass="big-text" stylesheets="@../layout/design.css" text="Kategori" textFill="WHITE" />
          </children>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
       </Pane>
    </children>
 </fx:root>

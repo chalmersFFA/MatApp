@@ -10,7 +10,7 @@
 
 <fx:root maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="265.0" prefWidth="233.0" styleClass="static_object_hinting" stylesheets="@../layout/design.css" type="AnchorPane" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <ImageView fx:id="productImageView" fitHeight="150.0" fitWidth="200.0" layoutX="20.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="productImageView" fitHeight="150.0" fitWidth="200.0" layoutX="20.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="16.0" AnchorPane.rightAnchor="16.0" AnchorPane.topAnchor="16.0">
          <image>
             <Image url="@../../../../../../.dat215/imat/images/product_16.jpg" />
          </image>
