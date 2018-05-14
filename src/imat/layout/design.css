@@ -38,13 +38,17 @@
     -fx-background-color: red;
 }
 .mainCategoryStandard {
+
+}
+.mainCategoryStandard:hover{
+  -fx-background-color: #777777;
 }
 .subCategoryStandard {
     -fx-background-color: #666666;
     -fx-border-style: hidden solid hidden solid;
 }
 .subCategoryStandard:hover{
-    -fx-background-color: #EEE9D1;
+    -fx-background-color: #777777;
 }
 .shoppingCart{
     -fx-background-color: #EEE9D1;
