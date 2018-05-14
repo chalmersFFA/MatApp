@@ -10,14 +10,6 @@
 <fx:root maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="585.0" prefWidth="600.0" stylesheets="@../layout/design.css" type="AnchorPane" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <Button layoutX="10.0" layoutY="14.0" mnemonicParsing="false" onAction="#backButton" text="Tillbaka till shopping" AnchorPane.topAnchor="14.0" />
-      <Label layoutX="183.0" layoutY="28.0" styleClass="normal-text" text="Varukorg" AnchorPane.leftAnchor="183.0" AnchorPane.topAnchor="28.0">
-         <font>
-            <Font size="14.0" />
-         </font></Label>
-      <Label layoutX="287.0" layoutY="28.0" opacity="0.7" prefHeight="17.0" prefWidth="92.0" styleClass="normal-text" text="Betalningssätt" AnchorPane.leftAnchor="287.0" AnchorPane.rightAnchor="221.0" AnchorPane.topAnchor="28.0" />
-      <Label layoutX="410.0" layoutY="28.0" opacity="0.7" styleClass="normal-text" text="Färdigställ order" AnchorPane.rightAnchor="60.0" AnchorPane.topAnchor="28.0" />
-      <Label layoutX="264.0" layoutY="33.0" text="-&gt;" AnchorPane.leftAnchor="264.0" AnchorPane.rightAnchor="321.0" AnchorPane.topAnchor="33.0" />
-      <Label layoutX="386.0" layoutY="33.0" text="-&gt;" AnchorPane.rightAnchor="200.0" AnchorPane.topAnchor="33.0" />
       <Button fx:id="toPaymentButton" layoutX="393.0" layoutY="541.0" mnemonicParsing="false" onAction="#toPayment" prefHeight="27.0" prefWidth="186.0" style="-fx-background-color: #63654d;" text="Vidare till betalningssätt" textFill="WHITE">
          <font>
             <Font size="14.0" />
@@ -35,5 +27,6 @@
             <FlowPane fx:id="orderFlowPane" prefHeight="371.0" prefWidth="535.0" />
          </content>
       </ScrollPane>
+      <AnchorPane fx:id="sequenceMapAnchorPane" layoutX="173.0" layoutY="18.0" prefHeight="67.0" prefWidth="409.0" />
    </children>
 </fx:root>

@@ -21,11 +21,14 @@ public class CheckoutController extends AnchorPane implements ShoppingCartListen
     private IMatDataHandler db = IMatDataHandler.getInstance();
     private ShoppingCart shoppingCart = db.getShoppingCart();
     private Map<String, ShoppingCartItem> shoppingCartItemMap = new HashMap<String, ShoppingCartItem>();
+    private SequenceMap sequenceMap = new SequenceMap();
 
     @FXML
     FlowPane orderFlowPane;
     @FXML
     Label totalLabel;
+    @FXML
+    AnchorPane sequenceMapAnchorPane;
 
     public CheckoutController(IMatController parentController, ShoppingCartController shoppingCartController) {
         this.shoppingCartController = shoppingCartController;
@@ -40,6 +43,7 @@ public class CheckoutController extends AnchorPane implements ShoppingCartListen
             throw new RuntimeException(exception);
         }
 
+        sequenceMapAnchorPane.getChildren().add(sequenceMap);
         shoppingCart.addShoppingCartListener(this);
 
     }
@@ -51,7 +55,7 @@ public class CheckoutController extends AnchorPane implements ShoppingCartListen
 
     @FXML
     public void toPayment() {
-
+        sequenceMap.nextState();
     }
 
     public void update() {

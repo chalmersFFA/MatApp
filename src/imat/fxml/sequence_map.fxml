@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<fx:root maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="64.0" prefWidth="524.0" stylesheets="@../layout/design.css" type="AnchorPane" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Label fx:id="label1" layoutX="14.0" layoutY="14.0" onMouseClicked="#button1Clicked" styleClass="normal-text" text="Varukorg">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="label2" layoutX="186.0" layoutY="14.0" onMouseClicked="#button2Clicked" prefHeight="27.0" prefWidth="124.0" styleClass="normal-text" text="Betalningssätt" />
+      <Label fx:id="label3" layoutX="380.0" layoutY="14.0" onMouseClicked="#button3Clicked" styleClass="normal-text" text="Färdigställ order" />
+      <ImageView fitHeight="27.0" fitWidth="61.0" layoutX="318.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../layout/images/orange_pil.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="27.0" fitWidth="61.0" layoutX="113.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../layout/images/orange_pil.png" />
+         </image>
+      </ImageView>
+   </children>
+</fx:root>
