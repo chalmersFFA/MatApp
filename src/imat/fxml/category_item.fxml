@@ -6,9 +6,9 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Pane?>
 
-<fx:root maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseClicked="#onClick" prefHeight="40.0" prefWidth="221.0" styleClass="static_object_hinting" stylesheets="@../layout/design.css" type="AnchorPane" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.141">
+<fx:root maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseClicked="#onClick" prefHeight="40.0" prefWidth="221.0" styleClass="mainCategoryStandard" stylesheets="@../layout/design.css" type="AnchorPane" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <Pane fx:id="backgroundPane" prefHeight="40.0" prefWidth="221.0" styleClass="static_object_hinting" stylesheets="@../layout/design.css">
+      <Pane fx:id="backgroundPane" prefHeight="40.0" prefWidth="221.0" stylesheets="@../layout/design.css">
          <children>
             <ImageView fx:id="arrowImageView" fitHeight="40.0" fitWidth="34.0" layoutX="190.0" layoutY="3.0" pickOnBounds="true" preserveRatio="true">
                <image>
