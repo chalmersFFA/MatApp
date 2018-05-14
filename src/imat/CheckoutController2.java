@@ -2,7 +2,6 @@ package imat;
 
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.FlowPane;
@@ -15,7 +14,7 @@ import java.util.Map;
 /**
  * Created by Jonathan Köre on 2018-05-09.
  */
-public class CheckoutController extends AnchorPane implements ShoppingCartListener{
+public class CheckoutController2 extends AnchorPane implements ShoppingCartListener{
 
     private ShoppingCartController shoppingCartController;
     private IMatController parentController;
@@ -23,15 +22,10 @@ public class CheckoutController extends AnchorPane implements ShoppingCartListen
     private ShoppingCart shoppingCart = db.getShoppingCart();
     private Map<String, ShoppingCartItem> shoppingCartItemMap = new HashMap<String, ShoppingCartItem>();
 
-    @FXML
-    FlowPane orderFlowPane;
-    @FXML
-    Label totalLabel;
-
-    public CheckoutController(IMatController parentController, ShoppingCartController shoppingCartController) {
+    public CheckoutController2(IMatController parentController, ShoppingCartController shoppingCartController) {
         this.shoppingCartController = shoppingCartController;
         this.parentController = parentController;
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("fxml/Steg1_betalning.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("fxml/Steg2_betalning.fxml"));
         fxmlLoader.setRoot(this);
         fxmlLoader.setController(this);
 
@@ -42,8 +36,6 @@ public class CheckoutController extends AnchorPane implements ShoppingCartListen
         }
 
         shoppingCart.addShoppingCartListener(this);
-        totalLabel.setText(Double.toString(shoppingCart.getTotal()));
-
     }
 
     @FXML
@@ -53,19 +45,11 @@ public class CheckoutController extends AnchorPane implements ShoppingCartListen
 
     @FXML
     public void toPayment() {
-        parentController.toPayment();
+
     }
 
     public void update() {
-        orderFlowPane.getChildren().clear();
-        for(ShoppingItem s : shoppingCart.getItems()) {
-            orderFlowPane.getChildren().add(shoppingCartItemMap.get(s.getProduct().getName()));
-        }
-        totalLabel.setText(Double.toString(shoppingCart.getTotal()));
-    }
 
-    public FlowPane getOrderFlowPane() {
-        return orderFlowPane;
     }
 
     @Override
