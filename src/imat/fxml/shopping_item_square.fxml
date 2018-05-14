@@ -8,16 +8,16 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<fx:root maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="265.0" prefWidth="190.0" type="AnchorPane" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1">
+<fx:root maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="265.0" prefWidth="233.0" styleClass="static_object_hinting" stylesheets="@../layout/design.css" type="AnchorPane" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <ImageView fx:id="productImageView" fitHeight="150.0" fitWidth="200.0" layoutX="20.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="15.0">
+      <ImageView fx:id="productImageView" fitHeight="150.0" fitWidth="200.0" layoutX="20.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../layout/images/milk.jpg" />
+            <Image url="@../../../../../../.dat215/imat/images/product_16.jpg" />
          </image>
       </ImageView>
-      <TextField fx:id="amountTextField" alignment="CENTER" layoutX="122.0" layoutY="224.0" prefHeight="25.0" prefWidth="43.0" />
-      <Button layoutX="99.0" layoutY="224.0" mnemonicParsing="false" onAction="#decreaseAmount" prefHeight="25.0" prefWidth="27.0" text="-" />
-      <Button layoutX="163.0" layoutY="224.0" mnemonicParsing="false" onAction="#increaseAmount" prefHeight="25.0" prefWidth="27.0" text="+" />
+      <TextField fx:id="amountTextField" alignment="CENTER" layoutX="151.0" layoutY="225.0" prefHeight="25.0" prefWidth="43.0" />
+      <Button layoutX="128.0" layoutY="225.0" mnemonicParsing="false" onAction="#decreaseAmount" prefHeight="25.0" prefWidth="27.0" text="-" />
+      <Button layoutX="192.0" layoutY="225.0" mnemonicParsing="false" onAction="#increaseAmount" prefHeight="25.0" prefWidth="27.0" text="+" />
       <Label layoutX="21.0" layoutY="193.0" text="jfr-pris 10kr/l" AnchorPane.leftAnchor="14.0">
          <font>
             <Font size="14.0" />
@@ -28,7 +28,7 @@
             <Font size="18.0" />
          </font>
       </Label>
-      <ImageView fx:id="favouriteImageView" fitHeight="37.0" fitWidth="35.0" layoutX="142.0" layoutY="170.0" onMouseClicked="#favourite" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="favouriteImageView" fitHeight="37.0" fitWidth="35.0" layoutX="184.0" layoutY="176.0" onMouseClicked="#favourite" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../layout/images/stareboi.png" />
          </image>
