@@ -2,9 +2,7 @@ package imat;
 
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.control.Label;
 import javafx.scene.layout.AnchorPane;
-import javafx.scene.layout.FlowPane;
 import se.chalmers.cse.dat216.project.*;
 
 import java.io.IOException;
@@ -14,7 +12,7 @@ import java.util.Map;
 /**
  * Created by Jonathan Köre on 2018-05-09.
  */
-public class CheckoutController2 extends AnchorPane implements ShoppingCartListener{
+public class CheckoutController3 extends AnchorPane implements ShoppingCartListener{
 
     private ShoppingCartController shoppingCartController;
     private IMatController parentController;
@@ -22,10 +20,10 @@ public class CheckoutController2 extends AnchorPane implements ShoppingCartListe
     private ShoppingCart shoppingCart = db.getShoppingCart();
     private Map<String, ShoppingCartItem> shoppingCartItemMap = new HashMap<String, ShoppingCartItem>();
 
-    public CheckoutController2(IMatController parentController, ShoppingCartController shoppingCartController) {
+    public CheckoutController3(IMatController parentController, ShoppingCartController shoppingCartController) {
         this.shoppingCartController = shoppingCartController;
         this.parentController = parentController;
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("fxml/Steg2_betalning.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("fxml/Steg3_betalning.fxml"));
         fxmlLoader.setRoot(this);
         fxmlLoader.setController(this);
 
@@ -66,10 +64,5 @@ public class CheckoutController2 extends AnchorPane implements ShoppingCartListe
             }
         }
         update();
-    }
-
-    @FXML
-    private void toFinalPaymentStep(){
-        parentController.toFinalPaymentStep();
     }
 }
