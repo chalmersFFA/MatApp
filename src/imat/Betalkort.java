@@ -24,13 +24,14 @@ public class Betalkort extends AnchorPane {
     private CreditCard creditCard = db.getCreditCard();
 
     @FXML
-    Label cardHolderLabel, cardNumberLabel, cardValidLabel, cardTypeLabel, cardVerificationLabel, whatIsCVCLabel;
+    Label cardHolderLabel, cardNumberLabel, cardValidLabel, cardTypeLabel, cardVerificationLabel, whatIsCVCLabel,
+    errorHolderLabel, errorNumberLabel, errorValidationLabel, errorCvcLabel;
 
     @FXML
     TextField cardHolderTextField, cardNumberTextField, cardVerificationTextField;
 
     @FXML
-    ComboBox cardValidYearComboBox, cardValidDayComboBox, cardTypeComboBox;
+    ComboBox cardValidYearComboBox, cardValidMonthComboBox, cardTypeComboBox;
 
     @FXML
     Button editCardButton, saveCardButton;
@@ -68,14 +69,14 @@ public class Betalkort extends AnchorPane {
 
         String[] dag = new String[31];
 
-        for(int i = 0; i < 30; i++) {
+        for(int i = 0; i < 12; i++) {
             dag[i] = Integer.toString(i + 1);
         }
-        cardValidDayComboBox.getItems().add("Dag");
-        cardValidDayComboBox.getItems().addAll(dag);
-        cardValidDayComboBox.getSelectionModel().select("Dag");
+        cardValidMonthComboBox.getItems().add("Dag");
+        cardValidMonthComboBox.getItems().addAll(dag);
+        cardValidMonthComboBox.getSelectionModel().select("Dag");
 
-        cardValidDayComboBox.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<Integer>() {
+        cardValidMonthComboBox.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<Integer>() {
 
 
             @Override
@@ -88,13 +89,14 @@ public class Betalkort extends AnchorPane {
     public void initDetails() {
         setDetailTextFieldsVisibility(false);
         loadDetails();
+        resetErrorLabels();
     }
 
     private void saveDetails() {
         creditCard.setCardNumber(cardNumberTextField.getText());
         creditCard.setHoldersName(cardHolderTextField.getText());
-        creditCard.setValidMonth((int)cardValidDayComboBox.getSelectionModel().getSelectedItem());
-        creditCard.setValidYear((int)cardValidYearComboBox.getSelectionModel().getSelectedItem());
+        creditCard.setValidMonth(Integer.valueOf((String)cardValidMonthComboBox.getSelectionModel().getSelectedItem()));
+        creditCard.setValidYear(Integer.valueOf((String)cardValidYearComboBox.getSelectionModel().getSelectedItem()));
         loadDetails();
     }
 
@@ -104,7 +106,7 @@ public class Betalkort extends AnchorPane {
         editCardButton.setVisible(!b);
 
         cardValidYearComboBox.setVisible(b);
-        cardValidDayComboBox.setVisible(b);
+        cardValidMonthComboBox.setVisible(b);
         cardHolderTextField.setVisible(b);
         cardNumberTextField.setVisible(b);
         cardVerificationTextField.setVisible(b);
@@ -134,14 +136,45 @@ public class Betalkort extends AnchorPane {
 
     @FXML
     private void saveButtonClick() {
-        setDetailTextFieldsVisibility(false);
-        editingDetails = false;
-        saveDetails();
+        if(infoIsValid()) {
+            editingDetails = false;
+            setDetailTextFieldsVisibility(false);
+            saveDetails();
+        }
     }
 
     @FXML
     private void editButtonClick() {
         setDetailTextFieldsVisibility(true);
         editingDetails = true;
+    }
+
+    private boolean infoIsValid() {
+        resetErrorLabels();
+        boolean valid = true;
+        if(cardValidYearComboBox.getSelectionModel().getSelectedItem() == "År" || cardValidMonthComboBox.getSelectionModel().getSelectedItem() == "Månad") {
+            errorValidationLabel.setVisible(true);
+            valid = false;
+        }
+        if(cardVerificationTextField.getText().length() != 3) {
+            errorCvcLabel.setVisible(true);
+            valid = false;
+        }
+        if(cardHolderTextField.getText().length() <= 0) {
+            errorHolderLabel.setVisible(true);
+            valid = false;
+        }
+        if(cardNumberTextField.getText().length() != 16) {
+            errorNumberLabel.setVisible(true);
+            valid = false;
+        }
+        return valid;
+    }
+
+    private void resetErrorLabels() {
+        errorHolderLabel.setVisible(false);
+        errorNumberLabel.setVisible(false);
+        errorValidationLabel.setVisible(false);
+        errorCvcLabel.setVisible(false);
     }
 }
