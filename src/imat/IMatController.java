@@ -25,10 +25,12 @@ public class IMatController extends VBox implements Initializable {
     private Map<String, StoreListItem> storeListItemMap = new HashMap<String, StoreListItem>();
     private CategoryItem currentExpandedSub;
     private ShoppingCart shoppingCart = db.getShoppingCart();
+
     public enum Mode {
         SHOPPING,
         CHECKOUT
     }
+
     private Mode currentMode = Mode.SHOPPING;
 
     MyDetails myDetails;
@@ -89,7 +91,7 @@ public class IMatController extends VBox implements Initializable {
 
     private void initProducts() {
         ShoppingCartItem s;
-        for (Product p : db.getProducts(ProductCategory.BERRY)){
+        for (Product p : db.getProducts(ProductCategory.BERRY)) {
             //ItemHandler itemHandler = new ItemHandler(new ShoppingItem(p,0));
             storeListItemMap.put(p.getName(), new StoreListItem(p, this));
             shoppingCartController.addToHashMap(new ShoppingCartItem(p, shoppingCartController));
@@ -101,14 +103,14 @@ public class IMatController extends VBox implements Initializable {
 
     public void updateProductList(ProductCategory category) {
         mainFlowPane.getChildren().clear();
-        for (Product p : db.getProducts(category)){
+        for (Product p : db.getProducts(category)) {
             mainFlowPane.getChildren().add(storeListItemMap.get(p.getName()));
         }
     }
 
-    public void displayFavourites(){
+    public void displayFavourites() {
         mainFlowPane.getChildren().clear();
-        for (Product p: db.favorites()){
+        for (Product p : db.favorites()) {
             mainFlowPane.getChildren().add(storeListItemMap.get(p.getName()));
         }
         //favouriteLabel.setId("current");
@@ -129,6 +131,7 @@ public class IMatController extends VBox implements Initializable {
         updateProductList(ProductCategory.BERRY);
         toggleShoppingMode();
     }
+
     @FXML
     private void pressedHelp() {
         System.out.println("help me N***UH");
@@ -176,16 +179,13 @@ public class IMatController extends VBox implements Initializable {
         cList.add(c);
 
 
-
-
-
         categoryFlowPane.getChildren().clear();
-        for(CategoryItem ci : cList)
+        for (CategoryItem ci : cList)
             categoryFlowPane.getChildren().add(ci);
     }
 
     public void expandCategory(CategoryItem c) {
-        for(CategoryItem sub : c.getSubCategories()) {
+        for (CategoryItem sub : c.getSubCategories()) {
             int index = categoryFlowPane.getChildren().indexOf(c) + 1;
             categoryFlowPane.getChildren().add(index, sub);
         }
@@ -240,7 +240,7 @@ public class IMatController extends VBox implements Initializable {
         displayPane.toFront();
     }
 
-    public void toCheckout1(){
+    public void toCheckout1() {
         displayPane.getChildren().clear();
         displayPane.setAlignment(Pos.CENTER);
         displayPane.getChildren().add(checkoutController);
@@ -248,7 +248,7 @@ public class IMatController extends VBox implements Initializable {
         displayPane.toFront();
     }
 
-    public void toPayment(){
+    public void toPayment() {
         checkoutController2.init();
         displayPane.getChildren().clear();
         displayPane.setAlignment(Pos.CENTER);
@@ -257,14 +257,15 @@ public class IMatController extends VBox implements Initializable {
         displayPane.toFront();
     }
 
-    public void toFinalPaymentStep(){
+    public void toFinalPaymentStep() {
         displayPane.getChildren().clear();
         displayPane.setAlignment(Pos.CENTER);
         displayPane.getChildren().add(checkoutController3);
         bigHBox.toBack();
         displayPane.toFront();
     }
-    public void thankYou(){
+
+    public void thankYou() {
         displayPane.getChildren().clear();
         displayPane.setAlignment(Pos.CENTER);
         displayPane.getChildren().add(checkoutController4);
@@ -292,7 +293,7 @@ public class IMatController extends VBox implements Initializable {
     }
 
     @FXML
-    public void mouseTrap(Event event){
+    public void mouseTrap(Event event) {
         event.consume();
     }
 
@@ -300,4 +301,5 @@ public class IMatController extends VBox implements Initializable {
     public MyDetails getMyDetails() {
         return myDetails;
     }
+
 }

@@ -62,8 +62,8 @@ public class ShoppingCartItem extends AnchorPane implements ShoppingCartListener
         amountTextField.setText("0");
         for(ShoppingItem s : shoppingCart.getItems()){
             if(s.getProduct().getName().equals(product.getName())){
-                amountTextField.setText(Double.toString(s.getAmount()));
-                priceLabel.setText(Double.toString(s.getTotal()) + " kr");
+                amountTextField.setText(Double.toString(round(s.getAmount(),3)));
+                priceLabel.setText(Double.toString(round(s.getTotal(), 3)) + " kr");
                 break;
             }
         }
@@ -84,7 +84,12 @@ public class ShoppingCartItem extends AnchorPane implements ShoppingCartListener
         boolean finns = false;
         for(ShoppingItem s : shoppingCart.getItems()){
             if(s.getProduct().getName().equals(product.getName())){
-                s.setAmount(s.getAmount()+1);
+                if(s.getProduct().getUnitSuffix().equals("kg") || s.getProduct().getUnitSuffix().equals("l") ){
+                    s.setAmount(s.getAmount()+0.1);
+                }
+                else{
+                    s.setAmount(s.getAmount()+1);
+                }
                 finns = true;
                 shoppingCart.fireShoppingCartChanged(null, false); //bara för att meddela att något hänt till övriga världen
             }
@@ -98,7 +103,12 @@ public class ShoppingCartItem extends AnchorPane implements ShoppingCartListener
     public void decreaseAmount() {
         for(ShoppingItem s : shoppingCart.getItems()){
             if(s.getProduct().getName().equals(product.getName())){
-                s.setAmount(s.getAmount()-1);
+                if(s.getProduct().getUnitSuffix().equals("kg") || s.getProduct().getUnitSuffix().equals("l") ){
+                    s.setAmount(s.getAmount()+0.1);
+                }
+                else{
+                    s.setAmount(s.getAmount()+1);
+                }
                 shoppingCart.fireShoppingCartChanged(null, false); //bara för att meddela att
                 //TODO bestäm vad som ska hända med vagnen om det finns 0 av en vara
                 if(s.getAmount() < 0){
@@ -116,5 +126,14 @@ public class ShoppingCartItem extends AnchorPane implements ShoppingCartListener
     @Override
     public void shoppingCartChanged(CartEvent cartEvent) {
         update();
+    }
+
+    public static double round(double value, int places) {
+        if (places < 0) throw new IllegalArgumentException();
+
+        long factor = (long) Math.pow(10, places);
+        value = value * factor;
+        long tmp = Math.round(value);
+        return (double) tmp / factor;
     }
 }
