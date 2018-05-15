@@ -123,6 +123,15 @@ public class IMatController extends VBox implements Initializable {
         myDetails.initDetails();
     }
 
+    @FXML
+    private void escapeHatch() {
+        System.out.println("hej");
+        updateProductList(ProductCategory.BERRY);
+    }
+    @FXML
+    private void pressedHelp() {
+        System.out.println("help me N***UH");
+    }
 
     private void initCategories() {
 
@@ -278,4 +287,6 @@ public class IMatController extends VBox implements Initializable {
     public void mouseTrap(Event event){
         event.consume();
     }
+
+
 }
