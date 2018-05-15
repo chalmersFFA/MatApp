@@ -48,7 +48,10 @@ public class CheckoutController3 extends AnchorPane implements ShoppingCartListe
     }
 
     @FXML
-    public void toPayment() {
+    public void placeOrder() {
+        db.placeOrder(true);
+        shoppingCart.fireShoppingCartChanged(null, false);
+        parentController.thankYou();
 
     }
 
@@ -58,8 +61,9 @@ public class CheckoutController3 extends AnchorPane implements ShoppingCartListe
             for (ShoppingItem s : shoppingCart.getItems()) {
                 finalOrderFlowPane.getChildren().add(steg3ItemMap.get(s.getProduct().getName()));
             }
-            totalPriceLabel.setText(Double.toString(shoppingCart.getTotal()));
         }
+        totalPriceLabel.setText(Double.toString(shoppingCart.getTotal()));
+
 
     }
 

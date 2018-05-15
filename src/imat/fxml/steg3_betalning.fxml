@@ -57,7 +57,7 @@
             </ImageView>
          </children>
       </AnchorPane>
-      <Button layoutX="700.0" layoutY="803.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="186.0" styleClass="nextButton" text="Vidare till betalningssätt" textFill="WHITE">
+      <Button layoutX="700.0" layoutY="803.0" mnemonicParsing="false" onAction="#placeOrder" prefHeight="27.0" prefWidth="186.0" styleClass="nextButton" text="Slutför köp" textFill="WHITE">
          <font>
             <Font size="14.0" />
          </font>

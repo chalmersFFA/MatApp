@@ -83,4 +83,5 @@
 .nextButton{
     -fx-background-color:  #55CC55;
     -fx-font-color: #FFFFFF;
+    -fx-text-fill: #FFFFFF;
 }

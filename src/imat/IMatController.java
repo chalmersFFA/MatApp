@@ -36,6 +36,7 @@ public class IMatController extends VBox implements Initializable {
     CheckoutController checkoutController;
     CheckoutController2 checkoutController2;
     CheckoutController3 checkoutController3;
+    CheckoutController4 checkoutController4;
 
 
     @FXML
@@ -78,6 +79,7 @@ public class IMatController extends VBox implements Initializable {
         checkoutController = new CheckoutController(this, shoppingCartController);
         checkoutController2 = new CheckoutController2(this, shoppingCartController);
         checkoutController3 = new CheckoutController3(this, shoppingCartController);
+        checkoutController4 = new CheckoutController4(this);
         showShoppingCart();
         initProducts();
         initCategories();
@@ -242,6 +244,13 @@ public class IMatController extends VBox implements Initializable {
         displayPane.getChildren().clear();
         displayPane.setAlignment(Pos.CENTER);
         displayPane.getChildren().add(checkoutController3);
+        bigHBox.toBack();
+        displayPane.toFront();
+    }
+    public void thankYou(){
+        displayPane.getChildren().clear();
+        displayPane.setAlignment(Pos.CENTER);
+        displayPane.getChildren().add(checkoutController4);
         bigHBox.toBack();
         displayPane.toFront();
     }
