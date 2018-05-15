@@ -63,7 +63,7 @@ public class ShoppingCartItem extends AnchorPane implements ShoppingCartListener
         for(ShoppingItem s : shoppingCart.getItems()){
             if(s.getProduct().getName().equals(product.getName())){
                 amountTextField.setText(Double.toString(s.getAmount()));
-                priceLabel.setText(Double.toString(s.getTotal()));
+                priceLabel.setText(Double.toString(s.getTotal()) + " kr");
                 break;
             }
         }
