@@ -38,14 +38,21 @@
     -fx-background-color: red;
 }
 .mainCategoryStandard {
-
+   -fx-border-color: #4F4F4F;
+   -fx-border-style: hidden hidden solid hidden;
 }
+#mainCategoryStandard_First {
+    -fx-border-color: #4F4F4F;
+    -fx-border-style: solid hidden hidden hidden;
+    -fx-border-width: 2px;
+}
+
 .mainCategoryStandard:hover{
   -fx-background-color: #777777;
 }
 .subCategoryStandard {
     -fx-background-color: #666666;
-    -fx-border-style: hidden solid hidden solid;
+   /* -fx-border-style: hidden solid hidden solid;   */
 }
 .subCategoryStandard:hover{
     -fx-background-color: #777777;

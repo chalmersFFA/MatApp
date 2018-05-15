@@ -15,7 +15,7 @@
 <?import javafx.scene.paint.Color?>
 <?import javafx.scene.text.Font?>
 
-<VBox stylesheets="@../layout/design.css" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="imat.IMatController">
+<VBox stylesheets="@../layout/design.css" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="imat.IMatController">
    <children>
       <AnchorPane prefHeight="75.0" prefWidth="1127.0">
          <children>
@@ -118,7 +118,7 @@
                             <Color blue="0.624" green="0.624" red="0.624" fx:id="x2" />
                           </textFill>
                         </Label>
-                              <FlowPane fx:id="categoryFlowPane" layoutY="48.0" prefHeight="538.0" prefWidth="246.0" />
+                              <FlowPane id="mainCategoryStandard_First" fx:id="categoryFlowPane" layoutY="48.0" prefHeight="538.0" prefWidth="246.0" stylesheets="@../layout/design.css" />
                       </children>
                     </AnchorPane>
                         <AnchorPane HBox.hgrow="ALWAYS">
