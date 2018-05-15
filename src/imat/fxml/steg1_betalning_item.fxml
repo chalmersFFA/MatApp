@@ -18,12 +18,10 @@
       </ImageView>
       <Label fx:id="productLabel" layoutX="97.0" layoutY="13.0" styleClass="big-text" text="ARLA mjölk 1.5dl" />
       <Button fx:id="decreaseButton" layoutX="92.0" layoutY="58.0" mnemonicParsing="false" onAction="#decreaseAmount" prefHeight="27.0" prefWidth="27.0" text="-">
-      <Button fx:id="decreaseButton" layoutX="90.0" layoutY="58.0" mnemonicParsing="false" onAction="#decreaseAmount" styleClass="redFocusColor" text="-">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor></Button>
       <Button fx:id="increaseButton" layoutX="173.0" layoutY="58.0" mnemonicParsing="false" onAction="#increaseAmount" text="+">
-      <Button fx:id="increaseButton" layoutX="148.0" layoutY="58.0" mnemonicParsing="false" onAction="#increaseAmount" styleClass="greenFocusColor" text="+">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor></Button>

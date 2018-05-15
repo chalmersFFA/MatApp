@@ -301,5 +301,4 @@ public class IMatController extends VBox implements Initializable {
     public MyDetails getMyDetails() {
         return myDetails;
     }
-
 }

@@ -109,10 +109,10 @@ public class ShoppingCartItem extends AnchorPane implements ShoppingCartListener
         for(ShoppingItem s : shoppingCart.getItems()){
             if(s.getProduct().getName().equals(product.getName())){
                 if(s.getProduct().getUnitSuffix().equals("kg") || s.getProduct().getUnitSuffix().equals("l") ){
-                    s.setAmount(s.getAmount()+0.1);
+                    s.setAmount(s.getAmount()-0.1);
                 }
                 else{
-                    s.setAmount(s.getAmount()+1);
+                    s.setAmount(s.getAmount()-1);
                 }
                 shoppingCart.fireShoppingCartChanged(null, false); //bara för att meddela att
                 //TODO bestäm vad som ska hända med vagnen om det finns 0 av en vara
