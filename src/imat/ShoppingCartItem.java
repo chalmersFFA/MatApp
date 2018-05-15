@@ -7,6 +7,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import se.chalmers.cse.dat216.project.*;
@@ -24,6 +25,8 @@ public class ShoppingCartItem extends AnchorPane implements ShoppingCartListener
 
     @FXML
     ImageView productImageView;
+    @FXML
+    ImageView cross;
     @FXML
     Label productLabel;
     @FXML
@@ -119,5 +122,16 @@ public class ShoppingCartItem extends AnchorPane implements ShoppingCartListener
     @Override
     public void shoppingCartChanged(CartEvent cartEvent) {
         update();
+    }
+
+    @FXML
+    public void changeCrossPliant(){
+        Image crossPliant = new Image("imat/layout/images/cross_pliant.png");
+        cross.setImage(crossPliant);
+    }
+    @FXML
+    public void changeCrossNotPliant(){
+        Image crossNotPliant = new Image("imat/layout/images/cross.png");
+        cross.setImage(crossNotPliant);
     }
 }

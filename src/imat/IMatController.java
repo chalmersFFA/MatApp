@@ -37,6 +37,7 @@ public class IMatController extends VBox implements Initializable {
     CheckoutController2 checkoutController2;
     CheckoutController3 checkoutController3;
     CheckoutController4 checkoutController4;
+    OrderHistoryController orderHistoryController;
 
 
     @FXML
@@ -80,11 +81,13 @@ public class IMatController extends VBox implements Initializable {
         checkoutController2 = new CheckoutController2(this, shoppingCartController);
         checkoutController3 = new CheckoutController3(this, shoppingCartController);
         checkoutController4 = new CheckoutController4(this);
+        orderHistoryController = new OrderHistoryController(this, shoppingCartController);
         showShoppingCart();
         initProducts();
         initCategories();
         updateProductList(ProductCategory.BERRY);
         shoppingCart.fireShoppingCartChanged(null, false);
+        orderHistoryController.createHistory();
     }
 
     private void initProducts() {
@@ -122,6 +125,14 @@ public class IMatController extends VBox implements Initializable {
         mainFlowPane.getChildren().add(myDetails);
         mainFlowPane.setAlignment(Pos.CENTER);
         myDetails.initDetails();
+    }
+    @FXML
+    private void showOrderScreen() {
+        toggleShoppingMode();
+        mainFlowPane.toFront();
+        mainFlowPane.getChildren().clear();
+        mainFlowPane.getChildren().add(orderHistoryController);
+        mainFlowPane.setAlignment(Pos.CENTER);
     }
 
     @FXML
