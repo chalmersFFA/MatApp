@@ -239,9 +239,15 @@ public class IMatController extends VBox implements Initializable {
         displayPane.toFront();
     }
 
+    public void toCheckout1(){
+        displayPane.getChildren().clear();
+        displayPane.setAlignment(Pos.CENTER);
+        displayPane.getChildren().add(checkoutController);
+        bigHBox.toBack();
+        displayPane.toFront();
+    }
+
     public void toPayment(){
-        //TODO update checkoutcontroller2
-        //checkoutController.update();
         checkoutController2.init();
         displayPane.getChildren().clear();
         displayPane.setAlignment(Pos.CENTER);
