@@ -87,7 +87,8 @@
 }
 #shopping_item_text{
     -fx-font-size: 25px;
-}.backbutton{
+}
+.backbutton{
 
 }
 
@@ -102,4 +103,7 @@
 .redFocusColor{
     fx-focus-color: #FF0000;
     -fx-faint-focus-color: #FF0000;
+}
+#shopping_item_text{
+    -fx-font-size: 25px;
 }
