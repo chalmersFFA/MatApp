@@ -107,15 +107,15 @@
                               <FlowPane id="mainCategoryStandard_First" fx:id="categoryFlowPane" layoutY="48.0" prefHeight="538.0" prefWidth="246.0" stylesheets="@../layout/design.css" />
                       </children>
                     </AnchorPane>
-                        <AnchorPane HBox.hgrow="ALWAYS">
+                        <AnchorPane styleClass="removeFocusColor" HBox.hgrow="ALWAYS">
                            <children>
                               <StackPane fx:id="browsingStackPane" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                                  <children>
                                     <VBox fx:id="mainVBox">
                                        <children>
-                                          <ScrollPane fitToHeight="true" fitToWidth="true" hbarPolicy="NEVER" prefWidth="616.0" vbarPolicy="ALWAYS" VBox.vgrow="ALWAYS">
+                                          <ScrollPane fitToHeight="true" fitToWidth="true" hbarPolicy="NEVER" prefWidth="616.0" styleClass="removeFocusColor" vbarPolicy="ALWAYS" VBox.vgrow="ALWAYS">
                                              <content>
-                                                <FlowPane fx:id="mainFlowPane" alignment="CENTER" columnHalignment="CENTER" hgap="15.0" maxWidth="1.7976931348623157E308" minWidth="-Infinity" nodeOrientation="LEFT_TO_RIGHT" onMousePressed="#escapeHatch" prefWrapLength="1000.0" styleClass="mainFlowPane" vgap="15.0" />
+                                                <FlowPane fx:id="mainFlowPane" alignment="CENTER" columnHalignment="CENTER" hgap="15.0" maxWidth="1.7976931348623157E308" minWidth="-Infinity" nodeOrientation="LEFT_TO_RIGHT" prefWrapLength="1000.0" styleClass="mainFlowPane" vgap="15.0" />
                                              </content>
                                           </ScrollPane>
                                        </children>

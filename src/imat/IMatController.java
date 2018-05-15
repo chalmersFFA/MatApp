@@ -126,7 +126,6 @@ public class IMatController extends VBox implements Initializable {
 
     @FXML
     private void escapeHatch() {
-        System.out.println("hej");
         updateProductList(ProductCategory.BERRY);
     }
     @FXML

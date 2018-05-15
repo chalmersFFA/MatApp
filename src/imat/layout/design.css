@@ -85,3 +85,19 @@
     -fx-font-color: #FFFFFF;
     -fx-text-fill: #FFFFFF;
 }
+.backbutton{
+
+}
+
+.removeFocusColor{
+    -fx-focus-color: transparent;
+    -fx-faint-focus-color: transparent;
+}
+.greenFocusColor{
+    fx-focus-color: #00FF00;
+    -fx-faint-focus-color: #00FF00;
+}
+.redFocusColor{
+    fx-focus-color: #FF0000;
+    -fx-faint-focus-color: #FF0000;
+}

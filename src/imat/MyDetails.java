@@ -1,5 +1,6 @@
 package imat;
 
+import javafx.event.Event;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Button;
@@ -9,6 +10,7 @@ import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import se.chalmers.cse.dat216.project.Customer;
 import se.chalmers.cse.dat216.project.IMatDataHandler;
+import se.chalmers.cse.dat216.project.ProductCategory;
 
 import java.io.IOException;
 
@@ -56,7 +58,7 @@ public class MyDetails extends AnchorPane {
     }
     @FXML
     public void backButton() {
-        parentController.changeMode(IMatController.Mode.SHOPPING);
+        parentController.updateProductList(ProductCategory.BERRY);
     }
 
     public Uppgifter getUppgifter() {
@@ -65,5 +67,9 @@ public class MyDetails extends AnchorPane {
 
     public Betalkort getBetalkort() {
         return betalkort;
+    }
+    @FXML
+    public void mouseTrap(Event event){
+        parentController.mouseTrap(event);
     }
 }
