@@ -26,8 +26,6 @@ public class IMat extends Application {
         stage.setScene(scene);
         stage.setMaximized(true);
         stage.setResizable(false);
-        stage.setMaximized(true);
-
         stage.show();
 
     }

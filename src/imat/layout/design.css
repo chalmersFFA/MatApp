@@ -92,20 +92,22 @@
     -fx-font-size: 25px;
 }
 .backbutton{
-
+    -fx-background-color:  #AAAAAA;
+    -fx-font-color: #FFFFFF;
+    -fx-text-fill: #FFFFFF;
 }
 
 .removeFocusColor{
     -fx-focus-color: transparent;
     -fx-faint-focus-color: transparent;
 }
-.greenFocusColor{
-    fx-focus-color: #00FF00;
-    -fx-faint-focus-color: #00FF00;
+.greenFocusColor:focused{
+    fx-focus-color: #55cc55;
+    -fx-faint-focus-color: #55cc55;
 }
-.redFocusColor{
-    fx-focus-color: #FF0000;
-    -fx-faint-focus-color: #FF0000;
+.redFocusColor:focused{
+    fx-focus-color: #FF7777;
+    -fx-faint-focus-color: #FF7777;
 }
 #shopping_item_text{
     -fx-font-size: 25px;
