@@ -29,6 +29,8 @@ public class ShoppingCartItem extends AnchorPane implements ShoppingCartListener
     @FXML
     Label priceLabel;
     @FXML
+    Label unit;
+    @FXML
     Button increaseButton;
     @FXML
     Button decreaseButton;
@@ -64,6 +66,7 @@ public class ShoppingCartItem extends AnchorPane implements ShoppingCartListener
             if(s.getProduct().getName().equals(product.getName())){
                 amountTextField.setText(Double.toString(s.getAmount()));
                 priceLabel.setText(Double.toString(s.getTotal()) + " kr");
+                unit.setText(product.getUnitSuffix());
                 break;
             }
         }

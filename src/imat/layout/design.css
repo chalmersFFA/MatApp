@@ -93,11 +93,12 @@
     -fx-focus-color: transparent;
     -fx-faint-focus-color: transparent;
 }
-.greenFocusColor{
-    fx-focus-color: #00FF00;
-    -fx-faint-focus-color: #00FF00;
+
+.greenFocusColor:focused{
+    -fx-focus-color: rgba(85,204,85,0.7);
+    -fx-faint-focus-color: rgba(85,204,85,0.7);
 }
-.redFocusColor{
-    fx-focus-color: #FF0000;
-    -fx-faint-focus-color: #FF0000;
+.redFocusColor:focused{
+    -fx-focus-color: rgba(255,85,85,0.7);
+    -fx-faint-focus-color: rgba(255,85,85,0.7);
 }

@@ -9,7 +9,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<fx:root maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="98.0" prefWidth="400.0" stylesheets="@../layout/design.css" type="AnchorPane" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1">
+<fx:root maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="98.0" prefWidth="400.0" stylesheets="@../layout/design.css" type="AnchorPane" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <ImageView fx:id="productImageView" fitHeight="84.0" fitWidth="68.0" layoutX="14.0" layoutY="15.0" pickOnBounds="true" preserveRatio="true">
          <image>
@@ -17,11 +17,11 @@
          </image>
       </ImageView>
       <Label fx:id="productLabel" layoutX="97.0" layoutY="13.0" styleClass="big-text" text="ARLA mjölk 1.5dl" />
-      <Button fx:id="decreaseButton" layoutX="90.0" layoutY="58.0" mnemonicParsing="false" onAction="#decreaseAmount" text="-">
+      <Button fx:id="decreaseButton" layoutX="90.0" layoutY="58.0" mnemonicParsing="false" onAction="#decreaseAmount" styleClass="redFocusColor" text="-">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor></Button>
-      <Button fx:id="increaseButton" layoutX="148.0" layoutY="58.0" mnemonicParsing="false" onAction="#increaseAmount" text="+">
+      <Button fx:id="increaseButton" layoutX="148.0" layoutY="58.0" mnemonicParsing="false" onAction="#increaseAmount" styleClass="greenFocusColor" text="+">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor></Button>
@@ -44,5 +44,6 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </ImageView>
+      <Label fx:id="unit" layoutX="200.0" layoutY="62.0" styleClass="normal-text" text="UNIT" />
    </children>
 </fx:root>
