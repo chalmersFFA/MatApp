@@ -116,6 +116,7 @@ public class IMatController extends VBox implements Initializable {
 
     @FXML
     private void showDetailsScreen() {
+        toggleShoppingMode();
         mainFlowPane.toFront();
         mainFlowPane.getChildren().clear();
         mainFlowPane.getChildren().add(myDetails);
