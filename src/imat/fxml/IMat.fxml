@@ -122,7 +122,7 @@
                                     </VBox>
                                  </children>
                               </StackPane>
-                              <Label fx:id="categoryLabel" layoutX="22.0" layoutY="26.0" text="BÄR MOTHER FUCKER">
+                              <Label fx:id="categoryLabel" layoutX="22.0" layoutY="26.0" text="BÄR">
                                  <font>
                                     <Font size="46.0" />
                                  </font>
