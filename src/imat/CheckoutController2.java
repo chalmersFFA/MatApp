@@ -61,7 +61,6 @@ public class CheckoutController2 extends AnchorPane{
 
     }
 
-
     @FXML
     private void toFinalPaymentStep(){
         parentController.toFinalPaymentStep();
