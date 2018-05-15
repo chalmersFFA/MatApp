@@ -48,7 +48,7 @@ public class CheckoutController2 extends AnchorPane{
     }
     @FXML
     public void backButton() {
-        parentController.changeMode(IMatController.Mode.SHOPPING);
+        parentController.toCheckout1();
     }
 
     @FXML

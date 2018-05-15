@@ -44,7 +44,7 @@ public class CheckoutController3 extends AnchorPane implements ShoppingCartListe
 
     @FXML
     public void backButton() {
-        parentController.changeMode(IMatController.Mode.SHOPPING);
+        parentController.toPayment();
     }
 
     @FXML
