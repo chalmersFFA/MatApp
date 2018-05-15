@@ -89,7 +89,7 @@ public class StoreListItem extends AnchorPane implements ShoppingCartListener {
         amountTextField.setText("0");
         for(ShoppingItem s : shoppingCart.getItems()){
             if(s.getProduct().getName().equals(product.getName())){
-                amountTextField.setText(Double.toString(s.getAmount()));
+                amountTextField.setText(Double.toString(round(s.getAmount(),3)));
                 break;
             }
         }
@@ -156,5 +156,14 @@ public class StoreListItem extends AnchorPane implements ShoppingCartListener {
         //TODO fixa så att den kollar på hur många saker av sig själv som finns i vagnen
         update();
     }
+
+     public static double round(double value, int places) {
+            if (places < 0) throw new IllegalArgumentException();
+
+            long factor = (long) Math.pow(10, places);
+            value = value * factor;
+            long tmp = Math.round(value);
+            return (double) tmp / factor;
+        }
 }
 

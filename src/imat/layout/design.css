@@ -1,6 +1,9 @@
 .normal-text {
     -fx-font-size: 1.5em;
 }
+.right-text {
+    -fx-text-alignment: right;
+}
 .big-text {
     -fx-font-size: 200%;
 }
@@ -108,4 +111,12 @@
 }
 #shopping_item_text{
     -fx-font-size: 25px;
+}
+
+#shoppingcart_item{
+    -fx-border-width: 1px;
+    -fx-border-color: #d2d2d2;
+    -fx-border-radius: 1px;
+    -fx-background-radius: 1px;
+    -fx-border-style: hidden hidden solid hidden;
 }

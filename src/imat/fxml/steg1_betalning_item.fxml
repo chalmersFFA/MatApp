@@ -9,7 +9,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<fx:root maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="98.0" prefWidth="400.0" stylesheets="@../layout/design.css" type="AnchorPane" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<fx:root id="shoppingcart_item" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="98.0" prefWidth="400.0" stylesheets="@../layout/design.css" type="AnchorPane" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <ImageView fx:id="productImageView" fitHeight="84.0" fitWidth="68.0" layoutX="14.0" layoutY="15.0" pickOnBounds="true" preserveRatio="true">
          <image>
@@ -17,16 +17,16 @@
          </image>
       </ImageView>
       <Label fx:id="productLabel" layoutX="97.0" layoutY="13.0" styleClass="big-text" text="ARLA mjölk 1.5dl" />
-      <Button fx:id="decreaseButton" layoutX="90.0" layoutY="58.0" mnemonicParsing="false" onAction="#decreaseAmount" styleClass="redFocusColor" text="-">
+      <Button fx:id="decreaseButton" layoutX="92.0" layoutY="58.0" mnemonicParsing="false" onAction="#decreaseAmount" prefHeight="27.0" prefWidth="27.0" text="-">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor></Button>
-      <Button fx:id="increaseButton" layoutX="148.0" layoutY="58.0" mnemonicParsing="false" onAction="#increaseAmount" styleClass="greenFocusColor" text="+">
+      <Button fx:id="increaseButton" layoutX="173.0" layoutY="58.0" mnemonicParsing="false" onAction="#increaseAmount" text="+">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor></Button>
-      <TextField fx:id="amountTextField" alignment="CENTER" layoutX="111.0" layoutY="58.0" prefHeight="25.0" prefWidth="37.0" text="1" />
-      <Label fx:id="priceLabel" layoutX="295.0" layoutY="56.0" prefHeight="30.0" prefWidth="90.0" styleClass="normal-text" text="15kr">
+      <TextField fx:id="amountTextField" alignment="CENTER" layoutX="119.0" layoutY="58.0" prefHeight="27.0" prefWidth="54.0" text="1" />
+      <Label fx:id="priceLabel" layoutX="276.0" layoutY="56.0" prefHeight="30.0" prefWidth="123.0" style="-fx-text-alignment: Right;" styleClass="normal-text" text="15kr" textAlignment="RIGHT" wrapText="true">
          <font>
             <Font size="20.0" />
          </font>
