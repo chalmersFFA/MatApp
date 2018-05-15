@@ -75,17 +75,19 @@
     -fx-background-radius: 1px;
 }
 .static_object_hinting:hover{
-    -fx-background-color: #FCFCFC;
+    -fx-background-color: #F3F3F3;
 }
 .static_object_hinting:pressed{
-    -fx-background-color: #FCFCFC;
+    -fx-background-color: #F3F3F3;
 }
 .nextButton{
     -fx-background-color:  #55CC55;
     -fx-font-color: #FFFFFF;
     -fx-text-fill: #FFFFFF;
 }
-.backbutton{
+#shopping_item_text{
+    -fx-font-size: 25px;
+}.backbutton{
 
 }
 
