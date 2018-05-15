@@ -229,6 +229,7 @@ public class IMatController extends VBox implements Initializable {
     public void toPayment(){
         //TODO update checkoutcontroller2
         //checkoutController.update();
+        checkoutController2.init();
         displayPane.getChildren().clear();
         displayPane.setAlignment(Pos.CENTER);
         displayPane.getChildren().add(checkoutController2);
@@ -266,5 +267,9 @@ public class IMatController extends VBox implements Initializable {
     @FXML
     public void mouseTrap(Event event){
         event.consume();
+    }
+
+    public MyDetails getMyDetails() {
+        return myDetails;
     }
 }

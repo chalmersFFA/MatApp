@@ -14,13 +14,14 @@ import java.util.Map;
 /**
  * Created by Jonathan Köre on 2018-05-09.
  */
-public class CheckoutController2 extends AnchorPane implements ShoppingCartListener{
+public class CheckoutController2 extends AnchorPane{
 
     private ShoppingCartController shoppingCartController;
     private IMatController parentController;
     private IMatDataHandler db = IMatDataHandler.getInstance();
-    private ShoppingCart shoppingCart = db.getShoppingCart();
-    private Map<String, ShoppingCartItem> shoppingCartItemMap = new HashMap<String, ShoppingCartItem>();
+
+    @FXML
+    AnchorPane uppgifterAnchorPane, betalkortAnchorPane;
 
     public CheckoutController2(IMatController parentController, ShoppingCartController shoppingCartController) {
         this.shoppingCartController = shoppingCartController;
@@ -35,16 +36,24 @@ public class CheckoutController2 extends AnchorPane implements ShoppingCartListe
             throw new RuntimeException(exception);
         }
 
-        shoppingCart.addShoppingCartListener(this);
+        init();
+
     }
 
+    public void init() {
+        betalkortAnchorPane.getChildren().clear();
+        uppgifterAnchorPane.getChildren().clear();
+        uppgifterAnchorPane.getChildren().add(parentController.getMyDetails().getUppgifter());
+        betalkortAnchorPane.getChildren().add(parentController.getMyDetails().getBetalkort());
+    }
     @FXML
     public void backButton() {
         parentController.changeMode(IMatController.Mode.SHOPPING);
     }
 
     @FXML
-    public void toPayment() {
+    public void nextButton() {
+        parentController.toFinalPaymentStep();
 
     }
 
@@ -52,21 +61,6 @@ public class CheckoutController2 extends AnchorPane implements ShoppingCartListe
 
     }
 
-    @Override
-    public void shoppingCartChanged(CartEvent cartEvent) {
-        update();
-    }
-    public void addToHashMap(ShoppingCartItem s) {
-        shoppingCartItemMap.put(s.getProduct().getName(), s);
-    }
-    public void remove(ShoppingCartItem item) {
-        for(ShoppingItem s : shoppingCart.getItems()){
-            if(s.getProduct().getName().equals(item.getProduct().getName())){
-                shoppingCart.removeItem(s);
-            }
-        }
-        update();
-    }
 
     @FXML
     private void toFinalPaymentStep(){
