@@ -127,6 +127,7 @@ public class IMatController extends VBox implements Initializable {
     @FXML
     private void escapeHatch() {
         updateProductList(ProductCategory.BERRY);
+        toggleShoppingMode();
     }
     @FXML
     private void pressedHelp() {

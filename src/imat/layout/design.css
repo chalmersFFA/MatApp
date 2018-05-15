@@ -78,7 +78,7 @@
     -fx-background-color: #FCFCFC;
 }
 .static_object_hinting:pressed{
-    -fx-background-color: #D0D0D0;
+    -fx-background-color: #FCFCFC;
 }
 .nextButton{
     -fx-background-color:  #55CC55;

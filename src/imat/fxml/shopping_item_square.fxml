@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
@@ -8,37 +9,52 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<fx:root maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="265.0" prefWidth="190.0" type="AnchorPane" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1">
+<fx:root maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="265.0" prefWidth="230.0" styleClass="static_object_hinting" stylesheets="@../layout/design.css" type="AnchorPane" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <ImageView fx:id="productImageView" fitHeight="150.0" fitWidth="200.0" layoutX="20.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="15.0">
+      <ImageView fx:id="productImageView" fitHeight="150.0" fitWidth="200.0" layoutX="20.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="99.0" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="15.0">
          <image>
-            <Image url="@../layout/images/milk.jpg" />
+            <Image url="@../../../../../../.dat215/imat/images/product_5.jpg" />
          </image>
       </ImageView>
-      <TextField fx:id="amountTextField" alignment="CENTER" layoutX="122.0" layoutY="224.0" prefHeight="25.0" prefWidth="43.0" />
-      <Button layoutX="99.0" layoutY="224.0" mnemonicParsing="false" onAction="#decreaseAmount" prefHeight="25.0" prefWidth="27.0" text="-" />
-      <Button layoutX="163.0" layoutY="224.0" mnemonicParsing="false" onAction="#increaseAmount" prefHeight="25.0" prefWidth="27.0" text="+" />
+      <TextField fx:id="amountTextField" alignment="CENTER" layoutX="148.0" layoutY="224.0" prefHeight="25.0" prefWidth="43.0" />
+      <Button layoutX="125.0" layoutY="224.0" mnemonicParsing="false" onAction="#decreaseAmount" prefHeight="25.0" prefWidth="27.0" text="-">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></Button>
+      <Button layoutX="189.0" layoutY="224.0" mnemonicParsing="false" onAction="#increaseAmount" prefHeight="25.0" prefWidth="27.0" text="+">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></Button>
       <Label layoutX="14.0" layoutY="193.0" text="jfr-pris 10kr/l">
          <font>
             <Font size="14.0" />
          </font>
+         <cursor>
+            <Cursor fx:constant="DEFAULT" />
+         </cursor>
       </Label>
       <Label fx:id="productNameLabel" layoutX="14.0" layoutY="165.0" prefHeight="37.0" prefWidth="256.0" text="ARLA MJÖLK 1,5 L">
          <font>
             <Font size="18.0" />
          </font>
+         <cursor>
+            <Cursor fx:constant="DEFAULT" />
+         </cursor>
       </Label>
-      <ImageView fx:id="favouriteImageView" fitHeight="37.0" fitWidth="27.0" layoutX="7.0" layoutY="224.0" onMouseClicked="#favourite" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="favouriteImageView" fitHeight="37.0" fitWidth="35.0" layoutX="185.0" layoutY="176.0" onMouseClicked="#favourite" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../layout/images/stareboi.png" />
          </image>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
       </ImageView>
-      <Label fx:id="priceLabel" layoutX="50.0" layoutY="224.0" text="15kr">
+      <Label fx:id="priceLabel" layoutX="14.0" layoutY="215.0" prefHeight="45.0" prefWidth="61.0" text="15kr">
          <font>
             <Font size="22.0" />
          </font>
       </Label>
-      <ImageView fx:id="ecoImageView" fitHeight="35.0" fitWidth="35.0" layoutX="21.0" layoutY="133.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="ecoImageView" fitHeight="35.0" fitWidth="35.0" layoutX="21.0" layoutY="133.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="99.0" AnchorPane.leftAnchor="15.0">
          <image>
             <Image url="@../layout/images/svanen.png" />
          </image>
