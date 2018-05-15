@@ -2,7 +2,9 @@ package imat;
 
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.control.Label;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.FlowPane;
 import se.chalmers.cse.dat216.project.*;
 
 import java.io.IOException;
@@ -18,7 +20,11 @@ public class CheckoutController3 extends AnchorPane implements ShoppingCartListe
     private IMatController parentController;
     private IMatDataHandler db = IMatDataHandler.getInstance();
     private ShoppingCart shoppingCart = db.getShoppingCart();
-    private Map<String, ShoppingCartItem> shoppingCartItemMap = new HashMap<String, ShoppingCartItem>();
+    private Map<String, steg3_betalning_item_controller> steg3ItemMap = new HashMap<String, steg3_betalning_item_controller>();
+    @FXML
+    FlowPane finalOrderFlowPane;
+    @FXML
+    Label totalPriceLabel;
 
     public CheckoutController3(IMatController parentController, ShoppingCartController shoppingCartController) {
         this.shoppingCartController = shoppingCartController;
@@ -42,11 +48,22 @@ public class CheckoutController3 extends AnchorPane implements ShoppingCartListe
     }
 
     @FXML
-    public void toPayment() {
+    public void placeOrder() {
+        db.placeOrder(true);
+        shoppingCart.fireShoppingCartChanged(null, false);
+        parentController.thankYou();
 
     }
 
     public void update() {
+        finalOrderFlowPane.getChildren().clear();
+        if(!shoppingCart.getItems().isEmpty() ) {
+            for (ShoppingItem s : shoppingCart.getItems()) {
+                finalOrderFlowPane.getChildren().add(steg3ItemMap.get(s.getProduct().getName()));
+            }
+        }
+        totalPriceLabel.setText(Double.toString(shoppingCart.getTotal()));
+
 
     }
 
@@ -54,8 +71,8 @@ public class CheckoutController3 extends AnchorPane implements ShoppingCartListe
     public void shoppingCartChanged(CartEvent cartEvent) {
         update();
     }
-    public void addToHashMap(ShoppingCartItem s) {
-        shoppingCartItemMap.put(s.getProduct().getName(), s);
+    public void addToHashMap(steg3_betalning_item_controller s) {
+        steg3ItemMap.put(s.getProduct().getName(), s);
     }
     public void remove(ShoppingCartItem item) {
         for(ShoppingItem s : shoppingCart.getItems()){

@@ -5,16 +5,17 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="63.0" prefWidth="284.0" style="-fx-border-color: #d3d3d3; -fx-border-width: 2;" stylesheets="@../layout/design.css" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<fx:root maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="60.0" prefWidth="640.0" stylesheets="@../layout/design.css" type="AnchorPane" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <ImageView fitHeight="47.0" fitWidth="54.0" layoutX="6.0" layoutY="8.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="image" fitHeight="47.0" fitWidth="54.0" layoutX="6.0" layoutY="8.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../layout/images/milk.jpg" />
          </image>
       </ImageView>
-      <Label layoutX="86.0" layoutY="18.0" styleClass="normal-text" text="ARLA Mjölk 1,5L" />
-      <Label layoutX="61.0" layoutY="18.0" styleClass="normal-text" text="2x" />
-      <Label layoutX="235.0" layoutY="18.0" styleClass="normal-text" text="30kr" />
+      <Label fx:id="name" layoutX="71.0" layoutY="18.0" styleClass="normal-text" text="ARLA Mjölk 1,5L" />
+      <Label fx:id="amount" layoutX="212.0" layoutY="17.0" prefHeight="27.0" prefWidth="76.0" styleClass="normal-text" text="2" />
+      <Label fx:id="totalPrice" layoutX="504.0" layoutY="17.0" prefHeight="27.0" prefWidth="167.0" styleClass="normal-text" text="30kr" textAlignment="RIGHT" />
+      <Label layoutX="445.0" layoutY="17.0" styleClass="normal-text" text="Totalt:" />
+      <Label fx:id="unitPrice" layoutX="288.0" layoutY="17.0" prefHeight="27.0" prefWidth="167.0" styleClass="normal-text" text="à 15kr" />
    </children>
-</AnchorPane>
+</fx:root>

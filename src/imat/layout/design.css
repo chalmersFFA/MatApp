@@ -32,20 +32,27 @@
     -fx-background-color: green;
 }
 .subCategorySelected {
-    -fx-background-color: green;
+    -fx-background-color: #b3b3b3;
 }
 .mainCategorySelected {
-    -fx-background-color: red;
+    -fx-background-color: #a3a3a3;
 }
 .mainCategoryStandard {
-
+   -fx-border-color: #4F4F4F;
+   -fx-border-style: hidden hidden solid hidden;
 }
+#mainCategoryStandard_First {
+    -fx-border-color: #4F4F4F;
+    -fx-border-style: solid hidden hidden hidden;
+    -fx-border-width: 2px;
+}
+
 .mainCategoryStandard:hover{
   -fx-background-color: #777777;
 }
 .subCategoryStandard {
     -fx-background-color: #666666;
-    -fx-border-style: hidden solid hidden solid;
+   /* -fx-border-style: hidden solid hidden solid;   */
 }
 .subCategoryStandard:hover{
     -fx-background-color: #777777;
@@ -76,4 +83,5 @@
 .nextButton{
     -fx-background-color:  #55CC55;
     -fx-font-color: #FFFFFF;
+    -fx-text-fill: #FFFFFF;
 }
