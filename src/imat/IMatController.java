@@ -3,6 +3,7 @@ package imat;
 import javafx.event.Event;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
@@ -104,6 +105,9 @@ public class IMatController extends VBox implements Initializable {
     public void updateProductList(ProductCategory category) {
         mainFlowPane.getChildren().clear();
         for (Product p : db.getProducts(category)) {
+            mainFlowPane.setHgap(10);
+            mainFlowPane.setVgap(10);
+            mainFlowPane.setPadding(new Insets(0, 10, 10, 10));
             mainFlowPane.getChildren().add(storeListItemMap.get(p.getName()));
         }
     }
