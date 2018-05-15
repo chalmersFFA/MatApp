@@ -107,22 +107,26 @@
                               <FlowPane id="mainCategoryStandard_First" fx:id="categoryFlowPane" layoutY="48.0" prefHeight="538.0" prefWidth="246.0" stylesheets="@../layout/design.css" />
                       </children>
                     </AnchorPane>
-                        <AnchorPane styleClass="removeFocusColor" HBox.hgrow="ALWAYS">
+                        <AnchorPane styleClass="mainFlowPane" HBox.hgrow="ALWAYS">
                            <children>
-                              <StackPane fx:id="browsingStackPane" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                              <StackPane fx:id="browsingStackPane" layoutY="83.0" prefHeight="504.0" prefWidth="616.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="83.0">
                                  <children>
-                                    <VBox fx:id="mainVBox">
+                                    <VBox fx:id="mainVBox" prefHeight="545.0" prefWidth="616.0">
                                        <children>
-                                          <ScrollPane fitToHeight="true" fitToWidth="true" hbarPolicy="NEVER" prefWidth="616.0" styleClass="removeFocusColor" vbarPolicy="ALWAYS" VBox.vgrow="ALWAYS">
+                                          <ScrollPane fitToHeight="true" fitToWidth="true" hbarPolicy="NEVER" prefHeight="506.0" prefWidth="616.0" styleClass="removeFocusColor" vbarPolicy="ALWAYS" VBox.vgrow="ALWAYS">
                                              <content>
                                                 <FlowPane fx:id="mainFlowPane" alignment="CENTER" columnHalignment="CENTER" hgap="15.0" maxWidth="1.7976931348623157E308" minWidth="-Infinity" nodeOrientation="LEFT_TO_RIGHT" prefWrapLength="1000.0" styleClass="mainFlowPane" vgap="15.0" />
                                              </content>
                                           </ScrollPane>
                                        </children>
                                     </VBox>
-                                    <Label text="Label" />
                                  </children>
                               </StackPane>
+                              <Label fx:id="categoryLabel" layoutX="22.0" layoutY="26.0" text="BÄR MOTHER FUCKER">
+                                 <font>
+                                    <Font size="46.0" />
+                                 </font>
+                              </Label>
                            </children>
                         </AnchorPane>
                     <AnchorPane fx:id="shoppingCartAnchorPane" maxWidth="-Infinity" prefHeight="587.0" prefWidth="400.0" styleClass="shoppingCart" HBox.hgrow="ALWAYS" />
