@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<fx:root maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="236.0" prefWidth="441.0" styleClass="normal-text" stylesheets="@../layout/design.css" type="AnchorPane" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Label alignment="CENTER_RIGHT" layoutX="47.0" layoutY="70.0" prefHeight="17.0" prefWidth="133.0" text="Kortnummer:" textAlignment="RIGHT" AnchorPane.rightAnchor="270.0" AnchorPane.topAnchor="115.0" />
+      <Label alignment="CENTER_RIGHT" layoutX="94.0" layoutY="115.0" text="Kortets innehavare:" AnchorPane.rightAnchor="270.0" AnchorPane.topAnchor="70.0" />
+      <Button fx:id="editCardButton" layoutX="305.0" layoutY="182.0" mnemonicParsing="false" text="Redigera Kort" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="182.0" />
+      <Label fx:id="cardNumberLabel" layoutX="215.0" layoutY="77.0" styleClass="bold-text" AnchorPane.topAnchor="115.0" />
+      <Label fx:id="cardOwnerLabel" layoutX="215.0" layoutY="120.0" styleClass="bold-text" AnchorPane.topAnchor="70.0" />
+      <TextField fx:id="cardOwnerTextField" layoutX="206.0" layoutY="69.0" AnchorPane.leftAnchor="180.0" AnchorPane.topAnchor="70.0" />
+      <TextField fx:id="cardNumberTextField" layoutX="216.0" layoutY="79.0" AnchorPane.leftAnchor="180.0" AnchorPane.topAnchor="115.0" />
+      <ImageView fitHeight="56.0" fitWidth="57.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../layout/images/payment.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="56.0" layoutY="8.0" text="Mitt Betalkort" />
+   </children>
+</fx:root>

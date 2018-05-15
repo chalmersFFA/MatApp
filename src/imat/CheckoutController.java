@@ -54,6 +54,7 @@ public class CheckoutController extends AnchorPane implements ShoppingCartListen
     @FXML
     public void toPayment() {
         parentController.toPayment();
+
     }
 
     public void update() {
