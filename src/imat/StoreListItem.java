@@ -42,7 +42,8 @@ public class StoreListItem extends AnchorPane implements ShoppingCartListener {
     Button decreaseButton, increaseButton;
     Image favouriteImage = new Image("imat/layout/images/favourite.png");
     Image notFavouriteImage = new Image("imat/layout/images/notFavourite.png");
-
+    Image notFavouriteImagePliant = new Image("imat/layout/images/notFavourite_pliant.png"); //...notFavourite_pliant_border.png
+    Image favouriteImagePliant = new Image("imat/layout/images/Favourite_pliant.png"); //...Favourite_pliant_border.png
 
 
     public StoreListItem(Product product, IMatController parentController) {
@@ -105,7 +106,7 @@ public class StoreListItem extends AnchorPane implements ShoppingCartListener {
         amountTextField.setText("0");
         for(ShoppingItem s : shoppingCart.getItems()){
             if(s.getProduct().getName().equals(product.getName())){
-                amountTextField.setText(Double.toString(MyMath.round(s.getAmount(),3)));
+                amountTextField.setText(Double.toString(MyMath.round(s.getAmount(),3)) + product.getUnitSuffix());
                 break;
             }
         }
@@ -173,9 +174,20 @@ public class StoreListItem extends AnchorPane implements ShoppingCartListener {
     @FXML
     public void ChangePliancyFavorite(){
         if(db.isFavorite(product)){
-
+            favouriteImageView.setImage(favouriteImagePliant);
+        }else{
+            favouriteImageView.setImage(notFavouriteImagePliant);
         }
     }
+    @FXML
+    public void endChangePliancyFavorite(){
+        if(db.isFavorite(product)){
+            favouriteImageView.setImage(favouriteImage);
+        }else{
+            favouriteImageView.setImage(notFavouriteImage);
+        }
+    }
+
 
     @Override
     public void shoppingCartChanged(CartEvent cartEvent) {
