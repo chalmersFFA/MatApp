@@ -71,7 +71,8 @@ public class OrderHistoryItemController extends AnchorPane{
     public void expand() {
         orderHistoryItemFlowPane.getChildren().clear();
         for (ShoppingItem s : order.getItems()) {
-            orderHistoryItemFlowPane.getChildren().add(new OrderHistorySubItem(s));
+            if(s.getAmount() >= 0.1)
+                orderHistoryItemFlowPane.getChildren().add(new OrderHistorySubItem(s));
         }
         this.getChildren().get(0).getStyleClass().add("historyItemExpanded");
     }
