@@ -18,13 +18,11 @@
       </ImageView>
       <TextField fx:id="amountTextField" alignment="CENTER" layoutX="138.0" layoutY="224.0" prefHeight="27.0" prefWidth="53.0" />
       <Button fx:id="decreaseButton" layoutX="113.0" layoutY="224.0" mnemonicParsing="false" onAction="#decreaseAmount" prefHeight="25.0" prefWidth="27.0" styleClass="redFocusColor" text="-">
-      <Button layoutX="113.0" layoutY="224.0" mnemonicParsing="false" onAction="#decreaseAmount" prefHeight="25.0" prefWidth="27.0" styleClass="redFocusColor" text="-">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor></Button>
       <TextField fx:id="amountTextField" alignment="CENTER" layoutX="138.0" layoutY="224.0" prefHeight="27.0" prefWidth="53.0" />
       <Button layoutX="189.0" layoutY="224.0" mnemonicParsing="false" onAction="#increaseAmount" prefHeight="25.0" prefWidth="27.0" styleClass="greenFocusColor" text="+">
-      <Button fx:id="increaseButton" layoutX="189.0" layoutY="224.0" mnemonicParsing="false" onAction="#increaseAmount" prefHeight="25.0" prefWidth="27.0" styleClass="greenFocusColor" text="+">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor></Button>
@@ -44,7 +42,7 @@
             <Cursor fx:constant="DEFAULT" />
          </cursor>
       </Label>
-      <ImageView fx:id="favouriteImageView" fitHeight="37.0" fitWidth="35.0" layoutX="185.0" layoutY="176.0" onMouseClicked="#favourite" onMouseEntered="#ChangePliancyFavorite" onMouseExited="#endChangePliancyFavorite" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="favouriteImageView" fitHeight="37.0" fitWidth="35.0" layoutX="185.0" layoutY="176.0" onContextMenuRequested="#ChangePliancyFavorite" onMouseClicked="#favourite" onMouseEntered="#ChangePliancyFavorite" onMouseExited="#endChangePliancyFavorite" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../layout/images/stareboi.png" />
          </image>

@@ -30,6 +30,8 @@ public class ShoppingCartController extends AnchorPane implements ShoppingCartLi
     Button checkoutButton;
     @FXML
     Label totalLabel;
+    @FXML
+    Label emptyCartLabel;
 
     public ShoppingCartController(IMatController parentController) {
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("fxml/shopping_cart_controller.fxml"));
@@ -97,5 +99,12 @@ public class ShoppingCartController extends AnchorPane implements ShoppingCartLi
 
     public FlowPane getShoppingCartFlowPane() {
         return shoppingCartFlowPane;
+    }
+
+    @FXML
+    public void emptyCart(){
+        while(shoppingCart.getTotal()!= 0)
+            shoppingCart.removeItem(0);
+        update();
     }
 }
