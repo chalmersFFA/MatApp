@@ -27,6 +27,8 @@ public class CheckoutController extends AnchorPane implements ShoppingCartListen
     FlowPane orderFlowPane;
     @FXML
     Label totalLabel;
+    @FXML
+    AnchorPane sequenceMapAnchorPane;
 
     public CheckoutController(IMatController parentController, ShoppingCartController shoppingCartController) {
         this.shoppingCartController = shoppingCartController;
@@ -46,6 +48,11 @@ public class CheckoutController extends AnchorPane implements ShoppingCartListen
 
     }
 
+    public void refreshSequenceMap() {
+        sequenceMapAnchorPane.getChildren().clear();
+        sequenceMapAnchorPane.getChildren().add(parentController.getSequenceMap());
+        parentController.getSequenceMap().setState(1);
+    }
     @FXML
     public void backButton() {
         parentController.changeMode(IMatController.Mode.SHOPPING);

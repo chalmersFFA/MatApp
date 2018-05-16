@@ -26,7 +26,6 @@ public class SequenceMap extends AnchorPane {
         } catch (IOException exception) {
             throw new RuntimeException(exception);
         }
-        setState(1);
     }
 
 
@@ -39,7 +38,7 @@ public class SequenceMap extends AnchorPane {
         setState(state--);
     }
 
-    private void setState(int i) {
+    public void setState(int i) {
         if (i > 0 && i < 4)
             state = i;
         update();
@@ -48,19 +47,19 @@ public class SequenceMap extends AnchorPane {
     private void update() {
         switch (state) {
             case 1:
-                label1.setDisable(false);
-                label2.setDisable(true);
-                label3.setDisable(true);
+                label1.getStyleClass().add("red");
+                label2.getStyleClass().remove("red");
+                label3.getStyleClass().remove("red");
                 return;
             case 2:
-                label1.setDisable(false);
-                label2.setDisable(false);
-                label3.setDisable(true);
+                label1.getStyleClass().remove("red");
+                label2.getStyleClass().add("red");
+                label3.getStyleClass().remove("red");
                 return;
             case 3:
-                label1.setDisable(false);
-                label2.setDisable(false);
-                label3.setDisable(false);
+                label1.getStyleClass().remove("red");
+                label2.getStyleClass().remove("red");
+                label3.getStyleClass().add("red");
                 System.out.println("suh");
                 return;
 

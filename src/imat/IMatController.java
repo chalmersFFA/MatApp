@@ -25,7 +25,10 @@ public class IMatController extends VBox implements Initializable {
     static ArrayList<CategoryItem> cList = new ArrayList<>();
     private Map<String, StoreListItem> storeListItemMap = new HashMap<String, StoreListItem>();
     private CategoryItem currentExpandedSub;
+
+    private CategoryItem currentExpandedMain;
     private ShoppingCart shoppingCart = db.getShoppingCart();
+    private SequenceMap sequenceMap = new SequenceMap();
 
     public enum Mode {
         SHOPPING,
@@ -251,16 +254,11 @@ public class IMatController extends VBox implements Initializable {
     }
 
     private void toggleCheckoutMode() {
-        //bigHBox.getChildren().clear();
-        checkoutController.update();
-        displayPane.setAlignment(Pos.CENTER);
-        //bigHBox.getChildren().add(checkoutController);
-        displayPane.getChildren().add(checkoutController);
-        bigHBox.toBack();
-        displayPane.toFront();
+        toCheckout1();
     }
 
     public void toCheckout1() {
+        checkoutController.refreshSequenceMap();
         displayPane.getChildren().clear();
         displayPane.setAlignment(Pos.CENTER);
         displayPane.getChildren().add(checkoutController);
@@ -269,6 +267,7 @@ public class IMatController extends VBox implements Initializable {
     }
 
     public void toPayment() {
+        checkoutController2.refreshSequenceMap();
         checkoutController2.init();
         displayPane.getChildren().clear();
         displayPane.setAlignment(Pos.CENTER);
@@ -278,6 +277,7 @@ public class IMatController extends VBox implements Initializable {
     }
 
     public void toFinalPaymentStep() {
+        checkoutController3.refreshSequenceMap();
         displayPane.getChildren().clear();
         displayPane.setAlignment(Pos.CENTER);
         displayPane.getChildren().add(checkoutController3);
@@ -321,4 +321,17 @@ public class IMatController extends VBox implements Initializable {
     public MyDetails getMyDetails() {
         return myDetails;
     }
+
+    public SequenceMap getSequenceMap() {
+        return sequenceMap;
+    }
+
+    public CategoryItem getCurrentExpandedMain() {
+        return currentExpandedMain;
+    }
+
+    public void setCurrentExpandedMain(CategoryItem currentExpandedMain) {
+        this.currentExpandedMain = currentExpandedMain;
+    }
+
 }

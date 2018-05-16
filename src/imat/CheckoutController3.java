@@ -25,6 +25,8 @@ public class CheckoutController3 extends AnchorPane implements ShoppingCartListe
     FlowPane finalOrderFlowPane;
     @FXML
     Label totalPriceLabel;
+    @FXML
+    AnchorPane sequenceMapAnchorPane;
 
     public CheckoutController3(IMatController parentController, ShoppingCartController shoppingCartController) {
         this.shoppingCartController = shoppingCartController;
@@ -38,10 +40,15 @@ public class CheckoutController3 extends AnchorPane implements ShoppingCartListe
         } catch (IOException exception) {
             throw new RuntimeException(exception);
         }
-
+        sequenceMapAnchorPane.getChildren().add(parentController.getSequenceMap());
         shoppingCart.addShoppingCartListener(this);
     }
 
+    public void refreshSequenceMap() {
+        sequenceMapAnchorPane.getChildren().clear();
+        sequenceMapAnchorPane.getChildren().add(parentController.getSequenceMap());
+        parentController.getSequenceMap().setState(3);
+    }
     @FXML
     public void backButton() {
         parentController.toPayment();

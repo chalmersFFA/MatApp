@@ -23,6 +23,8 @@ public class CheckoutController4 extends AnchorPane{
     private IMatController parentController;
     @FXML
     Button exitApplication;
+    @FXML
+    AnchorPane sequenceMapAnchorPane;
 
     public CheckoutController4(IMatController parentController) {
         this.parentController = parentController;

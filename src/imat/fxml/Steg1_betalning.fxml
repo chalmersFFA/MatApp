@@ -15,14 +15,6 @@
             <String fx:value="nextButton" />
             <String fx:value="normal-text" />
          </styleClass></Button>
-      <Label layoutX="183.0" layoutY="28.0" styleClass="normal-text" text="Varukorg" AnchorPane.leftAnchor="183.0" AnchorPane.topAnchor="28.0">
-         <font>
-            <Font size="14.0" />
-         </font></Label>
-      <Label layoutX="287.0" layoutY="28.0" opacity="0.7" prefHeight="17.0" prefWidth="92.0" styleClass="normal-text" text="Betalningssätt" AnchorPane.leftAnchor="287.0" AnchorPane.rightAnchor="221.0" AnchorPane.topAnchor="28.0" />
-      <Label layoutX="410.0" layoutY="28.0" opacity="0.7" styleClass="normal-text" text="Färdigställ order" AnchorPane.rightAnchor="60.0" AnchorPane.topAnchor="28.0" />
-      <Label layoutX="264.0" layoutY="33.0" text="-&gt;" AnchorPane.leftAnchor="264.0" AnchorPane.rightAnchor="321.0" AnchorPane.topAnchor="33.0" />
-      <Label layoutX="386.0" layoutY="33.0" text="-&gt;" AnchorPane.rightAnchor="200.0" AnchorPane.topAnchor="33.0" />
       <Button fx:id="toPaymentButton" layoutX="863.0" layoutY="800.0" mnemonicParsing="false" onAction="#toPayment" prefHeight="40.0" prefWidth="222.0" text="Vidare till betalningssätt" textFill="WHITE">
          <font>
             <Font size="14.0" />
@@ -44,5 +36,6 @@
             <FlowPane fx:id="orderFlowPane" prefHeight="200.0" prefWidth="800.0" />
          </content>
       </ScrollPane>
+      <AnchorPane fx:id="sequenceMapAnchorPane" layoutX="298.0" layoutY="24.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="64.0" prefWidth="524.0" stylesheets="@../layout/design.css" />
    </children>
 </fx:root>
