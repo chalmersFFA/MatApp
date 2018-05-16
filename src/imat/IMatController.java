@@ -311,6 +311,7 @@ public class IMatController extends VBox implements Initializable {
     }
 
     public void thankYou() {
+        refreshHistory();
         displayPane.getChildren().clear();
         displayPane.setAlignment(Pos.CENTER);
         displayPane.getChildren().add(checkoutController4);
@@ -380,6 +381,9 @@ public class IMatController extends VBox implements Initializable {
         t.setStyle("-fx-font-size: 1.5em");
         IMatController.hackTooltipStartTiming(t, delay);
         Tooltip.install(n, t);
+    }
+    public void refreshHistory(){
+        orderHistoryController.createHistory();
     }
 
 }
