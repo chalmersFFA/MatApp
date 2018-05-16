@@ -108,11 +108,8 @@ public class IMatController extends VBox implements Initializable {
     @FXML
     AnchorPane headerAnchorPane;
 
-
-
     Image favouriteImage = new Image("imat/layout/images/favourite.png");
     Image favouriteImagePliant = new Image("imat/layout/images/favourite_pliant.png");
-
 
     @FXML
     TextField searchTextField;
@@ -146,7 +143,7 @@ public class IMatController extends VBox implements Initializable {
 
     private void initProducts() {
         ShoppingCartItem s;
-        for (Product p : db.getProducts()) {
+        for (Product p : db.getProducts(ProductCategory.BERRY)) {
             //ItemHandler itemHandler = new ItemHandler(new ShoppingItem(p,0));
             storeListItemMap.put(p.getName(), new StoreListItem(p, this));
             shoppingCartController.addToHashMap(new ShoppingCartItem(p, shoppingCartController));
@@ -172,6 +169,8 @@ public class IMatController extends VBox implements Initializable {
     }
 
     public void displayFavourites() {
+        deSelectCategory(currentExpandedSub);
+        currentExpandedSub = null;
         mainFlowPane.getChildren().clear();
         for (Product p : db.favorites()) {
             mainFlowPane.getChildren().add(storeListItemMap.get(p.getName()));
@@ -192,6 +191,8 @@ public class IMatController extends VBox implements Initializable {
 
     @FXML
     private void showDetailsScreen() {
+        deSelectCategory(currentExpandedSub);
+        currentExpandedSub = null;
         toggleShoppingMode();
         mainFlowPane.toFront();
         mainFlowPane.getChildren().clear();
@@ -203,6 +204,8 @@ public class IMatController extends VBox implements Initializable {
     }
     @FXML
     private void showOrderScreen() {
+        deSelectCategory(currentExpandedSub);
+        currentExpandedSub = null;
         toggleShoppingMode();
         mainFlowPane.toFront();
         mainFlowPane.getChildren().clear();
@@ -222,6 +225,8 @@ public class IMatController extends VBox implements Initializable {
 
     @FXML
     private void pressedHelp() {
+        deSelectCategory(currentExpandedSub);
+        currentExpandedSub = null;
         toggleShoppingMode();
         mainFlowPane.toFront();
         mainFlowPane.getChildren().clear();
