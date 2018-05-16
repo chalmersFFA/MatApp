@@ -58,9 +58,9 @@ public class steg3_betalning_item_controller extends AnchorPane implements Shopp
         amount.setText("0");
         for(ShoppingItem s : shoppingCart.getItems()){
             if(s.getProduct().getName().equals(product.getName())){
-                amount.setText(Double.toString(s.getAmount()) + s.getProduct().getUnitSuffix());
-                totalPrice.setText(Double.toString(s.getTotal()) + " kr");
-                unitPrice.setText("à " + Double.toString(s.getProduct().getPrice()) + s.getProduct().getUnit());
+                amount.setText(Double.toString(MyMath.round(s.getAmount(),3)) + s.getProduct().getUnitSuffix());
+                totalPrice.setText(Double.toString(MyMath.round(s.getTotal(),3)) + " kr");
+                unitPrice.setText("à " + Double.toString(MyMath.round(s.getProduct().getPrice(),3)) + s.getProduct().getUnit());
                 break;
             }
         }

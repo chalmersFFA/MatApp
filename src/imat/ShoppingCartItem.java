@@ -70,8 +70,8 @@ public class ShoppingCartItem extends AnchorPane implements ShoppingCartListener
                 amountTextField.setText(Double.toString(s.getAmount()));
                 priceLabel.setText(Double.toString(s.getTotal()) + " kr");
                 unit.setText(product.getUnitSuffix());
-                amountTextField.setText(Double.toString(round(s.getAmount(),3)));
-                priceLabel.setText(Double.toString(round(s.getTotal(), 3)) + " kr");
+                amountTextField.setText(Double.toString(MyMath.round(s.getAmount(),3)));
+                priceLabel.setText(Double.toString(MyMath.round(s.getTotal(), 3)) + " kr");
                 break;
             }
         }
@@ -145,14 +145,5 @@ public class ShoppingCartItem extends AnchorPane implements ShoppingCartListener
     public void changeCrossNotPliant(){
         Image crossNotPliant = new Image("imat/layout/images/cross.png");
         cross.setImage(crossNotPliant);
-    }
-
-    public static double round(double value, int places) {
-        if (places < 0) throw new IllegalArgumentException();
-
-        long factor = (long) Math.pow(10, places);
-        value = value * factor;
-        long tmp = Math.round(value);
-        return (double) tmp / factor;
     }
 }
