@@ -45,6 +45,8 @@ public class StoreListItem extends AnchorPane implements ShoppingCartListener {
     Image notFavouriteImagePliant = new Image("imat/layout/images/notFavourite_pliant.png"); //...notFavourite_pliant_border.png
     Image favouriteImagePliant = new Image("imat/layout/images/Favourite_pliant.png"); //...Favourite_pliant_border.png
 
+    private static final int tooltipDelay = 500;
+
 
     public StoreListItem(Product product, IMatController parentController) {
 
@@ -81,10 +83,10 @@ public class StoreListItem extends AnchorPane implements ShoppingCartListener {
 
         shoppingCart.addShoppingCartListener(this);
 
-        IMatController.addToolTip(favouriteImageView, tooltipFavourite, 100);
+        IMatController.addToolTip(favouriteImageView, tooltipFavourite, tooltipDelay);
 
-        IMatController.addToolTip(increaseButton, tooltipIncrease, 100);
-        IMatController.addToolTip(decreaseButton, tooltipDecrease, 100);
+        IMatController.addToolTip(increaseButton, tooltipIncrease, tooltipDelay);
+        IMatController.addToolTip(decreaseButton, tooltipDecrease, tooltipDelay);
         update();
 
     }

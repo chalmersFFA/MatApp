@@ -58,7 +58,7 @@ public class IMatController extends VBox implements Initializable {
     Tooltip myAccount = new Tooltip("Se och redigera mina uppgifter");
     Tooltip help = new Tooltip("Hjälp med navigation");
 
-
+    private static final int tooltipDelay = 500;
 
     @FXML
     FlowPane mainFlowPane;
@@ -108,6 +108,8 @@ public class IMatController extends VBox implements Initializable {
     @FXML
     AnchorPane headerAnchorPane;
 
+
+
     Image favouriteImage = new Image("imat/layout/images/favourite.png");
     Image favouriteImagePliant = new Image("imat/layout/images/favourite_pliant.png");
 
@@ -128,6 +130,13 @@ public class IMatController extends VBox implements Initializable {
         updateProductList(ProductCategory.BERRY);
         shoppingCart.fireShoppingCartChanged(null, false);
         orderHistoryController.createHistory();
+
+        IMatController.addToolTip(myDetailsLabel, myAccount, tooltipDelay);
+        IMatController.addToolTip(favouriteLabel, favourites, tooltipDelay);
+        IMatController.addToolTip(logoImageView, iMatLogo, tooltipDelay);
+        IMatController.addToolTip(helpLabel, help, tooltipDelay);
+        IMatController.addToolTip(orderHistoryLabel, orderHistory, tooltipDelay);
+
     }
 
     private void initProducts() {
