@@ -82,6 +82,9 @@ public class IMatController extends VBox implements Initializable {
     @FXML
     HBox displayPane;
 
+    @FXML
+    AnchorPane headerAnchorPane;
+
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         myDetails = new MyDetails(this);
