@@ -8,6 +8,8 @@ import javafx.scene.layout.VBox;
 import se.chalmers.cse.dat216.project.*;
 
 import java.io.IOException;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -37,6 +39,13 @@ public class OrderHistoryController extends VBox{
         } catch (IOException exception) {
             throw new RuntimeException(exception);
         }
+
+        Collections.sort(db.getOrders(), new Comparator<Order>() {
+            @Override
+            public int compare(Order o1, Order o2) {
+                return o2.getDate().compareTo(o1.getDate());
+            }
+        });
 
     }
 
