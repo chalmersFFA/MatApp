@@ -98,7 +98,7 @@ public class IMatController extends VBox implements Initializable {
 
     private void initProducts() {
         ShoppingCartItem s;
-        for (Product p : db.getProducts()) {
+        for (Product p : db.getProducts(ProductCategory.BERRY)) {
             //ItemHandler itemHandler = new ItemHandler(new ShoppingItem(p,0));
             storeListItemMap.put(p.getName(), new StoreListItem(p, this));
             shoppingCartController.addToHashMap(new ShoppingCartItem(p, shoppingCartController));

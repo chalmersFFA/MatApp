@@ -11,7 +11,7 @@
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-<fx:root maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="850.0" prefWidth="1100.0" stylesheets="@../layout/design.css" type="AnchorPane" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<fx:root maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="850.0" prefWidth="1100.0" stylesheets="@../layout/design.css" type="AnchorPane" xmlns="http://javafx.com/javafx/9.0.4" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <Label layoutX="133.0" layoutY="39.0" opacity="0.7" styleClass="normal-text" text="Varukorg" />
       <Label layoutX="240.0" layoutY="39.0" prefHeight="27.0" prefWidth="120.0" styleClass="normal-text" text="Betalningssätt" />
@@ -79,7 +79,7 @@
       </AnchorPane>
       <Button layoutX="15.0" layoutY="800.0" mnemonicParsing="false" onAction="#backButton" prefHeight="40.0" prefWidth="280.0" text="Tillbaka till betalningssätt">
          <styleClass>
-            <String fx:value="nextButton" />
+            <String fx:value="backbutton" />
             <String fx:value="normal-text" />
          </styleClass></Button>
       <Label layoutX="472.0" layoutY="592.0" styleClass="big-text" text="Totalt:" />
