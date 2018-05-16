@@ -103,8 +103,16 @@ public class ShoppingCartController extends AnchorPane implements ShoppingCartLi
 
     @FXML
     public void emptyCart(){
-        while(shoppingCart.getTotal()!= 0)
-            shoppingCart.removeItem(0);
+        shoppingCart.clear();
         update();
     }
+    @FXML
+    public void changePliancyCart(){
+        emptyCartLabel.setOpacity(0.6);
+    }
+    @FXML
+    public void endPliancyOrderCart(){
+        emptyCartLabel.setOpacity(1);
+    }
+
 }
