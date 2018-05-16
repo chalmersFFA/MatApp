@@ -15,7 +15,7 @@
 <?import javafx.scene.paint.Color?>
 <?import javafx.scene.text.Font?>
 
-<VBox stylesheets="@../layout/design.css" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="imat.IMatController">
+<VBox stylesheets="@../layout/design.css" xmlns="http://javafx.com/javafx/9.0.4" xmlns:fx="http://javafx.com/fxml/1" fx:controller="imat.IMatController">
    <children>
       <AnchorPane id="headerStyle" fx:id="headerAnchorPane" prefHeight="75.0" prefWidth="1127.0" stylesheets="@../layout/design.css">
          <children>
@@ -25,9 +25,9 @@
                   <Image url="@../layout/images/search.png" />
                </image>
             </ImageView>
-            <Label fx:id="favouriteLabel" contentDisplay="TOP" layoutX="844.0" layoutY="9.0" onMouseClicked="#displayFavourites" stylesheets="@../layout/design.css" text="Favoritvaror" AnchorPane.rightAnchor="445.0" AnchorPane.topAnchor="9.0">
+            <Label fx:id="favouriteLabel" contentDisplay="TOP" layoutX="844.0" layoutY="9.0" onMouseClicked="#displayFavourites" onMouseEntered="#ChangePliancyFavourite" onMouseExited="#endPliancyFavourite" stylesheets="@../layout/design.css" text="Favoritvaror" AnchorPane.rightAnchor="445.0" AnchorPane.topAnchor="9.0">
                <graphic>
-                  <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fx:id="myFavourites" fitHeight="25.0" fitWidth="28.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../layout/images/stareboi.png" />
                      </image>
@@ -41,7 +41,7 @@
                   <String fx:value="textLabel" />
                </styleClass>
             </Label>
-            <Label contentDisplay="TOP" layoutX="995.0" layoutY="10.0" onMouseClicked="#showOrderScreen" styleClass="big-text" text="Orderhistorik" AnchorPane.rightAnchor="281.0" AnchorPane.topAnchor="10.0">
+            <Label fx:id="orderHistoryLabel" contentDisplay="TOP" layoutX="995.0" layoutY="10.0" onMouseClicked="#showOrderScreen" onMouseEntered="#ChangePliancyOrderHistory" onMouseExited="#endPliancyOrderHistory" styleClass="big-text" text="Orderhistorik" AnchorPane.rightAnchor="281.0" AnchorPane.topAnchor="10.0">
                <graphic>
                   <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -53,7 +53,7 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
             </Label>
-            <Label fx:id="myDetailsLabel" contentDisplay="TOP" layoutX="1163.0" layoutY="10.0" onMouseClicked="#showDetailsScreen" styleClass="big-text" text="Mitt konto" AnchorPane.rightAnchor="141.0" AnchorPane.topAnchor="9.0">
+            <Label fx:id="myDetailsLabel" contentDisplay="TOP" layoutX="1163.0" layoutY="10.0" onMouseClicked="#showDetailsScreen" onMouseEntered="#ChangePliancyMyAccount" onMouseExited="#endPliancyMyAccount" styleClass="big-text" text="Mitt konto" AnchorPane.rightAnchor="141.0" AnchorPane.topAnchor="9.0">
                <graphic>
                   <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true" styleClass="big-text">
                      <image>
@@ -65,7 +65,7 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
             </Label>
-            <Label contentDisplay="TOP" layoutX="1318.0" layoutY="5.0" onMousePressed="#pressedHelp" styleClass="big-text" text="Hjälp" AnchorPane.rightAnchor="41.0" AnchorPane.topAnchor="9.0">
+            <Label fx:id="helpLabel" contentDisplay="TOP" layoutX="1318.0" layoutY="5.0" onMouseEntered="#ChangePliancyhelpPage" onMouseExited="#endPliancyHelpPage" onMousePressed="#pressedHelp" styleClass="big-text" text="Hjälp" AnchorPane.rightAnchor="41.0" AnchorPane.topAnchor="9.0">
                <graphic>
                   <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -113,7 +113,7 @@
                                  <children>
                                     <VBox fx:id="mainVBox" prefHeight="545.0" prefWidth="616.0">
                                        <children>
-                                          <ScrollPane fitToHeight="true" fitToWidth="true" hbarPolicy="NEVER" prefHeight="506.0" prefWidth="616.0" styleClass="removeFocusColor" vbarPolicy="ALWAYS" VBox.vgrow="ALWAYS">
+                                          <ScrollPane fitToHeight="true" fitToWidth="true" hbarPolicy="NEVER" prefHeight="506.0" prefWidth="616.0" styleClass="removeFocusColor" VBox.vgrow="ALWAYS">
                                              <content>
                                                 <FlowPane fx:id="mainFlowPane" alignment="CENTER" columnHalignment="CENTER" hgap="15.0" maxWidth="1.7976931348623157E308" minWidth="-Infinity" nodeOrientation="LEFT_TO_RIGHT" prefWrapLength="1000.0" styleClass="mainFlowPane" vgap="15.0" />
                                              </content>
@@ -122,7 +122,7 @@
                                     </VBox>
                                  </children>
                               </StackPane>
-                              <Label fx:id="currentSiteLabel" layoutX="22.0" layoutY="26.0" text="BÄR">
+                              <Label fx:id="currentSiteLabel" layoutX="14.0" layoutY="8.0" text="BÄR">
                                  <font>
                                     <Font size="46.0" />
                                  </font>

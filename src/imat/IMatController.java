@@ -76,6 +76,15 @@ public class IMatController extends VBox implements Initializable {
     Label favouriteLabel;
 
     @FXML
+    Label helpLabel;
+
+    @FXML
+    Label orderHistoryLabel;
+
+    @FXML
+    ImageView myFavourites;
+
+    @FXML
     Label currentSiteLabel;
 
     @FXML
@@ -98,6 +107,9 @@ public class IMatController extends VBox implements Initializable {
 
     @FXML
     AnchorPane headerAnchorPane;
+
+    Image favouriteImage = new Image("imat/layout/images/favourite.png");
+    Image favouriteImagePliant = new Image("imat/layout/images/favourite_pliant.png");
 
 
     @Override
@@ -131,6 +143,7 @@ public class IMatController extends VBox implements Initializable {
 
 
     public void updateProductList(ProductCategory category) {
+
         mainFlowPane.getChildren().clear();
         for (Product p : db.getProducts(category)) {
             mainFlowPane.setHgap(30);
@@ -143,17 +156,20 @@ public class IMatController extends VBox implements Initializable {
     }
 
     public void displayFavourites() {
+        deSelectCategory(currentExpandedSub);
+        currentExpandedSub = null;
         mainFlowPane.getChildren().clear();
         for (Product p : db.favorites()) {
             mainFlowPane.getChildren().add(storeListItemMap.get(p.getName()));
         }
-        //favouriteLabel.setId("current");
         currentSiteLabel.setText("Mina Favoritvaror");
 
     }
 
     @FXML
     private void showDetailsScreen() {
+        deSelectCategory(currentExpandedSub);
+        currentExpandedSub = null;
         toggleShoppingMode();
         mainFlowPane.toFront();
         mainFlowPane.getChildren().clear();
@@ -165,6 +181,8 @@ public class IMatController extends VBox implements Initializable {
     }
     @FXML
     private void showOrderScreen() {
+        deSelectCategory(currentExpandedSub);
+        currentExpandedSub = null;
         toggleShoppingMode();
         mainFlowPane.toFront();
         mainFlowPane.getChildren().clear();
@@ -320,6 +338,7 @@ public class IMatController extends VBox implements Initializable {
     }
 
     public void thankYou() {
+        refreshHistory();
         displayPane.getChildren().clear();
         displayPane.setAlignment(Pos.CENTER);
         displayPane.getChildren().add(checkoutController4);
@@ -390,5 +409,41 @@ public class IMatController extends VBox implements Initializable {
         IMatController.hackTooltipStartTiming(t, delay);
         Tooltip.install(n, t);
     }
-
+    public void refreshHistory(){
+        orderHistoryController.createHistory();
+    }
+    @FXML
+    public void ChangePliancyFavourite(){
+        myFavourites.setImage(favouriteImagePliant);
+        favouriteLabel.setOpacity(0.6);
+    }
+    @FXML
+    public void endPliancyFavourite(){
+        myFavourites.setImage(favouriteImage);
+        favouriteLabel.setOpacity(1);
+    }
+    @FXML
+    public void ChangePliancyMyAccount(){
+        myDetailsLabel.setOpacity(0.6);
+    }
+    @FXML
+    public void endPliancyMyAccount(){
+        myDetailsLabel.setOpacity(1);
+    }
+    @FXML
+    public void ChangePliancyhelpPage(){
+        helpLabel.setOpacity(0.6);
+    }
+    @FXML
+    public void endPliancyHelpPage(){
+        helpLabel.setOpacity(1);
+    }
+    @FXML
+    public void ChangePliancyOrderHistory(){
+        orderHistoryLabel.setOpacity(0.6);
+    }
+    @FXML
+    public void endPliancyOrderHistory(){
+        orderHistoryLabel.setOpacity(1);
+    }
 }
