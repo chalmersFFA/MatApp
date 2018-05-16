@@ -68,6 +68,15 @@ public class IMatController extends VBox implements Initializable {
     Label favouriteLabel;
 
     @FXML
+    Label helpLabel;
+
+    @FXML
+    Label orderHistoryLabel;
+
+    @FXML
+    ImageView myFavourites;
+
+    @FXML
     Label currentSiteLabel;
 
     @FXML
@@ -90,6 +99,9 @@ public class IMatController extends VBox implements Initializable {
 
     @FXML
     AnchorPane headerAnchorPane;
+
+    Image favouriteImage = new Image("imat/layout/images/favourite.png");
+    Image favouriteImagePliant = new Image("imat/layout/images/favourite_pliant.png");
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -385,5 +397,38 @@ public class IMatController extends VBox implements Initializable {
     public void refreshHistory(){
         orderHistoryController.createHistory();
     }
-
+    @FXML
+    public void ChangePliancyFavourite(){
+        myFavourites.setImage(favouriteImagePliant);
+        favouriteLabel.setOpacity(0.6);
+    }
+    @FXML
+    public void endPliancyFavourite(){
+        myFavourites.setImage(favouriteImage);
+        favouriteLabel.setOpacity(1);
+    }
+    @FXML
+    public void ChangePliancyMyAccount(){
+        myDetailsLabel.setOpacity(0.6);
+    }
+    @FXML
+    public void endPliancyMyAccount(){
+        myDetailsLabel.setOpacity(1);
+    }
+    @FXML
+    public void ChangePliancyhelpPage(){
+        helpLabel.setOpacity(0.6);
+    }
+    @FXML
+    public void endPliancyHelpPage(){
+        helpLabel.setOpacity(1);
+    }
+    @FXML
+    public void ChangePliancyOrderHistory(){
+        orderHistoryLabel.setOpacity(0.6);
+    }
+    @FXML
+    public void endPliancyOrderHistory(){
+        orderHistoryLabel.setOpacity(1);
+    }
 }
