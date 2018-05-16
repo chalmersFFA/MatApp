@@ -138,7 +138,6 @@ public class IMatController extends VBox implements Initializable {
         for (Product p : db.favorites()) {
             mainFlowPane.getChildren().add(storeListItemMap.get(p.getName()));
         }
-        //favouriteLabel.setId("current");
         currentSiteLabel.setText("Mina Favoritvaror");
 
     }

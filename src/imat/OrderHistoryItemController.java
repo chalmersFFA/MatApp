@@ -50,7 +50,7 @@ public class OrderHistoryItemController extends AnchorPane{
         for(ShoppingItem item : order.getItems()){
             totalAmount += item.getTotal();
         }
-        total.setText("Totalt: " + Double.toString(totalAmount) + " kr");
+        total.setText("Totalt: " + Double.toString(MyMath.round(totalAmount,2)) + " kr");
         //this.getChildren().get(0).getStyleClass().remove("historyItem");
 
 
