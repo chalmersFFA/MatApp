@@ -1,5 +1,6 @@
 package imat;
 
+import se.chalmers.cse.dat216.project.Order;
 import se.chalmers.cse.dat216.project.ProductCategory;
 
 /**

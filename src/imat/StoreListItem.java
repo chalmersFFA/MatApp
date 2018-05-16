@@ -112,7 +112,9 @@ public class StoreListItem extends AnchorPane implements ShoppingCartListener {
             }
         }
         if(!finns){
-            shoppingCart.addProduct(product);
+            shoppingCart.addProduct(product); /** Det visar sig att .addProduct lägger till 1 som mängd, alltså är detta ett problem i backend
+                                                * och inte något vi behöver ändra på. Sen tycker jag att 1 kg är en bra mängd tbh /rob2
+                                                */
         }
         update();
 
