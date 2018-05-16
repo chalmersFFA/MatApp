@@ -9,9 +9,12 @@ import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Node;
 import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
 import javafx.scene.control.Tooltip;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.KeyCode;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.*;
 import javafx.util.Duration;
 import se.chalmers.cse.dat216.project.*;
@@ -19,10 +22,7 @@ import se.chalmers.cse.dat216.project.*;
 import javax.tools.Tool;
 import java.lang.reflect.Field;
 import java.net.URL;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.ResourceBundle;
+import java.util.*;
 
 /**
  * Created by Jonathan Köre on 2018-05-03.
@@ -114,6 +114,9 @@ public class IMatController extends VBox implements Initializable {
     Image favouriteImagePliant = new Image("imat/layout/images/favourite_pliant.png");
 
 
+    @FXML
+    TextField searchTextField;
+
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         myDetails = new MyDetails(this);
@@ -137,11 +140,13 @@ public class IMatController extends VBox implements Initializable {
         IMatController.addToolTip(helpLabel, help, tooltipDelay);
         IMatController.addToolTip(orderHistoryLabel, orderHistory, tooltipDelay);
 
+        setGlobalEventHandler(searchTextField);
+
     }
 
     private void initProducts() {
         ShoppingCartItem s;
-        for (Product p : db.getProducts(ProductCategory.BERRY)) {
+        for (Product p : db.getProducts()) {
             //ItemHandler itemHandler = new ItemHandler(new ShoppingItem(p,0));
             storeListItemMap.put(p.getName(), new StoreListItem(p, this));
             shoppingCartController.addToHashMap(new ShoppingCartItem(p, shoppingCartController));
@@ -152,33 +157,41 @@ public class IMatController extends VBox implements Initializable {
 
 
     public void updateProductList(ProductCategory category) {
+        updateProductListLoop(db.getProducts(category));
+        currentSiteLabel.setText("Kategori: " + Translator.swe(category));
+    }
 
+    private void updateProductListLoop(List<Product> products) {
         mainFlowPane.getChildren().clear();
-        for (Product p : db.getProducts(category)) {
+        for(Product p : products) {
             mainFlowPane.setHgap(30);
             mainFlowPane.setVgap(10);
             mainFlowPane.setPadding(new Insets(30, 10, 10, 10));
             mainFlowPane.getChildren().add(storeListItemMap.get(p.getName()));
-            currentSiteLabel.setText("Kategori: " + Translator.swe(category));
-
         }
     }
 
     public void displayFavourites() {
-        deSelectCategory(currentExpandedSub);
-        currentExpandedSub = null;
         mainFlowPane.getChildren().clear();
         for (Product p : db.favorites()) {
             mainFlowPane.getChildren().add(storeListItemMap.get(p.getName()));
         }
+        //favouriteLabel.setId("current");
         currentSiteLabel.setText("Mina Favoritvaror");
 
     }
 
+    private void setGlobalEventHandler(Node root) {
+        root.addEventHandler(KeyEvent.KEY_PRESSED, ev -> {
+            if (ev.getCode() == KeyCode.ENTER) {
+                search();
+                ev.consume();
+            }
+        });
+    }
+
     @FXML
     private void showDetailsScreen() {
-        deSelectCategory(currentExpandedSub);
-        currentExpandedSub = null;
         toggleShoppingMode();
         mainFlowPane.toFront();
         mainFlowPane.getChildren().clear();
@@ -190,8 +203,6 @@ public class IMatController extends VBox implements Initializable {
     }
     @FXML
     private void showOrderScreen() {
-        deSelectCategory(currentExpandedSub);
-        currentExpandedSub = null;
         toggleShoppingMode();
         mainFlowPane.toFront();
         mainFlowPane.getChildren().clear();
@@ -421,14 +432,30 @@ public class IMatController extends VBox implements Initializable {
     public void refreshHistory(){
         orderHistoryController.createHistory();
     }
+
+    @FXML
+    private void search() {
+        List<Product> p = db.findProducts(searchTextField.getText());
+        if(p.size() == 0) {
+            mainFlowPane.getChildren().clear();
+            currentSiteLabel.setText("Sökningen " + "\"" + searchTextField.getText() + "\" gav inga resultat.");
+        }
+        else {
+            updateProductListLoop(db.findProducts(searchTextField.getText()));
+            currentSiteLabel.setText("Sökresultat för: " + searchTextField.getText());
+        }
+
+
+    }
+
     @FXML
     public void ChangePliancyFavourite(){
-        myFavourites.setImage(favouriteImagePliant);
+       // myFavourites.setImage(favouriteImagePliant);
         favouriteLabel.setOpacity(0.6);
     }
     @FXML
     public void endPliancyFavourite(){
-        myFavourites.setImage(favouriteImage);
+        //myFavourites.setImage(favouriteImage);
         favouriteLabel.setOpacity(1);
     }
     @FXML

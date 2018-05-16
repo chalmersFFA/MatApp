@@ -175,19 +175,21 @@ public class StoreListItem extends AnchorPane implements ShoppingCartListener {
 
     @FXML
     public void ChangePliancyFavorite(){
-        if(db.isFavorite(product)){
+        /*if(db.isFavorite(product)){
             favouriteImageView.setImage(favouriteImagePliant);
         }else{
             favouriteImageView.setImage(notFavouriteImagePliant);
-        }
+        } */
+        favouriteImageView.setOpacity(0.6);
     }
     @FXML
     public void endChangePliancyFavorite(){
-        if(db.isFavorite(product)){
+        /*if(db.isFavorite(product)){
             favouriteImageView.setImage(favouriteImage);
         }else{
             favouriteImageView.setImage(notFavouriteImage);
-        }
+        }*/
+        favouriteImageView.setOpacity(1);
     }
 
 
