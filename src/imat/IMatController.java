@@ -59,7 +59,7 @@ public class IMatController extends VBox implements Initializable {
     Label favouriteLabel;
 
     @FXML
-    Label categoryLabel;
+    Label currentSiteLabel;
 
     @FXML
     ImageView logoImageView;
@@ -116,7 +116,7 @@ public class IMatController extends VBox implements Initializable {
             mainFlowPane.setVgap(10);
             mainFlowPane.setPadding(new Insets(30, 10, 10, 10));
             mainFlowPane.getChildren().add(storeListItemMap.get(p.getName()));
-            categoryLabel.setText(Translator.swe(category));
+            currentSiteLabel.setText("Kategori: " + Translator.swe(category));
 
         }
     }
@@ -127,6 +127,8 @@ public class IMatController extends VBox implements Initializable {
             mainFlowPane.getChildren().add(storeListItemMap.get(p.getName()));
         }
         //favouriteLabel.setId("current");
+        currentSiteLabel.setText("Mina Favoritvaror");
+
     }
 
     @FXML
@@ -137,6 +139,8 @@ public class IMatController extends VBox implements Initializable {
         mainFlowPane.getChildren().add(myDetails);
         mainFlowPane.setAlignment(Pos.CENTER);
         myDetails.initDetails();
+        currentSiteLabel.setText("Mitt Konto");
+
     }
     @FXML
     private void showOrderScreen() {
@@ -145,12 +149,16 @@ public class IMatController extends VBox implements Initializable {
         mainFlowPane.getChildren().clear();
         mainFlowPane.getChildren().add(orderHistoryController);
         mainFlowPane.setAlignment(Pos.CENTER);
+        currentSiteLabel.setText("Mina Ordrar");
+
     }
 
     @FXML
     private void escapeHatch() {
-        updateProductList(ProductCategory.BERRY);
-        toggleShoppingMode();
+        pressedHelp();
+        /**
+         * En temporär lösning
+         */
     }
 
     @FXML
@@ -160,7 +168,9 @@ public class IMatController extends VBox implements Initializable {
         mainFlowPane.getChildren().clear();
         mainFlowPane.getChildren().add(helpPage);
         mainFlowPane.setAlignment(Pos.CENTER);
+        currentSiteLabel.setText("Startsida");
         System.out.println("help clicked");
+
     }
 
     private void initCategories() {
