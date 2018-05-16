@@ -4,8 +4,10 @@ import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.scene.control.Tooltip;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
@@ -20,6 +22,9 @@ public class StoreListItem extends AnchorPane implements ShoppingCartListener {
     private IMatDataHandler db = IMatDataHandler.getInstance();
     private ShoppingCart shoppingCart = db.getShoppingCart();
     private IMatController parentController;
+    private Tooltip tooltipFavourite = new Tooltip("Lägg till i Favoriter");
+    private Tooltip tooltipIncrease = new Tooltip("Öka Mängd");
+    private Tooltip tooltipDecrease = new Tooltip("Minska Mängd");
     Product product;
     @FXML
     ImageView ecoImageView;
@@ -33,7 +38,8 @@ public class StoreListItem extends AnchorPane implements ShoppingCartListener {
     Label priceLabel;
     @FXML
     TextField amountTextField;
-
+    @FXML
+    Button decreaseButton, increaseButton;
     Image favouriteImage = new Image("imat/layout/images/favourite.png");
     Image notFavouriteImage = new Image("imat/layout/images/notFavourite.png");
 
@@ -71,6 +77,11 @@ public class StoreListItem extends AnchorPane implements ShoppingCartListener {
         //itemHandler.setStoreListItem(this);
 
         shoppingCart.addShoppingCartListener(this);
+
+        IMatController.addToolTip(favouriteImageView, tooltipFavourite, 100);
+
+        IMatController.addToolTip(increaseButton, tooltipIncrease, 100);
+        IMatController.addToolTip(decreaseButton, tooltipDecrease, 100);
         update();
 
     }
@@ -79,8 +90,11 @@ public class StoreListItem extends AnchorPane implements ShoppingCartListener {
     public void updateFavourite(){
         if (db.isFavorite(product)){
             favouriteImageView.setImage(favouriteImage);
+            tooltipFavourite.setText("Ta bort från Favoriter");
+
         }else{
             favouriteImageView.setImage(notFavouriteImage);
+            tooltipFavourite.setText("Lägg till i Favoriter");
         }
     }
 
