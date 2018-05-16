@@ -27,6 +27,11 @@ public class CheckoutController3 extends AnchorPane implements ShoppingCartListe
     Label totalPriceLabel;
     @FXML
     AnchorPane sequenceMapAnchorPane;
+    @FXML
+    Label firstNameLabel, lastNameLabel, emailLabel, phoneNumberLabel, addressLabel, postAddressLabel, postCodeLabel, cardHolderName, cardNumber;
+    private Customer customer = db.getCustomer();
+    private CreditCard creditCard = db.getCreditCard();
+
 
     public CheckoutController3(IMatController parentController, ShoppingCartController shoppingCartController) {
         this.shoppingCartController = shoppingCartController;
@@ -70,6 +75,25 @@ public class CheckoutController3 extends AnchorPane implements ShoppingCartListe
             }
         }
         totalPriceLabel.setText(Double.toString(MyMath.round(shoppingCart.getTotal(),3)) +" kr");
+
+        firstNameLabel.setText(customer.getFirstName());
+        lastNameLabel.setText(customer.getLastName());
+        emailLabel.setText(customer.getEmail());
+        addressLabel.setText(customer.getAddress());
+        postAddressLabel.setText(customer.getPostAddress()); //Vilket måste vara Orten?
+        postCodeLabel.setText(customer.getPostCode());
+        phoneNumberLabel.setText(customer.getMobilePhoneNumber());
+        cardHolderName.setText(creditCard.getHoldersName());
+        cardNumber.setText(creditCard.getCardNumber());
+        String tempCardNumber = "";
+        for(int i = 0; i < creditCard.getCardNumber().length(); i++) {
+            if(i < creditCard.getCardNumber().length() - 4)
+                tempCardNumber += "X";
+            else
+                tempCardNumber += creditCard.getCardNumber().charAt(i);
+        }
+
+        cardNumber.setText(tempCardNumber);
 
 
     }

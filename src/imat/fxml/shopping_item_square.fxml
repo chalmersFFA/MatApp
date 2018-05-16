@@ -9,19 +9,22 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<fx:root maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="265.0" prefWidth="230.0" styleClass="static_object_hinting" stylesheets="@../layout/design.css" type="AnchorPane" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1">
+<fx:root maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="265.0" prefWidth="230.0" styleClass="static_object_hinting" stylesheets="@../layout/design.css" type="AnchorPane" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <ImageView fx:id="productImageView" fitHeight="150.0" fitWidth="200.0" layoutX="20.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="99.0" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="15.0">
          <image>
             <Image url="@../../../../../../.dat215/imat/images/product_5.jpg" />
          </image>
       </ImageView>
+      <TextField fx:id="amountTextField" alignment="CENTER" layoutX="138.0" layoutY="224.0" prefHeight="27.0" prefWidth="53.0" />
+      <Button fx:id="decreaseButton" layoutX="113.0" layoutY="224.0" mnemonicParsing="false" onAction="#decreaseAmount" prefHeight="25.0" prefWidth="27.0" styleClass="redFocusColor" text="-">
       <Button layoutX="113.0" layoutY="224.0" mnemonicParsing="false" onAction="#decreaseAmount" prefHeight="25.0" prefWidth="27.0" styleClass="redFocusColor" text="-">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor></Button>
       <TextField fx:id="amountTextField" alignment="CENTER" layoutX="138.0" layoutY="224.0" prefHeight="27.0" prefWidth="53.0" />
       <Button layoutX="189.0" layoutY="224.0" mnemonicParsing="false" onAction="#increaseAmount" prefHeight="25.0" prefWidth="27.0" styleClass="greenFocusColor" text="+">
+      <Button fx:id="increaseButton" layoutX="189.0" layoutY="224.0" mnemonicParsing="false" onAction="#increaseAmount" prefHeight="25.0" prefWidth="27.0" styleClass="greenFocusColor" text="+">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor></Button>
