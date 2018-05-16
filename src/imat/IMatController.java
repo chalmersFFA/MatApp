@@ -310,8 +310,11 @@ public class IMatController extends VBox implements Initializable {
     }
 
     public void deSelectCategory(CategoryItem c) {
-        c.getBackgroundPane().getStyleClass().remove(c.getSelectedClass());
-        c.getBackgroundPane().getStyleClass().add(c.getStandardClass());
+        if(c != null) {
+            c.getBackgroundPane().getStyleClass().remove(c.getSelectedClass());
+            c.getBackgroundPane().getStyleClass().add(c.getStandardClass());
+        }
+
     }
 
     public void showShoppingCart() {
