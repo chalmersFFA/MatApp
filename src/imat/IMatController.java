@@ -33,7 +33,7 @@ public class IMatController extends VBox implements Initializable {
     }
 
     private Mode currentMode = Mode.SHOPPING;
-
+    HelpPage helpPage;
     MyDetails myDetails;
     ShoppingCartController shoppingCartController;
     CheckoutController checkoutController;
@@ -82,6 +82,7 @@ public class IMatController extends VBox implements Initializable {
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         myDetails = new MyDetails(this);
+        helpPage = new HelpPage(this);
         shoppingCartController = new ShoppingCartController(this);
         checkoutController = new CheckoutController(this, shoppingCartController);
         checkoutController2 = new CheckoutController2(this, shoppingCartController);
@@ -154,7 +155,12 @@ public class IMatController extends VBox implements Initializable {
 
     @FXML
     private void pressedHelp() {
-        System.out.println("help me N***UH");
+        toggleShoppingMode();
+        mainFlowPane.toFront();
+        mainFlowPane.getChildren().clear();
+        mainFlowPane.getChildren().add(helpPage);
+        mainFlowPane.setAlignment(Pos.CENTER);
+        System.out.println("help clicked");
     }
 
     private void initCategories() {
