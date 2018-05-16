@@ -62,7 +62,7 @@ public class CheckoutController3 extends AnchorPane implements ShoppingCartListe
                 finalOrderFlowPane.getChildren().add(steg3ItemMap.get(s.getProduct().getName()));
             }
         }
-        totalPriceLabel.setText(Double.toString(StoreListItem.round(shoppingCart.getTotal(),3)) +" kr");
+        totalPriceLabel.setText(Double.toString(MyMath.round(shoppingCart.getTotal(),3)) +" kr");
 
 
     }
