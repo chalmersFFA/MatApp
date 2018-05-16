@@ -120,3 +120,8 @@
     -fx-background-radius: 1px;
     -fx-border-style: hidden hidden solid hidden;
 }
+.historyItem{
+    -fx-background-color: rgba(200,200,200,1);
+    -fx-border-style: hidden hidden solid hidden;
+
+}
