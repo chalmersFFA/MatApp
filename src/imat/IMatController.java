@@ -122,6 +122,7 @@ public class IMatController extends VBox implements Initializable {
 
 
     public void updateProductList(ProductCategory category) {
+
         mainFlowPane.getChildren().clear();
         for (Product p : db.getProducts(category)) {
             mainFlowPane.setHgap(30);
@@ -134,6 +135,8 @@ public class IMatController extends VBox implements Initializable {
     }
 
     public void displayFavourites() {
+        deSelectCategory(currentExpandedSub);
+        currentExpandedSub = null;
         mainFlowPane.getChildren().clear();
         for (Product p : db.favorites()) {
             mainFlowPane.getChildren().add(storeListItemMap.get(p.getName()));
@@ -145,6 +148,8 @@ public class IMatController extends VBox implements Initializable {
 
     @FXML
     private void showDetailsScreen() {
+        deSelectCategory(currentExpandedSub);
+        currentExpandedSub = null;
         toggleShoppingMode();
         mainFlowPane.toFront();
         mainFlowPane.getChildren().clear();
@@ -156,6 +161,8 @@ public class IMatController extends VBox implements Initializable {
     }
     @FXML
     private void showOrderScreen() {
+        deSelectCategory(currentExpandedSub);
+        currentExpandedSub = null;
         toggleShoppingMode();
         mainFlowPane.toFront();
         mainFlowPane.getChildren().clear();
