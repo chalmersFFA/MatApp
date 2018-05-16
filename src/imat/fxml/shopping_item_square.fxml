@@ -16,11 +16,11 @@
             <Image url="@../../../../../../.dat215/imat/images/product_5.jpg" />
          </image>
       </ImageView>
-      <TextField fx:id="amountTextField" alignment="CENTER" layoutX="138.0" layoutY="224.0" prefHeight="27.0" prefWidth="53.0" />
       <Button layoutX="113.0" layoutY="224.0" mnemonicParsing="false" onAction="#decreaseAmount" prefHeight="25.0" prefWidth="27.0" styleClass="redFocusColor" text="-">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor></Button>
+      <TextField fx:id="amountTextField" alignment="CENTER" layoutX="138.0" layoutY="224.0" prefHeight="27.0" prefWidth="53.0" />
       <Button layoutX="189.0" layoutY="224.0" mnemonicParsing="false" onAction="#increaseAmount" prefHeight="25.0" prefWidth="27.0" styleClass="greenFocusColor" text="+">
          <cursor>
             <Cursor fx:constant="HAND" />
