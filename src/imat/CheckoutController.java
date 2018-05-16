@@ -62,7 +62,7 @@ public class CheckoutController extends AnchorPane implements ShoppingCartListen
         for(ShoppingItem s : shoppingCart.getItems()) {
             orderFlowPane.getChildren().add(shoppingCartItemMap.get(s.getProduct().getName()));
         }
-        totalLabel.setText(Double.toString(shoppingCart.getTotal()) +" kr");
+        totalLabel.setText(Double.toString(MyMath.round(shoppingCart.getTotal(),3)) +" kr");
     }
 
     public FlowPane getOrderFlowPane() {
