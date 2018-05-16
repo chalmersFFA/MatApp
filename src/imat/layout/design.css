@@ -148,3 +148,9 @@
 .historyItemExpanded{
     -fx-background-color: rgba(210,210,210,1);
 }
+.textFieldBackground{
+    -fx-background-color: -fx-background;
+}
+.textFieldBackground .content {
+   -fx-background-color: -fx-background;
+}
