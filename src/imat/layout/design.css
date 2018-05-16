@@ -120,10 +120,15 @@
     -fx-border-color: #d2d2d2;
     -fx-border-radius: 1px;
     -fx-background-radius: 1px;
-    -fx-border-style: hidden hidden solid hidden;
+    -fx-border-style: hidden solid solid hidden;
 }
 .historyItem{
     -fx-background-color: rgba(200,200,200,1);
     -fx-border-style: hidden hidden solid hidden;
-
+}
+.historyItem:hover{
+    -fx-background-color: rgba(220,220,220,1);
+}
+.historyItem:pressed{
+    -fx-background-color: rgba(180,180,180,1);
 }

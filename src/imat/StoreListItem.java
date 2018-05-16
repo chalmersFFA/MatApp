@@ -125,6 +125,7 @@ public class StoreListItem extends AnchorPane implements ShoppingCartListener {
         if(itemHandler.getShoppingItem().getAmount() == 0){
             itemHandler.getShoppingCartItem().remove();
         }*/
+        //TODO fixa så att man kollar om det finns något i kundvagnen först!
         for(ShoppingItem s : shoppingCart.getItems()){
             if(s.getProduct().getName().equals(product.getName())){
                 if(s.getProduct().getUnitSuffix().equals("kg") || s.getProduct().getUnitSuffix().equals("l") ){
