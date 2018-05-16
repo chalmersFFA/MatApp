@@ -40,13 +40,6 @@ public class OrderHistoryController extends VBox{
             throw new RuntimeException(exception);
         }
 
-        Collections.sort(db.getOrders(), new Comparator<Order>() {
-            @Override
-            public int compare(Order o1, Order o2) {
-                return o2.getDate().compareTo(o1.getDate());
-            }
-        });
-
     }
 
     @FXML
@@ -56,6 +49,12 @@ public class OrderHistoryController extends VBox{
 
 
     public void createHistory() {
+        Collections.sort(db.getOrders(), new Comparator<Order>() {
+            @Override
+            public int compare(Order o1, Order o2) {
+                return o2.getDate().compareTo(o1.getDate());
+            }
+        });
         orderHistoryFlowPane.getChildren().clear();
         if(!db.getOrders().isEmpty() ) {
             for (Order o: db.getOrders()) {
