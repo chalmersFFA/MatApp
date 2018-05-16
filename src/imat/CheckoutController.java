@@ -42,7 +42,7 @@ public class CheckoutController extends AnchorPane implements ShoppingCartListen
         }
 
         shoppingCart.addShoppingCartListener(this);
-        totalLabel.setText(Double.toString(shoppingCart.getTotal()) +" kr");
+        totalLabel.setText(Double.toString(MyMath.round(shoppingCart.getTotal(),3)) +" kr");
 
     }
 
