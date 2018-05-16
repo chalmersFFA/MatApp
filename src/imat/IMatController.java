@@ -1,17 +1,23 @@
 package imat;
 
+import javafx.animation.KeyFrame;
+import javafx.animation.Timeline;
 import javafx.event.Event;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
+import javafx.scene.Node;
 import javafx.scene.control.Label;
 import javafx.scene.control.Tooltip;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.*;
+import javafx.util.Duration;
 import se.chalmers.cse.dat216.project.*;
 
+import javax.tools.Tool;
+import java.lang.reflect.Field;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -26,7 +32,10 @@ public class IMatController extends VBox implements Initializable {
     static ArrayList<CategoryItem> cList = new ArrayList<>();
     private Map<String, StoreListItem> storeListItemMap = new HashMap<String, StoreListItem>();
     private CategoryItem currentExpandedSub;
+
+    private CategoryItem currentExpandedMain;
     private ShoppingCart shoppingCart = db.getShoppingCart();
+    private SequenceMap sequenceMap = new SequenceMap();
 
     public enum Mode {
         SHOPPING,
@@ -270,16 +279,11 @@ public class IMatController extends VBox implements Initializable {
     }
 
     private void toggleCheckoutMode() {
-        //bigHBox.getChildren().clear();
-        checkoutController.update();
-        displayPane.setAlignment(Pos.CENTER);
-        //bigHBox.getChildren().add(checkoutController);
-        displayPane.getChildren().add(checkoutController);
-        bigHBox.toBack();
-        displayPane.toFront();
+        toCheckout1();
     }
 
     public void toCheckout1() {
+        checkoutController.refreshSequenceMap();
         displayPane.getChildren().clear();
         displayPane.setAlignment(Pos.CENTER);
         displayPane.getChildren().add(checkoutController);
@@ -288,6 +292,7 @@ public class IMatController extends VBox implements Initializable {
     }
 
     public void toPayment() {
+        checkoutController2.refreshSequenceMap();
         checkoutController2.init();
         displayPane.getChildren().clear();
         displayPane.setAlignment(Pos.CENTER);
@@ -297,6 +302,7 @@ public class IMatController extends VBox implements Initializable {
     }
 
     public void toFinalPaymentStep() {
+        checkoutController3.refreshSequenceMap();
         displayPane.getChildren().clear();
         displayPane.setAlignment(Pos.CENTER);
         displayPane.getChildren().add(checkoutController3);
@@ -340,4 +346,40 @@ public class IMatController extends VBox implements Initializable {
     public MyDetails getMyDetails() {
         return myDetails;
     }
+
+    public SequenceMap getSequenceMap() {
+        return sequenceMap;
+    }
+
+    public CategoryItem getCurrentExpandedMain() {
+        return currentExpandedMain;
+    }
+
+    public void setCurrentExpandedMain(CategoryItem currentExpandedMain) {
+        this.currentExpandedMain = currentExpandedMain;
+    }
+
+    public static void hackTooltipStartTiming(Tooltip tooltip, int delay) {
+        try {
+            Field fieldBehavior = tooltip.getClass().getDeclaredField("BEHAVIOR");
+            fieldBehavior.setAccessible(true);
+            Object objBehavior = fieldBehavior.get(tooltip);
+
+            Field fieldTimer = objBehavior.getClass().getDeclaredField("activationTimer");
+            fieldTimer.setAccessible(true);
+            Timeline objTimer = (Timeline) fieldTimer.get(objBehavior);
+
+            objTimer.getKeyFrames().clear();
+            objTimer.getKeyFrames().add(new KeyFrame(new Duration(delay)));
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    public static void addToolTip(Node n, Tooltip t, int delay) {
+        t.setStyle("-fx-font-size: 1.5em");
+        IMatController.hackTooltipStartTiming(t, delay);
+        Tooltip.install(n, t);
+    }
+
 }

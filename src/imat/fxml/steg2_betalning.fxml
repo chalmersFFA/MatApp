@@ -26,5 +26,6 @@
             <String fx:value="nextButton" />
             <String fx:value="normal-text" />
          </styleClass></Button>
+      <AnchorPane fx:id="sequenceMapAnchorPane" layoutX="308.0" layoutY="34.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="64.0" prefWidth="524.0" stylesheets="@../layout/design.css" AnchorPane.bottomAnchor="762.0" AnchorPane.leftAnchor="298.0" AnchorPane.rightAnchor="278.0" AnchorPane.topAnchor="24.0" />
    </children>
 </fx:root>
