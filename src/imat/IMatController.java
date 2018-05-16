@@ -43,7 +43,12 @@ public class IMatController extends VBox implements Initializable {
     CheckoutController4 checkoutController4;
     OrderHistoryController orderHistoryController;
 
-    Tooltip
+    Tooltip iMatLogo = new Tooltip("Klicka här för att komma till Startsidan");
+    Tooltip favourites = new Tooltip("Se dina favoritvaror");
+    Tooltip orderHistory = new Tooltip("Se dina tidigare köp");
+    Tooltip myAccount = new Tooltip("Se och redigera mina uppgifter");
+    Tooltip help = new Tooltip("Hjälp med navigation");
+
 
 
     @FXML
@@ -84,6 +89,7 @@ public class IMatController extends VBox implements Initializable {
 
     @FXML
     AnchorPane headerAnchorPane;
+
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
