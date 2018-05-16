@@ -7,7 +7,7 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<fx:root maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="850.0" prefWidth="1100.0" styleClass="normal-text" stylesheets="@../layout/design.css" type="AnchorPane" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<fx:root maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="850.0" prefWidth="1100.0" styleClass="normal-text" stylesheets="@../layout/design.css" type="AnchorPane" xmlns="http://javafx.com/javafx/9.0.4" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <AnchorPane fx:id="betalkortAnchorPane" layoutX="577.0" layoutY="66.0" prefHeight="297.0" prefWidth="409.0" stylesheets="@../layout/design.css" />
       <AnchorPane fx:id="uppgifterAnchorPane" layoutX="38.0" layoutY="66.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="723.0" prefWidth="441.0" stylesheets="@../layout/design.css" />
@@ -20,7 +20,7 @@
             <ComboBox layoutX="322.0" layoutY="178.0" prefHeight="25.0" prefWidth="153.0" />
          </children>
       </AnchorPane>
-      <Button layoutX="15.0" layoutY="800.0" mnemonicParsing="false" onAction="#backButton" prefHeight="40.0" prefWidth="185.0" styleClass="nextButton" text="Tillbaka" />
+      <Button layoutX="15.0" layoutY="800.0" mnemonicParsing="false" onAction="#backButton" prefHeight="40.0" prefWidth="185.0" styleClass="backbutton" text="Tillbaka" />
       <Button layoutX="900.0" layoutY="800.0" mnemonicParsing="false" onAction="#nextButton" prefHeight="40.0" prefWidth="185.0" text="Vidare till översikt">
          <styleClass>
             <String fx:value="nextButton" />

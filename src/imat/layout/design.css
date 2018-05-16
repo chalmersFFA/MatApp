@@ -87,6 +87,7 @@
     -fx-background-color:  #55CC55;
     -fx-font-color: #FFFFFF;
     -fx-text-fill: #FFFFFF;
+    -fx-cursor: hand;
 }
 #shopping_item_text{
     -fx-font-size: 25px;
@@ -95,6 +96,7 @@
     -fx-background-color:  #AAAAAA;
     -fx-font-color: #FFFFFF;
     -fx-text-fill: #FFFFFF;
+    -fx-cursor: hand;
 }
 
 .removeFocusColor{
