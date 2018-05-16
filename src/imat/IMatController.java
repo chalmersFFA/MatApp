@@ -130,7 +130,6 @@ public class IMatController extends VBox implements Initializable {
         showShoppingCart();
         initProducts();
         initCategories();
-        shoppingCart.clear();
         updateProductList(ProductCategory.BERRY);
         shoppingCart.fireShoppingCartChanged(null, false);
         orderHistoryController.createHistory();
@@ -147,7 +146,7 @@ public class IMatController extends VBox implements Initializable {
 
     private void initProducts() {
         ShoppingCartItem s;
-        for (Product p : db.getProducts(ProductCategory.BERRY)) {
+        for (Product p : db.getProducts()) {
             //ItemHandler itemHandler = new ItemHandler(new ShoppingItem(p,0));
             storeListItemMap.put(p.getName(), new StoreListItem(p, this));
             shoppingCartController.addToHashMap(new ShoppingCartItem(p, shoppingCartController));
