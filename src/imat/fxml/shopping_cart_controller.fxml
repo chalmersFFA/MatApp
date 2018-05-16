@@ -11,12 +11,19 @@
 <?import javafx.scene.layout.FlowPane?>
 <?import javafx.scene.text.Font?>
 
-<fx:root fx:id="shoppingCartAnchorPane" prefHeight="900.0" prefWidth="400.0" stylesheets="@../layout/design.css" type="AnchorPane" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<fx:root fx:id="shoppingCartAnchorPane" prefHeight="900.0" prefWidth="400.0" stylesheets="@../layout/design.css" type="AnchorPane" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <Label alignment="CENTER" prefHeight="62.0" prefWidth="200.0" style="&#10;" styleClass="big-text" text="Kundvagn" textAlignment="CENTER" wrapText="false" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
          <font>
             <Font size="18.0" fx:id="x7" />
          </font>
+         <graphic>
+            <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../layout/images/shopping_cart.png" />
+               </image>
+            </ImageView>
+         </graphic>
       </Label>
       <Button fx:id="checkoutButton" layoutX="21.0" mnemonicParsing="false" onAction="#toCheckout" prefHeight="40.0" prefWidth="164.0" text="Till Kassan" textFill="WHITE" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="21.0" AnchorPane.rightAnchor="15.0">
          <cursor>
@@ -33,10 +40,14 @@
       </ScrollPane>
       <Label layoutX="100.0" layoutY="898.0" styleClass="normal-text" text="Total:" AnchorPane.bottomAnchor="60.0" />
       <Label fx:id="totalLabel" layoutX="190.0" layoutY="898.0" styleClass="normal-text" text="35 Spänn" AnchorPane.bottomAnchor="60.0" />
-      <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="6.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../layout/images/shopping_cart.png" />
-         </image>
-      </ImageView>
+      <Label fx:id="emptyCartLabel" layoutX="261.0" layoutY="15.0" onMouseClicked="#emptyCart" text="Töm Kundvagn">
+         <graphic>
+            <ImageView fitHeight="33.0" fitWidth="37.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../layout/images/ThrashBin_Icon.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Label>
    </children>
 </fx:root>

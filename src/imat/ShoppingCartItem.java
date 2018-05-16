@@ -7,6 +7,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.scene.control.Tooltip;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
@@ -22,6 +23,11 @@ public class ShoppingCartItem extends AnchorPane implements ShoppingCartListener
     private Product product;
     IMatDataHandler db = IMatDataHandler.getInstance();
     private ShoppingCart shoppingCart = db.getShoppingCart();
+
+    private Tooltip tooltipIncrease = new Tooltip("Öka Mängd");
+    private Tooltip tooltipDecrease = new Tooltip("Minska Mängd");
+    private Tooltip removeTooltip = new Tooltip("Ta bort varan från kundvagnen");
+    private Tooltip amountTooltip = new Tooltip("Välj själv mängd");
 
     @FXML
     ImageView productImageView;
@@ -39,6 +45,8 @@ public class ShoppingCartItem extends AnchorPane implements ShoppingCartListener
     Button decreaseButton;
     @FXML
     TextField amountTextField;
+
+    private static final int tooltipDelay = 500;
 
     public ShoppingCartItem(Product product, ShoppingCartController parentController) {
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("fxml/steg1_betalning_item.fxml"));
@@ -60,6 +68,12 @@ public class ShoppingCartItem extends AnchorPane implements ShoppingCartListener
         //amountTextField.textProperty().addListener(itemHandler.getChangeListener());
         update();
         shoppingCart.addShoppingCartListener(this);
+
+        IMatController.addToolTip(increaseButton, tooltipIncrease, tooltipDelay);
+        IMatController.addToolTip(decreaseButton, tooltipDecrease, tooltipDelay);
+        IMatController.addToolTip(cross, removeTooltip, tooltipDelay);
+        amountTextField.setTooltip(amountTooltip);
+
     }
 
     public void update() {
