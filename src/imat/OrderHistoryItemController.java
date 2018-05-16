@@ -50,7 +50,7 @@ public class OrderHistoryItemController extends AnchorPane{
         for(ShoppingItem item : order.getItems()){
             totalAmount += item.getTotal();
         }
-        total.setText("Totalt: " + Double.toString(totalAmount) + " kr");
+        total.setText("Totalt: " + Double.toString(MyMath.round(totalAmount,2)) + " kr");
         //this.getChildren().get(0).getStyleClass().remove("historyItem");
 
 
@@ -71,7 +71,8 @@ public class OrderHistoryItemController extends AnchorPane{
     public void expand() {
         orderHistoryItemFlowPane.getChildren().clear();
         for (ShoppingItem s : order.getItems()) {
-            orderHistoryItemFlowPane.getChildren().add(new OrderHistorySubItem(s));
+            if(s.getAmount() >= 0.1)
+                orderHistoryItemFlowPane.getChildren().add(new OrderHistorySubItem(s));
         }
         this.getChildren().get(0).getStyleClass().add("historyItemExpanded");
     }
