@@ -37,6 +37,8 @@ public class StoreListItem extends AnchorPane implements ShoppingCartListener {
     Image favouriteImage = new Image("imat/layout/images/favourite.png");
     Image notFavouriteImage = new Image("imat/layout/images/notFavourite.png");
 
+
+
     public StoreListItem(Product product, IMatController parentController) {
 
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("fxml/shopping_item_square.fxml"));
@@ -152,6 +154,13 @@ public class StoreListItem extends AnchorPane implements ShoppingCartListener {
             db.addFavorite(product);
         }
         updateFavourite();
+    }
+
+    @FXML
+    public void ChangePliancyFavorite(){
+        if(db.isFavorite(product)){
+
+        }
     }
 
     @Override
