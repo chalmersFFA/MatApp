@@ -1,16 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.String?>
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.FlowPane?>
 
 
-<fx:root maxWidth="600.0" prefHeight="60.0" prefWidth="600.0" stylesheets="@../layout/design.css" type="AnchorPane" xmlns="http://javafx.com/javafx/9.0.4" xmlns:fx="http://javafx.com/fxml/1">
+<fx:root maxWidth="800.0" minWidth="-Infinity" prefHeight="60.0" prefWidth="800.0" stylesheets="@../layout/design.css" type="AnchorPane" xmlns="http://javafx.com/javafx/9.0.4" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <AnchorPane layoutX="1.0" layoutY="1.0" maxHeight="-Infinity" onMouseClicked="#toggleExpand" prefHeight="60.0" styleClass="historyItem" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
             <Label fx:id="orderNameLabel" layoutX="44.0" layoutY="12.0" styleClass="big-text" text="ORDER" />
             <Label fx:id="total" layoutX="394.0" layoutY="17.0" prefHeight="27.0" prefWidth="190.0" styleClass="normal-text" text="TOTAL" textAlignment="RIGHT" />
+            <Button layoutX="602.0" layoutY="12.0" mnemonicParsing="false" onAction="#addToCart" text="Lägg till i varukorgen">
+               <styleClass>
+                  <String fx:value="nextButton" />
+                  <String fx:value="normal-text" />
+               </styleClass>
+            </Button>
          </children>
       </AnchorPane>
       <AnchorPane layoutX="1.0" layoutY="47.0" prefHeight="0.0" prefWidth="600.0" AnchorPane.topAnchor="60.0">

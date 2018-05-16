@@ -9,12 +9,12 @@
 <?import javafx.scene.layout.FlowPane?>
 <?import javafx.scene.layout.VBox?>
 
-<fx:root maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="615.0" stylesheets="@../layout/design.css" type="VBox" xmlns="http://javafx.com/javafx/9.0.4" xmlns:fx="http://javafx.com/fxml/1">
+<fx:root maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="800.0" stylesheets="@../layout/design.css" type="VBox" xmlns="http://javafx.com/javafx/9.0.4" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <AnchorPane prefHeight="126.0" prefWidth="600.0">
          <children>
-            <Label layoutX="240.0" layoutY="14.0" styleClass="big-text" text="Köphistorik" />
-            <Label layoutX="175.0" layoutY="66.0" styleClass="normal-text" text="Har kan du se dina tidigare köp" />
+            <Label layoutX="340.0" layoutY="14.0" styleClass="big-text" text="Köphistorik" />
+            <Label layoutX="275.0" layoutY="61.0" styleClass="normal-text" text="Har kan du se dina tidigare köp" />
          </children>
       </AnchorPane>
       <ScrollPane hbarPolicy="NEVER" layoutY="100.0" prefHeight="568.0" prefWidth="615.0">

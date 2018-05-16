@@ -81,5 +81,23 @@ public class OrderHistoryItemController extends AnchorPane{
         this.getChildren().get(0).getStyleClass().remove("historyItemExpanded");
     }
 
+    @FXML
+    public void addToCart() {
+        for (ShoppingItem s : order.getItems()) {
+            if(!shoppingCart.getItems().isEmpty()) {
+                for (ShoppingItem s2 : shoppingCart.getItems()) {
+                    if (s.getProduct().getName().equals(s2.getProduct().getName())) {
+                        s2.setAmount(s.getAmount() + s2.getAmount());
+                    } else {
+                        shoppingCart.addItem(new ShoppingItem(s.getProduct(), s.getAmount()));
+                    }
+                }
+            }else{
+                shoppingCart.addItem(new ShoppingItem(s.getProduct(), s.getAmount()));
+            }
+        }
+        shoppingCart.fireShoppingCartChanged(null, false);
+    }
+
 
 }
