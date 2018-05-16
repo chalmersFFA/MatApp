@@ -148,3 +148,18 @@
 .historyItemExpanded{
     -fx-background-color: rgba(210,210,210,1);
 }
+.textFieldBackground{
+    -fx-background-color: -fx-background;
+}
+.textFieldBackground .content {
+   -fx-background-color: -fx-background;
+}
+#headerStyle{
+    -fx-border-style: hidden hidden solid hidden;
+    -fx-border-width: 2px;
+    -fx-border-color: #b0b0b0;
+}
+
+.tooltip {
+    -fx-font-size: 4em;
+}

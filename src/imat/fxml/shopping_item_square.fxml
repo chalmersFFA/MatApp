@@ -17,11 +17,11 @@
          </image>
       </ImageView>
       <TextField fx:id="amountTextField" alignment="CENTER" layoutX="148.0" layoutY="224.0" prefHeight="25.0" prefWidth="43.0" />
-      <Button layoutX="125.0" layoutY="224.0" mnemonicParsing="false" onAction="#decreaseAmount" prefHeight="25.0" prefWidth="27.0" styleClass="redFocusColor" text="-">
+      <Button fx:id="decreaseButton" layoutX="125.0" layoutY="224.0" mnemonicParsing="false" onAction="#decreaseAmount" prefHeight="25.0" prefWidth="27.0" styleClass="redFocusColor" text="-">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor></Button>
-      <Button layoutX="189.0" layoutY="224.0" mnemonicParsing="false" onAction="#increaseAmount" prefHeight="25.0" prefWidth="27.0" styleClass="greenFocusColor" text="+">
+      <Button fx:id="increaseButton" layoutX="189.0" layoutY="224.0" mnemonicParsing="false" onAction="#increaseAmount" prefHeight="25.0" prefWidth="27.0" styleClass="greenFocusColor" text="+">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor></Button>
