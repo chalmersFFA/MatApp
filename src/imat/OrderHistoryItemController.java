@@ -83,12 +83,13 @@ public class OrderHistoryItemController extends AnchorPane{
 
     @FXML
     public void addToCart() {
+        boolean finns = false;
         for (ShoppingItem s : order.getItems()) {
-            if(!shoppingCart.getItems().isEmpty()) {
+            if(shoppingCart.getItems().isEmpty()) {
                 for (ShoppingItem s2 : shoppingCart.getItems()) {
                     if (s.getProduct().getName().equals(s2.getProduct().getName())) {
                         s2.setAmount(s.getAmount() + s2.getAmount());
-                    } else {
+                    }else{
                         shoppingCart.addItem(new ShoppingItem(s.getProduct(), s.getAmount()));
                     }
                 }
