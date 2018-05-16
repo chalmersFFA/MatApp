@@ -6,6 +6,7 @@ import javafx.fxml.Initializable;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.control.Label;
+import javafx.scene.control.Tooltip;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.*;
@@ -41,6 +42,8 @@ public class IMatController extends VBox implements Initializable {
     CheckoutController3 checkoutController3;
     CheckoutController4 checkoutController4;
     OrderHistoryController orderHistoryController;
+
+    Tooltip
 
 
     @FXML
