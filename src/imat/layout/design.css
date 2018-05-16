@@ -120,3 +120,6 @@
     -fx-background-radius: 1px;
     -fx-border-style: hidden hidden solid hidden;
 }
+.tooltip {
+    -fx-font-size: 4em;
+}
