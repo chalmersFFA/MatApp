@@ -43,9 +43,6 @@ public class IMatController extends VBox implements Initializable {
     CheckoutController4 checkoutController4;
     OrderHistoryController orderHistoryController;
 
-    Tooltip
-
-
     @FXML
     FlowPane mainFlowPane;
 
