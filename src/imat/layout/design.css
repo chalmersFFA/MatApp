@@ -166,3 +166,9 @@
 .textfield {
     -fx-border-style: hidden hidden hidden hidden;
 }
+.minusButton{
+    -fx-background-image: url("images/minus.png");
+}
+.plusButton{
+    -fx-background-image: url("images/plus.png");
+}
