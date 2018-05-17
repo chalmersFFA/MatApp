@@ -40,7 +40,7 @@
       </ScrollPane>
       <Label layoutX="100.0" layoutY="898.0" styleClass="normal-text" text="Total:" AnchorPane.bottomAnchor="60.0" />
       <Label fx:id="totalLabel" layoutX="190.0" layoutY="898.0" styleClass="normal-text" text="35 Spänn" AnchorPane.bottomAnchor="60.0" />
-      <Label fx:id="emptyCartLabel" layoutX="261.0" layoutY="15.0" onMouseClicked="#emptyCart" text="Töm Kundvagn">
+      <Label fx:id="emptyCartLabel" layoutX="261.0" layoutY="15.0" onContextMenuRequested="#changePliancyCart" onMouseClicked="#emptyCart" onMouseEntered="#changePliancyCart" onMouseExited="#endPliancyOrderCart" text="Töm Kundvagn">
          <graphic>
             <ImageView fitHeight="33.0" fitWidth="37.0" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -48,6 +48,14 @@
                </image>
             </ImageView>
          </graphic>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
       </Label>
+      <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="6.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../layout/images/shopping_cart.png" />
+         </image>
+      </ImageView>
    </children>
 </fx:root>
