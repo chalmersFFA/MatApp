@@ -103,6 +103,7 @@ public class ShoppingCartController extends AnchorPane implements ShoppingCartLi
 
     @FXML
     public void emptyCart(){
+
         shoppingCart.clear();
         update();
     }
@@ -114,5 +115,4 @@ public class ShoppingCartController extends AnchorPane implements ShoppingCartLi
     public void endPliancyCart(){
         emptyCartLabel.setOpacity(1);
     }
-
 }

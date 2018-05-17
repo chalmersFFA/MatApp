@@ -119,6 +119,7 @@ public class CategoryItem extends AnchorPane {
         return standardClass;
     }
 
+
     public void setStandardClass(String standardClass) {
         this.standardClass = standardClass;
     }

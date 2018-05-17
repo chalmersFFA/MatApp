@@ -143,7 +143,7 @@ public class IMatController extends VBox implements Initializable {
 
     private void initProducts() {
         ShoppingCartItem s;
-        for (Product p : db.getProducts(ProductCategory.BERRY)) {
+        for (Product p : db.getProducts()) {
             //ItemHandler itemHandler = new ItemHandler(new ShoppingItem(p,0));
             storeListItemMap.put(p.getName(), new StoreListItem(p, this));
             shoppingCartController.addToHashMap(new ShoppingCartItem(p, shoppingCartController));
@@ -158,8 +158,12 @@ public class IMatController extends VBox implements Initializable {
         currentSiteLabel.setText("Kategori: " + Translator.swe(category));
     }
 
-    private void updateProductListLoop(List<Product> products) {
+    public void clearProductList() {
         mainFlowPane.getChildren().clear();
+    }
+
+    private void updateProductListLoop(List<Product> products) {
+       // mainFlowPane.getChildren().clear();
         for(Product p : products) {
             mainFlowPane.setHgap(30);
             mainFlowPane.setVgap(10);
@@ -288,6 +292,7 @@ public class IMatController extends VBox implements Initializable {
         for (CategoryItem sub : c.getSubCategories()) {
             int index = categoryFlowPane.getChildren().indexOf(c) + 1;
             categoryFlowPane.getChildren().add(index, sub);
+
         }
     }
 
@@ -449,6 +454,7 @@ public class IMatController extends VBox implements Initializable {
             currentSiteLabel.setText("Sökningen " + "\"" + searchTextField.getText() + "\" gav inga resultat.");
         }
         else {
+            clearProductList();
             updateProductListLoop(db.findProducts(searchTextField.getText()));
             currentSiteLabel.setText("Sökresultat för: " + searchTextField.getText());
         }
