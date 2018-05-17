@@ -94,12 +94,14 @@ public class ShoppingCartItem extends AnchorPane implements ShoppingCartListener
     }
 
     public void remove() {
-        for(ShoppingItem s : shoppingCart.getItems()){
-            if(s.getProduct().getName().equals(product.getName())){
-                shoppingCart.removeItem(s);
+        if(!shoppingCart.getItems().isEmpty()){
+            for(ShoppingItem s : shoppingCart.getItems()){
+                if(s.getProduct().getName().equals(product.getName())){
+                    shoppingCart.removeItem(s);
+                }
             }
+            shoppingCart.fireShoppingCartChanged(null, false);
         }
-        shoppingCart.fireShoppingCartChanged(null, false);
     }
     @FXML
     public void increaseAmount(){
