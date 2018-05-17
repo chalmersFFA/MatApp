@@ -99,16 +99,16 @@
     -fx-font-size: 25px;
 }
 .backbutton{
-    -fx-background-color:  #CCCCCC;
+    -fx-background-color:  #4141EF;
     -fx-font-color: #FFFFFF;
     -fx-text-fill: #FFFFFF;
     -fx-cursor: hand;
 }
 .backbutton:hover{
-    -fx-background-color:  #CFCFCF;
+    -fx-background-color:  #4A4AFF;
 }
 .backbutton:pressed{
-    -fx-background-color:  #C0C0C0;
+    -fx-background-color:  #4141DF;
 }
 
 .removeFocusColor{
@@ -138,6 +138,7 @@
     -fx-background-color: rgba(255,255,255,1);
     -fx-border-style: hidden hidden solid hidden;
     -fx-border-color: rgba(200,200,200,0.7);
+    -fx-cursor: hand;
 }
 .historyItem:hover{
     -fx-background-color: rgba(230,230,230,1);
