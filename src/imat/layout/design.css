@@ -163,3 +163,6 @@
 .tooltip {
     -fx-font-size: 4em;
 }
+.textfield {
+    -fx-border-style: hidden hidden hidden hidden;
+}

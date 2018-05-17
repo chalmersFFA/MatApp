@@ -7,10 +7,10 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<fx:root maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="850.0" prefWidth="1100.0" styleClass="normal-text" stylesheets="@../layout/design.css" type="AnchorPane" xmlns="http://javafx.com/javafx/9.0.4" xmlns:fx="http://javafx.com/fxml/1">
+<fx:root maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="850.0" prefWidth="1100.0" styleClass="normal-text" stylesheets="@../layout/design.css" type="AnchorPane" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <AnchorPane fx:id="betalkortAnchorPane" layoutX="577.0" layoutY="66.0" prefHeight="297.0" prefWidth="409.0" stylesheets="@../layout/design.css" />
-      <AnchorPane fx:id="uppgifterAnchorPane" layoutX="38.0" layoutY="66.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="723.0" prefWidth="441.0" stylesheets="@../layout/design.css" />
+      <AnchorPane fx:id="betalkortAnchorPane" layoutX="14.0" layoutY="471.0" prefHeight="297.0" prefWidth="409.0" stylesheets="@../layout/design.css" />
+      <AnchorPane fx:id="uppgifterAnchorPane" layoutX="14.0" layoutY="14.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="723.0" prefWidth="441.0" stylesheets="@../layout/design.css" />
       <AnchorPane layoutX="500.0" layoutY="428.0" prefHeight="251.0" prefWidth="512.0">
          <children>
             <Label layoutX="371.0" layoutY="132.0" styleClass="normal-text" text="Välj tid" />
