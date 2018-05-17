@@ -9,4 +9,22 @@ public class MyMath {
         long tmp = Math.round(value);
         return (double) tmp / factor;
     }
+
+
+
+    public static String fixNumber(double number) {
+        String strNum = Double.toString(number);
+        int p = 0;
+        StringBuilder sb = new StringBuilder();
+
+        for(int i = strNum.length(); i > 0; i--) {
+            sb.append(strNum.charAt(i-1));
+            p++;
+            if(p % 3 == 0 && strNum.charAt(i-1)!='.'){
+                sb.append(" ");
+            }
+        }
+        sb = sb.reverse();
+        return sb.toString();
+    }
 }
