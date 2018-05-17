@@ -173,3 +173,10 @@
 .plusButton{
     -fx-background-image: url("images/plus.png");
 }
+.white {
+    -fx-background-color: white;
+}
+.textarea {
+    -fx-overflow-style: hidden;
+    -fx-overflow-size: none;
+}

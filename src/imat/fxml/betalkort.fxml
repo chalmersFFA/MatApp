@@ -8,32 +8,32 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<fx:root maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="442.0" prefWidth="779.0" styleClass="normal-text" stylesheets="@../layout/design.css" type="AnchorPane" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<fx:root maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="344.0" prefWidth="779.0" styleClass="normal-text" stylesheets="@../layout/design.css" type="AnchorPane" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <Label alignment="CENTER_RIGHT" layoutX="47.0" layoutY="70.0" prefHeight="17.0" prefWidth="133.0" text="Kortnummer:" textAlignment="RIGHT" AnchorPane.rightAnchor="570.0" AnchorPane.topAnchor="115.0" />
-      <Label alignment="CENTER_RIGHT" layoutX="94.0" layoutY="115.0" text="Kortets innehavare:" AnchorPane.rightAnchor="570.0" AnchorPane.topAnchor="70.0" />
-      <Button fx:id="editCardButton" layoutX="298.0" layoutY="304.0" mnemonicParsing="false" onAction="#editButtonClick" text="Redigera Kort" AnchorPane.rightAnchor="356.0" AnchorPane.topAnchor="304.0" />
+      <Label alignment="CENTER_RIGHT" layoutX="47.0" layoutY="70.0" prefHeight="17.0" prefWidth="133.0" text="Kortnummer:" textAlignment="RIGHT" AnchorPane.rightAnchor="630.0" AnchorPane.topAnchor="115.0" />
+      <Label alignment="CENTER_RIGHT" layoutX="94.0" layoutY="115.0" text="Kortets innehavare:" AnchorPane.rightAnchor="630.0" AnchorPane.topAnchor="70.0" />
+      <Button fx:id="editCardButton" layoutX="245.0" layoutY="304.0" mnemonicParsing="false" onAction="#editButtonClick" text="Redigera Kort" AnchorPane.rightAnchor="400.0" AnchorPane.topAnchor="304.0" />
       <Label fx:id="cardNumberLabel" layoutX="215.0" layoutY="77.0" styleClass="bold-text" AnchorPane.topAnchor="115.0" />
-      <TextField fx:id="cardHolderTextField" layoutX="206.0" layoutY="69.0" minHeight="29.0" prefHeight="29.0" AnchorPane.leftAnchor="220.0" AnchorPane.topAnchor="70.0" />
-      <TextField fx:id="cardNumberTextField" layoutX="216.0" layoutY="79.0" minHeight="29.0" prefHeight="29.0" AnchorPane.leftAnchor="220.0" AnchorPane.topAnchor="115.0" />
+      <TextField fx:id="cardHolderTextField" layoutX="206.0" layoutY="69.0" minHeight="29.0" prefHeight="29.0" AnchorPane.leftAnchor="155.0" AnchorPane.topAnchor="70.0" />
+      <TextField fx:id="cardNumberTextField" layoutX="216.0" layoutY="79.0" minHeight="29.0" prefHeight="29.0" AnchorPane.leftAnchor="155.0" AnchorPane.topAnchor="115.0" />
       <ImageView fitHeight="56.0" fitWidth="57.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../layout/images/payment.png" />
          </image>
       </ImageView>
-      <Label layoutX="56.0" layoutY="8.0" text="Mitt Betalkort" />
-      <Label fx:id="cardValidLabel" layoutX="77.0" layoutY="169.0" text="Giltig t.o.m:" AnchorPane.rightAnchor="570.0" AnchorPane.topAnchor="160.0" />
-      <ComboBox fx:id="cardValidYearComboBox" layoutX="312.0" layoutY="156.0" prefHeight="35.0" prefWidth="78.0" AnchorPane.leftAnchor="312.0" AnchorPane.topAnchor="156.0" />
-      <ComboBox fx:id="cardValidMonthComboBox" layoutX="220.0" layoutY="156.0" prefHeight="35.0" prefWidth="78.0" AnchorPane.leftAnchor="220.0" AnchorPane.topAnchor="156.0" />
-      <Label fx:id="cardVerificationLabel" layoutX="88.0" layoutY="257.0" text="CCV/CVC:" AnchorPane.rightAnchor="570.0" AnchorPane.topAnchor="205.0" />
-      <TextField fx:id="cardVerificationTextField" layoutX="181.0" layoutY="251.0" minHeight="29.0" prefHeight="29.0" prefWidth="78.0" AnchorPane.leftAnchor="220.0" AnchorPane.topAnchor="205.0" />
-      <Label fx:id="whatIsCVCLabel" layoutX="131.0" layoutY="312.0" styleClass="normal-text" text="Vad är CCV/CVC?" AnchorPane.leftAnchor="131.0" />
-      <Button fx:id="saveCardButton" layoutX="298.0" layoutY="304.0" mnemonicParsing="false" onAction="#saveButtonClick" text="Spara Ändringar" AnchorPane.rightAnchor="336.0" />
+      <Label layoutX="56.0" layoutY="8.0" styleClass="big-text" text="Mitt Betalkort" />
+      <Label fx:id="cardValidLabel" layoutX="77.0" layoutY="169.0" text="Giltig t.o.m:" AnchorPane.rightAnchor="630.0" AnchorPane.topAnchor="160.0" />
+      <ComboBox fx:id="cardValidYearComboBox" layoutX="312.0" layoutY="156.0" prefHeight="35.0" prefWidth="78.0" AnchorPane.leftAnchor="155.0" AnchorPane.topAnchor="156.0" />
+      <ComboBox fx:id="cardValidMonthComboBox" layoutX="252.0" layoutY="156.0" prefHeight="35.0" prefWidth="78.0" AnchorPane.topAnchor="156.0" />
+      <Label fx:id="cardVerificationLabel" layoutX="88.0" layoutY="257.0" text="CCV/CVC:" AnchorPane.rightAnchor="630.0" AnchorPane.topAnchor="205.0" />
+      <TextField fx:id="cardVerificationTextField" layoutX="181.0" layoutY="251.0" minHeight="29.0" prefHeight="29.0" prefWidth="78.0" AnchorPane.leftAnchor="155.0" AnchorPane.topAnchor="205.0" />
+      <Label fx:id="whatIsCVCLabel" layoutX="131.0" layoutY="312.0" styleClass="normal-text" text="Vad är CCV/CVC?" AnchorPane.leftAnchor="131.0" AnchorPane.rightAnchor="630.0" />
+      <Button fx:id="saveCardButton" layoutX="122.0" layoutY="304.0" mnemonicParsing="false" onAction="#saveButtonClick" text="Spara Ändringar" AnchorPane.rightAnchor="400.0" />
       <Label fx:id="cardHolderLabel" layoutX="220.0" layoutY="74.0" text="Namn" AnchorPane.leftAnchor="220.0" AnchorPane.topAnchor="70.0" />
       <Label fx:id="cardNumberLabel" layoutX="220.0" layoutY="119.0" text="Nummer" AnchorPane.leftAnchor="220.0" AnchorPane.topAnchor="115.0" />
-      <Label fx:id="errorHolderLabel" layoutX="472.0" layoutY="70.0" styleClass="red" text="Namn är fel angivet" />
-      <Label fx:id="errorNumberLabel" layoutX="472.0" layoutY="115.0" styleClass="red" text="Kortnummer är fel angivet" />
-      <Label fx:id="errorValidationLabel" layoutX="472.0" layoutY="169.0" styleClass="red" text="Datum är ej angivet" />
-      <Label fx:id="errorCvcLabel" layoutX="472.0" layoutY="214.0" styleClass="red" text="CCV/CVC är fel angivet" />
+      <Label fx:id="errorHolderLabel" layoutX="381.0" layoutY="71.0" styleClass="red" text="Namn är fel angivet" />
+      <Label fx:id="errorNumberLabel" layoutX="381.0" layoutY="115.0" styleClass="red" text="Kortnummer är fel angivet" />
+      <Label fx:id="errorValidationLabel" layoutX="381.0" layoutY="164.0" styleClass="red" text="Datum är ej angivet" />
+      <Label fx:id="errorCvcLabel" layoutX="381.0" layoutY="208.0" styleClass="red" text="CCV/CVC är fel angivet" />
    </children>
 </fx:root>
