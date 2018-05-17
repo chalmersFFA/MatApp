@@ -490,4 +490,5 @@ public class IMatController extends VBox implements Initializable {
     public void endPliancyOrderHistory(){
         orderHistoryLabel.setOpacity(1);
     }
+
 }

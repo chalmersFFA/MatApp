@@ -111,7 +111,7 @@ public class ShoppingCartController extends AnchorPane implements ShoppingCartLi
         emptyCartLabel.setOpacity(0.6);
     }
     @FXML
-    public void endPliancyOrderCart(){
+    public void endPliancyCart(){
         emptyCartLabel.setOpacity(1);
     }
 
