@@ -90,7 +90,7 @@ public class ShoppingCartItem extends AnchorPane implements ShoppingCartListener
         //amountTextField.setText(Double.toString(itemHandler.getShoppingItem().getAmount()));
         //priceLabel.setText(Double.toString(itemHandler.getShoppingItem().getTotal()));
     }
-
+    @FXML
     public void remove() {
         if(!shoppingCart.getItems().isEmpty()){
             for(ShoppingItem s : shoppingCart.getItems()){
@@ -100,6 +100,7 @@ public class ShoppingCartItem extends AnchorPane implements ShoppingCartListener
             }
             shoppingCart.fireShoppingCartChanged(null, false);
         }
+        parentController.changePliancyCart();
     }
     @FXML
     public void increaseAmount(){
@@ -135,6 +136,8 @@ public class ShoppingCartItem extends AnchorPane implements ShoppingCartListener
                 //TODO bestäm vad som ska hända med vagnen om det finns 0 av en vara
                 if(s.getAmount() < 0){
                     shoppingCart.removeItem(s);
+                    parentController.changePliancyCart();
+
                 }
             }
         }
