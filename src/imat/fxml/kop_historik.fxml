@@ -17,7 +17,7 @@
             <Label layoutX="325.0" layoutY="61.0" styleClass="normal-text" text="Har kan du se dina tidigare köp" />
          </children>
       </AnchorPane>
-      <ScrollPane hbarPolicy="NEVER" layoutY="100.0" prefHeight="568.0" prefWidth="615.0">
+      <ScrollPane hbarPolicy="NEVER" layoutY="100.0" prefHeight="568.0" prefWidth="615.0" vbarPolicy="ALWAYS">
          <content>
             <FlowPane fx:id="orderHistoryFlowPane" prefHeight="347.0" prefWidth="582.0" />
          </content>
