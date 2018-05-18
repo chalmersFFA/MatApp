@@ -21,7 +21,7 @@
                   <Image url="@../layout/images/Cooking_apple_detail.png" />
                </image>
             </ImageView>
-            <Label fx:id="nameLabel" layoutX="89.0" layoutY="7.0" styleClass="big-text" stylesheets="@../layout/design.css" text="Kategori" textFill="WHITE" />
+            <Label fx:id="nameLabel" layoutX="68.0" layoutY="9.0" prefHeight="31.0" prefWidth="267.0" styleClass="big-text" stylesheets="@../layout/design.css" text="Kategori" textFill="WHITE" />
          </children>
       </Pane>
    </children>
