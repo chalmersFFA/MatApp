@@ -25,18 +25,20 @@
          </children>
       </AnchorPane>
       <Line endX="500.0" layoutX="25.0" layoutY="530.0" />
-      <AnchorPane layoutY="793.0" prefHeight="64.0" prefWidth="1100.0" style="-fx-background-color: #f3f3f3;" />
-      <Button layoutX="15.0" layoutY="800.0" mnemonicParsing="false" onAction="#backButton" prefHeight="40.0" prefWidth="185.0" styleClass="backbutton" text="Tillbaka" AnchorPane.bottomAnchor="10.0" />
-      <Button layoutX="900.0" layoutY="800.0" mnemonicParsing="false" onAction="#nextButton" prefHeight="40.0" prefWidth="185.0" text="Vidare till översikt">
-         <styleClass>
-            <String fx:value="nextButton" />
-            <String fx:value="normal-text" />
-         </styleClass>
-      </Button>
-      <AnchorPane minHeight="-Infinity" prefHeight="90.0" prefWidth="1100.0" style="-fx-background-color: #f3f3f3;">
+      <AnchorPane layoutY="787.0" prefHeight="70.0" prefWidth="1100.0" styleClass="checkoutTopandBottom">
          <children>
-            <AnchorPane fx:id="sequenceMapAnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="64.0" prefWidth="524.0" stylesheets="@../layout/design.css" AnchorPane.leftAnchor="289.0" AnchorPane.rightAnchor="287.0" AnchorPane.topAnchor="10.0" />
-            <Button mnemonicParsing="false" styleClass="backbutton" text="Tillbaka till shopping" AnchorPane.leftAnchor="15.0" AnchorPane.topAnchor="10.0" />
+            <Button layoutX="14.0" layoutY="15.0" mnemonicParsing="false" onAction="#backButton" prefHeight="40.0" prefWidth="185.0" styleClass="backbutton" text="Tillbaka" AnchorPane.bottomAnchor="15.0" />
+            <Button layoutX="901.0" layoutY="15.0" mnemonicParsing="false" onAction="#nextButton" prefHeight="40.0" prefWidth="185.0" text="Vidare till översikt">
+               <styleClass>
+                  <String fx:value="nextButton" />
+                  <String fx:value="normal-text" />
+               </styleClass>
+            </Button>
+         </children></AnchorPane>
+      <AnchorPane minHeight="-Infinity" prefHeight="90.0" prefWidth="1100.0" styleClass="checkoutTopandBottom">
+         <children>
+            <AnchorPane fx:id="sequenceMapAnchorPane" layoutX="282.0" layoutY="13.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="64.0" prefWidth="524.0" stylesheets="@../layout/design.css" AnchorPane.leftAnchor="282.0" AnchorPane.rightAnchor="294.0" AnchorPane.topAnchor="13.0" />
+            <Button layoutX="14.0" layoutY="28.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="185.0" styleClass="backbutton" text="Tillbaka till shopping" AnchorPane.leftAnchor="14.0" AnchorPane.topAnchor="28.0" />
          </children>
       </AnchorPane>
    </children>
