@@ -83,6 +83,11 @@ public class StoreListItem extends AnchorPane implements ShoppingCartListener {
 
         IMatController.addToolTip(increaseButton, tooltipIncrease, tooltipDelay);
         IMatController.addToolTip(decreaseButton, tooltipDecrease, tooltipDelay);
+
+        amountTextField.textProperty().addListener((observable, oldValue, newValue) -> {
+            System.out.println("textfield changed from " + oldValue + " to " + newValue);
+        });
+
         update();
 
     }
