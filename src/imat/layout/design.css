@@ -197,3 +197,6 @@
     -fx-overflow-style: hidden;
     -fx-overflow-size: none;
 }
+.checkoutTopAndBottom {
+    -fx-background-color: #f3f3f3;
+}

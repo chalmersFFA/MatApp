@@ -36,7 +36,7 @@ public class CheckoutController3 extends AnchorPane implements ShoppingCartListe
     public CheckoutController3(IMatController parentController, ShoppingCartController shoppingCartController) {
         this.shoppingCartController = shoppingCartController;
         this.parentController = parentController;
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("fxml/Steg3_betalning.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("fxml/steg3_betalning.fxml"));
         fxmlLoader.setRoot(this);
         fxmlLoader.setController(this);
 
@@ -53,6 +53,9 @@ public class CheckoutController3 extends AnchorPane implements ShoppingCartListe
         sequenceMapAnchorPane.getChildren().clear();
         sequenceMapAnchorPane.getChildren().add(parentController.getSequenceMap());
         parentController.getSequenceMap().setState(3);
+    }
+    public void refreshCheckoutController3() {
+        update();
     }
     @FXML
     public void backButton() {

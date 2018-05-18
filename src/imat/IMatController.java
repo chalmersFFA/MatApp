@@ -358,6 +358,7 @@ public class IMatController extends VBox implements Initializable {
 
     public void toFinalPaymentStep() {
         checkoutController3.refreshSequenceMap();
+        checkoutController3.refreshCheckoutController3();
         displayPane.getChildren().clear();
         displayPane.setAlignment(Pos.CENTER);
         displayPane.getChildren().add(checkoutController3);
