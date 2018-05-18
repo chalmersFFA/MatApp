@@ -72,10 +72,6 @@ public class ShoppingCartController extends AnchorPane implements ShoppingCartLi
         update();
         endPliancyCart();
     }
-    /*public void add(ShoppingCartItem s) {
-        visualItems.add(s);
-        update();
-    }*/
 
     public void update() {
         shoppingCartFlowPane.getChildren().clear();
@@ -131,8 +127,5 @@ public class ShoppingCartController extends AnchorPane implements ShoppingCartLi
     public void endPliancyCart(){
         if(shoppingCart.getTotal()!=0)
             emptyCartLabel.setOpacity(1);
-    }
-    public void forcePliancyCartUnclickable() {
-
     }
 }
