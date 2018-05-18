@@ -23,7 +23,7 @@ public class MyMath {
 
 
     public static String doubleToString(double number) {
-        if(number < 2222222) { // om du betalar mer än 2 mille är du dum och du förstör programmet
+        if(number < 2222222 && number > 0.01) { // om du betalar mer än 2 mille är du dum och du förstör programmet
             String strNum = Double.toString(number);
             if(strNum.charAt(strNum.length()-2)=='.'){
                 strNum = strNum + "0";
@@ -40,6 +40,6 @@ public class MyMath {
             }
             return sb.reverse().toString();
         }
-        return Double.toString(number);
+        return "0";
     }
 }
