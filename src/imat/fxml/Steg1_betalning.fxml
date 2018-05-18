@@ -9,7 +9,7 @@
 <?import javafx.scene.layout.FlowPane?>
 <?import javafx.scene.text.Font?>
 
-<fx:root maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="850.0" prefWidth="1100.0" stylesheets="@../layout/design.css" type="AnchorPane" xmlns="http://javafx.com/javafx/9.0.4" xmlns:fx="http://javafx.com/fxml/1">
+<fx:root maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="850.0" prefWidth="1100.0" stylesheets="@../layout/design.css" type="AnchorPane" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <Button layoutX="15.0" layoutY="800.0" mnemonicParsing="false" onAction="#backButton" prefHeight="40.0" prefWidth="185.0" text="Tillbaka till shopping">
          <styleClass>
@@ -29,8 +29,8 @@
          </cursor>
       </Button>
       <Label layoutX="31.0" layoutY="89.0" styleClass="normal-text" stylesheets="@../layout/design.css" text="Här kan du granska din order innan du går vidare till betalningsättet" />
-      <Label layoutX="801.0" layoutY="722.0" styleClass="normal-text" text="Totalt:" />
-      <Label fx:id="totalLabel" layoutX="854.0" layoutY="718.0" prefHeight="35.0" prefWidth="118.0" styleClass="big-text" text="100 kr">
+      <Label layoutX="751.0" layoutY="725.0" styleClass="normal-text" text="Totalt:" AnchorPane.leftAnchor="751.0" />
+      <Label fx:id="totalLabel" ellipsisString="" layoutX="826.0" layoutY="720.0" prefHeight="35.0" prefWidth="148.0" styleClass="big-text" text="1001 kr" AnchorPane.leftAnchor="826.0">
          <font>
             <Font size="17.0" />
          </font>
