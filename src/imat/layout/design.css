@@ -169,7 +169,15 @@
 }
 .minusButton{
     -fx-background-image: url("images/minus.png");
+    -fx-background-repeat: no-repeat;
+    -fx-background-position: center;
+    -fx-background-size: 45% 30%;
+
 }
 .plusButton{
     -fx-background-image: url("images/plus.png");
+    -fx-background-repeat: no-repeat;
+    -fx-background-position: center;
+    -fx-background-size: 50%;
+
 }
