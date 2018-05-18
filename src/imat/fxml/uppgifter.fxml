@@ -25,12 +25,12 @@
       <TextField fx:id="postCodeTextField" minHeight="29.0" prefHeight="29.0" styleClass="textfield" AnchorPane.leftAnchor="155.0" AnchorPane.topAnchor="200.0" />
       <TextField fx:id="postAddressTextField" minHeight="29.0" prefHeight="29.0" styleClass="textfield" AnchorPane.leftAnchor="155.0" AnchorPane.topAnchor="230.0" />
       <TextField fx:id="phoneNumberTextField" minHeight="29.0" prefHeight="29.0" styleClass="textfield" AnchorPane.leftAnchor="155.0" AnchorPane.topAnchor="260.0" />
-      <Label fx:id="firstNameLabel" styleClass="bold-text" AnchorPane.leftAnchor="150.0" AnchorPane.topAnchor="70.0" />
-      <Label fx:id="lastNameLabel" styleClass="bold-text" AnchorPane.leftAnchor="150.0" AnchorPane.topAnchor="100.0" />
-      <Label fx:id="emailLabel" styleClass="bold-text" AnchorPane.leftAnchor="150.0" AnchorPane.topAnchor="130.0" />
-      <Label fx:id="addressLabel" styleClass="bold-text" AnchorPane.leftAnchor="150.0" AnchorPane.topAnchor="150.0" />
-      <Label fx:id="postCodeLabel" styleClass="bold-text" AnchorPane.leftAnchor="150.0" AnchorPane.topAnchor="200.0" />
-      <Label fx:id="postAddressLabel" styleClass="bold-text" AnchorPane.leftAnchor="150.0" AnchorPane.topAnchor="230.0" />
-      <Label fx:id="phoneNumberLabel" styleClass="bold-text" AnchorPane.leftAnchor="150.0" AnchorPane.topAnchor="260.0" />
+      <Label fx:id="firstNameLabel" styleClass="bold-text" AnchorPane.leftAnchor="160.0" AnchorPane.topAnchor="70.0" />
+      <Label fx:id="lastNameLabel" styleClass="bold-text" AnchorPane.leftAnchor="160.0" AnchorPane.topAnchor="100.0" />
+      <Label fx:id="emailLabel" styleClass="bold-text" AnchorPane.leftAnchor="160.0" AnchorPane.topAnchor="130.0" />
+      <Label fx:id="addressLabel" styleClass="bold-text" AnchorPane.leftAnchor="160.0" AnchorPane.topAnchor="150.0" />
+      <Label fx:id="postCodeLabel" styleClass="bold-text" AnchorPane.leftAnchor="160.0" AnchorPane.topAnchor="200.0" />
+      <Label fx:id="postAddressLabel" styleClass="bold-text" AnchorPane.leftAnchor="160.0" AnchorPane.topAnchor="230.0" />
+      <Label fx:id="phoneNumberLabel" styleClass="bold-text" AnchorPane.leftAnchor="160.0" AnchorPane.topAnchor="260.0" />
    </children>
 </fx:root>
