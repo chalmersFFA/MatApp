@@ -29,7 +29,7 @@
                <graphic>
                   <ImageView fx:id="myFavourites" fitHeight="25.0" fitWidth="28.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../layout/images/stareboi.png" />
+                        <Image url="@../layout/images/storStar.png" />
                      </image>
                   </ImageView>
                </graphic>
