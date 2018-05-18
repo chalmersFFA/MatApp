@@ -15,7 +15,7 @@
 <?import javafx.scene.paint.Color?>
 <?import javafx.scene.text.Font?>
 
-<VBox stylesheets="@../layout/design.css" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="imat.IMatController">
+<VBox stylesheets="@../layout/design.css" xmlns="http://javafx.com/javafx/9.0.4" xmlns:fx="http://javafx.com/fxml/1" fx:controller="imat.IMatController">
    <children>
       <AnchorPane id="headerStyle" fx:id="headerAnchorPane" prefHeight="75.0" prefWidth="1127.0" stylesheets="@../layout/design.css">
          <children>
@@ -109,7 +109,7 @@
                     </AnchorPane>
                         <AnchorPane styleClass="mainFlowPane" HBox.hgrow="ALWAYS">
                            <children>
-                              <StackPane fx:id="browsingStackPane" layoutY="83.0" prefHeight="504.0" prefWidth="616.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="83.0">
+                              <StackPane fx:id="browsingStackPane" layoutY="72.0" prefHeight="515.0" prefWidth="616.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="72.0">
                                  <children>
                                     <VBox fx:id="mainVBox" prefHeight="545.0" prefWidth="616.0">
                                        <children>
