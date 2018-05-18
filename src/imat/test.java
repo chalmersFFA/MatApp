@@ -11,7 +11,7 @@ public class test {
         Product p = db.getProduct(87);
         System.out.println(p.getName());*/
 
-        System.out.println(doubleToString(1000.002));
+        System.out.println(doubleToString(7));
     }
 
     private static int getIndexOfDecimal(String strNum){
