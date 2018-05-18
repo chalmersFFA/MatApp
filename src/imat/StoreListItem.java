@@ -74,7 +74,7 @@ public class StoreListItem extends AnchorPane implements ShoppingCartListener {
         productNameLabel.setText(product.getName());
         //amountTextField.setText(Integer.toString(amount));
 
-        priceLabel.setText(Integer.toString((int)product.getPrice()) + " " + product.getUnit());
+        priceLabel.setText(MyMath.doubleToString(product.getPrice()) + " " + product.getUnit());
         //itemHandler.setStoreListItem(this);
 
         shoppingCart.addShoppingCartListener(this);
