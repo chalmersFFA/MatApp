@@ -104,10 +104,9 @@ public class StoreListItem extends AnchorPane implements ShoppingCartListener {
     }
 
     public void update() {
-        //TODO fixa så att den här tar in ifrån shoppingcart, kanske ska den vara en listener?
+        amountTextField.setText("0");
         for(ShoppingItem s : shoppingCart.getItems()){
             if(s.getProduct().getName().equals(product.getName())){
-                System.out.println(s.getAmount());
                 amountTextField.setText(MyMath.doubleToString(s.getAmount()));
                 unit.setText(product.getUnitSuffix());
                 break;
@@ -196,7 +195,6 @@ public class StoreListItem extends AnchorPane implements ShoppingCartListener {
             if(s.getProduct().getName().equals(product.getName())){
                 s.setAmount(Double.parseDouble(amountTextField.getText()));
                 shoppingCart.fireShoppingCartChanged(null, false);
-                System.out.println("REEEEEEEEEEEEE");
             }
         }
     }
