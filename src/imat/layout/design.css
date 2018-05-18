@@ -173,3 +173,7 @@
 .plusButton{
     -fx-background-image: url("images/plus.png");
 }
+.borders{
+    -fx-border-width: 1px;
+    -fx-border-color: #d3d3d3;
+}
