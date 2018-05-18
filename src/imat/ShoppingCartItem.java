@@ -1,7 +1,5 @@
 package imat;
 
-import javafx.beans.value.ChangeListener;
-import javafx.beans.value.ObservableValue;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Button;
@@ -84,8 +82,8 @@ public class ShoppingCartItem extends AnchorPane implements ShoppingCartListener
                 //amountTextField.setText(Double.toString(s.getAmount()));
                 priceLabel.setText(Double.toString(s.getTotal()) + " kr");
                 //unit.setText(product.getUnitSuffix());
-                amountTextField.setText(Double.toString(MyMath.round(s.getAmount(),3))+ product.getUnitSuffix());
-                priceLabel.setText(Double.toString(MyMath.round(s.getTotal(), 3)) + " kr");
+                amountTextField.setText(MyMath.doubleToString(s.getAmount())+ product.getUnitSuffix());
+                priceLabel.setText(MyMath.doubleToString(s.getTotal()) + " kr");
                 break;
             }
         }

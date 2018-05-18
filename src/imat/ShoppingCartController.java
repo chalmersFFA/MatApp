@@ -77,7 +77,7 @@ public class ShoppingCartController extends AnchorPane implements ShoppingCartLi
         for(ShoppingItem s : shoppingCart.getItems()) {
             shoppingCartFlowPane.getChildren().add(shoppingCartItemMap.get(s.getProduct().getName()));
         }
-        totalLabel.setText(MyMath.fixNumber(MyMath.round(shoppingCart.getTotal(),3)) +" kr");
+        totalLabel.setText(MyMath.doubleToString(shoppingCart.getTotal()) +" kr");
     }
 
     public void addToHashMap(ShoppingCartItem s) {
