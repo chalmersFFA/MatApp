@@ -71,7 +71,7 @@ public class ShoppingCartItem extends AnchorPane implements ShoppingCartListener
         IMatController.addToolTip(decreaseButton, tooltipDecrease, tooltipDelay);
         IMatController.addToolTip(cross, removeTooltip, tooltipDelay);
         amountTextField.setTooltip(amountTooltip);
-
+        update();
     }
 
     public void update() {
@@ -169,7 +169,6 @@ public class ShoppingCartItem extends AnchorPane implements ShoppingCartListener
             if(s.getProduct().getName().equals(product.getName())){
                 s.setAmount(Double.parseDouble(amountTextField.getText()));
                 shoppingCart.fireShoppingCartChanged(null, false);
-                System.out.println("REEEEEEEEEEEEE");
             }
         }
     }
