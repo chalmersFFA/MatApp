@@ -23,6 +23,8 @@ public class CheckoutController2 extends AnchorPane{
     @FXML
     AnchorPane uppgifterAnchorPane, betalkortAnchorPane, sequenceMapAnchorPane;
 
+
+
     public CheckoutController2(IMatController parentController, ShoppingCartController shoppingCartController) {
         this.shoppingCartController = shoppingCartController;
         this.parentController = parentController;

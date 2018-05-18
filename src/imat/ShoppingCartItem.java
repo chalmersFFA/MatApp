@@ -1,7 +1,5 @@
 package imat;
 
-import javafx.beans.value.ChangeListener;
-import javafx.beans.value.ObservableValue;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Button;
@@ -84,22 +82,25 @@ public class ShoppingCartItem extends AnchorPane implements ShoppingCartListener
                 //amountTextField.setText(Double.toString(s.getAmount()));
                 priceLabel.setText(Double.toString(s.getTotal()) + " kr");
                 //unit.setText(product.getUnitSuffix());
-                amountTextField.setText(Double.toString(MyMath.round(s.getAmount(),3))+ product.getUnitSuffix());
-                priceLabel.setText(Double.toString(MyMath.round(s.getTotal(), 3)) + " kr");
+                amountTextField.setText(MyMath.doubleToString(s.getAmount())+ product.getUnitSuffix());
+                priceLabel.setText(MyMath.doubleToString(s.getTotal()) + " kr");
                 break;
             }
         }
         //amountTextField.setText(Double.toString(itemHandler.getShoppingItem().getAmount()));
         //priceLabel.setText(Double.toString(itemHandler.getShoppingItem().getTotal()));
     }
-
+    @FXML
     public void remove() {
-        for(ShoppingItem s : shoppingCart.getItems()){
-            if(s.getProduct().getName().equals(product.getName())){
-                shoppingCart.removeItem(s);
+        if(!shoppingCart.getItems().isEmpty()){
+            for(ShoppingItem s : shoppingCart.getItems()){
+                if(s.getProduct().getName().equals(product.getName())){
+                    shoppingCart.removeItem(s);
+                }
             }
+            shoppingCart.fireShoppingCartChanged(null, false);
         }
-        shoppingCart.fireShoppingCartChanged(null, false);
+        parentController.changePliancyCart();
     }
     @FXML
     public void increaseAmount(){
@@ -135,6 +136,8 @@ public class ShoppingCartItem extends AnchorPane implements ShoppingCartListener
                 //TODO bestäm vad som ska hända med vagnen om det finns 0 av en vara
                 if(s.getAmount() < 0){
                     shoppingCart.removeItem(s);
+                    parentController.changePliancyCart();
+
                 }
             }
         }

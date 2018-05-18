@@ -6,7 +6,7 @@
 <fx:root maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseClicked="#mouseTrap" prefHeight="724.0" prefWidth="441.0" styleClass="normal-text" stylesheets="@../layout/design.css" type="AnchorPane" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <AnchorPane fx:id="uppgifterAnchorPane" onMouseClicked="#mouseTrap" prefHeight="484.0" prefWidth="441.0" />
-      <AnchorPane fx:id="betalkortAnchorPane" layoutX="-10.0" layoutY="479.0" onMouseClicked="#mouseTrap" prefHeight="249.0" prefWidth="461.0" />
+      <AnchorPane fx:id="betalkortAnchorPane" layoutX="-10.0" layoutY="382.0" onMouseClicked="#mouseTrap" prefHeight="249.0" prefWidth="461.0" />
       <Button fx:id="backButton" mnemonicParsing="false" onAction="#backButton" text="Tillbaka" />
    </children>
 </fx:root>

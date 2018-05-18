@@ -6,32 +6,31 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.shape.Line?>
 
-<fx:root prefHeight="457.0" prefWidth="441.0" stylesheets="@../layout/design.css" type="AnchorPane" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<fx:root maxHeight="359.0" maxWidth="403.0" minHeight="0.0" minWidth="0.0" prefHeight="330.0" prefWidth="403.0" stylesheets="@../layout/design.css" type="AnchorPane" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <Label alignment="CENTER_RIGHT" prefHeight="17.0" prefWidth="133.0" styleClass="normal-text" text="Förnamn:" textAlignment="RIGHT" AnchorPane.rightAnchor="270.0" AnchorPane.topAnchor="70.0" />
-      <Label alignment="CENTER_RIGHT" styleClass="normal-text" text="Efternamn:" AnchorPane.rightAnchor="270.0" AnchorPane.topAnchor="115.0" />
-      <Label alignment="CENTER_RIGHT" prefHeight="27.0" prefWidth="120.0" styleClass="normal-text" text="Adress:" AnchorPane.rightAnchor="270.0" AnchorPane.topAnchor="225.0" />
-      <Label alignment="CENTER_RIGHT" prefHeight="27.0" prefWidth="133.0" styleClass="normal-text" text="Postnummer:" AnchorPane.rightAnchor="270.0" AnchorPane.topAnchor="270.0" />
-      <Label alignment="CENTER_RIGHT" prefHeight="17.0" prefWidth="94.0" styleClass="normal-text" text="Postort:" AnchorPane.rightAnchor="270.0" AnchorPane.topAnchor="315.0" />
-      <Label alignment="CENTER_RIGHT" prefHeight="27.0" prefWidth="133.0" styleClass="normal-text" text="Telefonnummer:" AnchorPane.rightAnchor="270.0" AnchorPane.topAnchor="360.0" />
-      <Label alignment="CENTER_RIGHT" prefHeight="27.0" prefWidth="133.0" styleClass="normal-text" text="E-postadress:" AnchorPane.rightAnchor="270.0" AnchorPane.topAnchor="160.0" />
-      <Button fx:id="editDetailsButton" layoutX="273.0" layoutY="412.0" mnemonicParsing="false" onAction="#editDetails" text="Redigera Uppgifter" AnchorPane.topAnchor="412.0" />
-      <Label layoutX="137.0" layoutY="9.0" styleClass="big-text" text="Mina Uppgifter" />
-      <Line endX="110.0" opacity="0.1" startX="-280.0" AnchorPane.topAnchor="210.5" />
-      <Label fx:id="firstNameLabel" styleClass="bold-text" AnchorPane.leftAnchor="180.0" AnchorPane.topAnchor="70.0" />
-      <Label fx:id="lastNameLabel" styleClass="bold-text" AnchorPane.leftAnchor="180.0" AnchorPane.topAnchor="115.0" />
-      <Label fx:id="emailLabel" styleClass="bold-text" AnchorPane.leftAnchor="180.0" AnchorPane.topAnchor="160.0" />
-      <Label fx:id="addressLabel" styleClass="bold-text" AnchorPane.leftAnchor="180.0" AnchorPane.topAnchor="225.0" />
-      <Label fx:id="postCodeLabel" styleClass="bold-text" AnchorPane.leftAnchor="180.0" AnchorPane.topAnchor="270.0" />
-      <Label fx:id="postAddressLabel" styleClass="bold-text" AnchorPane.leftAnchor="180.0" AnchorPane.topAnchor="315.0" />
-      <Label fx:id="phoneNumberLabel" styleClass="bold-text" AnchorPane.leftAnchor="180.0" AnchorPane.topAnchor="360.0" />
-      <Line endX="110.0" opacity="0.1" startX="-280.0" AnchorPane.topAnchor="460.0" />
-      <TextField fx:id="firstNameTextField" AnchorPane.leftAnchor="180.0" AnchorPane.topAnchor="70.0" />
-      <TextField fx:id="lastNameTextField" AnchorPane.leftAnchor="180.0" AnchorPane.topAnchor="115.0" />
-      <TextField fx:id="emailTextField" AnchorPane.leftAnchor="180.0" AnchorPane.topAnchor="160.0" />
-      <TextField fx:id="addressTextField" AnchorPane.leftAnchor="180.0" AnchorPane.topAnchor="225.0" />
-      <TextField fx:id="postCodeTextField" AnchorPane.leftAnchor="180.0" AnchorPane.topAnchor="270.0" />
-      <TextField fx:id="postAddressTextField" AnchorPane.leftAnchor="180.0" AnchorPane.topAnchor="315.0" />
-      <TextField fx:id="phoneNumberTextField" AnchorPane.leftAnchor="180.0" AnchorPane.topAnchor="360.0" />
+      <Label alignment="CENTER_RIGHT" prefHeight="17.0" prefWidth="133.0" styleClass="normal-text" text="Förnamn:" textAlignment="RIGHT" AnchorPane.rightAnchor="270.0" AnchorPane.topAnchor="60.0" />
+      <Label alignment="CENTER_RIGHT" layoutX="81.0" layoutY="102.0" styleClass="normal-text" text="Efternamn:" AnchorPane.rightAnchor="274.0" AnchorPane.topAnchor="90.0" />
+      <Label alignment="CENTER_RIGHT" prefHeight="27.0" prefWidth="120.0" styleClass="normal-text" text="Adress:" AnchorPane.rightAnchor="270.0" AnchorPane.topAnchor="150.0" />
+      <Label alignment="CENTER_RIGHT" prefHeight="27.0" prefWidth="133.0" styleClass="normal-text" text="Postnummer:" AnchorPane.rightAnchor="270.0" AnchorPane.topAnchor="200.0" />
+      <Label alignment="CENTER_RIGHT" prefHeight="17.0" prefWidth="94.0" styleClass="normal-text" text="Postort:" AnchorPane.rightAnchor="270.0" AnchorPane.topAnchor="230.0" />
+      <Label alignment="CENTER_RIGHT" prefHeight="27.0" prefWidth="133.0" styleClass="normal-text" text="Telefonnummer:" AnchorPane.rightAnchor="270.0" AnchorPane.topAnchor="260.0" />
+      <Label alignment="CENTER_RIGHT" prefHeight="27.0" prefWidth="133.0" styleClass="normal-text" text="E-postadress:" AnchorPane.rightAnchor="270.0" AnchorPane.topAnchor="120.0" />
+      <Button fx:id="editDetailsButton" layoutX="212.0" layoutY="303.0" mnemonicParsing="false" onAction="#editDetails" text="Redigera Uppgifter" AnchorPane.topAnchor="303.0" />
+      <Label layoutX="100.0" styleClass="big-text" text="Mina Uppgifter" />
+      <Line endX="400.0" endY="190.0" opacity="0.1" startY="190.0" />
+      <TextField fx:id="firstNameTextField" minHeight="29.0" prefHeight="29.0" styleClass="textfield" AnchorPane.leftAnchor="140.0" AnchorPane.topAnchor="60.0" />
+      <TextField fx:id="lastNameTextField" layoutX="180.0" layoutY="103.0" minHeight="29.0" prefHeight="29.0" styleClass="textfield" AnchorPane.leftAnchor="140.0" AnchorPane.topAnchor="90.0" />
+      <TextField fx:id="emailTextField" minHeight="29.0" prefHeight="29.0" styleClass="textfield" AnchorPane.leftAnchor="140.0" AnchorPane.topAnchor="120.0" />
+      <TextField fx:id="addressTextField" minHeight="29.0" prefHeight="29.0" styleClass="textfield" AnchorPane.leftAnchor="140.0" AnchorPane.topAnchor="150.0" />
+      <TextField fx:id="postCodeTextField" minHeight="29.0" prefHeight="29.0" styleClass="textfield" AnchorPane.leftAnchor="140.0" AnchorPane.topAnchor="200.0" />
+      <TextField fx:id="postAddressTextField" minHeight="29.0" prefHeight="29.0" styleClass="textfield" AnchorPane.leftAnchor="140.0" AnchorPane.topAnchor="230.0" />
+      <TextField fx:id="phoneNumberTextField" minHeight="29.0" prefHeight="29.0" styleClass="textfield" AnchorPane.leftAnchor="140.0" AnchorPane.topAnchor="260.0" />
+      <Label fx:id="firstNameLabel" styleClass="bold-text" AnchorPane.leftAnchor="150.0" AnchorPane.topAnchor="60.0" />
+      <Label fx:id="lastNameLabel" styleClass="bold-text" AnchorPane.leftAnchor="150.0" AnchorPane.topAnchor="90.0" />
+      <Label fx:id="emailLabel" styleClass="bold-text" AnchorPane.leftAnchor="150.0" AnchorPane.topAnchor="120.0" />
+      <Label fx:id="addressLabel" styleClass="bold-text" AnchorPane.leftAnchor="150.0" AnchorPane.topAnchor="150.0" />
+      <Label fx:id="postCodeLabel" styleClass="bold-text" AnchorPane.leftAnchor="150.0" AnchorPane.topAnchor="200.0" />
+      <Label fx:id="postAddressLabel" styleClass="bold-text" AnchorPane.leftAnchor="150.0" AnchorPane.topAnchor="230.0" />
+      <Label fx:id="phoneNumberLabel" styleClass="bold-text" AnchorPane.leftAnchor="150.0" AnchorPane.topAnchor="260.0" />
    </children>
 </fx:root>

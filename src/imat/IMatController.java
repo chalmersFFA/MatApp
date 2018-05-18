@@ -152,7 +152,10 @@ public class IMatController extends VBox implements Initializable {
         }
     }
 
-
+    public void updateProductListWithAllProducts() {
+        updateProductListLoop(db.getProducts());
+        currentSiteLabel.setText("Kategori: Alla");
+    }
     public void updateProductList(ProductCategory category) {
         updateProductListLoop(db.getProducts(category));
         currentSiteLabel.setText("Kategori: " + Translator.swe(category));

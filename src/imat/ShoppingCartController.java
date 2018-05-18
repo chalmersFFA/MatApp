@@ -32,6 +32,8 @@ public class ShoppingCartController extends AnchorPane implements ShoppingCartLi
     Label totalLabel;
     @FXML
     Label emptyCartLabel;
+    @FXML
+    AnchorPane emptyCartAnchorPane;
 
     public ShoppingCartController(IMatController parentController) {
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("fxml/shopping_cart_controller.fxml"));
@@ -47,6 +49,7 @@ public class ShoppingCartController extends AnchorPane implements ShoppingCartLi
         this.parentController = parentController;
         shoppingCart.addShoppingCartListener(this);
         totalLabel.setText(Double.toString(shoppingCart.getTotal()) +" kr");
+        endPliancyCart();
     }
 
 
@@ -66,6 +69,7 @@ public class ShoppingCartController extends AnchorPane implements ShoppingCartLi
             }
         }
         update();
+        endPliancyCart();
     }
     /*public void add(ShoppingCartItem s) {
         visualItems.add(s);
@@ -77,7 +81,8 @@ public class ShoppingCartController extends AnchorPane implements ShoppingCartLi
         for(ShoppingItem s : shoppingCart.getItems()) {
             shoppingCartFlowPane.getChildren().add(shoppingCartItemMap.get(s.getProduct().getName()));
         }
-        totalLabel.setText(Double.toString(MyMath.round(shoppingCart.getTotal(),3)) +" kr");
+        totalLabel.setText(MyMath.doubleToString(shoppingCart.getTotal()) +" kr");
+        endPliancyCart();
     }
 
     public void addToHashMap(ShoppingCartItem s) {
@@ -102,10 +107,21 @@ public class ShoppingCartController extends AnchorPane implements ShoppingCartLi
     }
 
     @FXML
-    public void emptyCart(){
+    public void emptyCartToFront(){
+        if(shoppingCart.getTotal()!=0)
+            emptyCartAnchorPane.toFront();
+    }
+    @FXML
+    public void emptyCartToBack(){
+        emptyCartAnchorPane.toBack();
+    }
 
+    @FXML
+    public void emptyCart(){
         shoppingCart.clear();
         update();
+        endPliancyCart();
+
     }
     @FXML
     public void changePliancyCart(){
@@ -113,6 +129,7 @@ public class ShoppingCartController extends AnchorPane implements ShoppingCartLi
     }
     @FXML
     public void endPliancyCart(){
-        emptyCartLabel.setOpacity(1);
+        if(shoppingCart.getTotal()!=0)
+            emptyCartLabel.setOpacity(1);
     }
 }

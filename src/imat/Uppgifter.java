@@ -55,6 +55,7 @@ public class Uppgifter extends AnchorPane {
     public void initDetails() {
         setDetailTextFieldsVisibility(false);
         loadDetails();
+        hideTextfieldText();
     }
 
     private void saveDetails() {
@@ -74,23 +75,47 @@ public class Uppgifter extends AnchorPane {
     }
 
     private void setDetailTextFieldsVisibility(boolean b) {
-        firstNameTextField.setVisible(b);
-        lastNameTextField.setVisible(b);
-        emailTextField.setVisible(b);
-        phoneNumberTextField.setVisible(b);
-        addressTextField.setVisible(b);
-        postAddressTextField.setVisible(b);
-        postCodeTextField.setVisible(b);
+        firstNameTextField.setDisable(!b);
+        lastNameTextField.setDisable(!b);
+        emailTextField.setDisable(!b);
+        phoneNumberTextField.setDisable(!b);
+        addressTextField.setDisable(!b);
+        postAddressTextField.setDisable(!b);
+        postCodeTextField.setDisable(!b);
+
+        if(!b) {
+           hideTextfieldText();
+        }
+
+
+        firstNameLabel.setVisible(!b);
+        lastNameLabel.setVisible(!b);
+        emailLabel.setVisible(!b);
+        addressLabel.setVisible(!b);
+        postAddressLabel.setVisible(!b);
+        postCodeLabel.setVisible(!b);
+        phoneNumberLabel.setVisible(!b);
+    }
+
+    private void hideTextfieldText() {
+        firstNameTextField.setText("");
+        lastNameTextField.setText("");
+        emailTextField.setText("");
+        phoneNumberTextField.setText("");
+        addressTextField.setText("");
+        postAddressTextField.setText("");
+        postCodeTextField.setText("");
     }
 
     @FXML
     public void editDetails() {
         if (editingDetails) {
+            saveDetails();
             setDetailTextFieldsVisibility(false);
             editDetailsButton.setText("Redigera Uppgifter");
             editingDetails = false;
-            saveDetails();
         } else {
+            loadDetails();
             setDetailTextFieldsVisibility(true);
             editDetailsButton.setText("Spara Ändringar");
             editingDetails = true;

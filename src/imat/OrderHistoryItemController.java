@@ -2,16 +2,16 @@ package imat;
 
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.Node;
 import javafx.scene.control.Label;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.FlowPane;
-import javafx.scene.layout.VBox;
+import jdk.nashorn.internal.runtime.SharedPropertyMap;
 import se.chalmers.cse.dat216.project.*;
 
+
 import java.io.IOException;
-import java.util.HashMap;
-import java.util.Map;
 
 /**
  * Created by Jonathan Köre on 2018-05-09.
@@ -30,7 +30,11 @@ public class OrderHistoryItemController extends AnchorPane{
     Label orderNameLabel;
     @FXML
     Label total;
+    @FXML
+    ImageView expandImageView;
 
+    Image arrowDown = new Image("imat/layout/images/arrow_downward.png");
+    Image arrowRight = new Image("imat/layout/images/arrow_forward.png");
 
     public OrderHistoryItemController(IMatController parentController, ShoppingCartController shoppingCartController, Order order) {
         this.order = order;
@@ -50,7 +54,7 @@ public class OrderHistoryItemController extends AnchorPane{
         for(ShoppingItem item : order.getItems()){
             totalAmount += item.getTotal();
         }
-        total.setText("Totalt: " + Double.toString(MyMath.round(totalAmount,2)) + " kr");
+        total.setText("Totalt: " + MyMath.doubleToString(totalAmount) + " kr");
         //this.getChildren().get(0).getStyleClass().remove("historyItem");
 
 
@@ -75,14 +79,38 @@ public class OrderHistoryItemController extends AnchorPane{
                 orderHistoryItemFlowPane.getChildren().add(new OrderHistorySubItem(s));
         }
         this.getChildren().get(0).getStyleClass().add("historyItemExpanded");
+        expandImageView.setImage(arrowDown);
     }
     public void collapse(){
         orderHistoryItemFlowPane.getChildren().clear();
         this.getChildren().get(0).getStyleClass().remove("historyItemExpanded");
+        expandImageView.setImage(arrowRight);
     }
 
     @FXML
     public void addToCart() {
+        boolean finns = false;
+        for(ShoppingItem s : order.getItems()) {
+            for (ShoppingItem cartItem : shoppingCart.getItems()) {
+                if (cartItem.getProduct().getName().equals(s.getProduct().getName())) {
+                    finns = true;
+                }
+            }
+            if (finns) {
+                for (ShoppingItem cartItem : shoppingCart.getItems()) {
+                    if (cartItem.getProduct().getName().equals(s.getProduct().getName())) {
+                        cartItem.setAmount(s.getAmount() + cartItem.getAmount());
+                        break;
+                    }
+                }
+            }else{
+                shoppingCart.addItem(new ShoppingItem(s.getProduct(), s.getAmount()));
+            }
+            finns = false;
+            shoppingCart.fireShoppingCartChanged(null, false);
+        }
+
+        /*
         boolean finns = false;
         for (ShoppingItem s : order.getItems()) {
             if(!shoppingCart.getItems().isEmpty()) {
@@ -91,6 +119,9 @@ public class OrderHistoryItemController extends AnchorPane{
                         s2.setAmount(s.getAmount() + s2.getAmount());
                         finns = true;
                         break;
+                    }
+                    else if(!shoppingCart.getItems().contains(s)){
+                        shoppingCart.addItem(new ShoppingItem(s.getProduct(), s.getAmount()));
                     }
                 }
                 if(!finns){
@@ -102,7 +133,7 @@ public class OrderHistoryItemController extends AnchorPane{
             }
             shoppingCart.fireShoppingCartChanged(null, false);
         }
-        shoppingCart.fireShoppingCartChanged(null, false);
+        shoppingCart.fireShoppingCartChanged(null, false);*/
     }
 
 
