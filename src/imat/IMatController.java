@@ -116,7 +116,6 @@ public class IMatController extends VBox implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        shoppingCart.clear();
         myDetails = new MyDetails(this);
         helpPage = new HelpPage(this);
         shoppingCartController = new ShoppingCartController(this);
@@ -128,7 +127,7 @@ public class IMatController extends VBox implements Initializable {
         showShoppingCart();
         initProducts();
         initCategories();
-        updateProductList(ProductCategory.POD);
+        updateProductList(ProductCategory.BERRY);
         shoppingCart.fireShoppingCartChanged(null, false);
         orderHistoryController.createHistory();
 
@@ -144,7 +143,7 @@ public class IMatController extends VBox implements Initializable {
 
     private void initProducts() {
         ShoppingCartItem s;
-        for (Product p : db.getProducts(ProductCategory.POD)) {
+        for (Product p : db.getProducts(ProductCategory.BERRY)) {
             //ItemHandler itemHandler = new ItemHandler(new ShoppingItem(p,0));
             storeListItemMap.put(p.getName(), new StoreListItem(p, this));
             shoppingCartController.addToHashMap(new ShoppingCartItem(p, shoppingCartController));

@@ -49,6 +49,7 @@ public class CategoryItem extends AnchorPane {
         this.parentController = parentController;
         categoryStrategy = new MainCategoryStrategy();
         nameLabel.setText(displayName);
+
         selectedClass = "mainCategorySelected";
         backgroundPane.getStyleClass().add(standardClass);
         categoryImageView.setImage(image);
@@ -71,6 +72,9 @@ public class CategoryItem extends AnchorPane {
         c.setStandardClass("subCategoryStandard");
         c.getBackgroundPane().getStyleClass().clear();
         c.getBackgroundPane().getStyleClass().add(c.getStandardClass());
+        c.getStyleClass().add("subCategoryText");
+        c.getNameLabel().setLayoutX(80);
+        c.getCategoryImageView().setX(20);
         subCategories.add(c);
     }
 
@@ -124,4 +128,11 @@ public class CategoryItem extends AnchorPane {
         this.standardClass = standardClass;
     }
 
+    public ImageView getCategoryImageView() {
+        return categoryImageView;
+    }
+
+    public Label getNameLabel() {
+        return nameLabel;
+    }
 }

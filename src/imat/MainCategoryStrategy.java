@@ -35,7 +35,6 @@ public class MainCategoryStrategy implements CategoryStrategy {
             System.out.println("nu öppnar jag");
             parentController.clearProductList();
             switch(c.getDisplayName()){
-
                 case("Drycker"):
                     parentController.updateProductList(ProductCategory.COLD_DRINKS);
                     parentController.updateProductList(ProductCategory.HOT_DRINKS);
