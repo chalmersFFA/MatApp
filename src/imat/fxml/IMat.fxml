@@ -15,12 +15,15 @@
 <?import javafx.scene.paint.Color?>
 <?import javafx.scene.text.Font?>
 
-<VBox stylesheets="@../layout/design.css" xmlns="http://javafx.com/javafx/9.0.4" xmlns:fx="http://javafx.com/fxml/1" fx:controller="imat.IMatController">
+<VBox stylesheets="@../layout/design.css" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="imat.IMatController">
    <children>
       <AnchorPane id="headerStyle" fx:id="headerAnchorPane" prefHeight="75.0" prefWidth="1127.0" stylesheets="@../layout/design.css">
          <children>
-            <TextField fx:id="searchTextField" layoutX="634.0" layoutY="28.0" prefHeight="29.0" prefWidth="302.0" promptText="Sök efter din vara" AnchorPane.bottomAnchor="26.0" AnchorPane.rightAnchor="635.0" AnchorPane.topAnchor="26.0" />
-            <ImageView fitHeight="17.0" fitWidth="23.0" layoutX="760.0" layoutY="29.0" onMouseClicked="#search" opacity="0.76" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="29.0" AnchorPane.rightAnchor="639.0">
+            <TextField fx:id="searchTextField" layoutX="473.0" layoutY="18.0" prefHeight="48.0" prefWidth="302.0" promptText="Sök efter din vara" AnchorPane.bottomAnchor="17.0" AnchorPane.rightAnchor="641.0" AnchorPane.topAnchor="18.0">
+               <font>
+                  <Font size="21.0" />
+               </font></TextField>
+            <ImageView fitHeight="33.0" fitWidth="34.0" layoutX="732.0" layoutY="19.0" onMouseClicked="#search" opacity="0.76" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="22.0" AnchorPane.rightAnchor="645.0">
                <image>
                   <Image url="@../layout/images/search.png" />
                </image>
@@ -113,7 +116,7 @@
                     </AnchorPane>
                         <AnchorPane styleClass="mainFlowPane" HBox.hgrow="ALWAYS">
                            <children>
-                              <StackPane fx:id="browsingStackPane" layoutY="72.0" prefHeight="515.0" prefWidth="616.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="72.0">
+                              <StackPane fx:id="browsingStackPane" layoutY="83.0" prefHeight="504.0" prefWidth="616.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="83.0">
                                  <children>
                                     <VBox fx:id="mainVBox" prefHeight="545.0" prefWidth="616.0">
                                        <children>
