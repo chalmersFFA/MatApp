@@ -21,7 +21,7 @@ public class CheckoutController2 extends AnchorPane{
     private IMatDataHandler db = IMatDataHandler.getInstance();
 
     @FXML
-    AnchorPane uppgifterAnchorPane, betalkortAnchorPane, sequenceMapAnchorPane;
+    AnchorPane myDetailsAnchorPane, betalkortAnchorPane, sequenceMapAnchorPane;
 
 
 
@@ -39,7 +39,7 @@ public class CheckoutController2 extends AnchorPane{
         }
         sequenceMapAnchorPane.getChildren().add(parentController.getSequenceMap());
 
-        init();
+        resetCheckoutController2();
 
     }
 
@@ -49,12 +49,11 @@ public class CheckoutController2 extends AnchorPane{
         parentController.getSequenceMap().setState(2);
     }
 
-    public void init() {
-        betalkortAnchorPane.getChildren().clear();
-        uppgifterAnchorPane.getChildren().clear();
-        uppgifterAnchorPane.getChildren().add(parentController.getMyDetails().getUppgifter());
-        betalkortAnchorPane.getChildren().add(parentController.getMyDetails().getBetalkort());
+    public void resetCheckoutController2() {
+        myDetailsAnchorPane.getChildren().clear();
+        myDetailsAnchorPane.getChildren().add(parentController.getMyDetails());
     }
+
     @FXML
     public void backButton() {
         parentController.toCheckout1();
