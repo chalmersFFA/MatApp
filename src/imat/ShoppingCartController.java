@@ -58,8 +58,10 @@ public class ShoppingCartController extends AnchorPane implements ShoppingCartLi
         update();
         if(shoppingCart.getTotal()==0){
             changePliancyCart();
+            setDisableCart();
         } else{
             endPliancyCart();
+            setEnableCart();
         }
     }
     public void remove(ShoppingCartItem item) {
@@ -70,6 +72,7 @@ public class ShoppingCartController extends AnchorPane implements ShoppingCartLi
             }
         }
         update();
+        emptyCartLabel.setDisable(false);
         endPliancyCart();
     }
 
@@ -116,7 +119,7 @@ public class ShoppingCartController extends AnchorPane implements ShoppingCartLi
     public void emptyCart(){
         shoppingCart.clear();
         update();
-        changePliancyCart();
+        setDisableCart();
         emptyCartToBack();
     }
     @FXML
@@ -127,5 +130,12 @@ public class ShoppingCartController extends AnchorPane implements ShoppingCartLi
     public void endPliancyCart(){
         if(shoppingCart.getTotal()!=0)
             emptyCartLabel.setOpacity(1);
+    }
+    public void setDisableCart(){
+        emptyCartLabel.setDisable(true);
+    }
+    public void setEnableCart() {
+        emptyCartLabel.setDisable(false);
+
     }
 }
