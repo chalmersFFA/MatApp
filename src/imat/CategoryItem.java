@@ -49,6 +49,7 @@ public class CategoryItem extends AnchorPane {
         this.parentController = parentController;
         categoryStrategy = new MainCategoryStrategy();
         nameLabel.setText(displayName);
+
         selectedClass = "mainCategorySelected";
         backgroundPane.getStyleClass().add(standardClass);
         categoryImageView.setImage(image);
