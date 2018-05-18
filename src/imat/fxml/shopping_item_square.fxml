@@ -22,7 +22,7 @@
             <String fx:value="minusButton" />
             <String fx:value="redFocusColor" />
          </styleClass></Button>
-      <TextField fx:id="amountTextField" alignment="CENTER" layoutX="89.0" layoutY="246.0" prefHeight="35.0" prefWidth="120.0" styleClass="normal-text" />
+      <TextField fx:id="amountTextField" alignment="CENTER" layoutX="89.0" layoutY="246.0" onAction="#textFieldChanged" prefHeight="35.0" prefWidth="120.0" styleClass="normal-text" />
       <Button layoutX="209.0" layoutY="246.0" mnemonicParsing="false" onAction="#increaseAmount" prefHeight="35.0" prefWidth="37.0" snapToPixel="false">
          <cursor>
             <Cursor fx:constant="HAND" />
@@ -31,14 +31,6 @@
             <String fx:value="greenFocusColor" />
             <String fx:value="plusButton" />
          </styleClass></Button>
-      <Label layoutX="14.0" layoutY="193.0">
-         <font>
-            <Font size="14.0" />
-         </font>
-         <cursor>
-            <Cursor fx:constant="DEFAULT" />
-         </cursor>
-      </Label>
       <Label fx:id="productNameLabel" alignment="TOP_LEFT" layoutX="14.0" layoutY="165.0" prefHeight="58.0" prefWidth="172.0" styleClass="shopping_item_text" stylesheets="@../layout/design.css" text="ARLA MJÖLK" wrapText="true">
          <font>
             <Font size="18.0" />
@@ -65,6 +57,14 @@
             <Image url="@../layout/images/svanen.png" />
          </image>
       </ImageView>
+      <Label fx:id="unit" layoutX="186.0" layoutY="250.0" styleClass="normal-text" text="KG">
+         <font>
+            <Font size="14.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="DEFAULT" />
+         </cursor>
+      </Label>
    </children>
    <styleClass>
       <String fx:value="static_object_hinting" />

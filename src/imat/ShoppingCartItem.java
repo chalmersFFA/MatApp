@@ -163,4 +163,14 @@ public class ShoppingCartItem extends AnchorPane implements ShoppingCartListener
         Image crossNotPliant = new Image("imat/layout/images/cross.png");
         cross.setImage(crossNotPliant);
     }
+    @FXML
+    public void textFieldChanged(){
+        for(ShoppingItem s : shoppingCart.getItems()){
+            if(s.getProduct().getName().equals(product.getName())){
+                s.setAmount(Double.parseDouble(amountTextField.getText()));
+                shoppingCart.fireShoppingCartChanged(null, false);
+                System.out.println("REEEEEEEEEEEEE");
+            }
+        }
+    }
 }
