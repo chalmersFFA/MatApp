@@ -191,12 +191,20 @@ public class StoreListItem extends AnchorPane implements ShoppingCartListener {
 
     @FXML
     public void textFieldChanged(){
+        boolean finns = false;
+
         for(ShoppingItem s : shoppingCart.getItems()){
             if(s.getProduct().getName().equals(product.getName())){
                 s.setAmount(Double.parseDouble(amountTextField.getText()));
                 shoppingCart.fireShoppingCartChanged(null, false);
+                finns = true;
+                shoppingCart.fireShoppingCartChanged(null, false); //bara för att meddela att något hänt till övriga världen
             }
         }
+        if(!finns){
+            shoppingCart.addProduct(product, Double.parseDouble(amountTextField.getText()));
+        }
+        update();
     }
 
 }
