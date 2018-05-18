@@ -100,8 +100,11 @@
 .nextButton:pressed{
     -fx-background-color:  #55BC55;
 }
-#shopping_item_text{
-    -fx-font-size: 25px;
+.shopping_item_text{
+    -fx-font-size: 28px;
+}
+.shoppingItem{
+
 }
 .backbutton{
     -fx-background-color:  #4141EF;

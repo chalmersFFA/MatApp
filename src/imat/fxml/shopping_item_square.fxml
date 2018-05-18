@@ -10,11 +10,11 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<fx:root maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="266.0" prefWidth="295.0" styleClass="static_object_hinting" stylesheets="@../layout/design.css" type="AnchorPane" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1">
+<fx:root maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="295.0" prefWidth="295.0" stylesheets="@../layout/design.css" type="AnchorPane" xmlns="http://javafx.com/javafx/9.0.4" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <ImageView fx:id="productImageView" fitHeight="150.0" fitWidth="200.0" layoutX="48.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="102.0" AnchorPane.leftAnchor="47.0" AnchorPane.rightAnchor="47.0" AnchorPane.topAnchor="14.0">
       </ImageView>
-      <Button fx:id="decreaseButton" layoutX="159.0" layoutY="224.0" mnemonicParsing="false" onAction="#decreaseAmount" prefHeight="25.0" prefWidth="27.0">
+      <Button fx:id="decreaseButton" layoutX="52.0" layoutY="246.0" mnemonicParsing="false" onAction="#decreaseAmount" prefHeight="35.0" prefWidth="37.0">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
@@ -22,8 +22,8 @@
             <String fx:value="minusButton" />
             <String fx:value="redFocusColor" />
          </styleClass></Button>
-      <TextField fx:id="amountTextField" alignment="CENTER" layoutX="186.0" layoutY="224.0" prefHeight="27.0" prefWidth="75.0" />
-      <Button layoutX="261.0" layoutY="224.0" mnemonicParsing="false" onAction="#increaseAmount" prefHeight="25.0" prefWidth="27.0">
+      <TextField fx:id="amountTextField" alignment="CENTER" layoutX="89.0" layoutY="246.0" prefHeight="35.0" prefWidth="120.0" styleClass="normal-text" />
+      <Button layoutX="209.0" layoutY="246.0" mnemonicParsing="false" onAction="#increaseAmount" prefHeight="35.0" prefWidth="37.0" snapToPixel="false">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
@@ -39,7 +39,7 @@
             <Cursor fx:constant="DEFAULT" />
          </cursor>
       </Label>
-      <Label id="shopping_item_text" fx:id="productNameLabel" alignment="TOP_LEFT" layoutX="14.0" layoutY="165.0" prefHeight="58.0" prefWidth="172.0" stylesheets="@../layout/design.css" text="ARLA MJÖLK" wrapText="true">
+      <Label fx:id="productNameLabel" alignment="TOP_LEFT" layoutX="14.0" layoutY="165.0" prefHeight="58.0" prefWidth="172.0" styleClass="shopping_item_text" stylesheets="@../layout/design.css" text="ARLA MJÖLK" wrapText="true">
          <font>
             <Font size="18.0" />
          </font>
@@ -55,15 +55,19 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </ImageView>
-      <Label fx:id="priceLabel" ellipsisString="" layoutX="14.0" layoutY="215.0" prefHeight="45.0" prefWidth="145.0" text="15kr">
+      <Label fx:id="priceLabel" ellipsisString="" layoutX="14.0" layoutY="201.0" prefHeight="35.0" prefWidth="145.0" text="15kr">
          <font>
             <Font size="22.0" />
          </font>
       </Label>
-      <ImageView fx:id="ecoImageView" fitHeight="35.0" fitWidth="35.0" layoutX="46.0" layoutY="133.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="101.39500045776367" AnchorPane.leftAnchor="47.0">
+      <ImageView fx:id="ecoImageView" fitHeight="35.0" fitWidth="35.0" layoutX="46.0" layoutY="133.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../layout/images/svanen.png" />
          </image>
       </ImageView>
    </children>
+   <styleClass>
+      <String fx:value="static_object_hinting" />
+      <String fx:value="shoppingItem" />
+   </styleClass>
 </fx:root>

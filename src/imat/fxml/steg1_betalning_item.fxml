@@ -16,7 +16,7 @@
             <Image url="@../layout/images/milk.jpg" />
          </image>
       </ImageView>
-      <Label fx:id="productLabel" layoutX="97.0" layoutY="13.0" styleClass="big-text" text="ARLA mjölk 1.5dl" />
+      <Label fx:id="productLabel" layoutX="97.0" layoutY="13.0" styleClass="shopping_item_text" text="ARLA mjölk 1.5dl" />
       <Button fx:id="decreaseButton" layoutX="91.0" layoutY="58.0" mnemonicParsing="false" onAction="#decreaseAmount" prefHeight="35.0" prefWidth="37.0" styleClass="minusButton">
          <cursor>
             <Cursor fx:constant="HAND" />
