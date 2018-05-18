@@ -6,12 +6,12 @@
 <?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Line?>
 
-<fx:root maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="850.0" prefWidth="1100.0" styleClass="normal-text" stylesheets="@../layout/design.css" type="AnchorPane" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<fx:root maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="850.0" prefWidth="1100.0" stylesheets="@../layout/design.css" type="AnchorPane" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <AnchorPane fx:id="betalkortAnchorPane" layoutX="14.0" layoutY="471.0" prefHeight="297.0" prefWidth="409.0" stylesheets="@../layout/design.css" />
-      <AnchorPane fx:id="uppgifterAnchorPane" layoutX="14.0" layoutY="14.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="723.0" prefWidth="441.0" stylesheets="@../layout/design.css" />
-      <AnchorPane layoutX="500.0" layoutY="428.0" prefHeight="251.0" prefWidth="512.0">
+      <AnchorPane fx:id="myDetailsAnchorPane" layoutX="22.0" layoutY="39.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="493.0" prefWidth="1055.0" stylesheets="@../layout/design.css" />
+      <AnchorPane layoutX="-20.0" layoutY="484.0" prefHeight="251.0" prefWidth="512.0">
          <children>
             <Label layoutX="371.0" layoutY="132.0" styleClass="normal-text" text="Välj tid" />
             <Label layoutX="191.0" layoutY="60.0" styleClass="big-text" stylesheets="@../layout/design.css" text="Tidsbokning" />
@@ -27,5 +27,10 @@
             <String fx:value="normal-text" />
          </styleClass></Button>
       <AnchorPane fx:id="sequenceMapAnchorPane" layoutX="308.0" layoutY="34.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="64.0" prefWidth="524.0" stylesheets="@../layout/design.css" AnchorPane.bottomAnchor="762.0" AnchorPane.leftAnchor="298.0" AnchorPane.rightAnchor="278.0" AnchorPane.topAnchor="24.0" />
+      <Line endX="550.0" endY="850.0" startX="550.0" startY="100.0" />
    </children>
+   <styleClass>
+      <String fx:value="normal-text" />
+      <String fx:value="white" />
+   </styleClass>
 </fx:root>
