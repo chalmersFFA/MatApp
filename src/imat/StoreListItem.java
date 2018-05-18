@@ -101,7 +101,7 @@ public class StoreListItem extends AnchorPane implements ShoppingCartListener {
 
     public void update() {
         //TODO fixa så att den här tar in ifrån shoppingcart, kanske ska den vara en listener?
-        amountTextField.setText("0");
+        amountTextField.setText("0" + product.getUnitSuffix());
         for(ShoppingItem s : shoppingCart.getItems()){
             if(s.getProduct().getName().equals(product.getName())){
                 amountTextField.setText(MyMath.doubleToString(s.getAmount()) + product.getUnitSuffix());
