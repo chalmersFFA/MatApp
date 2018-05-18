@@ -75,6 +75,8 @@ public class MyDetails extends AnchorPane {
 
         loadSavedCard();
         initComboBoxes();
+        resetDetails();
+        resetCard();
 
     }
 
@@ -273,6 +275,10 @@ public class MyDetails extends AnchorPane {
     }
 
     private void resetErrorLabels() {
+    }
+
+    public void resetCard() {
+        toggleCardEdit(false);
     }
 
     @FXML
