@@ -2,16 +2,12 @@ package imat;
 
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.Node;
 import javafx.scene.control.Label;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.FlowPane;
-import javafx.scene.layout.VBox;
 import se.chalmers.cse.dat216.project.*;
 
 import java.io.IOException;
-import java.util.HashMap;
-import java.util.Map;
 
 /**
  * Created by Jonathan Köre on 2018-05-09.
@@ -50,7 +46,7 @@ public class OrderHistoryItemController extends AnchorPane{
         for(ShoppingItem item : order.getItems()){
             totalAmount += item.getTotal();
         }
-        total.setText("Totalt: " + Double.toString(MyMath.round(totalAmount,2)) + " kr");
+        total.setText("Totalt: " + MyMath.doubleToString(totalAmount) + " kr");
         //this.getChildren().get(0).getStyleClass().remove("historyItem");
 
 

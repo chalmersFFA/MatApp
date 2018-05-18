@@ -47,8 +47,8 @@ public class OrderHistorySubItem extends AnchorPane{
     public void update() {
         //TODO fixa så att det här fungerar från shoppingcart istället
         amount.setText("0");
-        amount.setText(Double.toString(MyMath.round(shoppingItem.getAmount(),2)) + shoppingItem.getProduct().getUnitSuffix());
-        totalPrice.setText(Double.toString(MyMath.round(shoppingItem.getTotal(),2)) + " kr");
+        amount.setText(MyMath.doubleToString(shoppingItem.getAmount()) + shoppingItem.getProduct().getUnitSuffix());
+        totalPrice.setText(MyMath.doubleToString(shoppingItem.getTotal()) + " kr");
         unitPrice.setText("à " + Double.toString(shoppingItem.getProduct().getPrice()) + shoppingItem.getProduct().getUnit());
 
     }
