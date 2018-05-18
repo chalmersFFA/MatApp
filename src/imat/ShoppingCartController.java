@@ -49,17 +49,20 @@ public class ShoppingCartController extends AnchorPane implements ShoppingCartLi
         this.parentController = parentController;
         shoppingCart.addShoppingCartListener(this);
         totalLabel.setText(Double.toString(shoppingCart.getTotal()) +" kr");
-        endPliancyCart();
+        changePliancyCart();
     }
 
 
     @Override
     public void shoppingCartChanged(CartEvent cartEvent) {
         update();
-        /*if(cartEvent.isAddEvent())
-            add(shoppingCartItemMap.get(cartEvent.getShoppingItem().getProduct().getName()));
-        /*else
-            remove(shoppingCartItemMap.get(cartEvent.getShoppingItem().getProduct().getName()));*/
+        if(shoppingCart.getTotal()==0){
+            changePliancyCart();
+            setDisableCart();
+        } else{
+            endPliancyCart();
+            setEnableCart();
+        }
     }
     public void remove(ShoppingCartItem item) {
         //visualItems.remove(item);
@@ -69,12 +72,9 @@ public class ShoppingCartController extends AnchorPane implements ShoppingCartLi
             }
         }
         update();
+        emptyCartLabel.setDisable(false);
         endPliancyCart();
     }
-    /*public void add(ShoppingCartItem s) {
-        visualItems.add(s);
-        update();
-    }*/
 
     public void update() {
         shoppingCartFlowPane.getChildren().clear();
@@ -82,7 +82,6 @@ public class ShoppingCartController extends AnchorPane implements ShoppingCartLi
             shoppingCartFlowPane.getChildren().add(shoppingCartItemMap.get(s.getProduct().getName()));
         }
         totalLabel.setText(MyMath.doubleToString(shoppingCart.getTotal()) +" kr");
-        endPliancyCart();
     }
 
     public void addToHashMap(ShoppingCartItem s) {
@@ -117,20 +116,26 @@ public class ShoppingCartController extends AnchorPane implements ShoppingCartLi
     }
 
     @FXML
-        public void emptyCart(){
+    public void emptyCart(){
         shoppingCart.clear();
         update();
-        endPliancyCart();
-
+        setDisableCart();
+        emptyCartToBack();
     }
     @FXML
     public void changePliancyCart(){
-            emptyCartLabel.setOpacity(0.6);
+        emptyCartLabel.setOpacity(0.6);
     }
     @FXML
     public void endPliancyCart(){
         if(shoppingCart.getTotal()!=0)
             emptyCartLabel.setOpacity(1);
     }
+    public void setDisableCart(){
+        emptyCartLabel.setDisable(true);
+    }
+    public void setEnableCart() {
+        emptyCartLabel.setDisable(false);
 
+    }
 }

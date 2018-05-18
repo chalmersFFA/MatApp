@@ -1,6 +1,8 @@
 package imat;
 
 import javafx.scene.image.Image;
+import se.chalmers.cse.dat216.project.Product;
+import se.chalmers.cse.dat216.project.ProductCategory;
 
 /**
  * Created by Jonathan Köre on 2018-05-05.
@@ -15,6 +17,7 @@ public class MainCategoryStrategy implements CategoryStrategy {
             parentController.collapseCategory(c);
             parentController.deSelectCategory(c);
             c.getArrowImageView().setImage(new Image("imat/layout/images/arrow_forward.png"));
+            System.out.println("nu stänger jag");
         }
         else {
             c.setExpanded(true);
@@ -29,6 +32,35 @@ public class MainCategoryStrategy implements CategoryStrategy {
                 }
             }*/
             c.getArrowImageView().setImage(new Image("imat/layout/images/arrow_downward.png"));
+            System.out.println("nu öppnar jag");
+            parentController.clearProductList();
+            switch(c.getDisplayName()){
+
+                case("Drycker"):
+                    parentController.updateProductList(ProductCategory.COLD_DRINKS);
+                    parentController.updateProductList(ProductCategory.HOT_DRINKS);
+                    break;
+                case("Frukt och grönt"):
+                    parentController.updateProductList(ProductCategory.VEGETABLE_FRUIT);
+                    parentController.updateProductList(ProductCategory.ROOT_VEGETABLE);
+                    parentController.updateProductList(ProductCategory.MELONS);
+                    parentController.updateProductList(ProductCategory.CABBAGE);
+                    parentController.updateProductList(ProductCategory.FRUIT);
+                    parentController.updateProductList(ProductCategory.EXOTIC_FRUIT);
+                    parentController.updateProductList(ProductCategory.CITRUS_FRUIT);
+                    parentController.updateProductList(ProductCategory.BERRY);
+                    parentController.updateProductList(ProductCategory.POD);
+                    break;
+                case("Potatis, Ris och Pasta"):
+                    parentController.updateProductList(ProductCategory.POTATO_RICE);
+                    parentController.updateProductList(ProductCategory.PASTA);
+                    break;
+                case("Skafferi"):
+                    parentController.updateProductList(ProductCategory.HERB);
+                    parentController.updateProductList(ProductCategory.NUTS_AND_SEEDS);
+                    parentController.updateProductList(ProductCategory.FLOUR_SUGAR_SALT);
+                    break;
+            }
         }
 
     }
