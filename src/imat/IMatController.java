@@ -205,7 +205,7 @@ public class IMatController extends VBox implements Initializable {
         mainFlowPane.getChildren().clear();
         mainFlowPane.getChildren().add(myDetails);
         mainFlowPane.setAlignment(Pos.CENTER);
-        myDetails.initDetails();
+        myDetails.resetDetails();
         currentSiteLabel.setText("Mitt Konto");
 
     }
@@ -356,7 +356,7 @@ public class IMatController extends VBox implements Initializable {
 
     public void toPayment() {
         checkoutController2.refreshSequenceMap();
-        checkoutController2.init();
+        checkoutController2.resetCheckoutController2();
         displayPane.getChildren().clear();
         displayPane.setAlignment(Pos.CENTER);
         displayPane.getChildren().add(checkoutController2);

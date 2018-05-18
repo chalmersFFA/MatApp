@@ -15,7 +15,7 @@
 <?import javafx.scene.paint.Color?>
 <?import javafx.scene.text.Font?>
 
-<VBox stylesheets="@../layout/design.css" xmlns="http://javafx.com/javafx/9.0.4" xmlns:fx="http://javafx.com/fxml/1" fx:controller="imat.IMatController">
+<VBox stylesheets="@../layout/design.css" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="imat.IMatController">
    <children>
       <AnchorPane id="headerStyle" fx:id="headerAnchorPane" prefHeight="75.0" prefWidth="1127.0" stylesheets="@../layout/design.css">
          <children>
@@ -77,7 +77,7 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
             </Label>
-            <ImageView fx:id="logoImageView" fitHeight="49.0" fitWidth="97.0" layoutX="8.0" layoutY="6.0" onMousePressed="#updateProductListWithAllProducts" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="13.25" AnchorPane.leftAnchor="5.0" AnchorPane.topAnchor="13.25">
+            <ImageView fx:id="logoImageView" fitHeight="49.0" fitWidth="97.0" layoutX="8.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="13.25" AnchorPane.leftAnchor="5.0" AnchorPane.topAnchor="13.25">
                <image>
                   <Image url="@../layout/images/iMat.png" />
                </image>

@@ -34,7 +34,7 @@ public class Uppgifter extends AnchorPane {
     ImageView myDetailsImageView, cardImageView;
 
     @FXML
-    Button editDetailsButton, editCardNumber;
+    Button editDetailsButton, saveDetailsButton, editCardNumber;
 
 
     public Uppgifter() {
@@ -53,28 +53,21 @@ public class Uppgifter extends AnchorPane {
     }
 
     public void initDetails() {
-        setDetailTextFieldsVisibility(false);
-        loadDetails();
-        hideTextfieldText();
+
     }
 
-    private void saveDetails() {
+    private void saveUppgifter() {
         customer.setFirstName(firstNameTextField.getText());
         customer.setLastName(lastNameTextField.getText());
         customer.setEmail(emailTextField.getText());
         customer.setAddress(addressTextField.getText());
         customer.setPostAddress(postAddressTextField.getText());
-        db.getCustomer().setPostCode(postCodeTextField.getText());
-
-        // TODO: 2018-05-04
-        // Tänka angående om de ska ha mobilnummer eller vanligt telefonnummer?
-
+        customer.setPostCode(postCodeTextField.getText());
         customer.setMobilePhoneNumber(phoneNumberTextField.getText());
 
-        loadDetails();
     }
 
-    private void setDetailTextFieldsVisibility(boolean b) {
+    private void toggleDetailsEdit(boolean b) {
         firstNameTextField.setDisable(!b);
         lastNameTextField.setDisable(!b);
         emailTextField.setDisable(!b);
@@ -84,67 +77,51 @@ public class Uppgifter extends AnchorPane {
         postCodeTextField.setDisable(!b);
 
         if(!b) {
-           hideTextfieldText();
+            firstNameTextField.setText("");
+            lastNameTextField.setText("");
+            emailTextField.setText("");
+            phoneNumberTextField.setText("");
+            addressTextField.setText("");
+            postAddressTextField.setText("");
+            postCodeTextField.setText("");
+
+            firstNameLabel.setText(customer.getFirstName());
+            lastNameLabel.setText(customer.getLastName());
+            emailLabel.setText(customer.getEmail());
+            phoneNumberLabel.setText(customer.getMobilePhoneNumber());
+            addressLabel.setText(customer.getAddress());
+            postAddressLabel.setText(customer.getPostAddress());
+            postCodeLabel.setText(customer.getPostCode());
+        } else {
+            firstNameTextField.setText(customer.getFirstName());
+            lastNameTextField.setText(customer.getLastName());
+            emailTextField.setText(customer.getEmail());
+            phoneNumberTextField.setText(customer.getMobilePhoneNumber());
+            addressTextField.setText(customer.getAddress());
+            postAddressTextField.setText(customer.getPostAddress());
+            postCodeTextField.setText(customer.getPostCode());
+
+            firstNameLabel.setText("");
+            lastNameLabel.setText("");
+            emailLabel.setText("");
+            phoneNumberLabel.setText("");
+            addressLabel.setText("");
+            postAddressLabel.setText("");
+            postCodeLabel.setText("");
         }
-
-
-        firstNameLabel.setVisible(!b);
-        lastNameLabel.setVisible(!b);
-        emailLabel.setVisible(!b);
-        addressLabel.setVisible(!b);
-        postAddressLabel.setVisible(!b);
-        postCodeLabel.setVisible(!b);
-        phoneNumberLabel.setVisible(!b);
+        editDetailsButton.setVisible(!b);
+        saveDetailsButton.setVisible(b);
     }
 
-    private void hideTextfieldText() {
-        firstNameTextField.setText("");
-        lastNameTextField.setText("");
-        emailTextField.setText("");
-        phoneNumberTextField.setText("");
-        addressTextField.setText("");
-        postAddressTextField.setText("");
-        postCodeTextField.setText("");
+
+    @FXML
+    private void editDetails() {
+        toggleDetailsEdit(true);
     }
 
     @FXML
-    public void editDetails() {
-        if (editingDetails) {
-            saveDetails();
-            setDetailTextFieldsVisibility(false);
-            editDetailsButton.setText("Redigera Uppgifter");
-            editingDetails = false;
-        } else {
-            loadDetails();
-            setDetailTextFieldsVisibility(true);
-            editDetailsButton.setText("Spara Ändringar");
-            editingDetails = true;
-        }
+    private void saveDetails() {
+        toggleDetailsEdit(false);
     }
 
-    public void loadDetails() {
-
-        firstNameLabel.setText(customer.getFirstName());
-        lastNameLabel.setText(customer.getLastName());
-        emailLabel.setText(customer.getEmail());
-        addressLabel.setText(customer.getAddress());
-        postAddressLabel.setText(customer.getPostAddress()); //Vilket måste vara Orten?
-        postCodeLabel.setText(customer.getPostCode());
-        phoneNumberLabel.setText(customer.getMobilePhoneNumber());
-
-        firstNameTextField.setText(customer.getFirstName());
-        lastNameTextField.setText(customer.getLastName());
-        emailTextField.setText(customer.getEmail());
-        addressTextField.setText(customer.getAddress());
-        postAddressTextField.setText(customer.getPostAddress()); //Vilket måste vara Orten?
-        postCodeTextField.setText(customer.getPostCode());
-        phoneNumberTextField.setText(customer.getMobilePhoneNumber());
-
-
-        //TODO
-        //Finns fler attribut vi måste ha med, typ korttyp
-
-        /*cardOwnerLabel.setText(db.getCreditCard().getHoldersName());
-        cardNumberLabel.setText(db.getCreditCard().getCardNumber());*/
-    }
 }
