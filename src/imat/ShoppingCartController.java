@@ -4,6 +4,8 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.FlowPane;
 import se.chalmers.cse.dat216.project.*;
@@ -34,6 +36,8 @@ public class ShoppingCartController extends AnchorPane implements ShoppingCartLi
     Label emptyCartLabel;
     @FXML
     AnchorPane emptyCartAnchorPane;
+    @FXML
+    ImageView cross;
 
     public ShoppingCartController(IMatController parentController) {
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("fxml/shopping_cart_controller.fxml"));
@@ -136,6 +140,15 @@ public class ShoppingCartController extends AnchorPane implements ShoppingCartLi
     }
     public void setEnableCart() {
         emptyCartLabel.setDisable(false);
-
+    }
+    @FXML
+    public void changeCrossPliant(){
+        Image crossPliant = new Image("imat/layout/images/cross_pliant.png");
+        cross.setImage(crossPliant);
+    }
+    @FXML
+    public void changeCrossNotPliant(){
+        Image crossNotPliant = new Image("imat/layout/images/cross.png");
+        cross.setImage(crossNotPliant);
     }
 }

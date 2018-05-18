@@ -191,6 +191,7 @@
 .borders{
     -fx-border-width: 1px;
     -fx-border-color: #d3d3d3;
+    -fx-background-color: F0F0F0;
 }
 .white {
     -fx-background-color: white;

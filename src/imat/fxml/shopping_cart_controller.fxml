@@ -15,12 +15,18 @@
 
 <fx:root fx:id="shoppingCartAnchorPane" prefHeight="900.0" prefWidth="400.0" stylesheets="@../layout/design.css" type="AnchorPane" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <AnchorPane fx:id="emptyCartAnchorPane" layoutX="204.0" layoutY="6.0" prefHeight="92.0" prefWidth="190.0" stylesheets="@../layout/design.css" AnchorPane.leftAnchor="185.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="77.0">
+      <AnchorPane fx:id="emptyCartAnchorPane" layoutX="204.0" layoutY="6.0" prefHeight="92.0" prefWidth="190.0" stylesheets="@../layout/design.css" AnchorPane.leftAnchor="185.0" AnchorPane.topAnchor="69.0">
          <children>
-            <Button layoutX="14.0" layoutY="65.0" mnemonicParsing="false" onMouseClicked="#emptyCart" styleClass="static_object_hinting" stylesheets="@../layout/design.css" text="Ja" />
-            <Button layoutX="157.0" layoutY="65.0" mnemonicParsing="false" onMouseClicked="#emptyCartToBack" styleClass="static_object_hinting" stylesheets="@../layout/design.css" text="Nej" />
-            <TextArea editable="false" layoutX="10.0" layoutY="23.0" prefHeight="24.0" prefWidth="197.0" styleClass="textFieldBackground" text="Vill du tömma din kundvagn?" AnchorPane.leftAnchor="2.0" AnchorPane.rightAnchor="2.0" />
-            <ImageView fitHeight="18.0" fitWidth="19.0" layoutX="186.0" layoutY="5.0" onMouseClicked="#emptyCartToBack" pickOnBounds="true" preserveRatio="true">
+            <TextArea editable="false" layoutX="10.0" layoutY="23.0" prefHeight="24.0" prefWidth="200.0" styleClass="textFieldBackground" text="Vill du tömma din kundvagn?" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="2.0" />
+            <Button layoutX="14.0" layoutY="57.0" mnemonicParsing="false" onMouseClicked="#emptyCartToBack" styleClass="static_object_hinting" stylesheets="@../layout/design.css" text="Nej" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="20.0">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor></Button>
+            <Button layoutX="151.0" layoutY="57.0" mnemonicParsing="false" onMouseClicked="#emptyCart" styleClass="static_object_hinting" stylesheets="@../layout/design.css" text="Ja" AnchorPane.bottomAnchor="5.0" AnchorPane.rightAnchor="20.0">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor></Button>
+            <ImageView fx:id="cross" fitHeight="18.0" fitWidth="19.0" layoutX="186.0" layoutY="5.0" onMouseClicked="#emptyCartToBack" onMouseEntered="#changeCrossPliant" onMouseExited="#changeCrossNotPliant" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../layout/images/cross.png" />
                </image>
@@ -31,7 +37,7 @@
          </padding>
          <styleClass>
             <String fx:value="borders" />
-            <String fx:value="green" />
+            <String fx:value="static_object_hinting" />
          </styleClass>
       </AnchorPane>
       <Label alignment="CENTER" prefHeight="62.0" prefWidth="200.0" style="&#10;" styleClass="big-text" text="Kundvagn" textAlignment="CENTER" wrapText="false" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
