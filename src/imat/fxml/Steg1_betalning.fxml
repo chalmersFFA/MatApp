@@ -9,25 +9,8 @@
 <?import javafx.scene.layout.FlowPane?>
 <?import javafx.scene.text.Font?>
 
-<fx:root maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="850.0" prefWidth="1100.0" stylesheets="@../layout/design.css" type="AnchorPane" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1">
+<fx:root maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="850.0" prefWidth="1100.0" styleClass="white" stylesheets="@../layout/design.css" type="AnchorPane" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <Button layoutX="15.0" layoutY="800.0" mnemonicParsing="false" onAction="#backButton" prefHeight="40.0" prefWidth="185.0" text="Tillbaka till shopping">
-         <styleClass>
-            <String fx:value="backbutton" />
-            <String fx:value="normal-text" />
-         </styleClass></Button>
-      <Button fx:id="toPaymentButton" layoutX="863.0" layoutY="800.0" mnemonicParsing="false" onAction="#toPayment" prefHeight="40.0" prefWidth="222.0" text="Vidare till betalningssätt" textFill="WHITE">
-         <font>
-            <Font size="14.0" />
-         </font>
-         <styleClass>
-            <String fx:value="nextButton" />
-            <String fx:value="normal-text" />
-         </styleClass>
-         <cursor>
-            <Cursor fx:constant="HAND" />
-         </cursor>
-      </Button>
       <Label layoutX="31.0" layoutY="89.0" styleClass="normal-text" stylesheets="@../layout/design.css" text="Här kan du granska din order innan du går vidare till betalningsättet" />
       <Label layoutX="751.0" layoutY="725.0" styleClass="normal-text" text="Totalt:" AnchorPane.leftAnchor="751.0" />
       <Label fx:id="totalLabel" ellipsisString="" layoutX="826.0" layoutY="720.0" prefHeight="35.0" prefWidth="148.0" styleClass="big-text" text="1001 kr" AnchorPane.leftAnchor="826.0">
@@ -40,6 +23,38 @@
             <FlowPane fx:id="orderFlowPane" prefHeight="200.0" prefWidth="800.0" />
          </content>
       </ScrollPane>
-      <AnchorPane fx:id="sequenceMapAnchorPane" layoutX="298.0" layoutY="24.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="64.0" prefWidth="524.0" stylesheets="@../layout/design.css" />
+      <AnchorPane layoutY="780.0" prefHeight="70.0" prefWidth="1100.0" styleClass="checkoutTopAndBottom" AnchorPane.bottomAnchor="0.0">
+         <children>
+            <Button mnemonicParsing="false" onAction="#backButton" prefHeight="40.0" prefWidth="185.0" text="Tillbaka till shopping" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="15.0">
+               <styleClass>
+                  <String fx:value="backbutton" />
+                  <String fx:value="normal-text" />
+               </styleClass>
+            </Button>
+            <Button fx:id="toPaymentButton" mnemonicParsing="false" onAction="#toPayment" prefHeight="40.0" prefWidth="222.0" text="Vidare till betalningssätt" textFill="WHITE" AnchorPane.bottomAnchor="10.0" AnchorPane.rightAnchor="15.0">
+               <font>
+                  <Font size="14.0" />
+               </font>
+               <styleClass>
+                  <String fx:value="nextButton" />
+                  <String fx:value="normal-text" />
+               </styleClass>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+         </children>
+      </AnchorPane>
+      <AnchorPane minHeight="-Infinity" prefHeight="90.0" prefWidth="1100.0" style="-fx-background-color: #f3f3f3;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <AnchorPane fx:id="sequenceMapAnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="64.0" prefWidth="524.0" stylesheets="@../layout/design.css" AnchorPane.leftAnchor="288.0" AnchorPane.rightAnchor="288.0" AnchorPane.topAnchor="10.0" />
+            <Button mnemonicParsing="false" prefWidth="185.0" text="Tillbaka till Shopping" AnchorPane.leftAnchor="15.0" AnchorPane.topAnchor="28.0">
+               <styleClass>
+                  <String fx:value="backbutton" />
+                  <String fx:value="normal-text" />
+               </styleClass>
+            </Button>
+         </children>
+      </AnchorPane>
    </children>
 </fx:root>

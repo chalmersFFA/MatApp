@@ -66,18 +66,4 @@ public class SequenceMap extends AnchorPane {
         }
     }
 
-    @FXML
-    private void button1Clicked() {
-        setState(1);
-    }
-
-    @FXML
-    private void button2Clicked() {
-        setState(2);
-    }
-
-    @FXML
-    private void button3Clicked() {
-        setState(3);
-    }
 }

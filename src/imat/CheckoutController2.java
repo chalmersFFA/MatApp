@@ -28,7 +28,7 @@ public class CheckoutController2 extends AnchorPane{
     public CheckoutController2(IMatController parentController, ShoppingCartController shoppingCartController) {
         this.shoppingCartController = shoppingCartController;
         this.parentController = parentController;
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("fxml/Steg2_betalning.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("fxml/steg2_betalning.fxml"));
         fxmlLoader.setRoot(this);
         fxmlLoader.setController(this);
 

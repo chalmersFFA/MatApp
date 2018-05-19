@@ -10,7 +10,7 @@
 
 <fx:root maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="850.0" prefWidth="1100.0" stylesheets="@../layout/design.css" type="AnchorPane" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <AnchorPane fx:id="myDetailsAnchorPane" layoutX="15.0" layoutY="45.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="493.0" prefWidth="1055.0" stylesheets="@../layout/design.css">
+      <AnchorPane fx:id="myDetailsAnchorPane" layoutX="15.0" layoutY="22.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="318.0" prefWidth="1055.0" stylesheets="@../layout/design.css" AnchorPane.topAnchor="40.0">
          <children>
             <Line endX="550.0" endY="820.0" layoutX="-23.0" layoutY="-3.0" startX="550.0" startY="100.0" />
          </children>
@@ -25,20 +25,18 @@
          </children>
       </AnchorPane>
       <Line endX="500.0" layoutX="25.0" layoutY="530.0" />
-      <AnchorPane layoutY="787.0" prefHeight="70.0" prefWidth="1100.0" styleClass="checkoutTopandBottom">
+      <AnchorPane layoutY="793.0" prefHeight="70.0" prefWidth="1100.0" style="-fx-background-color: #f3f3f3;" AnchorPane.bottomAnchor="0.0" />
+      <Button layoutX="15.0" layoutY="800.0" mnemonicParsing="false" onAction="#backButton" prefHeight="40.0" prefWidth="185.0" styleClass="backbutton" text="Tillbaka till Varukorg" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="15.0" />
+      <Button layoutX="900.0" layoutY="800.0" mnemonicParsing="false" onAction="#nextButton" prefHeight="40.0" prefWidth="185.0" text="Vidare till översikt" AnchorPane.bottomAnchor="10.0" AnchorPane.rightAnchor="15.0">
+         <styleClass>
+            <String fx:value="nextButton" />
+            <String fx:value="normal-text" />
+         </styleClass>
+      </Button>
+      <AnchorPane minHeight="-Infinity" prefHeight="90.0" prefWidth="1100.0" style="-fx-background-color: #f3f3f3;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
-            <Button layoutX="14.0" layoutY="15.0" mnemonicParsing="false" onAction="#backButton" prefHeight="40.0" prefWidth="185.0" styleClass="backbutton" text="Tillbaka" AnchorPane.bottomAnchor="15.0" />
-            <Button layoutX="901.0" layoutY="15.0" mnemonicParsing="false" onAction="#nextButton" prefHeight="40.0" prefWidth="185.0" text="Vidare till översikt">
-               <styleClass>
-                  <String fx:value="nextButton" />
-                  <String fx:value="normal-text" />
-               </styleClass>
-            </Button>
-         </children></AnchorPane>
-      <AnchorPane minHeight="-Infinity" prefHeight="90.0" prefWidth="1100.0" styleClass="checkoutTopandBottom">
-         <children>
-            <AnchorPane fx:id="sequenceMapAnchorPane" layoutX="282.0" layoutY="13.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="64.0" prefWidth="524.0" stylesheets="@../layout/design.css" AnchorPane.leftAnchor="282.0" AnchorPane.rightAnchor="294.0" AnchorPane.topAnchor="13.0" />
-            <Button layoutX="14.0" layoutY="28.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="185.0" styleClass="backbutton" text="Tillbaka till shopping" AnchorPane.leftAnchor="14.0" AnchorPane.topAnchor="28.0" />
+            <AnchorPane fx:id="sequenceMapAnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="64.0" prefWidth="524.0" stylesheets="@../layout/design.css" AnchorPane.leftAnchor="288.0" AnchorPane.rightAnchor="288.0" AnchorPane.topAnchor="10.0" />
+            <Button mnemonicParsing="false" prefWidth="185.0" styleClass="backbutton" text="Tillbaka till Shopping" AnchorPane.leftAnchor="15.0" AnchorPane.topAnchor="28.0" />
          </children>
       </AnchorPane>
    </children>

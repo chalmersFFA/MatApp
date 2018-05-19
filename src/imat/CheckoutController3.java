@@ -54,6 +54,9 @@ public class CheckoutController3 extends AnchorPane implements ShoppingCartListe
         sequenceMapAnchorPane.getChildren().add(parentController.getSequenceMap());
         parentController.getSequenceMap().setState(3);
     }
+    public void refreshCheckoutController3() {
+        update();
+    }
     @FXML
     public void backButton() {
         parentController.toPayment();
