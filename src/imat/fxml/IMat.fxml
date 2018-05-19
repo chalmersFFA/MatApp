@@ -15,16 +15,24 @@
 <?import javafx.scene.paint.Color?>
 <?import javafx.scene.text.Font?>
 
-<VBox stylesheets="@../layout/design.css" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="imat.IMatController">
+<VBox stylesheets="@../layout/design.css" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="imat.IMatController">
    <children>
-      <AnchorPane prefHeight="75.0" prefWidth="1127.0">
+      <AnchorPane id="headerStyle" fx:id="headerAnchorPane" prefHeight="75.0" prefWidth="1127.0" stylesheets="@../layout/design.css">
          <children>
-            <TextField layoutX="336.0" layoutY="15.0" AnchorPane.bottomAnchor="24.0" AnchorPane.rightAnchor="474.0" AnchorPane.topAnchor="24.0" />
-            <Label fx:id="favouriteLabel" contentDisplay="TOP" layoutX="750.0" layoutY="9.0" onMouseClicked="#displayFavourites" stylesheets="@../layout/design.css" text="Favoritvaror" AnchorPane.rightAnchor="303.0" AnchorPane.topAnchor="9.0">
+            <TextField fx:id="searchTextField" layoutX="473.0" layoutY="18.0" prefHeight="48.0" prefWidth="302.0" promptText="Sök efter din vara" AnchorPane.bottomAnchor="17.0" AnchorPane.rightAnchor="641.0" AnchorPane.topAnchor="18.0">
+               <font>
+                  <Font size="21.0" />
+               </font></TextField>
+            <ImageView fitHeight="33.0" fitWidth="34.0" layoutX="732.0" layoutY="19.0" onMouseClicked="#search" opacity="0.76" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="22.0" AnchorPane.rightAnchor="645.0">
+               <image>
+                  <Image url="@../layout/images/search.png" />
+               </image>
+            </ImageView>
+            <Label fx:id="favouriteLabel" contentDisplay="TOP" layoutX="844.0" layoutY="9.0" onMouseClicked="#displayFavourites" onMouseEntered="#ChangePliancyFavourite" onMouseExited="#endPliancyFavourite" stylesheets="@../layout/design.css" text="Favoritvaror" AnchorPane.rightAnchor="445.0" AnchorPane.topAnchor="9.0">
                <graphic>
-                  <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fx:id="myFavourites" fitHeight="25.0" fitWidth="28.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../layout/images/stareboi.png" />
+                        <Image url="@../layout/images/storStar.png" />
                      </image>
                   </ImageView>
                </graphic>
@@ -33,11 +41,10 @@
                </cursor>
                <styleClass>
                   <String fx:value="big-text" />
-                  <String fx:value="static_object_hinting" />
                   <String fx:value="textLabel" />
                </styleClass>
             </Label>
-            <Label contentDisplay="TOP" layoutX="860.0" layoutY="9.0" text="Orderhistorik" AnchorPane.rightAnchor="170.0" AnchorPane.topAnchor="9.0">
+            <Label fx:id="orderHistoryLabel" contentDisplay="TOP" layoutX="995.0" layoutY="10.0" onMouseClicked="#showOrderScreen" onMouseEntered="#ChangePliancyOrderHistory" onMouseExited="#endPliancyOrderHistory" styleClass="big-text" text="Orderhistorik" AnchorPane.rightAnchor="281.0" AnchorPane.topAnchor="10.0">
                <graphic>
                   <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -48,12 +55,8 @@
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor>
-               <styleClass>
-                  <String fx:value="big-text" />
-                  <String fx:value="static_object_hinting" />
-               </styleClass>
             </Label>
-            <Label fx:id="myDetailsLabel" contentDisplay="TOP" layoutX="980.0" layoutY="9.0" onMouseClicked="#showDetailsScreen" text="Mitt konto" AnchorPane.rightAnchor="65.0" AnchorPane.topAnchor="9.0">
+            <Label fx:id="myDetailsLabel" contentDisplay="TOP" layoutX="1163.0" layoutY="10.0" onMouseClicked="#showDetailsScreen" onMouseEntered="#ChangePliancyMyAccount" onMouseExited="#endPliancyMyAccount" styleClass="big-text" text="Mitt konto" AnchorPane.rightAnchor="141.0" AnchorPane.topAnchor="9.0">
                <graphic>
                   <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true" styleClass="big-text">
                      <image>
@@ -64,12 +67,8 @@
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor>
-               <styleClass>
-                  <String fx:value="big-text" />
-                  <String fx:value="static_object_hinting" />
-               </styleClass>
             </Label>
-            <Label contentDisplay="TOP" layoutX="1090.0" layoutY="9.0" text="Hjälp" AnchorPane.rightAnchor="8.0" AnchorPane.topAnchor="9.0">
+            <Label fx:id="helpLabel" contentDisplay="TOP" layoutX="1318.0" layoutY="5.0" onMouseEntered="#ChangePliancyhelpPage" onMouseExited="#endPliancyHelpPage" onMousePressed="#pressedHelp" styleClass="big-text" text="Hjälp" AnchorPane.rightAnchor="41.0" AnchorPane.topAnchor="9.0">
                <graphic>
                   <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -80,17 +79,7 @@
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor>
-               <styleClass>
-                  <String fx:value="big-text" />
-                  <String fx:value="static_object_hinting" />
-               </styleClass>
             </Label>
-            <ImageView fitHeight="17.0" fitWidth="23.0" layoutX="462.0" layoutY="19.0" opacity="0.76" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="29.0" AnchorPane.rightAnchor="480.0">
-               <image>
-                  <Image url="@../layout/images/search.png" />
-               </image>
-            </ImageView>
-            <Label layoutX="493.0" layoutY="33.0" opacity="0.4" text="Sök efter din vara" AnchorPane.bottomAnchor="29.0" AnchorPane.rightAnchor="525.0" />
             <ImageView fx:id="logoImageView" fitHeight="49.0" fitWidth="97.0" layoutX="8.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="13.25" AnchorPane.leftAnchor="5.0" AnchorPane.topAnchor="13.25">
                <image>
                   <Image url="@../layout/images/iMat.png" />
@@ -108,7 +97,7 @@
                   <HBox fx:id="displayPane" prefHeight="100.0" prefWidth="200.0" styleClass="paymentPane" StackPane.alignment="CENTER" />
                   <HBox fx:id="bigHBox">
                      <children>
-                    <AnchorPane fx:id="categoriesAnchorPane" prefHeight="586.0" prefWidth="400.0" styleClass="categoriesAnchorPane">
+                    <AnchorPane fx:id="categoriesAnchorPane" prefWidth="400.0" styleClass="categoriesAnchorPane">
                       <children>
                         <Label alignment="CENTER" layoutX="14.0" layoutY="14.0" minWidth="60.0" prefWidth="-1.0" style="&#10;" text="Kategorier" textAlignment="CENTER" wrapText="false">
                           <font>
@@ -118,16 +107,20 @@
                             <Color blue="0.624" green="0.624" red="0.624" fx:id="x2" />
                           </textFill>
                         </Label>
-                              <FlowPane id="mainCategoryStandard_First" fx:id="categoryFlowPane" layoutY="48.0" prefHeight="538.0" prefWidth="246.0" stylesheets="@../layout/design.css" />
+                              <ScrollPane fitToHeight="true" fitToWidth="true" hbarPolicy="NEVER" layoutY="48.0" minHeight="860.0" prefHeight="869.0" prefWidth="405.0" styleClass="categoriesAnchorPane" AnchorPane.rightAnchor="0.0">
+                                 <content>
+                                    <FlowPane id="mainCategoryStandard_First" fx:id="categoryFlowPane" maxWidth="1.7976931348623157E308" prefHeight="867.0" prefWidth="405.0" styleClass="categoriesAnchorPane" stylesheets="@../layout/design.css" />
+                                 </content>
+                              </ScrollPane>
                       </children>
                     </AnchorPane>
-                        <AnchorPane HBox.hgrow="ALWAYS">
+                        <AnchorPane styleClass="mainFlowPane" HBox.hgrow="ALWAYS">
                            <children>
-                              <StackPane fx:id="browsingStackPane" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                              <StackPane fx:id="browsingStackPane" layoutY="83.0" prefHeight="504.0" prefWidth="616.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="83.0">
                                  <children>
-                                    <VBox fx:id="mainVBox">
+                                    <VBox fx:id="mainVBox" prefHeight="545.0" prefWidth="616.0">
                                        <children>
-                                          <ScrollPane fitToHeight="true" fitToWidth="true" hbarPolicy="NEVER" prefWidth="616.0" vbarPolicy="ALWAYS" VBox.vgrow="ALWAYS">
+                                          <ScrollPane fitToHeight="true" fitToWidth="true" hbarPolicy="NEVER" prefHeight="506.0" prefWidth="616.0" styleClass="removeFocusColor" VBox.vgrow="ALWAYS">
                                              <content>
                                                 <FlowPane fx:id="mainFlowPane" alignment="CENTER" columnHalignment="CENTER" hgap="15.0" maxWidth="1.7976931348623157E308" minWidth="-Infinity" nodeOrientation="LEFT_TO_RIGHT" prefWrapLength="1000.0" styleClass="mainFlowPane" vgap="15.0" />
                                              </content>
@@ -136,6 +129,11 @@
                                     </VBox>
                                  </children>
                               </StackPane>
+                              <Label fx:id="currentSiteLabel" layoutX="14.0" layoutY="8.0" text="BÄR">
+                                 <font>
+                                    <Font size="46.0" />
+                                 </font>
+                              </Label>
                            </children>
                         </AnchorPane>
                     <AnchorPane fx:id="shoppingCartAnchorPane" maxWidth="-Infinity" prefHeight="587.0" prefWidth="400.0" styleClass="shoppingCart" HBox.hgrow="ALWAYS" />

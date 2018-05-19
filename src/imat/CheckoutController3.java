@@ -25,11 +25,18 @@ public class CheckoutController3 extends AnchorPane implements ShoppingCartListe
     FlowPane finalOrderFlowPane;
     @FXML
     Label totalPriceLabel;
+    @FXML
+    AnchorPane sequenceMapAnchorPane;
+    @FXML
+    Label firstNameLabel, lastNameLabel, emailLabel, phoneNumberLabel, addressLabel, postAddressLabel, postCodeLabel, cardHolderName, cardNumber;
+    private Customer customer = db.getCustomer();
+    private CreditCard creditCard = db.getCreditCard();
+
 
     public CheckoutController3(IMatController parentController, ShoppingCartController shoppingCartController) {
         this.shoppingCartController = shoppingCartController;
         this.parentController = parentController;
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("fxml/Steg3_betalning.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("fxml/steg3_betalning.fxml"));
         fxmlLoader.setRoot(this);
         fxmlLoader.setController(this);
 
@@ -38,17 +45,28 @@ public class CheckoutController3 extends AnchorPane implements ShoppingCartListe
         } catch (IOException exception) {
             throw new RuntimeException(exception);
         }
-
+        sequenceMapAnchorPane.getChildren().add(parentController.getSequenceMap());
         shoppingCart.addShoppingCartListener(this);
     }
 
+    public void refreshSequenceMap() {
+        sequenceMapAnchorPane.getChildren().clear();
+        sequenceMapAnchorPane.getChildren().add(parentController.getSequenceMap());
+        parentController.getSequenceMap().setState(3);
+    }
+    public void refreshCheckoutController3() {
+        update();
+    }
     @FXML
     public void backButton() {
-        parentController.changeMode(IMatController.Mode.SHOPPING);
+        parentController.toPayment();
     }
 
     @FXML
-    public void toPayment() {
+    public void placeOrder() {
+        db.placeOrder(true);
+        shoppingCart.fireShoppingCartChanged(null, false);
+        parentController.thankYou();
 
     }
 
@@ -58,8 +76,28 @@ public class CheckoutController3 extends AnchorPane implements ShoppingCartListe
             for (ShoppingItem s : shoppingCart.getItems()) {
                 finalOrderFlowPane.getChildren().add(steg3ItemMap.get(s.getProduct().getName()));
             }
-            totalPriceLabel.setText(Double.toString(shoppingCart.getTotal()));
         }
+        totalPriceLabel.setText(MyMath.doubleToString(shoppingCart.getTotal()) +" kr");
+
+        firstNameLabel.setText(customer.getFirstName());
+        lastNameLabel.setText(customer.getLastName());
+        emailLabel.setText(customer.getEmail());
+        addressLabel.setText(customer.getAddress());
+        postAddressLabel.setText(customer.getPostAddress()); //Vilket måste vara Orten?
+        postCodeLabel.setText(customer.getPostCode());
+        phoneNumberLabel.setText(customer.getMobilePhoneNumber());
+        cardHolderName.setText(creditCard.getHoldersName());
+        cardNumber.setText(creditCard.getCardNumber());
+        String tempCardNumber = "";
+        for(int i = 0; i < creditCard.getCardNumber().length(); i++) {
+            if(i < creditCard.getCardNumber().length() - 4)
+                tempCardNumber += "X";
+            else
+                tempCardNumber += creditCard.getCardNumber().charAt(i);
+        }
+
+        cardNumber.setText(tempCardNumber);
+
 
     }
 

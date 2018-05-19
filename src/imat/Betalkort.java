@@ -2,56 +2,37 @@ package imat;
 
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
-import javafx.event.Event;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.*;
-import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import se.chalmers.cse.dat216.project.CreditCard;
-import se.chalmers.cse.dat216.project.Customer;
 import se.chalmers.cse.dat216.project.IMatDataHandler;
-import se.chalmers.cse.dat216.project.ProductCategory;
 
 import java.io.IOException;
 
 /**
- * Created by Jonathan Köre on 2018-05-04.
+ * Created by Jonathan Köre on 2018-05-15.
  */
-public class MyDetails extends AnchorPane {
-    private IMatController parentController;
+public class Betalkort extends AnchorPane {
+
     private IMatDataHandler db = IMatDataHandler.getInstance();
-    private Customer customer = db.getCustomer();
+    private boolean editingDetails = false;
     private CreditCard creditCard = db.getCreditCard();
-
-    @FXML
-    Button backButton;
-
-    @FXML
-    Label firstNameLabel, lastNameLabel, emailLabel, phoneNumberLabel, addressLabel, postAddressLabel, postCodeLabel;
-
-    @FXML
-    TextField firstNameTextField, lastNameTextField, emailTextField, phoneNumberTextField, addressTextField,
-            postAddressTextField, postCodeTextField;
-
-    @FXML
-    Button editDetailsButton, saveDetailsButton;
-
-
     @FXML
     ToggleGroup cardChoice;
 
     @FXML
-    Label cardHolderLabel, cardNumberLabel, cardValidLabel, cardVerificationLabel, whatIsCVCLabel;
+    Label cardHolderLabel, cardNumberLabel, cardValidLabel, cardTypeLabel, cardVerificationLabel, whatIsCVCLabel;
 
     @FXML
     TextField cardHolderTextField, cardNumberTextField, cardVerificationTextField;
 
     @FXML
-    ComboBox cardValidYearComboBox, cardValidMonthComboBox;
+    ComboBox cardValidYearComboBox, cardValidMonthComboBox, cardTypeComboBox;
 
     @FXML
-    Button saveCardButton;
+    Button editCardButton, saveCardButton;
 
     @FXML
     RadioButton changeCardRadioButton, useSavedCardRadioButton;
@@ -59,9 +40,8 @@ public class MyDetails extends AnchorPane {
     @FXML
     AnchorPane newCardAnchorPane;
 
-
-    public MyDetails(IMatController parentController) {
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("fxml/my_details_copy.fxml"));
+    public Betalkort() {
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("fxml/betalkort.fxml"));
         fxmlLoader.setRoot(this);
         fxmlLoader.setController(this);
 
@@ -71,86 +51,9 @@ public class MyDetails extends AnchorPane {
         } catch (IOException exception) {
             throw new RuntimeException(exception);
         }
-        this.parentController = parentController;
 
         loadSavedCard();
         initComboBoxes();
-        resetDetails();
-        resetCard();
-
-    }
-
-    public void resetDetails() {
-        toggleDetailsEdit(false);
-    }
-
-    private void saveDetails() {
-        customer.setFirstName(firstNameTextField.getText());
-        customer.setLastName(lastNameTextField.getText());
-        customer.setEmail(emailTextField.getText());
-        customer.setAddress(addressTextField.getText());
-        customer.setPostAddress(postAddressTextField.getText());
-        customer.setPostCode(postCodeTextField.getText());
-        customer.setMobilePhoneNumber(phoneNumberTextField.getText());
-
-    }
-
-    private void toggleDetailsEdit(boolean b) {
-        firstNameTextField.setDisable(!b);
-        lastNameTextField.setDisable(!b);
-        emailTextField.setDisable(!b);
-        phoneNumberTextField.setDisable(!b);
-        addressTextField.setDisable(!b);
-        postAddressTextField.setDisable(!b);
-        postCodeTextField.setDisable(!b);
-
-        if(!b) {
-            firstNameTextField.setText("");
-            lastNameTextField.setText("");
-            emailTextField.setText("");
-            phoneNumberTextField.setText("");
-            addressTextField.setText("");
-            postAddressTextField.setText("");
-            postCodeTextField.setText("");
-
-            firstNameLabel.setText(customer.getFirstName());
-            lastNameLabel.setText(customer.getLastName());
-            emailLabel.setText(customer.getEmail());
-            phoneNumberLabel.setText(customer.getMobilePhoneNumber());
-            addressLabel.setText(customer.getAddress());
-            postAddressLabel.setText(customer.getPostAddress());
-            postCodeLabel.setText(customer.getPostCode());
-        } else {
-            firstNameTextField.setText(customer.getFirstName());
-            lastNameTextField.setText(customer.getLastName());
-            emailTextField.setText(customer.getEmail());
-            phoneNumberTextField.setText(customer.getMobilePhoneNumber());
-            addressTextField.setText(customer.getAddress());
-            postAddressTextField.setText(customer.getPostAddress());
-            postCodeTextField.setText(customer.getPostCode());
-
-            firstNameLabel.setText("");
-            lastNameLabel.setText("");
-            emailLabel.setText("");
-            phoneNumberLabel.setText("");
-            addressLabel.setText("");
-            postAddressLabel.setText("");
-            postCodeLabel.setText("");
-        }
-        editDetailsButton.setVisible(!b);
-        saveDetailsButton.setVisible(b);
-    }
-
-
-    @FXML
-    private void editDetailsClick() {
-        toggleDetailsEdit(true);
-    }
-
-    @FXML
-    private void saveDetailsClick() {
-        saveDetails();
-        toggleDetailsEdit(false);
     }
 
     private void initComboBoxes() {
@@ -221,7 +124,7 @@ public class MyDetails extends AnchorPane {
 
     }
 
-    private void saveCard() {
+    private void saveDetails() {
         creditCard.setCardNumber(cardNumberTextField.getText());
         creditCard.setHoldersName(cardHolderTextField.getText());
         creditCard.setValidMonth(Integer.valueOf((String)cardValidMonthComboBox.getSelectionModel().getSelectedItem()));
@@ -246,12 +149,11 @@ public class MyDetails extends AnchorPane {
     }
 
     @FXML
-    private void saveCardClick() {
+    private void saveButtonClick() {
         if(infoIsValid()) {
-            saveCard();
+            saveDetails();
             loadSavedCard();
             toggleCardEdit(false);
-            useSavedCardRadioButton.setSelected(true);
         }
     }
 
@@ -275,19 +177,5 @@ public class MyDetails extends AnchorPane {
     }
 
     private void resetErrorLabels() {
-    }
-
-    public void resetCard() {
-        toggleCardEdit(false);
-    }
-
-    @FXML
-    public void backButton() {
-        parentController.updateProductList(ProductCategory.BERRY);
-    }
-
-    @FXML
-    public void mouseTrap(Event event){
-        parentController.mouseTrap(event);
     }
 }

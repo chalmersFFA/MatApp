@@ -1,11 +1,11 @@
 package imat;
 
-import javafx.beans.value.ChangeListener;
-import javafx.beans.value.ObservableValue;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.scene.control.Tooltip;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
@@ -20,6 +20,9 @@ public class StoreListItem extends AnchorPane implements ShoppingCartListener {
     private IMatDataHandler db = IMatDataHandler.getInstance();
     private ShoppingCart shoppingCart = db.getShoppingCart();
     private IMatController parentController;
+    private Tooltip tooltipFavourite = new Tooltip("Lägg till i Favoriter");
+    private Tooltip tooltipIncrease = new Tooltip("Öka Mängd");
+    private Tooltip tooltipDecrease = new Tooltip("Minska Mängd");
     Product product;
     @FXML
     ImageView ecoImageView;
@@ -32,10 +35,16 @@ public class StoreListItem extends AnchorPane implements ShoppingCartListener {
     @FXML
     Label priceLabel;
     @FXML
+    Label unit;
+    @FXML
     TextField amountTextField;
-
+    @FXML
+    Button decreaseButton, increaseButton;
     Image favouriteImage = new Image("imat/layout/images/favourite.png");
     Image notFavouriteImage = new Image("imat/layout/images/notFavourite.png");
+
+    private static final int tooltipDelay = 500;
+
 
     public StoreListItem(Product product, IMatController parentController) {
 
@@ -66,10 +75,18 @@ public class StoreListItem extends AnchorPane implements ShoppingCartListener {
 
         productNameLabel.setText(product.getName());
         //amountTextField.setText(Integer.toString(amount));
-        priceLabel.setText(Double.toString(product.getPrice()));
+
+        priceLabel.setText(MyMath.doubleToString(product.getPrice()) + " " + product.getUnit());
+        unit.setText(product.getUnitSuffix());
         //itemHandler.setStoreListItem(this);
 
         shoppingCart.addShoppingCartListener(this);
+
+        IMatController.addToolTip(favouriteImageView, tooltipFavourite, tooltipDelay);
+
+        IMatController.addToolTip(increaseButton, tooltipIncrease, tooltipDelay);
+        IMatController.addToolTip(decreaseButton, tooltipDecrease, tooltipDelay);
+
         update();
 
     }
@@ -78,17 +95,20 @@ public class StoreListItem extends AnchorPane implements ShoppingCartListener {
     public void updateFavourite(){
         if (db.isFavorite(product)){
             favouriteImageView.setImage(favouriteImage);
+            tooltipFavourite.setText("Ta bort från Favoriter");
+
         }else{
             favouriteImageView.setImage(notFavouriteImage);
+            tooltipFavourite.setText("Lägg till i Favoriter");
         }
     }
 
     public void update() {
-        //TODO fixa så att den här tar in ifrån shoppingcart, kanske ska den vara en listener?
         amountTextField.setText("0");
         for(ShoppingItem s : shoppingCart.getItems()){
             if(s.getProduct().getName().equals(product.getName())){
-                amountTextField.setText(Double.toString(s.getAmount()));
+                amountTextField.setText(MyMath.doubleToString(s.getAmount()));
+                unit.setText(product.getUnitSuffix());
                 break;
             }
         }
@@ -100,13 +120,20 @@ public class StoreListItem extends AnchorPane implements ShoppingCartListener {
         boolean finns = false;
         for(ShoppingItem s : shoppingCart.getItems()){
             if(s.getProduct().getName().equals(product.getName())){
-                s.setAmount(s.getAmount()+1);
+                if(s.getProduct().getUnitSuffix().equals("kg") || s.getProduct().getUnitSuffix().equals("l") ){
+                    s.setAmount(s.getAmount()+0.1);
+                }
+                else{    
+                    s.setAmount(s.getAmount()+1);
+                }
                 finns = true;
                 shoppingCart.fireShoppingCartChanged(null, false); //bara för att meddela att något hänt till övriga världen
             }
         }
         if(!finns){
-            shoppingCart.addProduct(product);
+            shoppingCart.addProduct(product); /** Det visar sig att .addProduct lägger till 1 som mängd, alltså är detta ett problem i backend
+                                                * och inte något vi behöver ändra på. Sen tycker jag att 1 kg är en bra mängd tbh /rob2
+                                                */
         }
         update();
 
@@ -117,9 +144,15 @@ public class StoreListItem extends AnchorPane implements ShoppingCartListener {
         if(itemHandler.getShoppingItem().getAmount() == 0){
             itemHandler.getShoppingCartItem().remove();
         }*/
+        //TODO fixa så att man kollar om det finns något i kundvagnen först!
         for(ShoppingItem s : shoppingCart.getItems()){
             if(s.getProduct().getName().equals(product.getName())){
-                s.setAmount(s.getAmount()-1);
+                if(s.getProduct().getUnitSuffix().equals("kg") || s.getProduct().getUnitSuffix().equals("l") ){
+                    s.setAmount(s.getAmount()-0.1);
+                }
+                else{
+                    s.setAmount(s.getAmount()-1);
+                }
                 shoppingCart.fireShoppingCartChanged(null, false); //bara för att meddela att
                 //TODO bestäm vad som ska hända med vagnen om det finns 0 av en vara
                 if(s.getAmount() < 0){
@@ -140,10 +173,39 @@ public class StoreListItem extends AnchorPane implements ShoppingCartListener {
         updateFavourite();
     }
 
+    @FXML
+    public void ChangePliancyFavorite(){
+        favouriteImageView.setOpacity(0.6);
+    }
+    @FXML
+    public void endChangePliancyFavorite(){
+        favouriteImageView.setOpacity(1);
+    }
+
+
     @Override
     public void shoppingCartChanged(CartEvent cartEvent) {
         //TODO fixa så att den kollar på hur många saker av sig själv som finns i vagnen
         update();
     }
+
+    @FXML
+    public void textFieldChanged(){
+        boolean finns = false;
+
+        for(ShoppingItem s : shoppingCart.getItems()){
+            if(s.getProduct().getName().equals(product.getName())){
+                s.setAmount(Double.parseDouble(amountTextField.getText()));
+                shoppingCart.fireShoppingCartChanged(null, false);
+                finns = true;
+                shoppingCart.fireShoppingCartChanged(null, false); //bara för att meddela att något hänt till övriga världen
+            }
+        }
+        if(!finns){
+            shoppingCart.addProduct(product, Double.parseDouble(amountTextField.getText()));
+        }
+        update();
+    }
+
 }
 

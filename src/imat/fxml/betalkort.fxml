@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<fx:root maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="707.0" prefWidth="533.0" styleClass="normal-text" stylesheets="@../layout/design.css" type="AnchorPane" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <ImageView fitHeight="56.0" fitWidth="57.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../layout/images/payment.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="56.0" layoutY="8.0" styleClass="big-text" text="Mitt Betalkort" />
+      <AnchorPane fx:id="newCardAnchorPane" layoutY="249.0" prefHeight="350.0" prefWidth="761.0">
+         <children>
+            <Label alignment="CENTER_RIGHT" layoutX="-56.0" layoutY="111.0" prefHeight="17.0" prefWidth="133.0" text="Kortnummer:" textAlignment="RIGHT" AnchorPane.rightAnchor="570.0" AnchorPane.topAnchor="111.0" />
+            <Label alignment="CENTER_RIGHT" layoutY="82.0" text="Kortets innehavare:" AnchorPane.rightAnchor="570.0" AnchorPane.topAnchor="82.0" />
+            <TextField fx:id="cardHolderTextField" layoutX="83.0" layoutY="81.0" minHeight="29.0" prefHeight="29.0" AnchorPane.leftAnchor="210.0" AnchorPane.topAnchor="81.0" />
+            <TextField fx:id="cardNumberTextField" layoutX="83.0" layoutY="111.0" minHeight="29.0" prefHeight="29.0" AnchorPane.leftAnchor="210.0" AnchorPane.topAnchor="111.0" />
+            <Label fx:id="cardValidLabel" layoutX="-16.0" layoutY="154.0" text="Giltig t.o.m:" AnchorPane.rightAnchor="570.0" AnchorPane.topAnchor="154.0" />
+            <ComboBox fx:id="cardValidYearComboBox" layoutX="303.0" layoutY="150.0" prefHeight="35.0" prefWidth="78.0" AnchorPane.leftAnchor="303.0" AnchorPane.topAnchor="150.0" />
+            <ComboBox fx:id="cardValidMonthComboBox" layoutX="182.0" layoutY="150.0" prefHeight="35.0" prefWidth="78.0" AnchorPane.leftAnchor="210.0" AnchorPane.topAnchor="150.0" />
+            <Label fx:id="cardVerificationLabel" layoutX="-1.0" layoutY="201.0" text="CCV/CVC:" AnchorPane.rightAnchor="570.0" AnchorPane.topAnchor="201.0" />
+            <TextField fx:id="cardVerificationTextField" layoutX="83.0" layoutY="201.0" minHeight="29.0" prefHeight="29.0" prefWidth="78.0" AnchorPane.leftAnchor="210.0" AnchorPane.topAnchor="201.0" />
+            <Label fx:id="whatIsCVCLabel" layoutX="318.0" layoutY="202.0" prefHeight="27.0" prefWidth="175.0" styleClass="normal-text" text="Vad är CCV/CVC?" AnchorPane.leftAnchor="318.0" AnchorPane.rightAnchor="286.0" />
+            <Button fx:id="saveCardButton" layoutX="348.0" layoutY="287.0" mnemonicParsing="false" onAction="#saveButtonClick" text="Spara kort" AnchorPane.rightAnchor="315.0" />
+         </children>
+      </AnchorPane>
+      <RadioButton fx:id="useSavedCardRadioButton" layoutX="20.0" layoutY="74.0" mnemonicParsing="false" text="Använd sparat kort" AnchorPane.leftAnchor="20.0" />
+      <RadioButton fx:id="changeCardRadioButton" layoutX="20.0" layoutY="222.0" mnemonicParsing="false" text="Byt till ett annat kort" AnchorPane.leftAnchor="20.0" />
+      <AnchorPane layoutX="20.0" layoutY="127.0" prefHeight="76.0" prefWidth="315.0">
+         <children>
+            <Label alignment="CENTER_RIGHT" layoutX="34.0" layoutY="39.0" prefHeight="17.0" prefWidth="133.0" text="Kortnummer:" textAlignment="RIGHT" />
+            <Label alignment="CENTER_RIGHT" layoutX="14.0" layoutY="9.0" text="Kortets innehavare:" />
+            <Label fx:id="cardHolderLabel" layoutX="178.0" layoutY="9.0" styleClass="bold-text" text="Namn" />
+            <Label fx:id="cardNumberLabel" layoutX="178.0" layoutY="39.0" styleClass="bold-text" text="Nummer" />
+         </children>
+      </AnchorPane>
+   </children>
+</fx:root>

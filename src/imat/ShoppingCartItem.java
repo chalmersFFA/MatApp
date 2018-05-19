@@ -1,12 +1,12 @@
 package imat;
 
-import javafx.beans.value.ChangeListener;
-import javafx.beans.value.ObservableValue;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.scene.control.Tooltip;
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import se.chalmers.cse.dat216.project.*;
@@ -22,18 +22,29 @@ public class ShoppingCartItem extends AnchorPane implements ShoppingCartListener
     IMatDataHandler db = IMatDataHandler.getInstance();
     private ShoppingCart shoppingCart = db.getShoppingCart();
 
+    private Tooltip tooltipIncrease = new Tooltip("Öka Mängd");
+    private Tooltip tooltipDecrease = new Tooltip("Minska Mängd");
+    private Tooltip removeTooltip = new Tooltip("Ta bort varan från kundvagnen");
+    private Tooltip amountTooltip = new Tooltip("Välj själv mängd");
+
     @FXML
     ImageView productImageView;
+    @FXML
+    ImageView cross;
     @FXML
     Label productLabel;
     @FXML
     Label priceLabel;
+    @FXML
+    Label unit;
     @FXML
     Button increaseButton;
     @FXML
     Button decreaseButton;
     @FXML
     TextField amountTextField;
+
+    private static final int tooltipDelay = 500;
 
     public ShoppingCartItem(Product product, ShoppingCartController parentController) {
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("fxml/steg1_betalning_item.fxml"));
@@ -55,6 +66,12 @@ public class ShoppingCartItem extends AnchorPane implements ShoppingCartListener
         //amountTextField.textProperty().addListener(itemHandler.getChangeListener());
         update();
         shoppingCart.addShoppingCartListener(this);
+
+        IMatController.addToolTip(increaseButton, tooltipIncrease, tooltipDelay);
+        IMatController.addToolTip(decreaseButton, tooltipDecrease, tooltipDelay);
+        IMatController.addToolTip(cross, removeTooltip, tooltipDelay);
+        amountTextField.setTooltip(amountTooltip);
+        update();
     }
 
     public void update() {
@@ -62,29 +79,40 @@ public class ShoppingCartItem extends AnchorPane implements ShoppingCartListener
         amountTextField.setText("0");
         for(ShoppingItem s : shoppingCart.getItems()){
             if(s.getProduct().getName().equals(product.getName())){
-                amountTextField.setText(Double.toString(s.getAmount()));
-                priceLabel.setText(Double.toString(s.getTotal()));
+                //amountTextField.setText(Double.toString(s.getAmount()));
+                priceLabel.setText(Double.toString(s.getTotal()) + " kr");
+                //unit.setText(product.getUnitSuffix());
+                amountTextField.setText(MyMath.doubleToString(s.getAmount())+ product.getUnitSuffix());
+                priceLabel.setText(MyMath.doubleToString(s.getTotal()) + " kr");
                 break;
             }
         }
         //amountTextField.setText(Double.toString(itemHandler.getShoppingItem().getAmount()));
         //priceLabel.setText(Double.toString(itemHandler.getShoppingItem().getTotal()));
     }
-
+    @FXML
     public void remove() {
-        for(ShoppingItem s : shoppingCart.getItems()){
-            if(s.getProduct().getName().equals(product.getName())){
-                shoppingCart.removeItem(s);
+        if(!shoppingCart.getItems().isEmpty()){
+            for(ShoppingItem s : shoppingCart.getItems()){
+                if(s.getProduct().getName().equals(product.getName())){
+                    shoppingCart.removeItem(s);
+                }
             }
+            shoppingCart.fireShoppingCartChanged(null, false);
         }
-        shoppingCart.fireShoppingCartChanged(null, false);
+        parentController.changePliancyCart();
     }
     @FXML
     public void increaseAmount(){
         boolean finns = false;
         for(ShoppingItem s : shoppingCart.getItems()){
             if(s.getProduct().getName().equals(product.getName())){
-                s.setAmount(s.getAmount()+1);
+                if(s.getProduct().getUnitSuffix().equals("kg") || s.getProduct().getUnitSuffix().equals("l") ){
+                    s.setAmount(s.getAmount()+0.1);
+                }
+                else{
+                    s.setAmount(s.getAmount()+1);
+                }
                 finns = true;
                 shoppingCart.fireShoppingCartChanged(null, false); //bara för att meddela att något hänt till övriga världen
             }
@@ -98,11 +126,18 @@ public class ShoppingCartItem extends AnchorPane implements ShoppingCartListener
     public void decreaseAmount() {
         for(ShoppingItem s : shoppingCart.getItems()){
             if(s.getProduct().getName().equals(product.getName())){
-                s.setAmount(s.getAmount()-1);
+                if(s.getProduct().getUnitSuffix().equals("kg") || s.getProduct().getUnitSuffix().equals("l") ){
+                    s.setAmount(s.getAmount()-0.1);
+                }
+                else{
+                    s.setAmount(s.getAmount()-1);
+                }
                 shoppingCart.fireShoppingCartChanged(null, false); //bara för att meddela att
                 //TODO bestäm vad som ska hända med vagnen om det finns 0 av en vara
                 if(s.getAmount() < 0){
                     shoppingCart.removeItem(s);
+                    parentController.changePliancyCart();
+
                 }
             }
         }
@@ -116,5 +151,25 @@ public class ShoppingCartItem extends AnchorPane implements ShoppingCartListener
     @Override
     public void shoppingCartChanged(CartEvent cartEvent) {
         update();
+    }
+
+    @FXML
+    public void changeCrossPliant(){
+        Image crossPliant = new Image("imat/layout/images/cross_pliant.png");
+        cross.setImage(crossPliant);
+    }
+    @FXML
+    public void changeCrossNotPliant(){
+        Image crossNotPliant = new Image("imat/layout/images/cross.png");
+        cross.setImage(crossNotPliant);
+    }
+    @FXML
+    public void textFieldChanged(){
+        for(ShoppingItem s : shoppingCart.getItems()){
+            if(s.getProduct().getName().equals(product.getName())){
+                s.setAmount(Double.parseDouble(amountTextField.getText()));
+                shoppingCart.fireShoppingCartChanged(null, false);
+            }
+        }
     }
 }

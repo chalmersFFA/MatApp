@@ -3,17 +3,18 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextArea?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="Content" minHeight="-1.0" minWidth="-1.0" prefHeight="545.0" prefWidth="430.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1">
+<fx:root id="Content" minHeight="-1.0" minWidth="-1.0" prefHeight="594.0" prefWidth="564.0" stylesheets="@../layout/design.css" type="AnchorPane" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1">
     <children>
         <Label alignment="CENTER" layoutX="14.0" layoutY="14.0" style="&#10;" text="Livsmedel online" textAlignment="CENTER" textFill="#f50909" wrapText="false">
             <font>
-                <Font size="36.0" fx:id="x5" />
+                <Font size="49.0" fx:id="x5" />
             </font>
         </Label>
-        <TextArea layoutX="14.0" layoutY="58.0" prefHeight="266.0" prefWidth="404.0" text="Välkommen till iMat, en tjänst som tillåter dig att handla livsmedel online. Nedan följer lite information om hur du använder dig av sidan och du kan alltid återvända hit genom att klicka på [iMat] uppe i vänstra hörnet eller på hjälp ikonen alltid tillgängliga på applikationens topp.&#10;&#10;Till vänster ser du kategorier, där kan du välja från ett urval inom samma kategori. Till höger ser du din varukorg som uppdateras under shoppingens gång och längst upp på sidan har du möjlighet att söka efter varor, se din orderhistorik, se och redigera uppgifter och se dina favoritmarkerade varor.&#10;Här är några vanliga frågor besvarade.&#10;&#10;Ha en trevlig dag och shoppingtur&#10;" wrapText="true" AnchorPane.leftAnchor="13.0" AnchorPane.rightAnchor="13.0" />
-        <Line endX="304.0" layoutX="115.0" layoutY="332.0" startX="-100.0" stroke="#d1d1d1" AnchorPane.bottomAnchor="212.5" AnchorPane.leftAnchor="13.0" AnchorPane.rightAnchor="13.0" AnchorPane.topAnchor="331.5" />
+        <TextArea editable="false" layoutX="13.0" layoutY="69.0" prefHeight="463.0" prefWidth="538.0" styleClass="textFieldBackground" stylesheets="@../layout/design.css" text="Välkommen till iMat, en tjänst som tillåter dig att handla livsmedel online. Nedan följer lite information om hur du använder dig av sidan och du kan alltid återvända hit genom att klicka på [iMat] uppe i vänstra hörnet eller på hjälp ikonen alltid tillgängliga på applikationens topp.&#10;&#10;Till vänster ser du kategorier, där kan du välja från ett urval inom samma kategori. Till höger ser du din varukorg som uppdateras under shoppingens gång och längst upp på sidan har du möjlighet att söka efter varor, se din orderhistorik, se och redigera uppgifter och se dina favoritmarkerade varor.&#10;Här är några vanliga frågor besvarade.&#10;&#10;Ha en trevlig dag och shoppingtur&#10;" wrapText="true" AnchorPane.leftAnchor="13.0" AnchorPane.rightAnchor="13.0">
+         <font>
+            <Font size="20.0" />
+         </font></TextArea>
     </children>
-</AnchorPane>
+</fx:root>

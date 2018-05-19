@@ -1,20 +1,28 @@
 package imat;
 
+import javafx.animation.KeyFrame;
+import javafx.animation.Timeline;
 import javafx.event.Event;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.geometry.Insets;
 import javafx.geometry.Pos;
+import javafx.scene.Node;
 import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
+import javafx.scene.control.Tooltip;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.KeyCode;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.*;
+import javafx.util.Duration;
 import se.chalmers.cse.dat216.project.*;
 
+import javax.tools.Tool;
+import java.lang.reflect.Field;
 import java.net.URL;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.ResourceBundle;
+import java.util.*;
 
 /**
  * Created by Jonathan Köre on 2018-05-03.
@@ -24,19 +32,33 @@ public class IMatController extends VBox implements Initializable {
     static ArrayList<CategoryItem> cList = new ArrayList<>();
     private Map<String, StoreListItem> storeListItemMap = new HashMap<String, StoreListItem>();
     private CategoryItem currentExpandedSub;
+
+    private CategoryItem currentExpandedMain;
     private ShoppingCart shoppingCart = db.getShoppingCart();
+    private SequenceMap sequenceMap = new SequenceMap();
+
     public enum Mode {
         SHOPPING,
         CHECKOUT
     }
-    private Mode currentMode = Mode.SHOPPING;
 
+    private Mode currentMode = Mode.SHOPPING;
+    HelpPage helpPage;
     MyDetails myDetails;
     ShoppingCartController shoppingCartController;
     CheckoutController checkoutController;
     CheckoutController2 checkoutController2;
     CheckoutController3 checkoutController3;
+    CheckoutController4 checkoutController4;
+    OrderHistoryController orderHistoryController;
 
+    Tooltip iMatLogo = new Tooltip("Klicka här för att komma till Startsidan");
+    Tooltip favourites = new Tooltip("Se dina favoritvaror");
+    Tooltip orderHistory = new Tooltip("Se dina tidigare köp");
+    Tooltip myAccount = new Tooltip("Se och redigera mina uppgifter");
+    Tooltip help = new Tooltip("Hjälp med navigation");
+
+    private static final int tooltipDelay = 500;
 
     @FXML
     FlowPane mainFlowPane;
@@ -52,6 +74,18 @@ public class IMatController extends VBox implements Initializable {
 
     @FXML
     Label favouriteLabel;
+
+    @FXML
+    Label helpLabel;
+
+    @FXML
+    Label orderHistoryLabel;
+
+    @FXML
+    ImageView myFavourites;
+
+    @FXML
+    Label currentSiteLabel;
 
     @FXML
     ImageView logoImageView;
@@ -71,23 +105,45 @@ public class IMatController extends VBox implements Initializable {
     @FXML
     HBox displayPane;
 
+    @FXML
+    AnchorPane headerAnchorPane;
+
+    Image favouriteImage = new Image("imat/layout/images/favourite.png");
+    Image favouriteImagePliant = new Image("imat/layout/images/favourite_pliant.png");
+
+    @FXML
+    TextField searchTextField;
+
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         myDetails = new MyDetails(this);
+        helpPage = new HelpPage(this);
         shoppingCartController = new ShoppingCartController(this);
         checkoutController = new CheckoutController(this, shoppingCartController);
         checkoutController2 = new CheckoutController2(this, shoppingCartController);
         checkoutController3 = new CheckoutController3(this, shoppingCartController);
+        checkoutController4 = new CheckoutController4(this);
+        orderHistoryController = new OrderHistoryController(this, shoppingCartController);
         showShoppingCart();
         initProducts();
         initCategories();
         updateProductList(ProductCategory.BERRY);
         shoppingCart.fireShoppingCartChanged(null, false);
+        orderHistoryController.createHistory();
+
+        IMatController.addToolTip(myDetailsLabel, myAccount, tooltipDelay);
+        IMatController.addToolTip(favouriteLabel, favourites, tooltipDelay);
+        IMatController.addToolTip(logoImageView, iMatLogo, tooltipDelay);
+        IMatController.addToolTip(helpLabel, help, tooltipDelay);
+        IMatController.addToolTip(orderHistoryLabel, orderHistory, tooltipDelay);
+
+        setGlobalEventHandler(searchTextField);
+
     }
 
     private void initProducts() {
         ShoppingCartItem s;
-        for (Product p : db.getProducts(ProductCategory.BERRY)){
+        for (Product p : db.getProducts(ProductCategory.BERRY)) {
             //ItemHandler itemHandler = new ItemHandler(new ShoppingItem(p,0));
             storeListItemMap.put(p.getName(), new StoreListItem(p, this));
             shoppingCartController.addToHashMap(new ShoppingCartItem(p, shoppingCartController));
@@ -96,31 +152,97 @@ public class IMatController extends VBox implements Initializable {
         }
     }
 
-
+    public void updateProductListWithAllProducts() {
+        updateProductListLoop(db.getProducts());
+        currentSiteLabel.setText("Kategori: Alla");
+    }
     public void updateProductList(ProductCategory category) {
+        updateProductListLoop(db.getProducts(category));
+        currentSiteLabel.setText("Kategori: " + Translator.swe(category));
+    }
+
+    public void clearProductList() {
         mainFlowPane.getChildren().clear();
-        for (Product p : db.getProducts(category)){
+    }
+
+    private void updateProductListLoop(List<Product> products) {
+       // mainFlowPane.getChildren().clear();
+        for(Product p : products) {
+            mainFlowPane.setHgap(30);
+            mainFlowPane.setVgap(10);
+            mainFlowPane.setPadding(new Insets(30, 10, 10, 10));
             mainFlowPane.getChildren().add(storeListItemMap.get(p.getName()));
         }
     }
 
-    public void displayFavourites(){
+    public void displayFavourites() {
+        deSelectCategory(currentExpandedSub);
+        currentExpandedSub = null;
         mainFlowPane.getChildren().clear();
-        for (Product p: db.favorites()){
+        for (Product p : db.favorites()) {
             mainFlowPane.getChildren().add(storeListItemMap.get(p.getName()));
         }
         //favouriteLabel.setId("current");
+        currentSiteLabel.setText("Mina Favoritvaror");
+
+    }
+
+    private void setGlobalEventHandler(Node root) {
+        root.addEventHandler(KeyEvent.KEY_PRESSED, ev -> {
+            if (ev.getCode() == KeyCode.ENTER) {
+                search();
+                ev.consume();
+            }
+        });
     }
 
     @FXML
     private void showDetailsScreen() {
-        displayPane.toFront();
-        displayPane.getChildren().clear();
-        displayPane.getChildren().add(myDetails);
-        displayPane.setAlignment(Pos.CENTER);
-        myDetails.initDetails();
+        deSelectCategory(currentExpandedSub);
+        currentExpandedSub = null;
+        toggleShoppingMode();
+        mainFlowPane.toFront();
+        mainFlowPane.getChildren().clear();
+        mainFlowPane.getChildren().add(myDetails);
+        mainFlowPane.setAlignment(Pos.CENTER);
+        myDetails.resetDetails();
+        currentSiteLabel.setText("Mitt Konto");
+
+    }
+    @FXML
+    private void showOrderScreen() {
+        deSelectCategory(currentExpandedSub);
+        currentExpandedSub = null;
+        toggleShoppingMode();
+        mainFlowPane.toFront();
+        mainFlowPane.getChildren().clear();
+        mainFlowPane.getChildren().add(orderHistoryController);
+        mainFlowPane.setAlignment(Pos.CENTER);
+        currentSiteLabel.setText("Mina Ordrar");
+
     }
 
+    @FXML
+    private void escapeHatch() {
+        pressedHelp();
+        /**
+         * En temporär lösning
+         */
+    }
+
+    @FXML
+    private void pressedHelp() {
+        deSelectCategory(currentExpandedSub);
+        currentExpandedSub = null;
+        toggleShoppingMode();
+        mainFlowPane.toFront();
+        mainFlowPane.getChildren().clear();
+        mainFlowPane.getChildren().add(helpPage);
+        mainFlowPane.setAlignment(Pos.CENTER);
+        currentSiteLabel.setText("Startsida");
+        System.out.println("help clicked");
+
+    }
 
     private void initCategories() {
 
@@ -164,18 +286,16 @@ public class IMatController extends VBox implements Initializable {
         cList.add(c);
 
 
-
-
-
         categoryFlowPane.getChildren().clear();
-        for(CategoryItem ci : cList)
+        for (CategoryItem ci : cList)
             categoryFlowPane.getChildren().add(ci);
     }
 
     public void expandCategory(CategoryItem c) {
-        for(CategoryItem sub : c.getSubCategories()) {
+        for (CategoryItem sub : c.getSubCategories()) {
             int index = categoryFlowPane.getChildren().indexOf(c) + 1;
             categoryFlowPane.getChildren().add(index, sub);
+
         }
     }
 
@@ -198,8 +318,11 @@ public class IMatController extends VBox implements Initializable {
     }
 
     public void deSelectCategory(CategoryItem c) {
-        c.getBackgroundPane().getStyleClass().remove(c.getSelectedClass());
-        c.getBackgroundPane().getStyleClass().add(c.getStandardClass());
+        if(c != null) {
+            c.getBackgroundPane().getStyleClass().remove(c.getSelectedClass());
+            c.getBackgroundPane().getStyleClass().add(c.getStandardClass());
+        }
+
     }
 
     public void showShoppingCart() {
@@ -219,18 +342,21 @@ public class IMatController extends VBox implements Initializable {
     }
 
     private void toggleCheckoutMode() {
-        //bigHBox.getChildren().clear();
-        checkoutController.update();
+        toCheckout1();
+    }
+
+    public void toCheckout1() {
+        checkoutController.refreshSequenceMap();
+        displayPane.getChildren().clear();
         displayPane.setAlignment(Pos.CENTER);
-        //bigHBox.getChildren().add(checkoutController);
         displayPane.getChildren().add(checkoutController);
         bigHBox.toBack();
         displayPane.toFront();
     }
 
-    public void toPayment(){
-        //TODO update checkoutcontroller2
-        //checkoutController.update();
+    public void toPayment() {
+        checkoutController2.refreshSequenceMap();
+        checkoutController2.resetCheckoutController2();
         displayPane.getChildren().clear();
         displayPane.setAlignment(Pos.CENTER);
         displayPane.getChildren().add(checkoutController2);
@@ -238,10 +364,21 @@ public class IMatController extends VBox implements Initializable {
         displayPane.toFront();
     }
 
-    public void toFinalPaymentStep(){
+    public void toFinalPaymentStep() {
+        checkoutController3.refreshSequenceMap();
+        checkoutController3.refreshCheckoutController3();
         displayPane.getChildren().clear();
         displayPane.setAlignment(Pos.CENTER);
         displayPane.getChildren().add(checkoutController3);
+        bigHBox.toBack();
+        displayPane.toFront();
+    }
+
+    public void thankYou() {
+        refreshHistory();
+        displayPane.getChildren().clear();
+        displayPane.setAlignment(Pos.CENTER);
+        displayPane.getChildren().add(checkoutController4);
         bigHBox.toBack();
         displayPane.toFront();
     }
@@ -266,7 +403,102 @@ public class IMatController extends VBox implements Initializable {
     }
 
     @FXML
-    public void mouseTrap(Event event){
+    public void mouseTrap(Event event) {
         event.consume();
     }
+
+
+    public MyDetails getMyDetails() {
+        return myDetails;
+    }
+
+    public SequenceMap getSequenceMap() {
+        return sequenceMap;
+    }
+
+    public CategoryItem getCurrentExpandedMain() {
+        return currentExpandedMain;
+    }
+
+    public void setCurrentExpandedMain(CategoryItem currentExpandedMain) {
+        this.currentExpandedMain = currentExpandedMain;
+    }
+
+    public static void hackTooltipStartTiming(Tooltip tooltip, int delay) {
+        try {
+            Field fieldBehavior = tooltip.getClass().getDeclaredField("BEHAVIOR");
+            fieldBehavior.setAccessible(true);
+            Object objBehavior = fieldBehavior.get(tooltip);
+
+            Field fieldTimer = objBehavior.getClass().getDeclaredField("activationTimer");
+            fieldTimer.setAccessible(true);
+            Timeline objTimer = (Timeline) fieldTimer.get(objBehavior);
+
+            objTimer.getKeyFrames().clear();
+            objTimer.getKeyFrames().add(new KeyFrame(new Duration(delay)));
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    public static void addToolTip(Node n, Tooltip t, int delay) {
+        t.setStyle("-fx-font-size: 1.5em");
+        IMatController.hackTooltipStartTiming(t, delay);
+        Tooltip.install(n, t);
+    }
+    public void refreshHistory(){
+        orderHistoryController.createHistory();
+    }
+
+    @FXML
+    private void search() {
+        List<Product> p = db.findProducts(searchTextField.getText());
+        if(p.size() == 0) {
+            mainFlowPane.getChildren().clear();
+            currentSiteLabel.setText("Sökningen " + "\"" + searchTextField.getText() + "\" gav inga resultat.");
+        }
+        else {
+            clearProductList();
+            updateProductListLoop(db.findProducts(searchTextField.getText()));
+            currentSiteLabel.setText("Sökresultat för: " + searchTextField.getText());
+        }
+
+
+    }
+
+    @FXML
+    public void ChangePliancyFavourite(){
+       // myFavourites.setImage(favouriteImagePliant);
+        favouriteLabel.setOpacity(0.6);
+    }
+    @FXML
+    public void endPliancyFavourite(){
+        //myFavourites.setImage(favouriteImage);
+        favouriteLabel.setOpacity(1);
+    }
+    @FXML
+    public void ChangePliancyMyAccount(){
+        myDetailsLabel.setOpacity(0.6);
+    }
+    @FXML
+    public void endPliancyMyAccount(){
+        myDetailsLabel.setOpacity(1);
+    }
+    @FXML
+    public void ChangePliancyhelpPage(){
+        helpLabel.setOpacity(0.6);
+    }
+    @FXML
+    public void endPliancyHelpPage(){
+        helpLabel.setOpacity(1);
+    }
+    @FXML
+    public void ChangePliancyOrderHistory(){
+        orderHistoryLabel.setOpacity(0.6);
+    }
+    @FXML
+    public void endPliancyOrderHistory(){
+        orderHistoryLabel.setOpacity(1);
+    }
+
 }

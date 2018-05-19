@@ -4,6 +4,8 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.FlowPane;
 import se.chalmers.cse.dat216.project.*;
@@ -30,6 +32,12 @@ public class ShoppingCartController extends AnchorPane implements ShoppingCartLi
     Button checkoutButton;
     @FXML
     Label totalLabel;
+    @FXML
+    Label emptyCartLabel;
+    @FXML
+    AnchorPane emptyCartAnchorPane;
+    @FXML
+    ImageView cross;
 
     public ShoppingCartController(IMatController parentController) {
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("fxml/shopping_cart_controller.fxml"));
@@ -44,17 +52,21 @@ public class ShoppingCartController extends AnchorPane implements ShoppingCartLi
 
         this.parentController = parentController;
         shoppingCart.addShoppingCartListener(this);
-        totalLabel.setText(Double.toString(shoppingCart.getTotal()));
+        totalLabel.setText(Double.toString(shoppingCart.getTotal()) +" kr");
+        changePliancyCart();
     }
 
 
     @Override
     public void shoppingCartChanged(CartEvent cartEvent) {
         update();
-        /*if(cartEvent.isAddEvent())
-            add(shoppingCartItemMap.get(cartEvent.getShoppingItem().getProduct().getName()));
-        /*else
-            remove(shoppingCartItemMap.get(cartEvent.getShoppingItem().getProduct().getName()));*/
+        if(shoppingCart.getTotal()==0){
+            changePliancyCart();
+            setDisableCart();
+        } else{
+            endPliancyCart();
+            setEnableCart();
+        }
     }
     public void remove(ShoppingCartItem item) {
         //visualItems.remove(item);
@@ -64,18 +76,16 @@ public class ShoppingCartController extends AnchorPane implements ShoppingCartLi
             }
         }
         update();
+        emptyCartLabel.setDisable(false);
+        endPliancyCart();
     }
-    /*public void add(ShoppingCartItem s) {
-        visualItems.add(s);
-        update();
-    }*/
 
     public void update() {
         shoppingCartFlowPane.getChildren().clear();
         for(ShoppingItem s : shoppingCart.getItems()) {
             shoppingCartFlowPane.getChildren().add(shoppingCartItemMap.get(s.getProduct().getName()));
         }
-        totalLabel.setText(Double.toString(shoppingCart.getTotal()));
+        totalLabel.setText(MyMath.doubleToString(shoppingCart.getTotal()) +" kr");
     }
 
     public void addToHashMap(ShoppingCartItem s) {
@@ -97,5 +107,48 @@ public class ShoppingCartController extends AnchorPane implements ShoppingCartLi
 
     public FlowPane getShoppingCartFlowPane() {
         return shoppingCartFlowPane;
+    }
+
+    @FXML
+    public void emptyCartToFront(){
+        if(shoppingCart.getTotal()!=0)
+            emptyCartAnchorPane.toFront();
+    }
+    @FXML
+    public void emptyCartToBack(){
+        emptyCartAnchorPane.toBack();
+    }
+
+    @FXML
+    public void emptyCart(){
+        shoppingCart.clear();
+        update();
+        setDisableCart();
+        emptyCartToBack();
+    }
+    @FXML
+    public void changePliancyCart(){
+        emptyCartLabel.setOpacity(0.6);
+    }
+    @FXML
+    public void endPliancyCart(){
+        if(shoppingCart.getTotal()!=0)
+            emptyCartLabel.setOpacity(1);
+    }
+    public void setDisableCart(){
+        emptyCartLabel.setDisable(true);
+    }
+    public void setEnableCart() {
+        emptyCartLabel.setDisable(false);
+    }
+    @FXML
+    public void changeCrossPliant(){
+        Image crossPliant = new Image("imat/layout/images/cross_pliant.png");
+        cross.setImage(crossPliant);
+    }
+    @FXML
+    public void changeCrossNotPliant(){
+        Image crossNotPliant = new Image("imat/layout/images/cross.png");
+        cross.setImage(crossNotPliant);
     }
 }

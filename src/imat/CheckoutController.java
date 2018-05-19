@@ -2,7 +2,6 @@ package imat;
 
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.FlowPane;
@@ -27,6 +26,8 @@ public class CheckoutController extends AnchorPane implements ShoppingCartListen
     FlowPane orderFlowPane;
     @FXML
     Label totalLabel;
+    @FXML
+    AnchorPane sequenceMapAnchorPane;
 
     public CheckoutController(IMatController parentController, ShoppingCartController shoppingCartController) {
         this.shoppingCartController = shoppingCartController;
@@ -42,10 +43,15 @@ public class CheckoutController extends AnchorPane implements ShoppingCartListen
         }
 
         shoppingCart.addShoppingCartListener(this);
-        totalLabel.setText(Double.toString(shoppingCart.getTotal()));
+        totalLabel.setText(MyMath.doubleToString(shoppingCart.getTotal()) +" kr");
 
     }
 
+    public void refreshSequenceMap() {
+        sequenceMapAnchorPane.getChildren().clear();
+        sequenceMapAnchorPane.getChildren().add(parentController.getSequenceMap());
+        parentController.getSequenceMap().setState(1);
+    }
     @FXML
     public void backButton() {
         parentController.changeMode(IMatController.Mode.SHOPPING);
@@ -54,6 +60,7 @@ public class CheckoutController extends AnchorPane implements ShoppingCartListen
     @FXML
     public void toPayment() {
         parentController.toPayment();
+
     }
 
     public void update() {
@@ -61,7 +68,7 @@ public class CheckoutController extends AnchorPane implements ShoppingCartListen
         for(ShoppingItem s : shoppingCart.getItems()) {
             orderFlowPane.getChildren().add(shoppingCartItemMap.get(s.getProduct().getName()));
         }
-        totalLabel.setText(Double.toString(shoppingCart.getTotal()));
+        totalLabel.setText(MyMath.doubleToString(shoppingCart.getTotal()) +" kr");
     }
 
     public FlowPane getOrderFlowPane() {
