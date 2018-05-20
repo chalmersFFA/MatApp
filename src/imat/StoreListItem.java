@@ -82,10 +82,9 @@ public class StoreListItem extends AnchorPane implements ShoppingCartListener {
 
         shoppingCart.addShoppingCartListener(this);
 
-        IMatController.addToolTip(favouriteImageView, tooltipFavourite, tooltipDelay);
-
-        IMatController.addToolTip(increaseButton, tooltipIncrease, tooltipDelay);
-        IMatController.addToolTip(decreaseButton, tooltipDecrease, tooltipDelay);
+        IMatController.addToolTip(this.favouriteImageView, tooltipFavourite, tooltipDelay);
+        IMatController.addToolTip(this.increaseButton, tooltipIncrease, tooltipDelay);
+        IMatController.addToolTip(this.decreaseButton, tooltipDecrease, tooltipDelay);
 
         update();
 
