@@ -141,8 +141,6 @@ public class ShoppingCartItem extends AnchorPane implements ShoppingCartListener
                 //TODO bestäm vad som ska hända med vagnen om det finns 0 av en vara
                 if(s.getAmount() < 0){
                     shoppingCart.removeItem(s);
-                    parentController.changePliancyCart();
-
                 }
             }
         }
