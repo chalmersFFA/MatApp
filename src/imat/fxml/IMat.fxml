@@ -15,13 +15,13 @@
 <?import javafx.scene.paint.Color?>
 <?import javafx.scene.text.Font?>
 
-<VBox stylesheets="@../layout/design.css" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="imat.IMatController">
+<VBox stylesheets="@../layout/design.css" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="imat.IMatController">
    <children>
       <AnchorPane id="headerStyle" fx:id="headerAnchorPane" prefHeight="75.0" prefWidth="1127.0" stylesheets="@../layout/design.css">
          <children>
-            <TextField fx:id="searchTextField" layoutX="473.0" layoutY="18.0" prefHeight="48.0" prefWidth="302.0" promptText="Sök efter din vara" AnchorPane.bottomAnchor="17.0" AnchorPane.rightAnchor="641.0" AnchorPane.topAnchor="18.0">
+            <TextField fx:id="searchTextField" layoutX="473.0" layoutY="18.0" prefHeight="48.0" prefWidth="302.0" promptText="Sök på iMat efter din vara" AnchorPane.bottomAnchor="17.0" AnchorPane.rightAnchor="641.0" AnchorPane.topAnchor="18.0">
                <font>
-                  <Font size="21.0" />
+                  <Font size="20.0" />
                </font></TextField>
             <ImageView fitHeight="33.0" fitWidth="34.0" layoutX="732.0" layoutY="19.0" onMouseClicked="#search" opacity="0.76" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="22.0" AnchorPane.rightAnchor="645.0">
                <image>

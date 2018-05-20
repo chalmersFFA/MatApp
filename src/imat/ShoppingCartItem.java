@@ -43,6 +43,9 @@ public class ShoppingCartItem extends AnchorPane implements ShoppingCartListener
     Button decreaseButton;
     @FXML
     TextField amountTextField;
+    @FXML
+    AnchorPane item_AnchorPane;
+
 
     private static final int tooltipDelay = 500;
 
@@ -72,6 +75,8 @@ public class ShoppingCartItem extends AnchorPane implements ShoppingCartListener
         IMatController.addToolTip(cross, removeTooltip, tooltipDelay);
         amountTextField.setTooltip(amountTooltip);
         update();
+        cross.setVisible(false);
+        cross.setOpacity(0.6);
     }
 
     public void update() {
@@ -171,5 +176,17 @@ public class ShoppingCartItem extends AnchorPane implements ShoppingCartListener
                 shoppingCart.fireShoppingCartChanged(null, false);
             }
         }
+    }
+    @FXML
+    public void showTheCross(){
+        System.out.println("show cross");
+        cross.toFront();
+        cross.setVisible(true);
+    }
+    @FXML
+    public void hideTheCross(){
+        System.out.println("hide cross");
+        cross.toBack();
+        cross.setVisible(false);
     }
 }
