@@ -38,7 +38,7 @@
     -fx-background-color: green;
 }
 .subCategorySelected {
-    -fx-background-color: #b3b3b3;
+    -fx-background-color: #939393;
 }
 .mainCategorySelected {
     -fx-background-color: #a3a3a3;
@@ -224,5 +224,6 @@
     -fx-font-weight: bold;
 }
 .subCategoryText{
-    -fx-font-size: 14px;
+    -fx-font-size: 28px;
+    -fx-text-fill: #F5F5F5;
 }

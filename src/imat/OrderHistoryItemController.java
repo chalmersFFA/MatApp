@@ -13,6 +13,9 @@ import se.chalmers.cse.dat216.project.*;
 
 
 import java.io.IOException;
+import java.text.SimpleDateFormat;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 
 /**
  * Created by Jonathan Köre on 2018-05-09.
@@ -50,12 +53,17 @@ public class OrderHistoryItemController extends AnchorPane{
         } catch (IOException exception) {
             throw new RuntimeException(exception);
         }
-        orderNameLabel.setText(order.getDate().toString());
+
+
+        //LocalDateTime datetime = LocalDateTime.parse(order.getDate().toString(), DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss.S"));
+        //String date = datetime.format(DateTimeFormatter.ofPattern("yyyy-MM-dd"));
+
+        orderNameLabel.setText(new SimpleDateFormat("yyyy-MM-dd").format(order.getDate()));
         double totalAmount = 0;
         for(ShoppingItem item : order.getItems()){
             totalAmount += item.getTotal();
         }
-        total.setText("Totalt: " + MyMath.doubleToString(totalAmount) + " kr");
+        total.setText(MyMath.doubleToString(totalAmount) + " kr");
         //this.getChildren().get(0).getStyleClass().remove("historyItem");
 
 
