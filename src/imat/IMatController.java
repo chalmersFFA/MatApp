@@ -453,6 +453,7 @@ public class IMatController extends VBox implements Initializable {
 
     @FXML
     private void search() {
+        toggleShoppingMode();
         List<Product> p = db.findProducts(searchTextField.getText());
         if(p.size() == 0) {
             mainFlowPane.getChildren().clear();
