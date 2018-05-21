@@ -44,6 +44,7 @@ public class OrderHistoryController extends VBox{
 
     @FXML
     public void backButton() {
+        parentController.clearProductList();
         parentController.updateProductList(ProductCategory.BERRY);
     }
 
