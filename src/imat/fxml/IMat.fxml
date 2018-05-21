@@ -80,9 +80,9 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
             </Label>
-            <ImageView fx:id="logoImageView" fitHeight="49.0" fitWidth="97.0" layoutX="8.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="13.25" AnchorPane.leftAnchor="5.0" AnchorPane.topAnchor="13.25">
+            <ImageView fx:id="logoImageView" fitHeight="57.0" fitWidth="109.0" layoutX="9.0" layoutY="17.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="13.25" AnchorPane.leftAnchor="7.0" AnchorPane.topAnchor="15.0">
                <image>
-                  <Image url="@../layout/images/iMat.png" />
+                  <Image url="@../layout/images/iMat_logo_final.png" />
                </image>
                <cursor>
                   <Cursor fx:constant="HAND" />
