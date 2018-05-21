@@ -271,9 +271,6 @@ public class MyDetails extends AnchorPane {
     }
 
     private void saveCard() {
-
-
-
         creditCard.setCardNumber(card1.getText() + card2.getText() + card3.getText() + card4.getText());
         creditCard.setHoldersName(cardHolderTextField.getText());
         creditCard.setValidMonth(Integer.valueOf((String)cardValidMonthComboBox.getSelectionModel().getSelectedItem()));
