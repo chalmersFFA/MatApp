@@ -179,6 +179,8 @@ public class IMatController extends VBox implements Initializable {
     public void displayFavourites() {
         deSelectCategory(currentExpandedSub);
         currentExpandedSub = null;
+        toggleShoppingMode();
+        mainFlowPane.toFront();
         mainFlowPane.getChildren().clear();
         for (Product p : db.favorites()) {
             mainFlowPane.getChildren().add(storeListItemMap.get(p.getName()));
@@ -225,10 +227,7 @@ public class IMatController extends VBox implements Initializable {
 
     @FXML
     private void escapeHatch() {
-        pressedHelp();
-        /**
-         * En temporär lösning
-         */
+        updateProductListWithAllProducts();
     }
 
     @FXML
