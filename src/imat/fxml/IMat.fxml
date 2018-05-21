@@ -12,14 +12,13 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.layout.VBox?>
-<?import javafx.scene.paint.Color?>
 <?import javafx.scene.text.Font?>
 
 <VBox stylesheets="@../layout/design.css" xmlns="http://javafx.com/javafx/9.0.4" xmlns:fx="http://javafx.com/fxml/1" fx:controller="imat.IMatController">
    <children>
       <AnchorPane id="headerStyle" fx:id="headerAnchorPane" prefHeight="75.0" prefWidth="1127.0" stylesheets="@../layout/design.css">
          <children>
-            <TextField fx:id="searchTextField" layoutX="473.0" layoutY="18.0" prefHeight="48.0" prefWidth="302.0" promptText="Sök på iMat efter din vara" AnchorPane.bottomAnchor="17.0" AnchorPane.rightAnchor="641.0" AnchorPane.topAnchor="18.0">
+            <TextField fx:id="searchTextField" layoutX="473.0" layoutY="18.0" prefHeight="48.0" prefWidth="302.0" promptText="Sök på iMat efter din vara" AnchorPane.bottomAnchor="17.0" AnchorPane.leftAnchor="641.0" AnchorPane.rightAnchor="641.0" AnchorPane.topAnchor="18.0">
                <font>
                   <Font size="20.0" />
                </font></TextField>
@@ -99,13 +98,10 @@
                      <children>
                     <AnchorPane fx:id="categoriesAnchorPane" prefWidth="400.0" styleClass="categoriesAnchorPane">
                       <children>
-                        <Label alignment="CENTER" layoutX="14.0" layoutY="14.0" minWidth="60.0" prefWidth="-1.0" style="&#10;" text="Kategorier" textAlignment="CENTER" wrapText="false">
+                        <Label id="kategorier" alignment="CENTER" layoutX="13.0" layoutY="10.0" minWidth="60.0" style="&#10;" styleClass="big-text" text="Kategorier" textAlignment="CENTER" textFill="WHITE" wrapText="false">
                           <font>
-                            <Font size="18.0" fx:id="x1" />
+                            <Font size="10.0" fx:id="x1" />
                           </font>
-                          <textFill>
-                            <Color blue="0.624" green="0.624" red="0.624" fx:id="x2" />
-                          </textFill>
                         </Label>
                               <ScrollPane fitToHeight="true" fitToWidth="true" hbarPolicy="NEVER" layoutY="48.0" minHeight="860.0" prefHeight="869.0" prefWidth="405.0" styleClass="categoriesAnchorPane" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0">
                                  <content>
@@ -129,7 +125,7 @@
                                     </VBox>
                                  </children>
                               </StackPane>
-                              <Label fx:id="currentSiteLabel" layoutX="14.0" layoutY="8.0" text="BÄR">
+                              <Label fx:id="currentSiteLabel" layoutX="14.0" layoutY="8.0" styleClass="breadcrumb" text="BÄR">
                                  <font>
                                     <Font size="46.0" />
                                  </font>

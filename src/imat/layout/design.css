@@ -216,3 +216,11 @@
 .textAlignCenter{
     -fx-alignment: center_right;
 }
+#kategorier{
+    -fx-font-size: 38px;
+    -fx-font-weight: bold;
+}
+.breadcrumb{
+    -fx-font-size: 46px;
+    -fx-font-weight: bold;
+}
