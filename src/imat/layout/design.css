@@ -232,3 +232,6 @@
     -fx-font-size: 28px;
     -fx-text-fill: #F5F5F5;
 }
+.red_border {
+    -fx-border-color: red;
+}

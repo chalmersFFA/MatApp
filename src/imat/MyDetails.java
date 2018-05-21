@@ -5,7 +5,9 @@ import javafx.beans.value.ObservableValue;
 import javafx.event.Event;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
 import javafx.scene.control.*;
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import se.chalmers.cse.dat216.project.CreditCard;
@@ -23,6 +25,7 @@ public class MyDetails extends AnchorPane {
     private IMatDataHandler db = IMatDataHandler.getInstance();
     private Customer customer = db.getCustomer();
     private CreditCard creditCard = db.getCreditCard();
+    private Image errorImage = new Image("imat/layout/images/redCross.png");
 
     @FXML
     Button backButton;
@@ -59,6 +62,10 @@ public class MyDetails extends AnchorPane {
     @FXML
     AnchorPane newCardAnchorPane;
 
+    @FXML
+    ImageView errorD1, errorD2, errorD3, errorD4, errorD5, errorD6, errorD7,
+            errorB1, errorB2, errorB3, errorB4, errorB5;
+
 
     public MyDetails(IMatController parentController) {
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("fxml/my_details_copy.fxml"));
@@ -75,8 +82,25 @@ public class MyDetails extends AnchorPane {
 
         loadSavedCard();
         initComboBoxes();
+        initErrors();
         resetDetails();
         resetCard();
+
+    }
+
+    private void initErrors() {
+        errorD1.setImage(errorImage);
+        errorD2.setImage(errorImage);
+        errorD3.setImage(errorImage);
+        errorD4.setImage(errorImage);
+        errorD5.setImage(errorImage);
+        errorD6.setImage(errorImage);
+        errorD7.setImage(errorImage);
+        errorB1.setImage(errorImage);
+        errorB2.setImage(errorImage);
+        errorB3.setImage(errorImage);
+        errorB4.setImage(errorImage);
+        errorB5.setImage(errorImage);
 
     }
 
@@ -247,7 +271,7 @@ public class MyDetails extends AnchorPane {
 
     @FXML
     private void saveCardClick() {
-        if(infoIsValid()) {
+        if(cardInfoIsValid()) {
             saveCard();
             loadSavedCard();
             toggleCardEdit(false);
@@ -256,28 +280,79 @@ public class MyDetails extends AnchorPane {
     }
 
 
-    private boolean infoIsValid() {
-        resetErrorLabels();
+    private boolean cardInfoIsValid() {
+        resetCardErrors();
         boolean valid = true;
-        if(cardValidYearComboBox.getSelectionModel().getSelectedItem() == "År" || cardValidMonthComboBox.getSelectionModel().getSelectedItem() == "Månad") {
+        if(cardValidYearComboBox.getSelectionModel().getSelectedItem() == "År") {
             valid = false;
+            produceError(cardValidYearComboBox, errorB4);
+        }
+        if(cardValidMonthComboBox.getSelectionModel().getSelectedItem() == "Månad") {
+            valid = false;
+            produceError(cardValidMonthComboBox, errorB3);
         }
         if(cardVerificationTextField.getText().length() != 3) {
             valid = false;
+            produceError(cardVerificationTextField, errorB5);
         }
         if(cardHolderTextField.getText().length() <= 0) {
             valid = false;
+            produceError(cardHolderTextField, errorB1);
         }
         if(cardNumberTextField.getText().length() != 16) {
             valid = false;
+            produceError(cardNumberTextField, errorB2);
         }
         return valid;
     }
 
-    private void resetErrorLabels() {
+    private boolean detailsInfoIsValid() {
+        resetDetailsErrors();
+        boolean valid = true;
+        if(firstNameTextField.getText().length() == 0) {
+            valid = false;
+            produceError(firstNameTextField, errorD1);
+        }
+        if(lastNameTextField.getText().length() == 0) {
+            valid = false;
+            produceError(lastNameTextField, errorD2);
+        }
+        if(!emailTextField.getText().contains("@")) {
+            valid = false;
+            produceError(emailTextField, errorD3);
+        }
+        //if(phoneNumberTextField.getText().contains())
+        return valid;
     }
 
+
+    private void produceError(Node n, ImageView v) {
+        n.setStyle("-fx-border-style: solid solid solid solid");
+        n.setStyle("-fx-border-color: red");
+        v.setVisible(true);
+    }
+    private void removeError(Node n, ImageView v) {
+        n.setStyle("-fx-border-width: hidden hidden hidden hidden");
+        v.setVisible(false);
+    }
+    private void resetCardErrors() {
+        removeError(cardValidYearComboBox, errorB1);
+        removeError(cardValidMonthComboBox, errorB2);
+        removeError(cardVerificationTextField, errorB3);
+        removeError(cardHolderTextField, errorB4);
+        removeError(cardNumberTextField, errorB5);
+    }
+    private void resetDetailsErrors() {
+        removeError(firstNameTextField, errorD1);
+        removeError(lastNameTextField, errorD2);
+        removeError(emailTextField, errorD3);
+        removeError(phoneNumberTextField, errorD4);
+        removeError(addressTextField, errorD5);
+        removeError(postAddressTextField, errorD6);
+        removeError(postCodeTextField, errorD7);
+    }
     public void resetCard() {
+        resetCardErrors();
         toggleCardEdit(false);
     }
 
