@@ -11,7 +11,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.shape.Line?>
 
-<fx:root maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseClicked="#mouseTrap" prefHeight="654.0" prefWidth="1100.0" stylesheets="@../layout/design.css" type="AnchorPane" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<fx:root maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseClicked="#mouseTrap" prefHeight="654.0" prefWidth="1100.0" stylesheets="@../layout/design.css" type="AnchorPane" xmlns="http://javafx.com/javafx/9.0.4" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <AnchorPane layoutX="14.0" layoutY="50.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="0.0" minWidth="0.0" prefHeight="340.0" prefWidth="406.0" styleClass="normal-text" stylesheets="@../layout/design.css">
          <children>
@@ -77,7 +77,6 @@
             <RadioButton fx:id="changeCardRadioButton" layoutX="20.0" layoutY="222.0" mnemonicParsing="false" text="Byt till ett annat kort" AnchorPane.leftAnchor="20.0" />
          </children>
       </AnchorPane>
-      <Label layoutX="249.0" layoutY="444.0" text="niqqa" />
    </children>
    <styleClass>
       <String fx:value="normal-text" />
