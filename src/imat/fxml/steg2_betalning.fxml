@@ -8,7 +8,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.shape.Line?>
 
-<fx:root maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="850.0" prefWidth="1100.0" stylesheets="@../layout/design.css" type="AnchorPane" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<fx:root maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="850.0" prefWidth="1100.0" stylesheets="@../layout/design.css" type="AnchorPane" xmlns="http://javafx.com/javafx/9.0.4" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <AnchorPane fx:id="myDetailsAnchorPane" layoutX="15.0" layoutY="22.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="318.0" prefWidth="1055.0" stylesheets="@../layout/design.css" AnchorPane.topAnchor="40.0">
          <children>
@@ -25,7 +25,7 @@
          </children>
       </AnchorPane>
       <Line endX="500.0" layoutX="25.0" layoutY="530.0" />
-      <AnchorPane layoutY="793.0" prefHeight="70.0" prefWidth="1100.0" style="-fx-background-color: #f3f3f3;" AnchorPane.bottomAnchor="0.0" />
+      <AnchorPane layoutY="793.0" prefHeight="70.0" prefWidth="1100.0" styleClass="checkoutTopAndBottom" AnchorPane.bottomAnchor="0.0" />
       <Button layoutX="15.0" layoutY="800.0" mnemonicParsing="false" onAction="#backButton" prefHeight="40.0" prefWidth="185.0" styleClass="backbutton" text="Tillbaka till Varukorg" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="15.0" />
       <Button layoutX="900.0" layoutY="800.0" mnemonicParsing="false" onAction="#nextButton" prefHeight="40.0" prefWidth="185.0" text="Vidare till översikt" AnchorPane.bottomAnchor="10.0" AnchorPane.rightAnchor="15.0">
          <styleClass>
@@ -33,7 +33,7 @@
             <String fx:value="normal-text" />
          </styleClass>
       </Button>
-      <AnchorPane minHeight="-Infinity" prefHeight="90.0" prefWidth="1100.0" style="-fx-background-color: #f3f3f3;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <AnchorPane minHeight="-Infinity" prefHeight="90.0" prefWidth="1100.0" styleClass="checkoutTopAndBottom" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
             <AnchorPane fx:id="sequenceMapAnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="64.0" prefWidth="524.0" stylesheets="@../layout/design.css" AnchorPane.leftAnchor="288.0" AnchorPane.rightAnchor="288.0" AnchorPane.topAnchor="10.0" />
             <Button mnemonicParsing="false" prefWidth="185.0" styleClass="backbutton" text="Tillbaka till Shopping" AnchorPane.leftAnchor="15.0" AnchorPane.topAnchor="28.0" />
