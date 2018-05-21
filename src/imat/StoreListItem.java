@@ -23,6 +23,7 @@ public class StoreListItem extends AnchorPane implements ShoppingCartListener {
     private Tooltip tooltipFavourite = new Tooltip("Lägg till i Favoriter");
     private Tooltip tooltipIncrease = new Tooltip("Öka Mängd");
     private Tooltip tooltipDecrease = new Tooltip("Minska Mängd");
+    private Tooltip tooltipAmount = new Tooltip("Ange själv Mängd");
     Product product;
     @FXML
     ImageView ecoImageView;
@@ -85,6 +86,7 @@ public class StoreListItem extends AnchorPane implements ShoppingCartListener {
         IMatController.addToolTip(this.favouriteImageView, tooltipFavourite, tooltipDelay);
         IMatController.addToolTip(this.increaseButton, tooltipIncrease, tooltipDelay);
         IMatController.addToolTip(this.decreaseButton, tooltipDecrease, tooltipDelay);
+        IMatController.addToolTip(amountTextField, tooltipAmount, tooltipDelay);
 
         update();
 
