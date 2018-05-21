@@ -10,7 +10,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<fx:root maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="295.0" prefWidth="295.0" stylesheets="@../layout/design.css" type="AnchorPane" xmlns="http://javafx.com/javafx/9.0.4" xmlns:fx="http://javafx.com/fxml/1">
+<fx:root maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="295.0" prefWidth="295.0" stylesheets="@../layout/design.css" type="AnchorPane" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <ImageView fx:id="productImageView" fitHeight="150.0" fitWidth="200.0" layoutX="48.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="102.0" AnchorPane.leftAnchor="47.0" AnchorPane.rightAnchor="47.0" AnchorPane.topAnchor="14.0">
       </ImageView>
@@ -31,7 +31,7 @@
             <String fx:value="greenFocusColor" />
             <String fx:value="plusButton" />
          </styleClass></Button>
-      <Label fx:id="productNameLabel" alignment="TOP_LEFT" layoutX="14.0" layoutY="165.0" prefHeight="58.0" prefWidth="172.0" styleClass="shopping_item_text" stylesheets="@../layout/design.css" text="ARLA MJÖLK" wrapText="true">
+      <Label fx:id="productNameLabel" alignment="TOP_LEFT" layoutX="14.0" layoutY="165.0" prefHeight="58.0" prefWidth="282.0" styleClass="shopping_item_text" stylesheets="@../layout/design.css" text="ARLA MJÖLK" wrapText="true">
          <font>
             <Font size="18.0" />
          </font>
@@ -39,7 +39,7 @@
             <Cursor fx:constant="DEFAULT" />
          </cursor>
       </Label>
-      <ImageView fx:id="favouriteImageView" fitHeight="37.0" fitWidth="35.0" layoutX="185.0" layoutY="176.0" onContextMenuRequested="#ChangePliancyFavorite" onMouseClicked="#favourite" onMouseEntered="#ChangePliancyFavorite" onMouseExited="#endChangePliancyFavorite" pickOnBounds="true" preserveRatio="true" AnchorPane.rightAnchor="20.0">
+      <ImageView fx:id="favouriteImageView" fitHeight="37.0" fitWidth="35.0" layoutX="210.0" layoutY="201.0" onContextMenuRequested="#ChangePliancyFavorite" onMouseClicked="#favourite" onMouseEntered="#ChangePliancyFavorite" onMouseExited="#endChangePliancyFavorite" pickOnBounds="true" preserveRatio="true" AnchorPane.rightAnchor="50.0">
          <image>
             <Image url="@../layout/images/stareboi.png" />
          </image>
