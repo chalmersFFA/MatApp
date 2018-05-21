@@ -67,12 +67,19 @@ public class MyDetails extends AnchorPane {
     ImageView errorD1, errorD2, errorD3, errorD4, errorD5, errorD6, errorD7,
             errorB1, errorB2, errorB3, errorB4, errorB5;
 
+    @FXML
+    TextField card1, card2, card3, card4;
+
+    @FXML
+    ImageView helpCVC;
+
+    @FXML
+    AnchorPane CVCinfo;
 
     public MyDetails(IMatController parentController) {
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("fxml/my_details_copy.fxml"));
         fxmlLoader.setRoot(this);
         fxmlLoader.setController(this);
-
 
         try {
             fxmlLoader.load();
@@ -87,6 +94,19 @@ public class MyDetails extends AnchorPane {
         resetDetails();
         resetCard();
 
+        registerListener(card1, card2);
+        registerListener(card2, card3);
+        registerListener(card3, card4);
+        registerListener(card4, cardVerificationTextField);
+        CVCinfo.setVisible(false);
+    }
+
+    private void registerListener(TextField tf1, TextField tf2) {
+        tf1.textProperty().addListener((obs, oldText, newText) -> {
+            if (oldText.length() < 4 && newText.length() >= 4) {
+                tf2.requestFocus();
+            }
+        });
     }
 
     private void initErrors() {
@@ -304,10 +324,10 @@ public class MyDetails extends AnchorPane {
             valid = false;
             produceError(cardHolderTextField, errorB1);
         }
-        if(cardNumberTextField.getText().length() != 16) {
+        /*if(cardNumberTextField.getText().length() != 16) {
             valid = false;
             produceError(cardNumberTextField, errorB2);
-        }
+        }*/
         return valid;
     }
 
@@ -380,7 +400,7 @@ public class MyDetails extends AnchorPane {
         removeError(cardValidMonthComboBox, errorB2);
         removeError(cardVerificationTextField, errorB3);
         removeError(cardHolderTextField, errorB4);
-        removeError(cardNumberTextField, errorB5);
+        //removeError(cardNumberTextField, errorB5);
     }
     private void resetDetailsErrors() {
         removeError(firstNameTextField, errorD1);
@@ -405,4 +425,15 @@ public class MyDetails extends AnchorPane {
     public void mouseTrap(Event event){
         parentController.mouseTrap(event);
     }
+
+
+    @FXML
+    public void showCVC() {
+        CVCinfo.setVisible(true);
+    }
+    @FXML
+    public void hideCVC() {
+        CVCinfo.setVisible(false);
+    }
+
 }

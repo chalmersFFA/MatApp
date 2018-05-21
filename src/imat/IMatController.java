@@ -179,6 +179,8 @@ public class IMatController extends VBox implements Initializable {
     public void displayFavourites() {
         deSelectCategory(currentExpandedSub);
         currentExpandedSub = null;
+        toggleShoppingMode();
+        mainFlowPane.toFront();
         mainFlowPane.getChildren().clear();
         for (Product p : db.favorites()) {
             mainFlowPane.getChildren().add(storeListItemMap.get(p.getName()));
@@ -225,10 +227,7 @@ public class IMatController extends VBox implements Initializable {
 
     @FXML
     private void escapeHatch() {
-        pressedHelp();
-        /**
-         * En temporär lösning
-         */
+        updateProductListWithAllProducts();
     }
 
     @FXML
@@ -268,6 +267,9 @@ public class IMatController extends VBox implements Initializable {
         c.addSubCategory(new CategoryItem(ProductCategory.CITRUS_FRUIT, this, new Image("imat/layout/images/categoryIcons/citrus.png")));   //CITRUSFRUKT
         c.addSubCategory(new CategoryItem(ProductCategory.BERRY, this, new Image("imat/layout/images/categoryIcons/berry.png")));   //BÄR
         c.addSubCategory(new CategoryItem(ProductCategory.POD, this, new Image("imat/layout/images/categoryIcons/pod.png")));   //BALJVÄXTER
+        cList.add(c);
+
+        c = new CategoryItem(ProductCategory.MEAT, this, new Image("imat/layout/images/categoryIcons/meat.png"));   //Kött
         cList.add(c);
 
         c = new CategoryItem(ProductCategory.DAIRIES, this, new Image("imat/layout/images/categoryIcons/dairy.png"));   //MEJERI

@@ -79,7 +79,7 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
             </Label>
-            <ImageView fx:id="logoImageView" fitHeight="57.0" fitWidth="109.0" layoutX="9.0" layoutY="17.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="13.25" AnchorPane.leftAnchor="7.0" AnchorPane.topAnchor="15.0">
+            <ImageView fx:id="logoImageView" fitHeight="57.0" fitWidth="109.0" layoutX="9.0" layoutY="17.0" onMouseClicked="#escapeHatch" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="13.25" AnchorPane.leftAnchor="7.0" AnchorPane.topAnchor="15.0">
                <image>
                   <Image url="@../layout/images/iMat_logo_final.png" />
                </image>
@@ -112,7 +112,7 @@
                     </AnchorPane>
                         <AnchorPane styleClass="mainFlowPane" HBox.hgrow="ALWAYS">
                            <children>
-                              <StackPane fx:id="browsingStackPane" layoutY="83.0" prefHeight="504.0" prefWidth="616.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="83.0">
+                              <StackPane fx:id="browsingStackPane" layoutY="83.0" prefHeight="504.0" prefWidth="616.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="67.0">
                                  <children>
                                     <VBox fx:id="mainVBox" prefHeight="545.0" prefWidth="616.0">
                                        <children>
@@ -125,7 +125,7 @@
                                     </VBox>
                                  </children>
                               </StackPane>
-                              <Label fx:id="currentSiteLabel" layoutX="14.0" layoutY="8.0" styleClass="breadcrumb" text="BÄR">
+                              <Label fx:id="currentSiteLabel" layoutX="10.0" layoutY="3.0" prefHeight="68.0" prefWidth="391.0" styleClass="breadcrumb" text="BÄR" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="0.0">
                                  <font>
                                     <Font size="46.0" />
                                  </font>
