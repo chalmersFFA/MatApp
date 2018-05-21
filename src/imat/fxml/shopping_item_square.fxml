@@ -23,7 +23,7 @@
             <String fx:value="redFocusColor" />
          </styleClass></Button>
       <TextField fx:id="amountTextField" alignment="CENTER" layoutX="89.0" layoutY="246.0" onAction="#textFieldChanged" onInputMethodTextChanged="#textFieldChanged" prefHeight="35.0" prefWidth="120.0" styleClass="normal-text" />
-      <Button layoutX="209.0" layoutY="246.0" mnemonicParsing="false" onAction="#increaseAmount" prefHeight="35.0" prefWidth="37.0" snapToPixel="false">
+      <Button fx:id="increaseButton" layoutX="209.0" layoutY="246.0" mnemonicParsing="false" onAction="#increaseAmount" prefHeight="35.0" prefWidth="37.0" snapToPixel="false">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>

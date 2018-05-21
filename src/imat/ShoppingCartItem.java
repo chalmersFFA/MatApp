@@ -72,8 +72,7 @@ public class ShoppingCartItem extends AnchorPane implements ShoppingCartListener
         IMatController.addToolTip(increaseButton, tooltipIncrease, tooltipDelay);
         IMatController.addToolTip(decreaseButton, tooltipDecrease, tooltipDelay);
         IMatController.addToolTip(cross, removeTooltip, tooltipDelay);
-
-        amountTextField.setTooltip(amountTooltip);
+        IMatController.addToolTip(amountTextField, amountTooltip, tooltipDelay);
         update();
         cross.setVisible(true);
         cross.setOpacity(0.6);
