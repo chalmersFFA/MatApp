@@ -59,12 +59,19 @@ public class MyDetails extends AnchorPane {
     @FXML
     AnchorPane newCardAnchorPane;
 
+    @FXML
+    TextField card1, card2, card3, card4;
+
+    @FXML
+    ImageView helpCVC;
+
+    @FXML
+    AnchorPane CVCinfo;
 
     public MyDetails(IMatController parentController) {
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("fxml/my_details_copy.fxml"));
         fxmlLoader.setRoot(this);
         fxmlLoader.setController(this);
-
 
         try {
             fxmlLoader.load();
@@ -78,6 +85,19 @@ public class MyDetails extends AnchorPane {
         resetDetails();
         resetCard();
 
+        registerListener(card1, card2);
+        registerListener(card2, card3);
+        registerListener(card3, card4);
+        registerListener(card4, cardVerificationTextField);
+        CVCinfo.setVisible(false);
+    }
+
+    private void registerListener(TextField tf1, TextField tf2) {
+        tf1.textProperty().addListener((obs, oldText, newText) -> {
+            if (oldText.length() < 4 && newText.length() >= 4) {
+                tf2.requestFocus();
+            }
+        });
     }
 
     public void resetDetails() {
@@ -290,4 +310,15 @@ public class MyDetails extends AnchorPane {
     public void mouseTrap(Event event){
         parentController.mouseTrap(event);
     }
+
+
+    @FXML
+    public void showCVC() {
+        CVCinfo.setVisible(true);
+    }
+    @FXML
+    public void hideCVC() {
+        CVCinfo.setVisible(false);
+    }
+
 }
