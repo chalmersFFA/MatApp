@@ -16,6 +16,7 @@ import se.chalmers.cse.dat216.project.IMatDataHandler;
 import se.chalmers.cse.dat216.project.ProductCategory;
 
 import java.io.IOException;
+import java.util.regex.Pattern;
 
 /**
  * Created by Jonathan Köre on 2018-05-04.
@@ -105,6 +106,7 @@ public class MyDetails extends AnchorPane {
     }
 
     public void resetDetails() {
+        resetDetailsErrors();
         toggleDetailsEdit(false);
     }
 
@@ -173,8 +175,11 @@ public class MyDetails extends AnchorPane {
 
     @FXML
     private void saveDetailsClick() {
-        saveDetails();
-        toggleDetailsEdit(false);
+        if(detailsInfoIsValid()) {
+            saveDetails();
+            toggleDetailsEdit(false);
+        }
+
     }
 
     private void initComboBoxes() {
@@ -321,8 +326,43 @@ public class MyDetails extends AnchorPane {
             valid = false;
             produceError(emailTextField, errorD3);
         }
-        //if(phoneNumberTextField.getText().contains())
+        if(!isDigit(phoneNumberTextField.getText()) || phoneNumberTextField.getText().length() == 0) {
+            valid = false;
+            produceError(phoneNumberTextField, errorD7);
+        }
+        if(addressTextField.getText().length() == 0) {
+            valid = false;
+            produceError(addressTextField, errorD4);
+        }
+        if(!isLetter(postAddressTextField.getText()) || postAddressTextField.getText().length() == 0) {
+            valid = false;
+            produceError(postAddressTextField, errorD6);
+        }
+        if(!isDigit(postCodeTextField.getText()) || postCodeTextField.getText().length() != 5) {
+            valid = false;
+            produceError(postCodeTextField, errorD5);
+        }
         return valid;
+    }
+
+
+    private boolean isDigit(String s) {
+        boolean b = true;
+        for(int i = 0; i < s.length(); i++) {
+            if(!Character.isDigit(s.charAt(i))) {
+                b = false;
+            }
+        }
+        return b;
+    }
+    private boolean isLetter(String s) {
+        boolean b = true;
+        for(int i = 0; i < s.length(); i++) {
+            if(!Character.isLetter(s.charAt(i))) {
+                b = false;
+            }
+        }
+        return b;
     }
 
 
