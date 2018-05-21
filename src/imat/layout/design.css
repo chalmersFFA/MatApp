@@ -93,6 +93,11 @@
     -fx-text-fill: #FFFFFF;
     -fx-cursor: hand;
 }
+
+.gray-text{
+    -fx-text-fill: #ff0000;
+}
+
 .nextButton:hover{
     -fx-background-color:  #55D055;
 }
