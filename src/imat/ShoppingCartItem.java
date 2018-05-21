@@ -69,13 +69,13 @@ public class ShoppingCartItem extends AnchorPane implements ShoppingCartListener
         //amountTextField.textProperty().addListener(itemHandler.getChangeListener());
         update();
         shoppingCart.addShoppingCartListener(this);
-
         IMatController.addToolTip(increaseButton, tooltipIncrease, tooltipDelay);
         IMatController.addToolTip(decreaseButton, tooltipDecrease, tooltipDelay);
         IMatController.addToolTip(cross, removeTooltip, tooltipDelay);
+
         amountTextField.setTooltip(amountTooltip);
         update();
-        cross.setVisible(false);
+        cross.setVisible(true);
         cross.setOpacity(0.6);
     }
 
@@ -158,12 +158,12 @@ public class ShoppingCartItem extends AnchorPane implements ShoppingCartListener
 
     @FXML
     public void changeCrossPliant(){
-        Image crossPliant = new Image("imat/layout/images/cross_pliant.png");
+        Image crossPliant = new Image("imat/layout/images/cross.png");
         cross.setImage(crossPliant);
     }
     @FXML
     public void changeCrossNotPliant(){
-        Image crossNotPliant = new Image("imat/layout/images/cross.png");
+        Image crossNotPliant = new Image("imat/layout/images/cross_pliant.png");
         cross.setImage(crossNotPliant);
     }
     @FXML
@@ -175,7 +175,7 @@ public class ShoppingCartItem extends AnchorPane implements ShoppingCartListener
             }
         }
     }
-    @FXML
+   /* @FXML
     public void showTheCross(){
         System.out.println("show cross");
         cross.toFront();
@@ -186,5 +186,5 @@ public class ShoppingCartItem extends AnchorPane implements ShoppingCartListener
         System.out.println("hide cross");
         cross.toBack();
         cross.setVisible(false);
-    }
+    }*/
 }
