@@ -15,7 +15,7 @@
 <?import javafx.scene.paint.Color?>
 <?import javafx.scene.text.Font?>
 
-<VBox stylesheets="@../layout/design.css" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="imat.IMatController">
+<VBox stylesheets="@../layout/design.css" xmlns="http://javafx.com/javafx/9.0.4" xmlns:fx="http://javafx.com/fxml/1" fx:controller="imat.IMatController">
    <children>
       <AnchorPane id="headerStyle" fx:id="headerAnchorPane" prefHeight="75.0" prefWidth="1127.0" stylesheets="@../layout/design.css">
          <children>
@@ -107,7 +107,7 @@
                             <Color blue="0.624" green="0.624" red="0.624" fx:id="x2" />
                           </textFill>
                         </Label>
-                              <ScrollPane fitToHeight="true" fitToWidth="true" hbarPolicy="NEVER" layoutY="48.0" minHeight="860.0" prefHeight="869.0" prefWidth="405.0" styleClass="categoriesAnchorPane" AnchorPane.rightAnchor="0.0">
+                              <ScrollPane fitToHeight="true" fitToWidth="true" hbarPolicy="NEVER" layoutY="48.0" minHeight="860.0" prefHeight="869.0" prefWidth="405.0" styleClass="categoriesAnchorPane" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0">
                                  <content>
                                     <FlowPane id="mainCategoryStandard_First" fx:id="categoryFlowPane" maxWidth="1.7976931348623157E308" prefHeight="867.0" prefWidth="405.0" styleClass="categoriesAnchorPane" stylesheets="@../layout/design.css" />
                                  </content>
