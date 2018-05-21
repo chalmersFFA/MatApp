@@ -33,7 +33,7 @@
       </Label>
       <ImageView fx:id="cross" fitHeight="17.0" fitWidth="21.0" layoutX="362.0" layoutY="14.0" onMouseClicked="#remove" onMouseEntered="#changeCrossPliant" onMouseExited="#changeCrossNotPliant" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../layout/images/cross_pliant.png" />
+            <Image url="@../layout/images/cross.png" />
          </image>
          <cursor>
             <Cursor fx:constant="HAND" />

@@ -158,12 +158,12 @@ public class ShoppingCartItem extends AnchorPane implements ShoppingCartListener
 
     @FXML
     public void changeCrossPliant(){
-        Image crossPliant = new Image("imat/layout/images/cross.png");
+        Image crossPliant = new Image("imat/layout/images/cross_pliant.png");
         cross.setImage(crossPliant);
     }
     @FXML
     public void changeCrossNotPliant(){
-        Image crossNotPliant = new Image("imat/layout/images/cross_pliant.png");
+        Image crossNotPliant = new Image("imat/layout/images/cross.png");
         cross.setImage(crossNotPliant);
     }
     @FXML

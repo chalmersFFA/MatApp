@@ -172,7 +172,6 @@
     -fx-border-style: hidden hidden solid hidden;
     -fx-border-width: 2px;
     -fx-border-color: #b0b0b0;
-
 }
 
 .tooltip {
@@ -195,7 +194,7 @@
     -fx-background-size: 50%;
 }
 .borders{
-    -fx-border-width: 1px;
+    -fx-border-width: 3px;
     -fx-border-color: #d3d3d3;
     -fx-background-color: F0F0F0;
 }
@@ -213,4 +212,7 @@
     -fx-border-style: hidden hidden hidden solid;
     -fx-border-color: d2d2d2;
     -fx-border-width: 1px;
+}
+.textAlignCenter{
+    -fx-alignment: center_right;
 }
