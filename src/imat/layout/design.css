@@ -59,7 +59,6 @@
 }
 .subCategoryStandard {
     -fx-background-color: #666666;
-    -fx-font-size: 14px
     /* -fx-border-style: hidden solid hidden solid;   */
 }
 .subCategoryStandard:hover{
@@ -223,4 +222,7 @@
 .breadcrumb{
     -fx-font-size: 46px;
     -fx-font-weight: bold;
+}
+.subCategoryText{
+    -fx-font-size: 14px;
 }
