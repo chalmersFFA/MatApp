@@ -38,7 +38,7 @@
     -fx-background-color: green;
 }
 .subCategorySelected {
-    -fx-background-color: #b3b3b3;
+    -fx-background-color: #939393;
 }
 .mainCategorySelected {
     -fx-background-color: #a3a3a3;
@@ -68,7 +68,8 @@
     -fx-background-color: #f2f2f2;
 }
 .paymentPane{
-    -fx-background-color: #EEE9D1;
+    -fx-background-image: url("../layout/images/textures/cloth.png");
+    -fx-background-repeat: repeat;
 }
 #current{
     -fx-background-color: #AAFFAA;
@@ -210,7 +211,7 @@
     -fx-overflow-size: none;
 }
 .checkoutTopAndBottom {
-    -fx-background-color: #f3f3f3;
+    -fx-background-color: #EEEEEE;
 }
 .borderForShoppingCart {
     -fx-border-style: hidden hidden hidden solid;
@@ -229,5 +230,12 @@
     -fx-font-weight: bold;
 }
 .subCategoryText{
-    -fx-font-size: 14px;
+    -fx-font-size: 28px;
+    -fx-text-fill: #F5F5F5;
+}
+.shopping_steg_4{
+    -fx-font-size: 2em;
+}
+#shopping_steg_4_header{
+    -fx-font-size: 3em;
 }

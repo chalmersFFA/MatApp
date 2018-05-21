@@ -6,25 +6,33 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<fx:root maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" stylesheets="@../layout/design.css" type="AnchorPane" xmlns="http://javafx.com/javafx/9.0.4" xmlns:fx="http://javafx.com/fxml/1">
+<fx:root minHeight="850.0" minWidth="1100.0" styleClass="white" stylesheets="@../layout/design.css" type="AnchorPane" xmlns="http://javafx.com/javafx/9.0.4" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <Label layoutX="196.0" layoutY="90.0" styleClass="big-text" text="Tack för ditt köp!" />
-      <Label layoutX="178.0" layoutY="157.0" styleClass="normal-text" text="Dina varor är nu på väg till dig." />
-      <Button layoutX="310.0" layoutY="270.0" mnemonicParsing="false" onAction="#continueShopping" prefHeight="40.0" prefWidth="140.0" text="Handla mer">
-         <cursor>
-            <Cursor fx:constant="HAND" />
-         </cursor>
-         <styleClass>
-            <String fx:value="nextButton" />
-            <String fx:value="normal-text" />
-         </styleClass></Button>
-      <Button layoutX="140.0" layoutY="270.0" mnemonicParsing="false" onAction="#exitApplication" prefHeight="40.0" prefWidth="140.0" text="Avsluta">
-         <cursor>
-            <Cursor fx:constant="HAND" />
-         </cursor>
-         <styleClass>
-            <String fx:value="backbutton" />
-            <String fx:value="normal-text" />
-         </styleClass></Button>
+      <AnchorPane layoutX="250.0" layoutY="225.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" styleClass="white" stylesheets="@../layout/design.css">
+         <children>
+            <Label id="shopping_steg_4_header" layoutX="165.0" layoutY="91.0" styleClass="shopping_steg_4" text="Tack för ditt köp!" />
+            <Label layoutX="137.0" layoutY="165.0" styleClass="shopping_steg_4" text="Dina varor är nu på väg till dig." />
+            <Button layoutX="310.0" layoutY="270.0" mnemonicParsing="false" onAction="#continueShopping" prefHeight="40.0" prefWidth="140.0" text="Handla mer">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <styleClass>
+                  <String fx:value="nextButton" />
+                  <String fx:value="normal-text" />
+               </styleClass>
+            </Button>
+            <Button layoutX="140.0" layoutY="270.0" mnemonicParsing="false" onAction="#exitApplication" prefHeight="40.0" prefWidth="140.0" text="Avsluta">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <styleClass>
+                  <String fx:value="backbutton" />
+                  <String fx:value="normal-text" />
+               </styleClass>
+            </Button>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="433.0" layoutY="-14.0" prefHeight="90.0" styleClass="checkoutTopAndBottom" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+      <AnchorPane layoutX="506.0" layoutY="726.0" prefHeight="70.0" styleClass="checkoutTopAndBottom" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" />
    </children>
 </fx:root>

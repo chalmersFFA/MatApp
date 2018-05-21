@@ -6,8 +6,9 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
 
-<fx:root maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseClicked="#onClick" prefHeight="50.0" prefWidth="400.0" styleClass="mainCategoryStandard" stylesheets="@../layout/design.css" type="AnchorPane" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1">
+<fx:root maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseClicked="#onClick" prefHeight="50.0" prefWidth="400.0" styleClass="mainCategoryStandard" stylesheets="@../layout/design.css" type="AnchorPane" xmlns="http://javafx.com/javafx/9.0.4" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <Pane fx:id="backgroundPane" prefHeight="40.0" prefWidth="221.0" stylesheets="@../layout/design.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
@@ -21,7 +22,10 @@
                   <Image url="@../layout/images/Cooking_apple_detail.png" />
                </image>
             </ImageView>
-            <Label fx:id="nameLabel" layoutX="89.0" layoutY="7.0" styleClass="big-text" stylesheets="@../layout/design.css" text="Kategori" textFill="WHITE" />
+            <Label fx:id="nameLabel" layoutX="87.0" layoutY="3.0" styleClass="big-text" stylesheets="@../layout/design.css" text="Kategori" textFill="WHITE">
+               <font>
+                  <Font size="28.0" />
+               </font></Label>
          </children>
       </Pane>
    </children>

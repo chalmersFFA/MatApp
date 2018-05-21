@@ -12,7 +12,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.shape.Line?>
 
-<fx:root maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseClicked="#mouseTrap" prefHeight="654.0" prefWidth="1100.0" stylesheets="@../layout/design.css" type="AnchorPane" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1">
+<fx:root maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseClicked="#mouseTrap" prefHeight="654.0" prefWidth="1100.0" stylesheets="@../layout/design.css" type="AnchorPane" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <AnchorPane layoutX="14.0" layoutY="50.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="0.0" minWidth="0.0" prefHeight="340.0" prefWidth="406.0" styleClass="normal-text" stylesheets="@../layout/design.css">
          <children>
@@ -41,6 +41,41 @@
             <Label fx:id="postAddressLabel" styleClass="bold-text" AnchorPane.leftAnchor="160.0" AnchorPane.topAnchor="230.0" />
             <Label fx:id="phoneNumberLabel" styleClass="bold-text" AnchorPane.leftAnchor="160.0" AnchorPane.topAnchor="260.0" />
             <Button fx:id="saveDetailsButton" layoutX="224.0" layoutY="298.0" mnemonicParsing="false" onAction="#saveDetailsClick" text="Spara Uppgifter" />
+            <ImageView fx:id="errorD1" fitHeight="17.0" fitWidth="15.0" layoutX="351.0" layoutY="76.0" pickOnBounds="true" preserveRatio="true" styleClass="red_border" AnchorPane.leftAnchor="373.0" AnchorPane.topAnchor="76.0">
+               <image>
+                  <Image url="@../layout/images/redCross.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="errorD2" fitHeight="17.0" fitWidth="15.0" layoutX="381.0" layoutY="87.0" pickOnBounds="true" preserveRatio="true" styleClass="red_border" AnchorPane.leftAnchor="373.0" AnchorPane.topAnchor="107.0">
+               <image>
+                  <Image url="@../layout/images/redCross.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="errorD3" fitHeight="17.0" fitWidth="15.0" layoutX="391.0" layoutY="97.0" pickOnBounds="true" preserveRatio="true" styleClass="red_border" AnchorPane.leftAnchor="373.0" AnchorPane.topAnchor="137.0">
+               <image>
+                  <Image url="@../layout/images/redCross.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="errorD4" fitHeight="17.0" fitWidth="15.0" layoutX="401.0" layoutY="107.0" pickOnBounds="true" preserveRatio="true" styleClass="red_border" AnchorPane.leftAnchor="373.0" AnchorPane.topAnchor="167.0">
+               <image>
+                  <Image url="@../layout/images/redCross.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="errorD5" fitHeight="17.0" fitWidth="15.0" layoutX="411.0" layoutY="117.0" pickOnBounds="true" preserveRatio="true" styleClass="red_border" AnchorPane.leftAnchor="373.0" AnchorPane.topAnchor="207.0">
+               <image>
+                  <Image url="@../layout/images/redCross.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="errorD6" fitHeight="17.0" fitWidth="15.0" layoutX="421.0" layoutY="127.0" pickOnBounds="true" preserveRatio="true" styleClass="red_border" AnchorPane.leftAnchor="373.0" AnchorPane.topAnchor="237.0">
+               <image>
+                  <Image url="@../layout/images/redCross.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="errorD7" fitHeight="17.0" fitWidth="15.0" layoutX="431.0" layoutY="137.0" pickOnBounds="true" preserveRatio="true" styleClass="red_border" AnchorPane.leftAnchor="373.0" AnchorPane.topAnchor="267.0">
+               <image>
+                  <Image url="@../layout/images/redCross.png" />
+               </image>
+            </ImageView>
          </children>
       </AnchorPane>
       <AnchorPane layoutX="550.0" layoutY="50.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="707.0" prefWidth="533.0" styleClass="normal-text" stylesheets="@../layout/design.css">
@@ -61,11 +96,37 @@
                   <TextField fx:id="card3" layoutX="357.0" layoutY="111.0" minHeight="29.0" prefHeight="29.0" prefWidth="64.0" AnchorPane.leftAnchor="344.0" />
                   <TextField fx:id="card4" layoutX="428.0" layoutY="111.0" minHeight="29.0" prefHeight="29.0" prefWidth="64.0" AnchorPane.leftAnchor="410.0" />
                   <Label fx:id="cardValidLabel" layoutX="-16.0" layoutY="154.0" text="Giltig t.o.m:" AnchorPane.rightAnchor="567.0" AnchorPane.topAnchor="154.0" />
-                  <ComboBox fx:id="cardValidMonthComboBox" layoutX="182.0" layoutY="150.0" prefHeight="35.0" prefWidth="78.0" AnchorPane.leftAnchor="210.0" AnchorPane.topAnchor="150.0" />
-                  <ComboBox fx:id="cardValidYearComboBox" layoutX="303.0" layoutY="150.0" prefHeight="35.0" prefWidth="78.0" AnchorPane.leftAnchor="303.0" AnchorPane.topAnchor="150.0" />
-                  <Label fx:id="cardVerificationLabel" layoutX="61.0" layoutY="204.0" text="CCV/CVC:" AnchorPane.rightAnchor="605.0" AnchorPane.topAnchor="204.0" />
-                  <TextField fx:id="cardVerificationTextField" layoutX="83.0" layoutY="201.0" minHeight="29.0" prefHeight="29.0" prefWidth="78.0" AnchorPane.leftAnchor="210.0" AnchorPane.topAnchor="201.0" />
+                  <ComboBox fx:id="cardValidYearComboBox" layoutX="335.0" layoutY="150.0" prefHeight="35.0" prefWidth="91.0" AnchorPane.leftAnchor="335.0" AnchorPane.topAnchor="150.0" />
+                  <ComboBox fx:id="cardValidMonthComboBox" layoutX="182.0" layoutY="150.0" prefHeight="35.0" prefWidth="91.0" AnchorPane.leftAnchor="210.0" AnchorPane.topAnchor="150.0" />
+                  <Label fx:id="cardVerificationLabel" layoutX="-1.0" layoutY="201.0" text="CCV/CVC:" AnchorPane.rightAnchor="567.0" AnchorPane.topAnchor="201.0" />
+                  <TextField fx:id="cardVerificationTextField" layoutX="83.0" layoutY="201.0" minHeight="29.0" prefHeight="29.0" prefWidth="91.0" AnchorPane.leftAnchor="210.0" AnchorPane.topAnchor="201.0" />
+                  <Label fx:id="whatIsCVCLabel" layoutX="335.0" layoutY="201.0" prefHeight="27.0" prefWidth="175.0" styleClass="normal-text" text="Vad är CCV/CVC?" AnchorPane.leftAnchor="335.0" AnchorPane.rightAnchor="269.0" />
                   <Button fx:id="saveCardButton" layoutX="348.0" layoutY="287.0" mnemonicParsing="false" onAction="#saveCardClick" text="Spara kort" AnchorPane.rightAnchor="315.0" />
+                  <ImageView fx:id="errorB1" fitHeight="17.0" fitWidth="15.0" layoutX="426.0" layoutY="88.0" pickOnBounds="true" preserveRatio="true" styleClass="red_border" AnchorPane.leftAnchor="430.0" AnchorPane.topAnchor="88.0">
+                     <image>
+                        <Image url="@../layout/images/redCross.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="errorB2" fitHeight="17.0" fitWidth="15.0" layoutX="436.0" layoutY="98.0" pickOnBounds="true" preserveRatio="true" styleClass="red_border" AnchorPane.leftAnchor="430.0" AnchorPane.topAnchor="118.0">
+                     <image>
+                        <Image url="@../layout/images/redCross.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="errorB3" fitHeight="17.0" fitWidth="15.0" layoutX="301.0" layoutY="160.0" pickOnBounds="true" preserveRatio="true" styleClass="red_border" AnchorPane.leftAnchor="304.0" AnchorPane.topAnchor="160.0">
+                     <image>
+                        <Image url="@../layout/images/redCross.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="errorB4" fitHeight="17.0" fitWidth="15.0" layoutX="427.0" layoutY="161.0" pickOnBounds="true" preserveRatio="true" styleClass="red_border" AnchorPane.leftAnchor="430.0" AnchorPane.topAnchor="160.0">
+                     <image>
+                        <Image url="@../layout/images/redCross.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="errorB5" fitHeight="17.0" fitWidth="15.0" layoutX="294.0" layoutY="208.0" pickOnBounds="true" preserveRatio="true" styleClass="red_border" AnchorPane.leftAnchor="304.0">
+                     <image>
+                        <Image url="@../layout/images/redCross.png" />
+                     </image>
+                  </ImageView>
                   <ImageView fx:id="helpCVC" fitHeight="29.0" fitWidth="28.0" layoutX="166.0" layoutY="202.0" onContextMenuRequested="#showCVC" onMouseEntered="#showCVC" onMouseExited="#hideCVC" onMouseMoved="#showCVC" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../layout/images/help.png" />
