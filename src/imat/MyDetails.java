@@ -396,11 +396,11 @@ public class MyDetails extends AnchorPane {
         v.setVisible(false);
     }
     private void resetCardErrors() {
-        removeError(cardValidYearComboBox, errorB1);
-        removeError(cardValidMonthComboBox, errorB2);
-        removeError(cardVerificationTextField, errorB3);
-        removeError(cardHolderTextField, errorB4);
-        //removeError(cardNumberTextField, errorB5);
+        removeError(cardValidYearComboBox, errorB4);
+        removeError(cardValidMonthComboBox, errorB3);
+        removeError(cardVerificationTextField, errorB5);
+        removeError(cardHolderTextField, errorB1);
+        //removeError(cardNumberTextField, errorB2);
     }
     private void resetDetailsErrors() {
         removeError(firstNameTextField, errorD1);
