@@ -22,7 +22,7 @@
                   <Image url="@../layout/images/Cooking_apple_detail.png" />
                </image>
             </ImageView>
-            <Label fx:id="nameLabel" layoutX="87.0" layoutY="3.0" styleClass="big-text" stylesheets="@../layout/design.css" text="Kategori" textFill="WHITE">
+            <Label fx:id="nameLabel" layoutX="75.0" layoutY="3.0" styleClass="big-text" stylesheets="@../layout/design.css" text="Kategori" textFill="WHITE">
                <font>
                   <Font size="28.0" />
                </font></Label>

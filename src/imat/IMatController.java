@@ -277,7 +277,8 @@ public class IMatController extends VBox implements Initializable {
 
         c = new CategoryItem("Potatis, Ris och Pasta", this, new Image("imat/layout/images/categoryIcons/potatoricepasta.png"));
         c.addSubCategory(new CategoryItem(ProductCategory.POTATO_RICE, this, new Image("imat/layout/images/categoryIcons/potato.png")));    //POTATIS OCH RIS
-        c.addSubCategory(new CategoryItem(ProductCategory.PASTA, this, new Image("imat/layout/images/categoryIcons/pasta.png")));   //PASTA
+        c.addSubCategory(new CategoryItem(ProductCategory.PASTA, this, new Image("imat/layout/images/categoryIcons/pasta.png")));
+        cList.add(c);
 
         c = new CategoryItem("Skafferi", this, new Image("imat/layout/images/categoryIcons/pantry.png"));
         c.addSubCategory(new CategoryItem(ProductCategory.HERB, this, new Image("imat/layout/images/categoryIcons/herb.png"))); //ÖRTER OCH KRYDDOR
