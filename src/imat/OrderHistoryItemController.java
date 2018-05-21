@@ -7,7 +7,8 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.FlowPane;
-import jdk.nashorn.internal.runtime.SharedPropertyMap;
+
+//import jdk.nashorn.internal.runtime.SharedPropertyMap;
 import se.chalmers.cse.dat216.project.*;
 
 
