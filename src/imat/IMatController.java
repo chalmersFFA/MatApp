@@ -270,6 +270,9 @@ public class IMatController extends VBox implements Initializable {
         c.addSubCategory(new CategoryItem(ProductCategory.POD, this, new Image("imat/layout/images/categoryIcons/pod.png")));   //BALJVÄXTER
         cList.add(c);
 
+        c = new CategoryItem(ProductCategory.MEAT, this, new Image("imat/layout/images/categoryIcons/meat.png"));   //Kött
+        cList.add(c);
+
         c = new CategoryItem(ProductCategory.DAIRIES, this, new Image("imat/layout/images/categoryIcons/dairy.png"));   //MEJERI
         cList.add(c);
 
