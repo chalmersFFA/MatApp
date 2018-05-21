@@ -271,7 +271,10 @@ public class MyDetails extends AnchorPane {
     }
 
     private void saveCard() {
-        creditCard.setCardNumber(cardNumberTextField.getText());
+
+
+
+        creditCard.setCardNumber(card1.getText() + card2.getText() + card3.getText() + card4.getText());
         creditCard.setHoldersName(cardHolderTextField.getText());
         creditCard.setValidMonth(Integer.valueOf((String)cardValidMonthComboBox.getSelectionModel().getSelectedItem()));
         creditCard.setValidYear(Integer.valueOf((String)cardValidYearComboBox.getSelectionModel().getSelectedItem()));
@@ -324,6 +327,23 @@ public class MyDetails extends AnchorPane {
             valid = false;
             produceError(cardHolderTextField, errorB1);
         }
+        if(!isDigit(card1.getText()) || card1.getText().length()!=4){
+            produceError(card1, errorB2);
+            valid = false;
+        }
+        if(!isDigit(card2.getText()) || card2.getText().length()!=4){
+            produceError(card2, errorB2);
+            valid = false;
+        }
+        if(!isDigit(card3.getText()) || card3.getText().length()!=4){
+            produceError(card3, errorB2);
+            valid = false;
+        }
+        if(!isDigit(card4.getText()) || card4.getText().length()!=4){
+            produceError(card4, errorB2);
+            valid = false;
+        }
+
         /*if(cardNumberTextField.getText().length() != 16) {
             valid = false;
             produceError(cardNumberTextField, errorB2);
@@ -400,6 +420,11 @@ public class MyDetails extends AnchorPane {
         removeError(cardValidMonthComboBox, errorB3);
         removeError(cardVerificationTextField, errorB5);
         removeError(cardHolderTextField, errorB1);
+        removeError(card1, errorB2);
+        removeError(card2, errorB2);
+        removeError(card3, errorB2);
+        removeError(card4, errorB2);
+
         //removeError(cardNumberTextField, errorB2);
     }
     private void resetDetailsErrors() {
