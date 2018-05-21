@@ -70,6 +70,7 @@ public class CategoryItem extends AnchorPane {
 
     public void addSubCategory(CategoryItem c) {
         c.setStandardClass("subCategoryStandard");
+        c.setStyle("subCategoryText");
         c.getBackgroundPane().getStyleClass().clear();
         c.getBackgroundPane().getStyleClass().add(c.getStandardClass());
         c.getNameLabel().setLayoutX(100);
