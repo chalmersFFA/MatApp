@@ -319,10 +319,10 @@ public class MyDetails extends AnchorPane {
             valid = false;
             produceError(cardHolderTextField, errorB1);
         }
-        if(cardNumberTextField.getText().length() != 16) {
+        /*if(cardNumberTextField.getText().length() != 16) {
             valid = false;
             produceError(cardNumberTextField, errorB2);
-        }
+        }*/
         return valid;
     }
 
@@ -360,7 +360,7 @@ public class MyDetails extends AnchorPane {
         removeError(cardValidMonthComboBox, errorB2);
         removeError(cardVerificationTextField, errorB3);
         removeError(cardHolderTextField, errorB4);
-        removeError(cardNumberTextField, errorB5);
+        //removeError(cardNumberTextField, errorB5);
     }
     private void resetDetailsErrors() {
         removeError(firstNameTextField, errorD1);
