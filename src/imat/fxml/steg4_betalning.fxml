@@ -6,9 +6,9 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<fx:root minHeight="850.0" minWidth="1100.0" styleClass="white" stylesheets="@../layout/design.css" type="AnchorPane" xmlns="http://javafx.com/javafx/9.0.4" xmlns:fx="http://javafx.com/fxml/1">
+<fx:root minHeight="850.0" minWidth="1200.0" styleClass="white" stylesheets="@../layout/design.css" type="AnchorPane" xmlns="http://javafx.com/javafx/9.0.4" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <AnchorPane layoutX="250.0" layoutY="225.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" styleClass="white" stylesheets="@../layout/design.css">
+      <AnchorPane layoutX="250.0" layoutY="225.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" styleClass="white" stylesheets="@../layout/design.css" AnchorPane.leftAnchor="300.0" AnchorPane.rightAnchor="300.0">
          <children>
             <Label id="shopping_steg_4_header" layoutX="165.0" layoutY="91.0" styleClass="shopping_steg_4" text="Tack för ditt köp!" />
             <Label layoutX="137.0" layoutY="165.0" styleClass="shopping_steg_4" text="Dina varor är nu på väg till dig." />

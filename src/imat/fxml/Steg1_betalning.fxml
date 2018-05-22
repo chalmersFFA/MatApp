@@ -9,21 +9,21 @@
 <?import javafx.scene.layout.FlowPane?>
 <?import javafx.scene.text.Font?>
 
-<fx:root minHeight="850.0" minWidth="1100.0" styleClass="white" stylesheets="@../layout/design.css" type="AnchorPane" xmlns="http://javafx.com/javafx/9.0.4" xmlns:fx="http://javafx.com/fxml/1">
+<fx:root maxWidth="-Infinity" minHeight="850.0" minWidth="1200.0" prefHeight="800.0" prefWidth="1200.0" styleClass="white" stylesheets="@../layout/design.css" type="AnchorPane" xmlns="http://javafx.com/javafx/9.0.4" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <Label layoutX="190.0" layoutY="103.0" styleClass="big-text" stylesheets="@../layout/design.css" text="Här kan du granska din order innan du går vidare till betalningssätt" />
+      <Label layoutX="190.0" layoutY="103.0" styleClass="big-text" stylesheets="@../layout/design.css" text="Här kan du granska din order innan du går vidare till betalningssätt" AnchorPane.leftAnchor="250.0" AnchorPane.rightAnchor="250.0" />
       <Label layoutX="751.0" layoutY="725.0" styleClass="normal-text" text="Totalt:" AnchorPane.leftAnchor="751.0" />
       <Label fx:id="totalLabel" ellipsisString="" layoutX="826.0" layoutY="720.0" prefHeight="35.0" prefWidth="148.0" styleClass="big-text" text="1001 kr" AnchorPane.leftAnchor="826.0">
          <font>
             <Font size="17.0" />
          </font>
       </Label>
-      <ScrollPane layoutX="149.0" layoutY="150.0" prefHeight="550.0" prefWidth="802.0">
+      <ScrollPane layoutX="149.0" layoutY="150.0" prefHeight="550.0" prefWidth="800.0" AnchorPane.leftAnchor="200.0" AnchorPane.rightAnchor="200.0">
          <content>
             <FlowPane fx:id="orderFlowPane" prefHeight="200.0" prefWidth="800.0" />
          </content>
       </ScrollPane>
-      <AnchorPane layoutY="780.0" prefHeight="70.0" prefWidth="1100.0" styleClass="checkoutTopAndBottom" AnchorPane.bottomAnchor="0.0">
+      <AnchorPane layoutY="780.0" prefHeight="70.0" prefWidth="1100.0" styleClass="checkoutTopAndBottom" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
          <children>
             <Button mnemonicParsing="false" onAction="#backButton" prefHeight="40.0" prefWidth="185.0" text="Tillbaka till shopping" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="15.0">
                <styleClass>

@@ -8,11 +8,11 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.shape.Line?>
 
-<fx:root minHeight="850.0" minWidth="1100.0" stylesheets="@../layout/design.css" type="AnchorPane" xmlns="http://javafx.com/javafx/9.0.4" xmlns:fx="http://javafx.com/fxml/1">
+<fx:root minHeight="850.0" minWidth="1200.0" stylesheets="@../layout/design.css" type="AnchorPane" xmlns="http://javafx.com/javafx/9.0.4" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <Line endX="550.0" endY="820.0" startX="550.0" startY="100.0" />
       <AnchorPane fx:id="myDetailsAnchorPane" layoutX="15.0" layoutY="22.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="318.0" prefWidth="1055.0" stylesheets="@../layout/design.css" AnchorPane.topAnchor="40.0" />
-      <AnchorPane layoutX="-20.0" layoutY="484.0" prefHeight="251.0" prefWidth="512.0">
+      <AnchorPane layoutX="-21.0" layoutY="530.0" prefHeight="251.0" prefWidth="512.0">
          <children>
             <Label layoutX="358.0" layoutY="146.0" styleClass="normal-text" text="Välj tid:" />
             <Label layoutX="191.0" layoutY="60.0" styleClass="big-text" stylesheets="@../layout/design.css" text="Tidsbokning" />
@@ -21,8 +21,8 @@
             <ComboBox layoutX="359.0" layoutY="178.0" prefHeight="25.0" prefWidth="153.0" />
          </children>
       </AnchorPane>
-      <Line endX="500.0" layoutX="25.0" layoutY="530.0" />
-      <AnchorPane layoutY="793.0" prefHeight="70.0" prefWidth="1100.0" styleClass="checkoutTopAndBottom" AnchorPane.bottomAnchor="0.0" />
+      <Line endX="500.0" layoutX="25.0" layoutY="570.0" />
+      <AnchorPane layoutY="793.0" prefHeight="70.0" prefWidth="1100.0" styleClass="checkoutTopAndBottom" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" />
       <Button layoutX="15.0" layoutY="800.0" mnemonicParsing="false" onAction="#backButton" prefHeight="40.0" prefWidth="185.0" styleClass="backbutton" text="Tillbaka till Varukorg" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="15.0" />
       <Button layoutX="900.0" layoutY="800.0" mnemonicParsing="false" onAction="#nextButton" prefHeight="40.0" prefWidth="185.0" text="Vidare till översikt" AnchorPane.bottomAnchor="10.0" AnchorPane.rightAnchor="15.0">
          <styleClass>

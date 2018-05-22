@@ -11,7 +11,7 @@
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-<fx:root minHeight="850.0" minWidth="1100.0" styleClass="white" stylesheets="@../layout/design.css" type="AnchorPane" xmlns="http://javafx.com/javafx/9.0.4" xmlns:fx="http://javafx.com/fxml/1">
+<fx:root minHeight="850.0" minWidth="1200.0" styleClass="white" stylesheets="@../layout/design.css" type="AnchorPane" xmlns="http://javafx.com/javafx/9.0.4" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <AnchorPane minHeight="-Infinity" prefHeight="90.0" prefWidth="1100.0" styleClass="checkoutTopAndBottom" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
@@ -24,7 +24,7 @@
             </Button>
          </children>
       </AnchorPane>
-      <AnchorPane layoutX="20.0" layoutY="107.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="470.0" prefWidth="440.0" style="-fx-border-color: #d3d3d3;" styleClass="normal-text" stylesheets="@../layout/design.css">
+      <AnchorPane layoutX="20.0" layoutY="107.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="470.0" prefWidth="440.0" style="-fx-border-color: #d3d3d3;" styleClass="normal-text" stylesheets="@../layout/design.css" AnchorPane.leftAnchor="50.0">
          <children>
             <Label alignment="CENTER_RIGHT" layoutX="47.0" layoutY="70.0" prefHeight="17.0" prefWidth="133.0" text="Förnamn:" textAlignment="RIGHT" AnchorPane.rightAnchor="270.0" AnchorPane.topAnchor="70.0" />
             <Label alignment="CENTER_RIGHT" layoutX="94.0" layoutY="115.0" text="Efternamn:" AnchorPane.rightAnchor="270.0" AnchorPane.topAnchor="95.0" />
@@ -63,7 +63,7 @@
             </ImageView>
          </children>
       </AnchorPane>
-      <AnchorPane layoutX="459.0" layoutY="106.0" prefHeight="470.0" prefWidth="640.0">
+      <AnchorPane layoutX="459.0" layoutY="106.0" prefHeight="470.0" prefWidth="640.0" AnchorPane.rightAnchor="50.0">
          <children>
             <ScrollPane prefHeight="470.0" prefWidth="640.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="40.0">
                <content>
@@ -77,7 +77,7 @@
       <Label fx:id="totalPriceLabel" layoutX="700.0" layoutY="597.0" styleClass="big-text" text="555kr" />
       <Label layoutX="42.0" layoutY="597.0" styleClass="big-text" text="Tidsbokning" />
       <Label layoutX="93.0" layoutY="652.0" text="TIDEN SOM DU HAR VALT" />
-      <AnchorPane layoutY="788.0" prefHeight="70.0" prefWidth="1100.0" styleClass="checkoutTopAndBottom" AnchorPane.bottomAnchor="0.0">
+      <AnchorPane layoutY="788.0" prefHeight="70.0" prefWidth="1100.0" styleClass="checkoutTopAndBottom" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
          <children>
             <Button layoutX="14.0" layoutY="15.0" mnemonicParsing="false" onAction="#backButton" prefHeight="40.0" prefWidth="280.0" text="Tillbaka till betalningssätt" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="15.0">
                <styleClass>
