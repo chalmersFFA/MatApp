@@ -99,7 +99,6 @@ public class ShoppingCartController extends AnchorPane implements ShoppingCartLi
     @FXML
     public void toCheckout() {
         parentController.changeMode(IMatController.Mode.CHECKOUT);
-        parentController.searchTextField.setDisable(true);
     }
 
     public ArrayList<ShoppingCartItem> getVisualItems() {
