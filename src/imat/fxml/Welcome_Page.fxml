@@ -5,7 +5,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<fx:root id="Content" minHeight="-1.0" minWidth="-1.0" prefHeight="594.0" prefWidth="564.0" stylesheets="@../layout/design.css" type="AnchorPane" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1">
+<fx:root id="Content" minHeight="-1.0" minWidth="-1.0" prefHeight="700.0" prefWidth="700.0" stylesheets="@../layout/design.css" type="AnchorPane" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1">
     <children>
         <Label alignment="CENTER" layoutX="14.0" layoutY="14.0" style="&#10;" text="Livsmedel online" textAlignment="CENTER" textFill="#f50909" wrapText="false">
             <font>

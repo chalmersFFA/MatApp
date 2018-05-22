@@ -39,7 +39,7 @@
             <Cursor fx:constant="DEFAULT" />
          </cursor>
       </Label>
-      <ImageView fx:id="favouriteImageView" fitHeight="37.0" fitWidth="35.0" layoutX="210.0" layoutY="201.0" onContextMenuRequested="#ChangePliancyFavorite" onMouseClicked="#favourite" onMouseEntered="#ChangePliancyFavorite" onMouseExited="#endChangePliancyFavorite" pickOnBounds="true" preserveRatio="true" AnchorPane.rightAnchor="50.0">
+      <ImageView fx:id="favouriteImageView" fitHeight="58.0" fitWidth="51.0" layoutX="202.0" layoutY="193.0" onContextMenuRequested="#ChangePliancyFavorite" onMouseClicked="#favourite" onMouseEntered="#ChangePliancyFavorite" onMouseExited="#endChangePliancyFavorite" pickOnBounds="true" preserveRatio="true" AnchorPane.rightAnchor="42.0">
          <image>
             <Image url="@../layout/images/stareboi.png" />
          </image>

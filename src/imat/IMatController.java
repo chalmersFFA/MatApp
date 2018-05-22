@@ -240,8 +240,7 @@ public class IMatController extends VBox implements Initializable {
         mainFlowPane.getChildren().clear();
         mainFlowPane.getChildren().add(helpPage);
         mainFlowPane.setAlignment(Pos.CENTER);
-        currentSiteLabel.setText("Startsida");
-        System.out.println("help clicked");
+        currentSiteLabel.setText("Hjälp");
 
     }
 

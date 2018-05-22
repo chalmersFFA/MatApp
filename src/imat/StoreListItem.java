@@ -96,10 +96,12 @@ public class StoreListItem extends AnchorPane implements ShoppingCartListener {
     public void updateFavourite(){
         if (db.isFavorite(product)){
             favouriteImageView.setImage(favouriteImage);
+            this.getStyleClass().add("favBorder");
             tooltipFavourite.setText("Ta bort från Favoriter");
 
         }else{
             favouriteImageView.setImage(notFavouriteImage);
+            this.getStyleClass().remove("favBorder");
             tooltipFavourite.setText("Lägg till i Favoriter");
         }
     }
