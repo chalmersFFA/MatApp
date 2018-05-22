@@ -208,7 +208,7 @@ public class IMatController extends VBox implements Initializable {
         mainFlowPane.toFront();
         mainFlowPane.getChildren().clear();
         mainFlowPane.getChildren().add(myDetails);
-        mainFlowPane.setAlignment(Pos.CENTER);
+        mainFlowPane.setAlignment(Pos.TOP_CENTER);
         myDetails.resetDetails();
         currentSiteLabel.setText("Mitt Konto");
 
@@ -353,7 +353,7 @@ public class IMatController extends VBox implements Initializable {
     public void toCheckout1() {
         checkoutController.refreshSequenceMap();
         displayPane.getChildren().clear();
-        displayPane.setAlignment(Pos.CENTER);
+        displayPane.setAlignment(Pos.TOP_CENTER);
         displayPane.getChildren().add(checkoutController);
         bigHBox.toBack();
         displayPane.toFront();
@@ -363,7 +363,7 @@ public class IMatController extends VBox implements Initializable {
         checkoutController2.refreshSequenceMap();
         checkoutController2.resetCheckoutController2();
         displayPane.getChildren().clear();
-        displayPane.setAlignment(Pos.CENTER);
+        displayPane.setAlignment(Pos.TOP_CENTER);
         displayPane.getChildren().add(checkoutController2);
         bigHBox.toBack();
         displayPane.toFront();
@@ -373,7 +373,7 @@ public class IMatController extends VBox implements Initializable {
         checkoutController3.refreshSequenceMap();
         checkoutController3.refreshCheckoutController3();
         displayPane.getChildren().clear();
-        displayPane.setAlignment(Pos.CENTER);
+        displayPane.setAlignment(Pos.TOP_CENTER);
         displayPane.getChildren().add(checkoutController3);
         bigHBox.toBack();
         displayPane.toFront();
