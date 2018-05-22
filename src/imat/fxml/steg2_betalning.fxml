@@ -10,11 +10,8 @@
 
 <fx:root minHeight="850.0" minWidth="1100.0" stylesheets="@../layout/design.css" type="AnchorPane" xmlns="http://javafx.com/javafx/9.0.4" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <AnchorPane fx:id="myDetailsAnchorPane" layoutX="15.0" layoutY="22.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="318.0" prefWidth="1055.0" stylesheets="@../layout/design.css" AnchorPane.topAnchor="40.0">
-         <children>
-            <Line endX="550.0" endY="820.0" layoutX="-23.0" layoutY="-3.0" startX="550.0" startY="100.0" />
-         </children>
-      </AnchorPane>
+      <Line endX="550.0" endY="820.0" startX="550.0" startY="100.0" />
+      <AnchorPane fx:id="myDetailsAnchorPane" layoutX="15.0" layoutY="22.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="318.0" prefWidth="1055.0" stylesheets="@../layout/design.css" AnchorPane.topAnchor="40.0" />
       <AnchorPane layoutX="-20.0" layoutY="484.0" prefHeight="251.0" prefWidth="512.0">
          <children>
             <Label layoutX="358.0" layoutY="146.0" styleClass="normal-text" text="Välj tid:" />

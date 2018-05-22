@@ -182,6 +182,7 @@ public class IMatController extends VBox implements Initializable {
         toggleShoppingMode();
         mainFlowPane.toFront();
         mainFlowPane.getChildren().clear();
+        mainFlowPane.setAlignment(Pos.TOP_CENTER);
         for (Product p : db.favorites()) {
             mainFlowPane.getChildren().add(storeListItemMap.get(p.getName()));
         }
@@ -220,7 +221,7 @@ public class IMatController extends VBox implements Initializable {
         mainFlowPane.toFront();
         mainFlowPane.getChildren().clear();
         mainFlowPane.getChildren().add(orderHistoryController);
-        mainFlowPane.setAlignment(Pos.CENTER);
+        mainFlowPane.setAlignment(Pos.TOP_CENTER);
         currentSiteLabel.setText("Mina Ordrar");
 
     }
