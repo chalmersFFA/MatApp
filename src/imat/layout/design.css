@@ -236,3 +236,10 @@
 #shopping_steg_4_header{
     -fx-font-size: 3em;/**/
 }
+.menuButton:hover{
+    -fx-opacity: 0.6;
+}
+.menuButton:pressed{
+    -fx-background-color: rgb(150,150,150);
+    -fx-opacity: 1;
+}

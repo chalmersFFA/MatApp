@@ -472,39 +472,4 @@ public class IMatController extends VBox implements Initializable {
 
     }
 
-    @FXML
-    public void ChangePliancyFavourite(){
-       // myFavourites.setImage(favouriteImagePliant);
-        favouriteLabel.setOpacity(0.6);
-    }
-    @FXML
-    public void endPliancyFavourite(){
-        //myFavourites.setImage(favouriteImage);
-        favouriteLabel.setOpacity(1);
-    }
-    @FXML
-    public void ChangePliancyMyAccount(){
-        myDetailsLabel.setOpacity(0.6);
-    }
-    @FXML
-    public void endPliancyMyAccount(){
-        myDetailsLabel.setOpacity(1);
-    }
-    @FXML
-    public void ChangePliancyhelpPage(){
-        helpLabel.setOpacity(0.6);
-    }
-    @FXML
-    public void endPliancyHelpPage(){
-        helpLabel.setOpacity(1);
-    }
-    @FXML
-    public void ChangePliancyOrderHistory(){
-        orderHistoryLabel.setOpacity(0.6);
-    }
-    @FXML
-    public void endPliancyOrderHistory(){
-        orderHistoryLabel.setOpacity(1);
-    }
-
 }
