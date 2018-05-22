@@ -14,7 +14,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox stylesheets="@../layout/design.css" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="imat.IMatController">
+<VBox stylesheets="@../layout/design.css" xmlns="http://javafx.com/javafx/9.0.4" xmlns:fx="http://javafx.com/fxml/1" fx:controller="imat.IMatController">
    <children>
       <AnchorPane id="headerStyle" fx:id="headerAnchorPane" prefHeight="75.0" prefWidth="1127.0" stylesheets="@../layout/design.css">
          <children>
@@ -27,7 +27,7 @@
                   <Image url="@../layout/images/search.png" />
                </image>
             </ImageView>
-            <Label fx:id="favouriteLabel" contentDisplay="TOP" layoutX="844.0" layoutY="9.0" onMouseClicked="#displayFavourites" onMouseEntered="#ChangePliancyFavourite" onMouseExited="#endPliancyFavourite" stylesheets="@../layout/design.css" text="Favoritvaror" AnchorPane.rightAnchor="445.0" AnchorPane.topAnchor="9.0">
+            <Label fx:id="favouriteLabel" contentDisplay="TOP" layoutX="844.0" layoutY="9.0" onMouseClicked="#displayFavourites" stylesheets="@../layout/design.css" text="Favoritvaror" AnchorPane.rightAnchor="445.0" AnchorPane.topAnchor="9.0">
                <graphic>
                   <ImageView fx:id="myFavourites" fitHeight="25.0" fitWidth="28.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -41,9 +41,10 @@
                <styleClass>
                   <String fx:value="big-text" />
                   <String fx:value="textLabel" />
+                  <String fx:value="menuButton" />
                </styleClass>
             </Label>
-            <Label fx:id="orderHistoryLabel" contentDisplay="TOP" layoutX="995.0" layoutY="10.0" onMouseClicked="#showOrderScreen" onMouseEntered="#ChangePliancyOrderHistory" onMouseExited="#endPliancyOrderHistory" styleClass="big-text" text="Orderhistorik" AnchorPane.rightAnchor="281.0" AnchorPane.topAnchor="9.0">
+            <Label fx:id="orderHistoryLabel" contentDisplay="TOP" layoutX="995.0" layoutY="10.0" onMouseClicked="#showOrderScreen" text="Orderhistorik" AnchorPane.rightAnchor="281.0" AnchorPane.topAnchor="9.0">
                <graphic>
                   <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -54,8 +55,12 @@
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor>
+               <styleClass>
+                  <String fx:value="big-text" />
+                  <String fx:value="menuButton" />
+               </styleClass>
             </Label>
-            <Label fx:id="myDetailsLabel" contentDisplay="TOP" layoutX="1163.0" layoutY="10.0" onMouseClicked="#showDetailsScreen" onMouseEntered="#ChangePliancyMyAccount" onMouseExited="#endPliancyMyAccount" styleClass="big-text" text="Mitt konto" AnchorPane.rightAnchor="141.0" AnchorPane.topAnchor="9.0">
+            <Label fx:id="myDetailsLabel" contentDisplay="TOP" layoutX="1163.0" layoutY="10.0" onMouseClicked="#showDetailsScreen" text="Mitt konto" AnchorPane.rightAnchor="141.0" AnchorPane.topAnchor="9.0">
                <graphic>
                   <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true" styleClass="big-text">
                      <image>
@@ -66,8 +71,12 @@
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor>
+               <styleClass>
+                  <String fx:value="big-text" />
+                  <String fx:value="menuButton" />
+               </styleClass>
             </Label>
-            <Label fx:id="helpLabel" contentDisplay="TOP" layoutX="1318.0" layoutY="5.0" onMouseEntered="#ChangePliancyhelpPage" onMouseExited="#endPliancyHelpPage" onMousePressed="#pressedHelp" styleClass="big-text" text="Hjälp" AnchorPane.rightAnchor="41.0" AnchorPane.topAnchor="9.0">
+            <Label fx:id="helpLabel" contentDisplay="TOP" layoutX="1318.0" layoutY="5.0" onMousePressed="#pressedHelp" text="Hjälp" AnchorPane.rightAnchor="41.0" AnchorPane.topAnchor="9.0">
                <graphic>
                   <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -78,6 +87,10 @@
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor>
+               <styleClass>
+                  <String fx:value="big-text" />
+                  <String fx:value="menuButton" />
+               </styleClass>
             </Label>
             <ImageView fx:id="logoImageView" fitHeight="57.0" fitWidth="109.0" layoutX="9.0" layoutY="17.0" onMouseClicked="#escapeHatch" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="13.25" AnchorPane.leftAnchor="7.0" AnchorPane.topAnchor="15.0">
                <image>
