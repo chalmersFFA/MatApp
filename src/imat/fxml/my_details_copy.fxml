@@ -33,45 +33,45 @@
             <TextField fx:id="postCodeTextField" minHeight="29.0" prefHeight="29.0" styleClass="textfield" AnchorPane.leftAnchor="155.0" AnchorPane.topAnchor="200.0" />
             <TextField fx:id="postAddressTextField" minHeight="29.0" prefHeight="29.0" styleClass="textfield" AnchorPane.leftAnchor="155.0" AnchorPane.topAnchor="230.0" />
             <TextField fx:id="phoneNumberTextField" minHeight="29.0" prefHeight="29.0" styleClass="textfield" AnchorPane.leftAnchor="155.0" AnchorPane.topAnchor="260.0" />
-            <Label fx:id="firstNameLabel" styleClass="bold-text" AnchorPane.leftAnchor="160.0" AnchorPane.topAnchor="70.0" />
-            <Label fx:id="lastNameLabel" styleClass="bold-text" AnchorPane.leftAnchor="160.0" AnchorPane.topAnchor="100.0" />
-            <Label fx:id="emailLabel" styleClass="bold-text" AnchorPane.leftAnchor="160.0" AnchorPane.topAnchor="130.0" />
-            <Label fx:id="addressLabel" styleClass="bold-text" AnchorPane.leftAnchor="160.0" AnchorPane.topAnchor="150.0" />
-            <Label fx:id="postCodeLabel" styleClass="bold-text" AnchorPane.leftAnchor="160.0" AnchorPane.topAnchor="200.0" />
-            <Label fx:id="postAddressLabel" styleClass="bold-text" AnchorPane.leftAnchor="160.0" AnchorPane.topAnchor="230.0" />
-            <Label fx:id="phoneNumberLabel" styleClass="bold-text" AnchorPane.leftAnchor="160.0" AnchorPane.topAnchor="260.0" />
+            <Label fx:id="firstNameLabel" focusTraversable="false" styleClass="bold-text" wrapText="true" AnchorPane.leftAnchor="160.0" AnchorPane.topAnchor="70.0" />
+            <Label fx:id="lastNameLabel" focusTraversable="false" styleClass="bold-text" wrapText="true" AnchorPane.leftAnchor="160.0" AnchorPane.topAnchor="100.0" />
+            <Label fx:id="emailLabel" focusTraversable="false" styleClass="bold-text" wrapText="true" AnchorPane.leftAnchor="160.0" AnchorPane.topAnchor="130.0" />
+            <Label fx:id="addressLabel" focusTraversable="false" styleClass="bold-text" wrapText="true" AnchorPane.leftAnchor="160.0" AnchorPane.topAnchor="160.0" />
+            <Label fx:id="postCodeLabel" focusTraversable="false" styleClass="bold-text" wrapText="true" AnchorPane.leftAnchor="160.0" AnchorPane.topAnchor="200.0" />
+            <Label fx:id="postAddressLabel" focusTraversable="false" styleClass="bold-text" wrapText="true" AnchorPane.leftAnchor="160.0" AnchorPane.topAnchor="230.0" />
+            <Label fx:id="phoneNumberLabel" focusTraversable="false" styleClass="bold-text" wrapText="true" AnchorPane.leftAnchor="160.0" AnchorPane.topAnchor="260.0" />
             <Button fx:id="saveDetailsButton" layoutX="155.0" layoutY="298.0" mnemonicParsing="false" onAction="#saveDetailsClick" styleClass="nextButton" text="Spara Uppgifter" />
-            <ImageView fx:id="errorD1" fitHeight="17.0" fitWidth="15.0" layoutX="351.0" layoutY="76.0" pickOnBounds="true" preserveRatio="true" styleClass="red_border" AnchorPane.leftAnchor="373.0" AnchorPane.topAnchor="76.0">
+            <ImageView fx:id="errorD1" fitHeight="17.0" fitWidth="15.0" layoutX="351.0" layoutY="76.0" pickOnBounds="true" preserveRatio="true" styleClass="red_border" AnchorPane.leftAnchor="380.0" AnchorPane.topAnchor="76.0">
                <image>
                   <Image url="@../layout/images/redCross.png" />
                </image>
             </ImageView>
-            <ImageView fx:id="errorD2" fitHeight="17.0" fitWidth="15.0" layoutX="381.0" layoutY="87.0" pickOnBounds="true" preserveRatio="true" styleClass="red_border" AnchorPane.leftAnchor="373.0" AnchorPane.topAnchor="107.0">
+            <ImageView fx:id="errorD2" fitHeight="17.0" fitWidth="15.0" layoutX="381.0" layoutY="87.0" pickOnBounds="true" preserveRatio="true" styleClass="red_border" AnchorPane.leftAnchor="380.0" AnchorPane.topAnchor="107.0">
                <image>
                   <Image url="@../layout/images/redCross.png" />
                </image>
             </ImageView>
-            <ImageView fx:id="errorD3" fitHeight="17.0" fitWidth="15.0" layoutX="391.0" layoutY="97.0" pickOnBounds="true" preserveRatio="true" styleClass="red_border" AnchorPane.leftAnchor="373.0" AnchorPane.topAnchor="137.0">
+            <ImageView fx:id="errorD3" fitHeight="17.0" fitWidth="15.0" layoutX="391.0" layoutY="97.0" pickOnBounds="true" preserveRatio="true" styleClass="red_border" AnchorPane.leftAnchor="380.0" AnchorPane.topAnchor="137.0">
                <image>
                   <Image url="@../layout/images/redCross.png" />
                </image>
             </ImageView>
-            <ImageView fx:id="errorD4" fitHeight="17.0" fitWidth="15.0" layoutX="401.0" layoutY="107.0" pickOnBounds="true" preserveRatio="true" styleClass="red_border" AnchorPane.leftAnchor="373.0" AnchorPane.topAnchor="167.0">
+            <ImageView fx:id="errorD4" fitHeight="17.0" fitWidth="15.0" layoutX="401.0" layoutY="107.0" pickOnBounds="true" preserveRatio="true" styleClass="red_border" AnchorPane.leftAnchor="380.0" AnchorPane.topAnchor="167.0">
                <image>
                   <Image url="@../layout/images/redCross.png" />
                </image>
             </ImageView>
-            <ImageView fx:id="errorD5" fitHeight="17.0" fitWidth="15.0" layoutX="411.0" layoutY="117.0" pickOnBounds="true" preserveRatio="true" styleClass="red_border" AnchorPane.leftAnchor="373.0" AnchorPane.topAnchor="207.0">
+            <ImageView fx:id="errorD5" fitHeight="17.0" fitWidth="15.0" layoutX="411.0" layoutY="117.0" pickOnBounds="true" preserveRatio="true" styleClass="red_border" AnchorPane.leftAnchor="380.0" AnchorPane.topAnchor="207.0">
                <image>
                   <Image url="@../layout/images/redCross.png" />
                </image>
             </ImageView>
-            <ImageView fx:id="errorD6" fitHeight="17.0" fitWidth="15.0" layoutX="421.0" layoutY="127.0" pickOnBounds="true" preserveRatio="true" styleClass="red_border" AnchorPane.leftAnchor="373.0" AnchorPane.topAnchor="237.0">
+            <ImageView fx:id="errorD6" fitHeight="17.0" fitWidth="15.0" layoutX="421.0" layoutY="127.0" pickOnBounds="true" preserveRatio="true" styleClass="red_border" AnchorPane.leftAnchor="380.0" AnchorPane.topAnchor="237.0">
                <image>
                   <Image url="@../layout/images/redCross.png" />
                </image>
             </ImageView>
-            <ImageView fx:id="errorD7" fitHeight="17.0" fitWidth="15.0" layoutX="431.0" layoutY="137.0" pickOnBounds="true" preserveRatio="true" styleClass="red_border" AnchorPane.leftAnchor="373.0" AnchorPane.topAnchor="267.0">
+            <ImageView fx:id="errorD7" fitHeight="17.0" fitWidth="15.0" layoutX="431.0" layoutY="137.0" pickOnBounds="true" preserveRatio="true" styleClass="red_border" AnchorPane.leftAnchor="380.0" AnchorPane.topAnchor="267.0">
                <image>
                   <Image url="@../layout/images/redCross.png" />
                </image>
@@ -101,22 +101,22 @@
                   <Label fx:id="cardVerificationLabel" layoutX="118.0" layoutY="205.0" text="CCV/CVC:" AnchorPane.rightAnchor="565.0" AnchorPane.topAnchor="204.0" />
                   <TextField fx:id="cardVerificationTextField" layoutX="83.0" layoutY="201.0" minHeight="29.0" prefHeight="29.0" prefWidth="52.0" AnchorPane.leftAnchor="210.0" AnchorPane.topAnchor="201.0" />
                   <Button fx:id="saveCardButton" layoutX="210.0" layoutY="244.0" mnemonicParsing="false" onAction="#saveCardClick" styleClass="nextButton" text="Spara kort" AnchorPane.rightAnchor="453.0" />
-                  <ImageView fx:id="errorB1" fitHeight="17.0" fitWidth="15.0" layoutX="474.0" layoutY="88.0" pickOnBounds="true" preserveRatio="true" styleClass="red_border" AnchorPane.leftAnchor="476.0" AnchorPane.topAnchor="88.0">
+                  <ImageView fx:id="errorB1" fitHeight="17.0" fitWidth="15.0" layoutX="474.0" layoutY="88.0" pickOnBounds="true" preserveRatio="true" styleClass="red_border" AnchorPane.leftAnchor="480.0" AnchorPane.topAnchor="88.0">
                      <image>
                         <Image url="@../layout/images/redCross.png" />
                      </image>
                   </ImageView>
-                  <ImageView fx:id="errorB2" fitHeight="17.0" fitWidth="15.0" layoutX="436.0" layoutY="98.0" pickOnBounds="true" preserveRatio="true" styleClass="red_border" AnchorPane.leftAnchor="476.0" AnchorPane.topAnchor="118.0">
+                  <ImageView fx:id="errorB2" fitHeight="17.0" fitWidth="15.0" layoutX="436.0" layoutY="98.0" pickOnBounds="true" preserveRatio="true" styleClass="red_border" AnchorPane.leftAnchor="480.0" AnchorPane.topAnchor="118.0">
                      <image>
                         <Image url="@../layout/images/redCross.png" />
                      </image>
                   </ImageView>
-                  <ImageView fx:id="errorB3" fitHeight="17.0" fitWidth="15.0" layoutX="334.0" layoutY="160.0" pickOnBounds="true" preserveRatio="true" styleClass="red_border" AnchorPane.leftAnchor="331.0" AnchorPane.topAnchor="160.0">
+                  <ImageView fx:id="errorB3" fitHeight="17.0" fitWidth="15.0" layoutX="334.0" layoutY="160.0" pickOnBounds="true" preserveRatio="true" styleClass="red_border" AnchorPane.leftAnchor="333.0" AnchorPane.topAnchor="160.0">
                      <image>
                         <Image url="@../layout/images/redCross.png" />
                      </image>
                   </ImageView>
-                  <ImageView fx:id="errorB4" fitHeight="17.0" fitWidth="15.0" layoutX="427.0" layoutY="161.0" pickOnBounds="true" preserveRatio="true" styleClass="red_border" AnchorPane.leftAnchor="476.0" AnchorPane.topAnchor="160.0">
+                  <ImageView fx:id="errorB4" fitHeight="17.0" fitWidth="15.0" layoutX="427.0" layoutY="161.0" pickOnBounds="true" preserveRatio="true" styleClass="red_border" AnchorPane.leftAnchor="480.0" AnchorPane.topAnchor="160.0">
                      <image>
                         <Image url="@../layout/images/redCross.png" />
                      </image>
@@ -131,7 +131,7 @@
                         <Image url="@../layout/images/help.png" />
                      </image>
                   </ImageView>
-                  <Label fx:id="errorLabelB" layoutX="196.0" layoutY="315.0" prefHeight="82.0" prefWidth="332.0" styleClass="borders" text="Rödmarkerade fällt är ej korrekt angivna. Rätta till dem och spara sedan." wrapText="true" AnchorPane.leftAnchor="196.0" />
+                  <Label fx:id="errorLabelB" layoutX="210.0" layoutY="315.0" prefHeight="82.0" prefWidth="332.0" styleClass="borders" text="Rödmarkerade fällt är ej korrekt angivna. Rätta till dem och spara sedan." wrapText="true" AnchorPane.leftAnchor="210.0" />
                   <AnchorPane fx:id="CVCinfo" layoutX="317.0" layoutY="201.0" prefHeight="114.0" prefWidth="229.0" styleClass="borders">
                      <children>
                         <TextArea layoutX="12.0" layoutY="14.0" prefHeight="82.0" prefWidth="172.0" text="Den tresiffriga koden på kortets baksida" wrapText="true" AnchorPane.leftAnchor="9.0">

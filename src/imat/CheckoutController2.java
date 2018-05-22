@@ -70,6 +70,11 @@ public class CheckoutController2 extends AnchorPane{
     }
 
     @FXML
+    public void extraBackButton() {
+        parentController.toggleShoppingMode();
+    }
+
+    @FXML
     private void toFinalPaymentStep(){
         parentController.toFinalPaymentStep();
     }

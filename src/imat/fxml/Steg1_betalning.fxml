@@ -9,7 +9,7 @@
 <?import javafx.scene.layout.FlowPane?>
 <?import javafx.scene.text.Font?>
 
-<fx:root maxWidth="-Infinity" minHeight="850.0" minWidth="1200.0" prefHeight="800.0" prefWidth="1200.0" styleClass="white" stylesheets="@../layout/design.css" type="AnchorPane" xmlns="http://javafx.com/javafx/9.0.4" xmlns:fx="http://javafx.com/fxml/1">
+<fx:root maxWidth="-Infinity" minHeight="850.0" minWidth="1200.0" prefHeight="800.0" prefWidth="1200.0" styleClass="white" stylesheets="@../layout/design.css" type="AnchorPane" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <Label layoutX="190.0" layoutY="103.0" styleClass="big-text" stylesheets="@../layout/design.css" text="Här kan du granska din order innan du går vidare till betalningssätt" AnchorPane.leftAnchor="250.0" AnchorPane.rightAnchor="250.0" />
       <Label layoutX="751.0" layoutY="725.0" styleClass="normal-text" text="Totalt:" AnchorPane.leftAnchor="751.0" />
@@ -48,7 +48,7 @@
       <AnchorPane minHeight="-Infinity" prefHeight="90.0" prefWidth="1100.0" styleClass="checkoutTopAndBottom" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
             <AnchorPane fx:id="sequenceMapAnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="64.0" prefWidth="524.0" stylesheets="@../layout/design.css" AnchorPane.leftAnchor="288.0" AnchorPane.rightAnchor="288.0" AnchorPane.topAnchor="10.0" />
-            <Button mnemonicParsing="false" prefWidth="185.0" text="Tillbaka till Shopping" AnchorPane.leftAnchor="15.0" AnchorPane.topAnchor="28.0">
+            <Button mnemonicParsing="false" onAction="#extraBackButton" prefWidth="185.0" text="Tillbaka till Shopping" AnchorPane.leftAnchor="15.0" AnchorPane.topAnchor="28.0">
                <styleClass>
                   <String fx:value="backbutton" />
                   <String fx:value="normal-text" />

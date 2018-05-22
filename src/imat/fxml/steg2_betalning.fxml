@@ -8,7 +8,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.shape.Line?>
 
-<fx:root minHeight="850.0" minWidth="1200.0" stylesheets="@../layout/design.css" type="AnchorPane" xmlns="http://javafx.com/javafx/9.0.4" xmlns:fx="http://javafx.com/fxml/1">
+<fx:root minHeight="850.0" minWidth="1200.0" stylesheets="@../layout/design.css" type="AnchorPane" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <Line endX="550.0" endY="820.0" startX="550.0" startY="100.0" />
       <AnchorPane fx:id="myDetailsAnchorPane" layoutX="15.0" layoutY="22.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="318.0" prefWidth="1055.0" stylesheets="@../layout/design.css" AnchorPane.topAnchor="40.0" />
@@ -33,7 +33,7 @@
       <AnchorPane minHeight="-Infinity" prefHeight="90.0" prefWidth="1100.0" styleClass="checkoutTopAndBottom" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
             <AnchorPane fx:id="sequenceMapAnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="64.0" prefWidth="524.0" stylesheets="@../layout/design.css" AnchorPane.leftAnchor="288.0" AnchorPane.rightAnchor="288.0" AnchorPane.topAnchor="10.0" />
-            <Button mnemonicParsing="false" prefWidth="185.0" styleClass="backbutton" text="Tillbaka till Shopping" AnchorPane.leftAnchor="15.0" AnchorPane.topAnchor="28.0" />
+            <Button mnemonicParsing="false" onAction="#extraBackButton" prefWidth="185.0" styleClass="backbutton" text="Tillbaka till Shopping" AnchorPane.leftAnchor="15.0" AnchorPane.topAnchor="28.0" />
          </children>
       </AnchorPane>
    </children>

@@ -101,6 +101,11 @@ public class CheckoutController3 extends AnchorPane implements ShoppingCartListe
 
     }
 
+    @FXML
+    public void extraBackButton() {
+        parentController.toggleShoppingMode();
+    }
+
     @Override
     public void shoppingCartChanged(CartEvent cartEvent) {
         update();

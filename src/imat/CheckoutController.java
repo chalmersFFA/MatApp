@@ -58,6 +58,11 @@ public class CheckoutController extends AnchorPane implements ShoppingCartListen
     }
 
     @FXML
+    public void extraBackButton() {
+        parentController.toggleShoppingMode();
+    }
+
+    @FXML
     public void toPayment() {
         parentController.toPayment();
 
