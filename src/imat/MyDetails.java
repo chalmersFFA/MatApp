@@ -319,7 +319,7 @@ public class MyDetails extends AnchorPane {
             valid = false;
             produceError(cardValidMonthComboBox, errorB3);
         }
-        if(cardVerificationTextField.getText().length() != 3) {
+        if(cardVerificationTextField.getText().length() != 3 || (!isDigit(cardVerificationTextField.getText()))) {
             valid = false;
             produceError(cardVerificationTextField, errorB5);
         }
