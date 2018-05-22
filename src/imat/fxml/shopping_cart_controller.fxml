@@ -70,7 +70,7 @@
             <String fx:value="normal-text" />
             <String fx:value="nextButton" />
          </styleClass></Button>
-      <ScrollPane hbarPolicy="NEVER" layoutY="67.0" prefHeight="735.0" prefWidth="285.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="67.0">
+      <ScrollPane hbarPolicy="NEVER" hmax="0.0" layoutY="67.0" prefHeight="735.0" prefWidth="285.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="67.0">
          <content>
             <FlowPane fx:id="shoppingCartFlowPane" prefHeight="452.0" prefWidth="200.0" />
          </content>

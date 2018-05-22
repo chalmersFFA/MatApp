@@ -11,7 +11,7 @@
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-<fx:root minHeight="850.0" minWidth="1200.0" styleClass="white" stylesheets="@../layout/design.css" type="AnchorPane" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<fx:root minHeight="850.0" minWidth="1200.0" styleClass="white" stylesheets="@../layout/design.css" type="AnchorPane" xmlns="http://javafx.com/javafx/9.0.4" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <AnchorPane minHeight="-Infinity" prefHeight="90.0" prefWidth="1100.0" styleClass="checkoutTopAndBottom" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
@@ -65,7 +65,7 @@
       </AnchorPane>
       <AnchorPane layoutX="459.0" layoutY="106.0" prefHeight="470.0" prefWidth="640.0" AnchorPane.rightAnchor="50.0">
          <children>
-            <ScrollPane prefHeight="470.0" prefWidth="640.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="40.0">
+            <ScrollPane hbarPolicy="NEVER" hmax="0.0" prefHeight="470.0" prefWidth="640.0" vbarPolicy="ALWAYS" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="40.0">
                <content>
                   <FlowPane fx:id="finalOrderFlowPane" prefHeight="420.0" />
                </content>
