@@ -16,6 +16,7 @@ import se.chalmers.cse.dat216.project.IMatDataHandler;
 import se.chalmers.cse.dat216.project.ProductCategory;
 
 import java.io.IOException;
+import java.util.regex.Pattern;
 
 /**
  * Created by Jonathan Köre on 2018-05-04.
@@ -66,12 +67,19 @@ public class MyDetails extends AnchorPane {
     ImageView errorD1, errorD2, errorD3, errorD4, errorD5, errorD6, errorD7,
             errorB1, errorB2, errorB3, errorB4, errorB5;
 
+    @FXML
+    TextField card1, card2, card3, card4;
+
+    @FXML
+    ImageView helpCVC;
+
+    @FXML
+    AnchorPane CVCinfo;
 
     public MyDetails(IMatController parentController) {
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("fxml/my_details_copy.fxml"));
         fxmlLoader.setRoot(this);
         fxmlLoader.setController(this);
-
 
         try {
             fxmlLoader.load();
@@ -86,6 +94,19 @@ public class MyDetails extends AnchorPane {
         resetDetails();
         resetCard();
 
+        registerListener(card1, card2);
+        registerListener(card2, card3);
+        registerListener(card3, card4);
+        registerListener(card4, cardVerificationTextField);
+        CVCinfo.setVisible(false);
+    }
+
+    private void registerListener(TextField tf1, TextField tf2) {
+        tf1.textProperty().addListener((obs, oldText, newText) -> {
+            if (oldText.length() < 4 && newText.length() >= 4) {
+                tf2.requestFocus();
+            }
+        });
     }
 
     private void initErrors() {
@@ -105,6 +126,7 @@ public class MyDetails extends AnchorPane {
     }
 
     public void resetDetails() {
+        resetDetailsErrors();
         toggleDetailsEdit(false);
     }
 
@@ -173,8 +195,11 @@ public class MyDetails extends AnchorPane {
 
     @FXML
     private void saveDetailsClick() {
-        saveDetails();
-        toggleDetailsEdit(false);
+        if(detailsInfoIsValid()) {
+            saveDetails();
+            toggleDetailsEdit(false);
+        }
+
     }
 
     private void initComboBoxes() {
@@ -246,7 +271,7 @@ public class MyDetails extends AnchorPane {
     }
 
     private void saveCard() {
-        creditCard.setCardNumber(cardNumberTextField.getText());
+        creditCard.setCardNumber(card1.getText() + card2.getText() + card3.getText() + card4.getText());
         creditCard.setHoldersName(cardHolderTextField.getText());
         creditCard.setValidMonth(Integer.valueOf((String)cardValidMonthComboBox.getSelectionModel().getSelectedItem()));
         creditCard.setValidYear(Integer.valueOf((String)cardValidYearComboBox.getSelectionModel().getSelectedItem()));
@@ -299,10 +324,27 @@ public class MyDetails extends AnchorPane {
             valid = false;
             produceError(cardHolderTextField, errorB1);
         }
-        if(cardNumberTextField.getText().length() != 16) {
+        if(!isDigit(card1.getText()) || card1.getText().length()!=4){
+            produceError(card1, errorB2);
+            valid = false;
+        }
+        if(!isDigit(card2.getText()) || card2.getText().length()!=4){
+            produceError(card2, errorB2);
+            valid = false;
+        }
+        if(!isDigit(card3.getText()) || card3.getText().length()!=4){
+            produceError(card3, errorB2);
+            valid = false;
+        }
+        if(!isDigit(card4.getText()) || card4.getText().length()!=4){
+            produceError(card4, errorB2);
+            valid = false;
+        }
+
+        /*if(cardNumberTextField.getText().length() != 16) {
             valid = false;
             produceError(cardNumberTextField, errorB2);
-        }
+        }*/
         return valid;
     }
 
@@ -321,8 +363,43 @@ public class MyDetails extends AnchorPane {
             valid = false;
             produceError(emailTextField, errorD3);
         }
-        //if(phoneNumberTextField.getText().contains())
+        if(!isDigit(phoneNumberTextField.getText()) || phoneNumberTextField.getText().length() == 0) {
+            valid = false;
+            produceError(phoneNumberTextField, errorD7);
+        }
+        if(addressTextField.getText().length() == 0) {
+            valid = false;
+            produceError(addressTextField, errorD4);
+        }
+        if(!isLetter(postAddressTextField.getText()) || postAddressTextField.getText().length() == 0) {
+            valid = false;
+            produceError(postAddressTextField, errorD6);
+        }
+        if(!isDigit(postCodeTextField.getText()) || postCodeTextField.getText().length() != 5) {
+            valid = false;
+            produceError(postCodeTextField, errorD5);
+        }
         return valid;
+    }
+
+
+    private boolean isDigit(String s) {
+        boolean b = true;
+        for(int i = 0; i < s.length(); i++) {
+            if(!Character.isDigit(s.charAt(i))) {
+                b = false;
+            }
+        }
+        return b;
+    }
+    private boolean isLetter(String s) {
+        boolean b = true;
+        for(int i = 0; i < s.length(); i++) {
+            if(!Character.isLetter(s.charAt(i))) {
+                b = false;
+            }
+        }
+        return b;
     }
 
 
@@ -336,11 +413,16 @@ public class MyDetails extends AnchorPane {
         v.setVisible(false);
     }
     private void resetCardErrors() {
-        removeError(cardValidYearComboBox, errorB1);
-        removeError(cardValidMonthComboBox, errorB2);
-        removeError(cardVerificationTextField, errorB3);
-        removeError(cardHolderTextField, errorB4);
-        removeError(cardNumberTextField, errorB5);
+        removeError(cardValidYearComboBox, errorB4);
+        removeError(cardValidMonthComboBox, errorB3);
+        removeError(cardVerificationTextField, errorB5);
+        removeError(cardHolderTextField, errorB1);
+        removeError(card1, errorB2);
+        removeError(card2, errorB2);
+        removeError(card3, errorB2);
+        removeError(card4, errorB2);
+
+        //removeError(cardNumberTextField, errorB2);
     }
     private void resetDetailsErrors() {
         removeError(firstNameTextField, errorD1);
@@ -365,4 +447,15 @@ public class MyDetails extends AnchorPane {
     public void mouseTrap(Event event){
         parentController.mouseTrap(event);
     }
+
+
+    @FXML
+    public void showCVC() {
+        CVCinfo.setVisible(true);
+    }
+    @FXML
+    public void hideCVC() {
+        CVCinfo.setVisible(false);
+    }
+
 }

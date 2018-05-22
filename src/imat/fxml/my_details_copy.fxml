@@ -5,6 +5,7 @@
 <?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TextArea?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
@@ -90,7 +91,10 @@
                   <Label alignment="CENTER_RIGHT" layoutX="-56.0" layoutY="111.0" prefHeight="17.0" prefWidth="133.0" text="Kortnummer:" textAlignment="RIGHT" AnchorPane.rightAnchor="567.0" AnchorPane.topAnchor="111.0" />
                   <Label alignment="CENTER_RIGHT" layoutY="82.0" text="Kortets innehavare:" AnchorPane.rightAnchor="567.0" AnchorPane.topAnchor="82.0" />
                   <TextField fx:id="cardHolderTextField" layoutX="83.0" layoutY="81.0" minHeight="29.0" prefHeight="29.0" AnchorPane.leftAnchor="210.0" AnchorPane.topAnchor="81.0" />
-                  <TextField fx:id="cardNumberTextField" layoutX="83.0" layoutY="111.0" minHeight="29.0" prefHeight="29.0" AnchorPane.leftAnchor="210.0" AnchorPane.topAnchor="111.0" />
+                  <TextField fx:id="card1" layoutX="83.0" layoutY="111.0" minHeight="29.0" prefHeight="29.0" prefWidth="64.0" AnchorPane.leftAnchor="210.0" AnchorPane.topAnchor="111.0" />
+                  <TextField fx:id="card2" layoutX="286.0" layoutY="111.0" minHeight="29.0" prefHeight="29.0" prefWidth="64.0" AnchorPane.leftAnchor="277.0" />
+                  <TextField fx:id="card3" layoutX="357.0" layoutY="111.0" minHeight="29.0" prefHeight="29.0" prefWidth="64.0" AnchorPane.leftAnchor="344.0" />
+                  <TextField fx:id="card4" layoutX="428.0" layoutY="111.0" minHeight="29.0" prefHeight="29.0" prefWidth="64.0" AnchorPane.leftAnchor="410.0" />
                   <Label fx:id="cardValidLabel" layoutX="-16.0" layoutY="154.0" text="Giltig t.o.m:" AnchorPane.rightAnchor="567.0" AnchorPane.topAnchor="154.0" />
                   <ComboBox fx:id="cardValidYearComboBox" layoutX="335.0" layoutY="150.0" prefHeight="35.0" prefWidth="91.0" AnchorPane.leftAnchor="335.0" AnchorPane.topAnchor="150.0" />
                   <ComboBox fx:id="cardValidMonthComboBox" layoutX="182.0" layoutY="150.0" prefHeight="35.0" prefWidth="91.0" AnchorPane.leftAnchor="210.0" AnchorPane.topAnchor="150.0" />
@@ -123,6 +127,26 @@
                         <Image url="@../layout/images/redCross.png" />
                      </image>
                   </ImageView>
+                  <ImageView fx:id="helpCVC" fitHeight="29.0" fitWidth="28.0" layoutX="166.0" layoutY="202.0" onContextMenuRequested="#showCVC" onMouseEntered="#showCVC" onMouseExited="#hideCVC" onMouseMoved="#showCVC" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../layout/images/help.png" />
+                     </image>
+                  </ImageView>
+                  <AnchorPane fx:id="CVCinfo" layoutX="55.0" layoutY="240.0" prefHeight="114.0" prefWidth="250.0" styleClass="borders">
+                     <children>
+                        <TextArea layoutX="36.0" layoutY="14.0" prefHeight="82.0" prefWidth="194.0" text="Den tresiffriga koden på baksidan av ditt kort" wrapText="true" AnchorPane.leftAnchor="0.0">
+                           <styleClass>
+                              <String fx:value="textFieldBackground" />
+                              <String fx:value="normal-text" />
+                           </styleClass>
+                        </TextArea>
+                        <ImageView fitHeight="82.0" fitWidth="64.0" layoutX="195.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true" AnchorPane.rightAnchor="0.0">
+                           <image>
+                              <Image url="@../layout/images/CVC.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </AnchorPane>
                </children>
             </AnchorPane>
             <AnchorPane layoutX="14.0" layoutY="68.0" prefHeight="114.0" prefWidth="401.0" style="-fx-border-color: #d3d3d3;">
