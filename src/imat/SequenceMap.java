@@ -44,23 +44,22 @@ public class SequenceMap extends AnchorPane {
         update();
     }
 
+    private void reset() {
+        label1.setDisable(true);
+        label2.setDisable(true);
+        label3.setDisable(true);
+    }
     private void update() {
+        reset();
         switch (state) {
             case 1:
-                label1.getStyleClass().add("red");
-                label2.getStyleClass().remove("red");
-                label3.getStyleClass().remove("red");
+                label1.setDisable(false);
                 return;
             case 2:
-                label1.getStyleClass().remove("red");
-                label2.getStyleClass().add("red");
-                label3.getStyleClass().remove("red");
+                label2.setDisable(false);
                 return;
             case 3:
-                label1.getStyleClass().remove("red");
-                label2.getStyleClass().remove("red");
-                label3.getStyleClass().add("red");
-                System.out.println("suh");
+                label3.setDisable(false);
                 return;
 
         }
