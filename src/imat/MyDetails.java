@@ -76,6 +76,9 @@ public class MyDetails extends AnchorPane {
     @FXML
     AnchorPane CVCinfo;
 
+    @FXML
+    Label errorLabelD, errorLabelB;
+
     public MyDetails(IMatController parentController) {
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("fxml/my_details_copy.fxml"));
         fxmlLoader.setRoot(this);
@@ -340,11 +343,8 @@ public class MyDetails extends AnchorPane {
             produceError(card4, errorB2);
             valid = false;
         }
-
-        /*if(cardNumberTextField.getText().length() != 16) {
-            valid = false;
-            produceError(cardNumberTextField, errorB2);
-        }*/
+        if(!valid)
+            errorLabelB.setVisible(true);
         return valid;
     }
 
@@ -379,6 +379,8 @@ public class MyDetails extends AnchorPane {
             valid = false;
             produceError(postCodeTextField, errorD5);
         }
+        if(!valid)
+            errorLabelD.setVisible(true);
         return valid;
     }
 
@@ -421,7 +423,7 @@ public class MyDetails extends AnchorPane {
         removeError(card2, errorB2);
         removeError(card3, errorB2);
         removeError(card4, errorB2);
-
+        errorLabelB.setVisible(false);
         //removeError(cardNumberTextField, errorB2);
     }
     private void resetDetailsErrors() {
@@ -432,6 +434,7 @@ public class MyDetails extends AnchorPane {
         removeError(addressTextField, errorD5);
         removeError(postAddressTextField, errorD6);
         removeError(postCodeTextField, errorD7);
+        errorLabelD.setVisible(false);
     }
     public void resetCard() {
         resetCardErrors();

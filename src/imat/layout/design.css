@@ -182,9 +182,6 @@
 .tooltip {
     -fx-font-size: 4em;
 }
-.textfield {
-    -fx-border-style: hidden hidden hidden hidden;
-}
 .minusButton{
     -fx-background-image: url("images/minus.png");
     -fx-background-repeat: no-repeat;
