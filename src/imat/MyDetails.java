@@ -162,6 +162,14 @@ public class MyDetails extends AnchorPane {
             postAddressTextField.setText("");
             postCodeTextField.setText("");
 
+            firstNameLabel.toFront();
+            lastNameLabel.toFront();
+            emailLabel.toFront();
+            phoneNumberLabel.toFront();
+            addressLabel.toFront();
+            postAddressLabel.toFront();
+            postCodeLabel.toFront();
+
             firstNameLabel.setText(customer.getFirstName());
             lastNameLabel.setText(customer.getLastName());
             emailLabel.setText(customer.getEmail());
@@ -185,6 +193,14 @@ public class MyDetails extends AnchorPane {
             addressLabel.setText("");
             postAddressLabel.setText("");
             postCodeLabel.setText("");
+
+            firstNameLabel.toBack();
+            lastNameLabel.toBack();
+            emailLabel.toBack();
+            phoneNumberLabel.toBack();
+            addressLabel.toBack();
+            postAddressLabel.toBack();
+            postCodeLabel.toBack();
         }
         editDetailsButton.setVisible(!b);
         saveDetailsButton.setVisible(b);
