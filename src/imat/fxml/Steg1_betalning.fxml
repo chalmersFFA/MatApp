@@ -25,19 +25,19 @@
       </ScrollPane>
       <AnchorPane layoutY="780.0" prefHeight="70.0" prefWidth="1100.0" styleClass="checkoutTopAndBottom" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
          <children>
-            <Button mnemonicParsing="false" onAction="#backButton" prefHeight="40.0" prefWidth="185.0" text="Tillbaka till shopping" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="15.0">
+            <Button mnemonicParsing="false" onAction="#backButton" prefHeight="45.0" prefWidth="275.0" text="Tillbaka till shopping" AnchorPane.bottomAnchor="12.0" AnchorPane.leftAnchor="15.0">
                <styleClass>
                   <String fx:value="backbutton" />
-                  <String fx:value="normal-text" />
+                  <String fx:value="big-text" />
                </styleClass>
             </Button>
-            <Button fx:id="toPaymentButton" mnemonicParsing="false" onAction="#toPayment" prefHeight="40.0" prefWidth="222.0" text="Vidare till betalningssätt" textFill="WHITE" AnchorPane.bottomAnchor="10.0" AnchorPane.rightAnchor="15.0">
+            <Button fx:id="toPaymentButton" mnemonicParsing="false" onAction="#toPayment" prefHeight="43.0" prefWidth="275.0" text="Vidare till betalningssätt" textFill="WHITE" AnchorPane.bottomAnchor="12.0" AnchorPane.rightAnchor="15.0">
                <font>
                   <Font size="14.0" />
                </font>
                <styleClass>
                   <String fx:value="nextButton" />
-                  <String fx:value="normal-text" />
+                  <String fx:value="big-text" />
                </styleClass>
                <cursor>
                   <Cursor fx:constant="HAND" />
@@ -48,10 +48,10 @@
       <AnchorPane minHeight="-Infinity" prefHeight="90.0" prefWidth="1100.0" styleClass="checkoutTopAndBottom" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
             <AnchorPane fx:id="sequenceMapAnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="64.0" prefWidth="524.0" stylesheets="@../layout/design.css" AnchorPane.leftAnchor="288.0" AnchorPane.rightAnchor="288.0" AnchorPane.topAnchor="10.0" />
-            <Button mnemonicParsing="false" onAction="#extraBackButton" prefWidth="185.0" text="Tillbaka till Shopping" AnchorPane.leftAnchor="15.0" AnchorPane.topAnchor="28.0">
+            <Button mnemonicParsing="false" onAction="#extraBackButton" prefWidth="275.0" text="Tillbaka till Shopping" AnchorPane.leftAnchor="15.0" AnchorPane.topAnchor="28.0">
                <styleClass>
                   <String fx:value="backbutton" />
-                  <String fx:value="normal-text" />
+                  <String fx:value="big-text" />
                </styleClass>
             </Button>
          </children>

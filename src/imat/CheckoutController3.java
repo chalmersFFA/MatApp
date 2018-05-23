@@ -28,7 +28,7 @@ public class CheckoutController3 extends AnchorPane implements ShoppingCartListe
     @FXML
     AnchorPane sequenceMapAnchorPane;
     @FXML
-    Label firstNameLabel, lastNameLabel, emailLabel, phoneNumberLabel, addressLabel, postAddressLabel, postCodeLabel, cardHolderName, cardNumber;
+    Label firstNameLabel, lastNameLabel, emailLabel, phoneNumberLabel, addressLabel, postAddressLabel, postCodeLabel, cardHolderName, cardNumber, deliveryTime;
     private Customer customer = db.getCustomer();
     private CreditCard creditCard = db.getCreditCard();
 
@@ -97,7 +97,9 @@ public class CheckoutController3 extends AnchorPane implements ShoppingCartListe
         }
 
         cardNumber.setText(tempCardNumber);
-
+        if(parentController.getDeliveryTime() != null){
+            deliveryTime.setText(parentController.getDeliveryTime());
+        }
 
     }
 

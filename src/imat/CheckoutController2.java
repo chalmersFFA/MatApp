@@ -2,6 +2,8 @@ package imat;
 
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.control.ComboBox;
+import javafx.scene.control.ComboBoxBase;
 import javafx.scene.control.Label;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.FlowPane;
@@ -22,6 +24,8 @@ public class CheckoutController2 extends AnchorPane{
 
     @FXML
     AnchorPane myDetailsAnchorPane, betalkortAnchorPane, sequenceMapAnchorPane;
+    @FXML
+    ComboBox dayCombo, monthCombo, timeCombo;
 
 
 
@@ -40,6 +44,13 @@ public class CheckoutController2 extends AnchorPane{
         sequenceMapAnchorPane.getChildren().add(parentController.getSequenceMap());
 
         resetCheckoutController2();
+
+        dayCombo.getItems().clear();
+        dayCombo.getItems().addAll("25","26","27","28","29","30","31");
+        monthCombo.getItems().clear();
+        monthCombo.getItems().add("Maj");
+        timeCombo.getItems().clear();
+        timeCombo.getItems().addAll("7:00","8:00","9:00","10:00","11:00","12:00","13:00","14:00","15:00","16:00","17:00");
 
     }
 
@@ -61,6 +72,7 @@ public class CheckoutController2 extends AnchorPane{
 
     @FXML
     public void nextButton() {
+        parentController.setDeliveryTime(dayCombo.getSelectionModel().getSelectedItem().toString() + " " + monthCombo.getSelectionModel().getSelectedItem().toString() + " " + timeCombo.getSelectionModel().getSelectedItem().toString());
         parentController.toFinalPaymentStep();
 
     }

@@ -112,16 +112,22 @@
 
 }
 .backbutton{
-    -fx-background-color:  #4141EF;
-    -fx-font-color: #FFFFFF;
-    -fx-text-fill: #FFFFFF;
+    -fx-text-fill: #4141EF;
+    -fx-background-color: transparent;
+
+    /*-fx-font-color: #FFFFFF;
+    -fx-text-fill: #FFFFFF;*/
+    -fx-border-color: #4141EF;
+    -fx-border-radius: 5px;
     -fx-cursor: hand;
 }
 .backbutton:hover{
     -fx-background-color:  #4A4AFF;
+    -fx-text-fill: #FFFFFF;
 }
 .backbutton:pressed{
     -fx-background-color:  #4141DF;
+    -fx-text-fill: #FFFFFF;
 }
 
 .removeFocusColor{
@@ -243,5 +249,6 @@
     -fx-background-color: rgb(150,150,150);
     -fx-opacity: 1;
 }
-.favBorder{
+.veryBigText{
+    -fx-font-size: 36px;
 }

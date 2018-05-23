@@ -25,6 +25,8 @@ public class CheckoutController4 extends AnchorPane{
     Button exitApplication;
     @FXML
     AnchorPane sequenceMapAnchorPane;
+    @FXML
+    Label deliveryTime;
 
     public CheckoutController4(IMatController parentController) {
         this.parentController = parentController;
@@ -37,7 +39,10 @@ public class CheckoutController4 extends AnchorPane{
         } catch (IOException exception) {
             throw new RuntimeException(exception);
         }
+    }
 
+    public void update(){
+        deliveryTime.setText("De anländer den " + parentController.getDeliveryTime());
     }
 
     @FXML

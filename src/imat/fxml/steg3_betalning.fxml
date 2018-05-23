@@ -16,10 +16,10 @@
       <AnchorPane minHeight="-Infinity" prefHeight="90.0" prefWidth="1100.0" styleClass="checkoutTopAndBottom" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
             <AnchorPane fx:id="sequenceMapAnchorPane" layoutX="352.0" layoutY="13.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="64.0" prefWidth="524.0" stylesheets="@../layout/design.css" AnchorPane.leftAnchor="288.0" AnchorPane.rightAnchor="288.0" AnchorPane.topAnchor="10.0" />
-            <Button fx:id="extraBackButton" layoutX="14.0" layoutY="28.0" mnemonicParsing="false" onAction="#extraBackButton" prefHeight="35.0" prefWidth="185.0" text="Tillbaka till Shopping" AnchorPane.leftAnchor="15.0" AnchorPane.topAnchor="28.0">
+            <Button fx:id="extraBackButton" layoutX="14.0" layoutY="28.0" mnemonicParsing="false" onAction="#extraBackButton" prefHeight="45.0" prefWidth="275.0" text="Tillbaka till Shopping" AnchorPane.leftAnchor="15.0" AnchorPane.topAnchor="28.0">
                <styleClass>
                   <String fx:value="backbutton" />
-                  <String fx:value="normal-text" />
+                  <String fx:value="big-text" />
                </styleClass>
             </Button>
          </children>
@@ -75,23 +75,23 @@
       </AnchorPane>
       <Label layoutX="472.0" layoutY="592.0" styleClass="big-text" text="Totalt:" />
       <Label fx:id="totalPriceLabel" layoutX="700.0" layoutY="597.0" styleClass="big-text" text="555kr" />
-      <Label layoutX="42.0" layoutY="597.0" styleClass="big-text" text="Tidsbokning" />
-      <Label layoutX="93.0" layoutY="652.0" text="TIDEN SOM DU HAR VALT" />
+      <Label layoutX="42.0" layoutY="597.0" styleClass="big-text" text="Levereras:" />
+      <Label fx:id="deliveryTime" layoutX="165.0" layoutY="601.0" styleClass="normal-text" text="TIDEN SOM DU HAR VALT" />
       <AnchorPane layoutY="788.0" prefHeight="70.0" prefWidth="1100.0" styleClass="checkoutTopAndBottom" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
          <children>
-            <Button layoutX="14.0" layoutY="15.0" mnemonicParsing="false" onAction="#backButton" prefHeight="40.0" prefWidth="280.0" text="Tillbaka till betalningssätt" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="15.0">
+            <Button layoutX="14.0" layoutY="13.0" mnemonicParsing="false" onAction="#backButton" prefHeight="45.0" prefWidth="292.0" text="Tillbaka till betalningssätt" AnchorPane.bottomAnchor="12.0" AnchorPane.leftAnchor="15.0">
                <styleClass>
                   <String fx:value="backbutton" />
-                  <String fx:value="normal-text" />
+                  <String fx:value="big-text" />
                </styleClass>
             </Button>
-            <Button layoutX="901.0" layoutY="15.0" mnemonicParsing="false" onAction="#placeOrder" prefHeight="40.0" prefWidth="185.0" text="Slutför köp" textFill="WHITE" AnchorPane.bottomAnchor="10.0" AnchorPane.rightAnchor="15.0">
+            <Button layoutX="1001.0" layoutY="14.0" mnemonicParsing="false" onAction="#placeOrder" prefHeight="45.0" prefWidth="275.0" text="Slutför köp" textFill="WHITE" AnchorPane.bottomAnchor="12.0" AnchorPane.rightAnchor="15.0">
                <font>
                   <Font size="14.0" />
                </font>
                <styleClass>
                   <String fx:value="nextButton" />
-                  <String fx:value="normal-text" />
+                  <String fx:value="big-text" />
                </styleClass>
             </Button>
          </children>

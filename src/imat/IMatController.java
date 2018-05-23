@@ -37,6 +37,7 @@ public class IMatController extends VBox implements Initializable {
     private CategoryItem currentExpandedMain;
     private ShoppingCart shoppingCart = db.getShoppingCart();
     private SequenceMap sequenceMap = new SequenceMap();
+    private String deliveryTime;
 
     public enum Mode {
         SHOPPING,
@@ -154,6 +155,7 @@ public class IMatController extends VBox implements Initializable {
     }
 
     public void updateProductListWithAllProducts() {
+        clearProductList();
         updateProductListLoop(db.getProducts());
         currentSiteLabel.setText("Kategori: Alla");
     }
@@ -177,6 +179,7 @@ public class IMatController extends VBox implements Initializable {
     }
 
     public void displayFavourites() {
+        currentSiteLabel.setText("Mina Favoritvaror");
         deSelectCategory(currentExpandedSub);
         currentExpandedSub = null;
         toggleShoppingMode();
@@ -186,9 +189,6 @@ public class IMatController extends VBox implements Initializable {
         for (Product p : db.favorites()) {
             mainFlowPane.getChildren().add(storeListItemMap.get(p.getName()));
         }
-        //favouriteLabel.setId("current");
-        currentSiteLabel.setText("Mina Favoritvaror");
-
     }
 
     private void setGlobalEventHandler(Node root) {
@@ -371,6 +371,7 @@ public class IMatController extends VBox implements Initializable {
     public void toFinalPaymentStep() {
         checkoutController3.refreshSequenceMap();
         checkoutController3.refreshCheckoutController3();
+        checkoutController3.update();
         displayPane.getChildren().clear();
         displayPane.setAlignment(Pos.TOP_CENTER);
         displayPane.getChildren().add(checkoutController3);
@@ -380,6 +381,7 @@ public class IMatController extends VBox implements Initializable {
 
     public void thankYou() {
         refreshHistory();
+        checkoutController4.update();
         displayPane.getChildren().clear();
         displayPane.setAlignment(Pos.CENTER);
         displayPane.getChildren().add(checkoutController4);
@@ -471,4 +473,11 @@ public class IMatController extends VBox implements Initializable {
 
     }
 
+    public void setDeliveryTime(String date){
+        this.deliveryTime = date;
+    }
+
+    public String getDeliveryTime() {
+        return deliveryTime;
+    }
 }
