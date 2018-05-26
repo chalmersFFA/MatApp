@@ -45,13 +45,16 @@ public class CheckoutController2 extends AnchorPane{
 
         resetCheckoutController2();
 
+        comboRefresh();
+    }
+
+    private void comboRefresh(){
         dayCombo.getItems().clear();
         dayCombo.getItems().addAll("25","26","27","28","29","30","31");
         monthCombo.getItems().clear();
         monthCombo.getItems().add("Maj");
         timeCombo.getItems().clear();
         timeCombo.getItems().addAll("7:00","8:00","9:00","10:00","11:00","12:00","13:00","14:00","15:00","16:00","17:00");
-
     }
 
     public void refreshSequenceMap() {
@@ -63,6 +66,7 @@ public class CheckoutController2 extends AnchorPane{
     public void resetCheckoutController2() {
         myDetailsAnchorPane.getChildren().clear();
         myDetailsAnchorPane.getChildren().add(parentController.getMyDetails());
+        comboRefresh();
     }
 
     @FXML
@@ -72,8 +76,10 @@ public class CheckoutController2 extends AnchorPane{
 
     @FXML
     public void nextButton() {
-        parentController.setDeliveryTime(dayCombo.getSelectionModel().getSelectedItem().toString() + " " + monthCombo.getSelectionModel().getSelectedItem().toString() + " " + timeCombo.getSelectionModel().getSelectedItem().toString());
-        parentController.toFinalPaymentStep();
+        if((dayCombo.getSelectionModel().getSelectedItem().toString() != null) && (monthCombo.getSelectionModel().getSelectedItem().toString() != null) && (timeCombo.getSelectionModel().getSelectedItem().toString() != null)){
+            parentController.setDeliveryTime(dayCombo.getSelectionModel().getSelectedItem().toString() + " " + monthCombo.getSelectionModel().getSelectedItem().toString() + " " + timeCombo.getSelectionModel().getSelectedItem().toString());
+            parentController.toFinalPaymentStep();
+        }
 
     }
 
