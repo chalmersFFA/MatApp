@@ -359,6 +359,17 @@ public class MyDetails extends AnchorPane {
             produceError(card4, errorB2);
             valid = false;
         }
+        if(cardValidYearComboBox.getSelectionModel().getSelectedItem().toString().equals("18")) {
+            switch(cardValidMonthComboBox.getSelectionModel().getSelectedItem().toString()) {
+                case("1"):
+                case("2"):
+                case("3"):
+                case("4"):
+                    produceError(cardValidMonthComboBox, errorB3);
+                    valid = false;
+                    break;
+            }
+        }
         if(!valid)
             errorLabelB.setVisible(true);
         return valid;
