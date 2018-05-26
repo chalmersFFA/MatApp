@@ -5,6 +5,8 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.ComboBoxBase;
 import javafx.scene.control.Label;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.FlowPane;
 import se.chalmers.cse.dat216.project.*;
@@ -26,6 +28,9 @@ public class CheckoutController2 extends AnchorPane{
     AnchorPane myDetailsAnchorPane, betalkortAnchorPane, sequenceMapAnchorPane;
     @FXML
     ComboBox dayCombo, monthCombo, timeCombo;
+    @FXML
+    ImageView timeError, dayError, monthError;
+    private Image errorImage = new Image("imat/layout/images/redCross.png");
 
 
 
@@ -46,6 +51,8 @@ public class CheckoutController2 extends AnchorPane{
         resetCheckoutController2();
 
         comboRefresh();
+        errorRefresh();
+
     }
 
     private void comboRefresh(){
@@ -55,6 +62,14 @@ public class CheckoutController2 extends AnchorPane{
         monthCombo.getItems().add("Maj");
         timeCombo.getItems().clear();
         timeCombo.getItems().addAll("7:00","8:00","9:00","10:00","11:00","12:00","13:00","14:00","15:00","16:00","17:00");
+    }
+    private void errorRefresh(){
+        dayError.setImage(errorImage);
+        dayError.setVisible(false);
+        monthError.setImage(errorImage);
+        monthError.setVisible(false);
+        timeError.setImage(errorImage);
+        timeError.setVisible(false);
     }
 
     public void refreshSequenceMap() {
@@ -76,9 +91,25 @@ public class CheckoutController2 extends AnchorPane{
 
     @FXML
     public void nextButton() {
-        if((dayCombo.getSelectionModel().getSelectedItem().toString() != null) && (monthCombo.getSelectionModel().getSelectedItem().toString() != null) && (timeCombo.getSelectionModel().getSelectedItem().toString() != null)){
+        if((dayCombo.getSelectionModel().getSelectedItem() != null) && (monthCombo.getSelectionModel().getSelectedItem() != null) && (timeCombo.getSelectionModel().getSelectedItem() != null)){
             parentController.setDeliveryTime(dayCombo.getSelectionModel().getSelectedItem().toString() + " " + monthCombo.getSelectionModel().getSelectedItem().toString() + " " + timeCombo.getSelectionModel().getSelectedItem().toString());
             parentController.toFinalPaymentStep();
+        }else{
+            if(dayCombo.getSelectionModel().getSelectedItem() == null){
+                dayError.setVisible(true);
+            }else{
+                dayError.setVisible(false);
+            }
+            if(monthCombo.getSelectionModel().getSelectedItem() == null){
+                monthError.setVisible(true);
+            }else{
+                monthError.setVisible(false);
+            }
+            if(timeCombo.getSelectionModel().getSelectedItem() == null){
+                timeError.setVisible(true);
+            }else{
+                timeError.setVisible(false);
+            }
         }
 
     }
