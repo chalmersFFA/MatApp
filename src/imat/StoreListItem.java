@@ -78,7 +78,7 @@ public class StoreListItem extends AnchorPane implements ShoppingCartListener {
         //amountTextField.setText(Integer.toString(amount));
 
         priceLabel.setText(MyMath.doubleToString(product.getPrice()) + " " + product.getUnit());
-        unit.setText(product.getUnitSuffix());
+        //unit.setText(product.getUnitSuffix());
         //itemHandler.setStoreListItem(this);
 
         shoppingCart.addShoppingCartListener(this);
@@ -110,8 +110,8 @@ public class StoreListItem extends AnchorPane implements ShoppingCartListener {
         amountTextField.setText("0");
         for(ShoppingItem s : shoppingCart.getItems()){
             if(s.getProduct().getName().equals(product.getName())){
-                amountTextField.setText(MyMath.doubleToString(s.getAmount()));
-                unit.setText(product.getUnitSuffix());
+                amountTextField.setText(MyMath.doubleToString(s.getAmount()) + product.getUnitSuffix());
+                //unit.setText(product.getUnitSuffix());
                 break;
             }
         }
@@ -208,6 +208,10 @@ public class StoreListItem extends AnchorPane implements ShoppingCartListener {
             shoppingCart.addProduct(product, Double.parseDouble(amountTextField.getText()));
         }
         update();
+    }
+    @FXML
+    public void selectAll(){
+        amountTextField.selectAll();
     }
 
 }

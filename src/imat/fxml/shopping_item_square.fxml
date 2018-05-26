@@ -10,7 +10,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<fx:root maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="295.0" prefWidth="295.0" stylesheets="@../layout/design.css" type="AnchorPane" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<fx:root maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="295.0" prefWidth="295.0" stylesheets="@../layout/design.css" type="AnchorPane" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <ImageView fx:id="productImageView" fitHeight="150.0" fitWidth="200.0" layoutX="48.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="102.0" AnchorPane.leftAnchor="47.0" AnchorPane.rightAnchor="47.0" AnchorPane.topAnchor="14.0">
       </ImageView>
@@ -22,7 +22,7 @@
             <String fx:value="minusButton" />
             <String fx:value="redFocusColor" />
          </styleClass></Button>
-      <TextField fx:id="amountTextField" alignment="CENTER" layoutX="89.0" layoutY="246.0" onAction="#textFieldChanged" onInputMethodTextChanged="#textFieldChanged" prefHeight="35.0" prefWidth="120.0" styleClass="normal-text" />
+      <TextField fx:id="amountTextField" alignment="CENTER" layoutX="89.0" layoutY="246.0" onAction="#textFieldChanged" onInputMethodTextChanged="#textFieldChanged" onMouseClicked="#selectAll" prefHeight="35.0" prefWidth="120.0" styleClass="normal-text" />
       <Button fx:id="increaseButton" layoutX="209.0" layoutY="246.0" mnemonicParsing="false" onAction="#increaseAmount" prefHeight="35.0" prefWidth="37.0" snapToPixel="false">
          <cursor>
             <Cursor fx:constant="HAND" />
@@ -57,14 +57,6 @@
             <Image url="@../layout/images/svanen.png" />
          </image>
       </ImageView>
-      <Label fx:id="unit" layoutX="186.0" layoutY="250.0" styleClass="normal-text" text="KG">
-         <font>
-            <Font size="14.0" />
-         </font>
-         <cursor>
-            <Cursor fx:constant="DEFAULT" />
-         </cursor>
-      </Label>
    </children>
    <styleClass>
       <String fx:value="static_object_hinting" />

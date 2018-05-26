@@ -174,6 +174,10 @@ public class ShoppingCartItem extends AnchorPane implements ShoppingCartListener
             }
         }
     }
+    @FXML
+    public void selectAll(){
+        amountTextField.selectAll();
+    }
    /* @FXML
     public void showTheCross(){
         System.out.println("show cross");
