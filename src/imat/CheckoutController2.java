@@ -23,6 +23,7 @@ public class CheckoutController2 extends AnchorPane{
     private ShoppingCartController shoppingCartController;
     private IMatController parentController;
     private IMatDataHandler db = IMatDataHandler.getInstance();
+    private MyDetails myDetails;
 
     @FXML
     AnchorPane myDetailsAnchorPane, betalkortAnchorPane, sequenceMapAnchorPane;
@@ -47,7 +48,7 @@ public class CheckoutController2 extends AnchorPane{
             throw new RuntimeException(exception);
         }
         sequenceMapAnchorPane.getChildren().add(parentController.getSequenceMap());
-
+        myDetails = parentController.getMyDetails();
         resetCheckoutController2();
 
         comboRefresh();
@@ -96,7 +97,7 @@ public class CheckoutController2 extends AnchorPane{
 
     @FXML
     public void nextButton() {
-        if((dayCombo.getSelectionModel().getSelectedItem() != null) && (monthCombo.getSelectionModel().getSelectedItem() != null) && (timeCombo.getSelectionModel().getSelectedItem() != null)){
+        if((dayCombo.getSelectionModel().getSelectedItem() != null) && (monthCombo.getSelectionModel().getSelectedItem() != null) && (timeCombo.getSelectionModel().getSelectedItem() != null) && myDetails.isVerified()){
             parentController.setDeliveryTime(dayCombo.getSelectionModel().getSelectedItem().toString() + " " + monthCombo.getSelectionModel().getSelectedItem().toString() + " " + timeCombo.getSelectionModel().getSelectedItem().toString());
             parentController.toFinalPaymentStep();
         }else{
@@ -121,6 +122,8 @@ public class CheckoutController2 extends AnchorPane{
                 timeError.setVisible(false);
                 timeCombo.getStyleClass().removeAll("badComboBox");
             }
+            if(!myDetails.isVerified())
+                myDetails.produceVerifyError();
         }
 
     }

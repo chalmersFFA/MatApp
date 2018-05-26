@@ -2,6 +2,7 @@ package imat;
 
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.FlowPane;
@@ -28,6 +29,8 @@ public class CheckoutController extends AnchorPane implements ShoppingCartListen
     Label totalLabel;
     @FXML
     AnchorPane sequenceMapAnchorPane;
+    @FXML
+    Button toPaymentButton;
 
     public CheckoutController(IMatController parentController, ShoppingCartController shoppingCartController) {
         this.shoppingCartController = shoppingCartController;
@@ -74,6 +77,10 @@ public class CheckoutController extends AnchorPane implements ShoppingCartListen
             orderFlowPane.getChildren().add(shoppingCartItemMap.get(s.getProduct().getName()));
         }
         totalLabel.setText(MyMath.doubleToString(shoppingCart.getTotal()) +" kr");
+
+        if(shoppingCart.getItems().isEmpty()) {
+            toPaymentButton.setDisable(true);
+        }
     }
 
     public FlowPane getOrderFlowPane() {
@@ -94,5 +101,8 @@ public class CheckoutController extends AnchorPane implements ShoppingCartListen
             }
         }
         update();
+    }
+    public void reset() {
+        toPaymentButton.setDisable(false);
     }
 }

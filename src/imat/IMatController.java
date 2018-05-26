@@ -346,11 +346,13 @@ public class IMatController extends VBox implements Initializable {
     }
 
     private void toggleCheckoutMode() {
+        myDetails.loadCheckoutVersion();
         toCheckout1();
     }
 
     public void toCheckout1() {
         checkoutController.refreshSequenceMap();
+        checkoutController.reset();
         displayPane.getChildren().clear();
         displayPane.setAlignment(Pos.TOP_CENTER);
         displayPane.getChildren().add(checkoutController);
@@ -392,6 +394,7 @@ public class IMatController extends VBox implements Initializable {
 
     public void toggleShoppingMode() {
 
+        myDetails.loadShoppingVersion();
         shoppingCartController.update();
         displayPane.toBack();
         bigHBox.toFront();
