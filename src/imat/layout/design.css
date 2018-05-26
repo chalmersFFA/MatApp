@@ -255,3 +255,6 @@
 .badComboBox{
     -fx-border-color: #FF0000;
 }
+#empy_cart:hover{
+    -fx-opacity: 0.6;
+}

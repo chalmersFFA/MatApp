@@ -98,7 +98,8 @@ public class ShoppingCartController extends AnchorPane implements ShoppingCartLi
 
     @FXML
     public void toCheckout() {
-        parentController.changeMode(IMatController.Mode.CHECKOUT);
+        if(!shoppingCart.getItems().isEmpty())
+            parentController.changeMode(IMatController.Mode.CHECKOUT);
     }
 
     public ArrayList<ShoppingCartItem> getVisualItems() {
@@ -129,17 +130,22 @@ public class ShoppingCartController extends AnchorPane implements ShoppingCartLi
     @FXML
     public void changePliancyCart(){
         emptyCartLabel.setOpacity(0.6);
+        checkoutButton.setOpacity(0.6);
     }
     @FXML
     public void endPliancyCart(){
-        if(shoppingCart.getTotal()!=0)
+        if(shoppingCart.getTotal()!=0) {
             emptyCartLabel.setOpacity(1);
+            checkoutButton.setOpacity(1);
+        }
     }
     public void setDisableCart(){
         emptyCartLabel.setDisable(true);
+        checkoutButton.setDisable(true);
     }
     public void setEnableCart() {
         emptyCartLabel.setDisable(false);
+        checkoutButton.setDisable(false);
     }
     @FXML
     public void changeCrossPliant(){
