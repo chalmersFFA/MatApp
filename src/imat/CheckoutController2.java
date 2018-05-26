@@ -66,10 +66,15 @@ public class CheckoutController2 extends AnchorPane{
     private void errorRefresh(){
         dayError.setImage(errorImage);
         dayError.setVisible(false);
+        dayCombo.getStyleClass().removeAll("badComboBox");
+
         monthError.setImage(errorImage);
         monthError.setVisible(false);
+        monthCombo.getStyleClass().removeAll("badComboBox");
+
         timeError.setImage(errorImage);
         timeError.setVisible(false);
+        timeCombo.getStyleClass().removeAll("badComboBox");
     }
 
     public void refreshSequenceMap() {
@@ -97,25 +102,31 @@ public class CheckoutController2 extends AnchorPane{
         }else{
             if(dayCombo.getSelectionModel().getSelectedItem() == null){
                 dayError.setVisible(true);
+                dayCombo.getStyleClass().add("badComboBox");
             }else{
                 dayError.setVisible(false);
+                dayCombo.getStyleClass().removeAll("badComboBox");
             }
             if(monthCombo.getSelectionModel().getSelectedItem() == null){
                 monthError.setVisible(true);
+                monthCombo.getStyleClass().add("badComboBox");
             }else{
                 monthError.setVisible(false);
+                monthCombo.getStyleClass().removeAll("badComboBox");
             }
             if(timeCombo.getSelectionModel().getSelectedItem() == null){
                 timeError.setVisible(true);
+                timeCombo.getStyleClass().add("badComboBox");
             }else{
                 timeError.setVisible(false);
+                timeCombo.getStyleClass().removeAll("badComboBox");
             }
         }
 
     }
 
     public void update() {
-
+        errorRefresh();
     }
 
     @FXML

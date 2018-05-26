@@ -364,6 +364,7 @@ public class IMatController extends VBox implements Initializable {
         displayPane.getChildren().clear();
         displayPane.setAlignment(Pos.TOP_CENTER);
         displayPane.getChildren().add(checkoutController2);
+        checkoutController2.update();
         bigHBox.toBack();
         displayPane.toFront();
     }

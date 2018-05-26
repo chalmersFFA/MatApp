@@ -252,3 +252,6 @@
 .veryBigText{
     -fx-font-size: 36px;
 }
+.badComboBox{
+    -fx-border-color: #FF0000;
+}
