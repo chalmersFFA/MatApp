@@ -367,7 +367,6 @@ public class MyDetails extends AnchorPane {
                 case("4"):
                     produceError(cardValidMonthComboBox, errorB3);
                     valid = false;
-                    break;
             }
         }
         if(!valid)
