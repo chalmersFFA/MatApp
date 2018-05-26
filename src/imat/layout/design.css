@@ -7,6 +7,10 @@
 .big-text {
     -fx-font-size: 200%;
 }
+.bigger_text {
+    -fx-font-size: 250%;
+}
+
 .bold-text {
     -fx-font-weight: bold;
 }
@@ -257,4 +261,7 @@
 }
 #empy_cart:hover{
     -fx-opacity: 0.6;
+}
+.text_opacity{
+    -fx-opacity: 0.9;
 }
