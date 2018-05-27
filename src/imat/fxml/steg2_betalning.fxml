@@ -20,7 +20,7 @@
             <Label layoutX="254.0" layoutY="146.0" styleClass="normal-text" text="Välj dag:" />
             <ComboBox fx:id="timeCombo" layoutX="360.0" layoutY="180.0" prefHeight="25.0" prefWidth="150.0" />
             <ComboBox fx:id="dayCombo" layoutX="251.0" layoutY="180.0" prefHeight="25.0" prefWidth="75.0" />
-            <ComboBox fx:id="monthCombo" layoutX="144.0" layoutY="180.0" prefHeight="25.0" prefWidth="75.0" />
+            <ComboBox fx:id="monthCombo" layoutX="134.0" layoutY="180.0" prefHeight="35.0" prefWidth="85.0" />
             <Label layoutX="135.0" layoutY="146.0" styleClass="normal-text" text="Välj månad:" />
             <ImageView fx:id="monthError" fitHeight="17.0" fitWidth="15.0" layoutX="228.0" layoutY="190.0" pickOnBounds="true" preserveRatio="true">
                <image>
