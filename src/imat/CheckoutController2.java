@@ -112,7 +112,7 @@ public class CheckoutController2 extends AnchorPane{
     @FXML
     public void nextButton() {
         if(myDetails.detailsIsValid() && (dayCombo.getSelectionModel().getSelectedItem() != null) && (monthCombo.getSelectionModel().getSelectedItem() != null) &&
-                (timeCombo.getSelectionModel().getSelectedItem() != null) && myDetails.isVerified()){
+                (timeCombo.getSelectionModel().getSelectedItem() != null) && myDetails.isVerified() && !myDetails.otherCardSelected()){
             parentController.setDeliveryTime(dayCombo.getSelectionModel().getSelectedItem().toString() + " " + monthCombo.getSelectionModel().getSelectedItem().toString() + " " + timeCombo.getSelectionModel().getSelectedItem().toString());
             parentController.toFinalPaymentStep();
         }else{

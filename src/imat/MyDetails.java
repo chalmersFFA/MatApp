@@ -524,10 +524,11 @@ public class MyDetails extends AnchorPane {
 
     public boolean detailsIsValid() {
         if(customer.getFirstName().isEmpty() || customer.getLastName().isEmpty() || customer.getAddress().isEmpty() ||
-                customer.getEmail().isEmpty() || customer.getPhoneNumber().isEmpty() || customer.getPostAddress().isEmpty()
+                customer.getEmail().isEmpty() || customer.getMobilePhoneNumber().isEmpty() || customer.getPostAddress().isEmpty()
                 || customer.getPostCode().isEmpty()) {
+            System.out.println("yo");
             editDetailsClick();
-            detailsInfoIsValid();
+            saveDetailsClick();
             return false;
         }
         return true;
