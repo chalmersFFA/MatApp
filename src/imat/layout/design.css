@@ -42,7 +42,7 @@
     -fx-background-color: green;
 }
 .subCategorySelected {
-    -fx-background-color: #939393;
+    -fx-background-color: rgb(255, 50, 50);
 }
 .mainCategorySelected {
     -fx-background-color: #a3a3a3;
