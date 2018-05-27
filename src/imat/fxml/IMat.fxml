@@ -22,7 +22,7 @@
                <font>
                   <Font size="20.0" />
                </font></TextField>
-            <ImageView fitHeight="24.0" fitWidth="26.0" layoutX="754.0" layoutY="29.0" onMouseClicked="#search" opacity="0.76" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="26.0" AnchorPane.rightAnchor="643.0">
+            <ImageView fitHeight="24.0" fitWidth="26.0" layoutX="754.0" layoutY="29.0" onMouseClicked="#search" opacity="0.76" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="26.0" AnchorPane.rightAnchor="651.0">
                <image>
                   <Image url="@../layout/images/search.png" />
                </image>
