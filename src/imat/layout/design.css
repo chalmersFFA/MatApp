@@ -1,6 +1,10 @@
 .normal-text {
     -fx-font-size: 1.5em;
 }
+.smaller-normal-text {
+    -fx-font-size: 1.25em;
+}
+
 .right-text {
     -fx-text-alignment: right;
 }

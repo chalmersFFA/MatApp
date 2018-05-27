@@ -90,13 +90,13 @@ public class MyDetails extends AnchorPane {
     Tooltip errorCity = new Tooltip("Den ort du bor i, T.ex. Göteborg");
     Tooltip errorPhoneNumber = new Tooltip("Fältet får bara innehålla siffror, T.ex. 0701231234");
 
-    Tooltip errorCVCSaved = new Tooltip("Fältet måste enbart innehålla tre siffror");
+    Tooltip errorCVCSaved = new Tooltip("Fältet måste enbart innehålla tre siffror och måste matcha det sparade kortets kod");
     Tooltip errorCardName = new Tooltip("Fältet får bara innehålla bokstäver, T.ex. Hjördis Svensson");
     Tooltip errorCardNumber = new Tooltip("Varje ruta måste ernbart innehålla fyra siffror var, hittas på framsidan av ditt betalkort");
     Tooltip errorExpiryMonth = new Tooltip("Månaden på året ditt kort går ut, hittas på framsidan av ditt betalkort");
     Tooltip errorExpiryYear = new Tooltip("Året ditt kort går ut, hittas på framsidan av ditt betalkort");
     Tooltip errorCVCNew = new Tooltip("Fältet måste enbart innehålla tre siffror");
-
+    //Tooltip errorCVCWrong = new Tooltip("Fältet måste enbart innehålla tre siffror och måste matcha det sparade kortets kod");
 
 
 
@@ -146,6 +146,7 @@ public class MyDetails extends AnchorPane {
             verified = true;
         } else {
             produceError(verifyVerificationTextField, errorS1);
+
         }
     }
 
@@ -208,7 +209,6 @@ public class MyDetails extends AnchorPane {
         parentController.addToolTip(errorB3, errorExpiryMonth, tooltipDelay);
         parentController.addToolTip(errorB4, errorExpiryYear, tooltipDelay);
         parentController.addToolTip(errorB5, errorCVCNew, tooltipDelay);
-
     }
 
     public void resetDetails() {
@@ -292,6 +292,7 @@ public class MyDetails extends AnchorPane {
 
     @FXML
     private void editDetailsClick() {
+        System.out.println("yes");
         toggleDetailsEdit(true);
     }
 
@@ -346,7 +347,6 @@ public class MyDetails extends AnchorPane {
 
             @Override
             public void changed(ObservableValue<? extends Toggle> observable, Toggle oldValue, Toggle newValue) {
-
                 if (cardChoice.getSelectedToggle() != null) {
                     RadioButton selected = (RadioButton) cardChoice.getSelectedToggle();
                     if(selected.equals(changeCardRadioButton)) {
@@ -392,7 +392,7 @@ public class MyDetails extends AnchorPane {
         String tempCardNumber = "";
         for(int i = 0; i < creditCard.getCardNumber().length(); i++) {
             if(i < creditCard.getCardNumber().length() - 4)
-                tempCardNumber += "X";
+                tempCardNumber += "x";
             else
                 tempCardNumber += creditCard.getCardNumber().charAt(i);
         }
@@ -403,7 +403,7 @@ public class MyDetails extends AnchorPane {
     }
 
     @FXML
-    private void saveCardClick() {
+    public void saveCardClick() {
         if(cardInfoIsValid()) {
             saveCard();
             loadSavedCard();
@@ -428,7 +428,7 @@ public class MyDetails extends AnchorPane {
             valid = false;
             produceError(cardVerificationTextField, errorB5);
         }
-        if(cardHolderTextField.getText().length() <= 0) {
+        if(cardHolderTextField.getText().length() <= 0 && isLetter(cardHolderTextField.getText())) {
             valid = false;
             produceError(cardHolderTextField, errorB1);
         }
@@ -463,14 +463,14 @@ public class MyDetails extends AnchorPane {
         return valid;
     }
 
-    private boolean detailsInfoIsValid() {
+    public boolean detailsInfoIsValid() {
         resetDetailsErrors();
         boolean valid = true;
-        if(firstNameTextField.getText().length() == 0) {
+        if(firstNameTextField.getText().length() == 0 && isLetter(firstNameTextField.getText())) {
             valid = false;
             produceError(firstNameTextField, errorD1);
         }
-        if(lastNameTextField.getText().length() == 0) {
+        if(lastNameTextField.getText().length() == 0 && isLetter(lastNameTextField.getText())) {
             valid = false;
             produceError(lastNameTextField, errorD2);
         }
@@ -497,6 +497,17 @@ public class MyDetails extends AnchorPane {
         if(!valid)
             errorLabelD.setVisible(true);
         return valid;
+    }
+
+    public boolean detailsIsValid() {
+        if(customer.getFirstName().isEmpty() || customer.getLastName().isEmpty() || customer.getAddress().isEmpty() ||
+                customer.getEmail().isEmpty() || customer.getPhoneNumber().isEmpty() || customer.getPostAddress().isEmpty()
+                || customer.getPostCode().isEmpty()) {
+            editDetailsClick();
+            detailsInfoIsValid();
+            return false;
+        }
+        return true;
     }
 
 
@@ -590,5 +601,17 @@ public class MyDetails extends AnchorPane {
 
     public boolean isVerified() {
         return verified;
+    }
+
+    public boolean otherCardSelected(){
+        if (cardChoice.getSelectedToggle() != null) {
+            RadioButton selected = (RadioButton) cardChoice.getSelectedToggle();
+            if(selected.equals(changeCardRadioButton)) {
+                return true;
+            } else {
+                return false;
+            }
+        }
+        return false;
     }
 }

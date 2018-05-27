@@ -134,15 +134,15 @@
                      </image>
                   </ImageView>
                   <Label fx:id="errorLabelB" layoutX="210.0" layoutY="301.0" prefHeight="114.0" prefWidth="332.0" styleClass="borders" text="Rödmarkerade fält är ej korrekt angivna. Rätta till dem och spara sedan. Håll muspekaren över de röda kryssen för hjälp." wrapText="true" AnchorPane.leftAnchor="210.0" />
-                  <AnchorPane fx:id="CVCinfo" layoutX="313.0" layoutY="187.0" prefHeight="114.0" prefWidth="229.0" styleClass="borders">
+                  <AnchorPane fx:id="CVCinfo" layoutX="313.0" layoutY="187.0" prefHeight="114.0" prefWidth="229.0" styleClass="borders" AnchorPane.rightAnchor="214.0">
                      <children>
-                        <TextArea layoutX="12.0" layoutY="14.0" prefHeight="82.0" prefWidth="172.0" text="Den tresiffriga koden på kortets baksida" wrapText="true" AnchorPane.leftAnchor="9.0">
+                        <TextArea layoutX="12.0" layoutY="14.0" prefHeight="82.0" prefWidth="172.0" text="Den tresiffriga koden på kortets baksida" wrapText="true" AnchorPane.leftAnchor="-1.0">
                            <styleClass>
                               <String fx:value="textFieldBackground" />
                               <String fx:value="normal-text" />
                            </styleClass>
                         </TextArea>
-                        <ImageView fitHeight="82.0" fitWidth="64.0" layoutX="195.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true" AnchorPane.rightAnchor="0.0">
+                        <ImageView fitHeight="82.0" fitWidth="64.0" layoutX="195.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true" AnchorPane.rightAnchor="5.0">
                            <image>
                               <Image url="@../layout/images/CVC.png" />
                            </image>
@@ -181,15 +181,15 @@
          </children>
       </AnchorPane>
       <Label fx:id="errorLabelD" layoutX="167.0" layoutY="404.0" prefHeight="114.0" prefWidth="332.0" styleClass="borders" text="Rödmarkerade fält är ej korrekt angivna. Rätta till dem och spara sedan. Håll muspekaren över de röda kryssen för hjälp." wrapText="true" />
-      <AnchorPane fx:id="CVCinfoS" layoutX="458.0" layoutY="252.0" prefHeight="114.0" prefWidth="229.0" styleClass="borders" AnchorPane.leftAnchor="860.0" AnchorPane.topAnchor="270.0">
+      <AnchorPane fx:id="CVCinfoS" layoutX="458.0" layoutY="252.0" prefHeight="114.0" prefWidth="229.0" styleClass="borders" AnchorPane.rightAnchor="6.0" AnchorPane.topAnchor="270.0">
          <children>
-            <TextArea layoutX="12.0" layoutY="14.0" prefHeight="82.0" prefWidth="172.0" text="Den tresiffriga koden på kortets baksida" wrapText="true" AnchorPane.leftAnchor="9.0">
+            <TextArea layoutX="12.0" layoutY="14.0" prefHeight="82.0" prefWidth="172.0" text="Den tresiffriga koden på kortets baksida" wrapText="true" AnchorPane.leftAnchor="-1.0">
                <styleClass>
                   <String fx:value="textFieldBackground" />
                   <String fx:value="normal-text" />
                </styleClass>
             </TextArea>
-            <ImageView fitHeight="82.0" fitWidth="64.0" layoutX="195.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true" AnchorPane.rightAnchor="0.0">
+            <ImageView fitHeight="82.0" fitWidth="64.0" layoutX="195.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true" AnchorPane.rightAnchor="5.0">
                <image>
                   <Image url="@../layout/images/CVC.png" />
                </image>

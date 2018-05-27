@@ -141,6 +141,7 @@ public class IMatController extends VBox implements Initializable {
 
         setGlobalEventHandler(searchTextField);
 
+        db.reset();
     }
 
     private void initProducts() {
@@ -393,7 +394,6 @@ public class IMatController extends VBox implements Initializable {
     }
 
     public void toggleShoppingMode() {
-
         myDetails.loadShoppingVersion();
         shoppingCartController.update();
         displayPane.toBack();

@@ -32,6 +32,8 @@ public class CheckoutController2 extends AnchorPane{
     ComboBox dayCombo, monthCombo, timeCombo;
     @FXML
     ImageView timeError, dayError, monthError;
+    @FXML
+    Label deliveryError;
     private Image errorImage = new Image("imat/layout/images/redCross.png");
 
     Tooltip dayErrorTooltip = new Tooltip("Välj en dag");
@@ -68,7 +70,7 @@ public class CheckoutController2 extends AnchorPane{
 
     private void comboRefresh(){
         dayCombo.getItems().clear();
-        dayCombo.getItems().addAll("25","26","27","28","29","30","31");
+        dayCombo.getItems().addAll("30","31");
         monthCombo.getItems().clear();
         monthCombo.getItems().add("Maj");
         timeCombo.getItems().clear();
@@ -86,6 +88,8 @@ public class CheckoutController2 extends AnchorPane{
         timeError.setImage(errorImage);
         timeError.setVisible(false);
         timeCombo.getStyleClass().removeAll("badComboBox");
+
+        deliveryError.setVisible(false);
     }
 
     public void refreshSequenceMap() {
@@ -107,13 +111,15 @@ public class CheckoutController2 extends AnchorPane{
 
     @FXML
     public void nextButton() {
-        if((dayCombo.getSelectionModel().getSelectedItem() != null) && (monthCombo.getSelectionModel().getSelectedItem() != null) && (timeCombo.getSelectionModel().getSelectedItem() != null) && myDetails.isVerified()){
+        if(myDetails.detailsIsValid() && (dayCombo.getSelectionModel().getSelectedItem() != null) && (monthCombo.getSelectionModel().getSelectedItem() != null) &&
+                (timeCombo.getSelectionModel().getSelectedItem() != null) && myDetails.isVerified()){
             parentController.setDeliveryTime(dayCombo.getSelectionModel().getSelectedItem().toString() + " " + monthCombo.getSelectionModel().getSelectedItem().toString() + " " + timeCombo.getSelectionModel().getSelectedItem().toString());
             parentController.toFinalPaymentStep();
         }else{
             if(dayCombo.getSelectionModel().getSelectedItem() == null){
                 dayError.setVisible(true);
                 dayCombo.getStyleClass().add("badComboBox");
+                deliveryError.setVisible(true);
             }else{
                 dayError.setVisible(false);
                 dayCombo.getStyleClass().removeAll("badComboBox");
@@ -121,6 +127,7 @@ public class CheckoutController2 extends AnchorPane{
             if(monthCombo.getSelectionModel().getSelectedItem() == null){
                 monthError.setVisible(true);
                 monthCombo.getStyleClass().add("badComboBox");
+                deliveryError.setVisible(true);
             }else{
                 monthError.setVisible(false);
                 monthCombo.getStyleClass().removeAll("badComboBox");
@@ -128,12 +135,15 @@ public class CheckoutController2 extends AnchorPane{
             if(timeCombo.getSelectionModel().getSelectedItem() == null){
                 timeError.setVisible(true);
                 timeCombo.getStyleClass().add("badComboBox");
+                deliveryError.setVisible(true);
             }else{
                 timeError.setVisible(false);
                 timeCombo.getStyleClass().removeAll("badComboBox");
             }
-            if(!myDetails.isVerified())
+            if(!myDetails.isVerified() && !myDetails.otherCardSelected())
                 myDetails.produceVerifyError();
+            else
+                myDetails.saveCardClick();
         }
 
     }
