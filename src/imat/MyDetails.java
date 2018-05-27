@@ -80,12 +80,25 @@ public class MyDetails extends AnchorPane {
     @FXML
     Label errorLabelD, errorLabelB;
 
-    Tooltip errorFirstName = new Tooltip("Fältet får bara innehålla bokstäver, T.ex Hjördis");
-    Tooltip errorLastName = new Tooltip("Fältet får bara innehålla bokstäver, T.ex Svensson");
+    private static final int tooltipDelay = 500;
+
+    Tooltip errorFirstName = new Tooltip("Fältet får bara innehålla bokstäver, T.ex. Hjördis");
+    Tooltip errorLastName = new Tooltip("Fältet får bara innehålla bokstäver, T.ex. Svensson");
     Tooltip errorEmail = new Tooltip("Skriv in din e-postadress, T.ex. hjordis@hotmail.com");
-    Tooltip errorAddress = new Tooltip("Skriv på formatet #####, bara siffror");
+    Tooltip errorAddress = new Tooltip("Skriv in din adress, T.ex. Bovägen 123");
+    Tooltip errorPostalCode = new Tooltip("Skriv på formatet #####, bara siffror");
     Tooltip errorCity = new Tooltip("Den ort du bor i, T.ex. Göteborg");
-    Tooltip errorPhoneNumber = new Tooltip("Fältet får bara innehålla siffror, T.ex 0701231234");
+    Tooltip errorPhoneNumber = new Tooltip("Fältet får bara innehålla siffror, T.ex. 0701231234");
+
+    Tooltip errorCVCSaved = new Tooltip("Fältet måste enbart innehålla tre siffror");
+    Tooltip errorCardName = new Tooltip("Fältet får bara innehålla bokstäver, T.ex. Hjördis Svensson");
+    Tooltip errorCardNumber = new Tooltip("Varje ruta måste ernbart innehålla fyra siffror var, hittas på framsidan av ditt betalkort");
+    Tooltip errorExpiryMonth = new Tooltip("Månaden på året ditt kort går ut, hittas på framsidan av ditt betalkort");
+    Tooltip errorExpiryYear = new Tooltip("Året ditt kort går ut, hittas på framsidan av ditt betalkort");
+    Tooltip errorCVCNew = new Tooltip("Fältet måste enbart innehålla tre siffror");
+
+
+
 
 
     public MyDetails(IMatController parentController) {
@@ -180,6 +193,21 @@ public class MyDetails extends AnchorPane {
         errorB4.setImage(errorImage);
         errorB5.setImage(errorImage);
         errorS1.setImage(errorImage);
+
+        parentController.addToolTip(errorD1, errorFirstName, tooltipDelay);
+        parentController.addToolTip(errorD2, errorLastName, tooltipDelay);
+        parentController.addToolTip(errorD3, errorEmail, tooltipDelay);
+        parentController.addToolTip(errorD4, errorAddress, tooltipDelay);
+        parentController.addToolTip(errorD5, errorPostalCode, tooltipDelay);
+        parentController.addToolTip(errorD6, errorCity, tooltipDelay);
+        parentController.addToolTip(errorD7, errorPhoneNumber, tooltipDelay);
+
+        parentController.addToolTip(errorS1, errorCVCSaved, tooltipDelay);
+        parentController.addToolTip(errorB1, errorCardName, tooltipDelay);
+        parentController.addToolTip(errorB2, errorCardNumber, tooltipDelay);
+        parentController.addToolTip(errorB3, errorExpiryMonth, tooltipDelay);
+        parentController.addToolTip(errorB4, errorExpiryYear, tooltipDelay);
+        parentController.addToolTip(errorB5, errorCVCNew, tooltipDelay);
 
     }
 
