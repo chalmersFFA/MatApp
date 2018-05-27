@@ -301,7 +301,6 @@ public class MyDetails extends AnchorPane {
 
     @FXML
     private void editDetailsClick() {
-        System.out.println("yes");
         toggleDetailsEdit(true);
     }
 
