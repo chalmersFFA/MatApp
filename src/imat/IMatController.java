@@ -8,7 +8,6 @@ import javafx.fxml.Initializable;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Node;
-import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.control.Tooltip;
@@ -20,7 +19,6 @@ import javafx.scene.layout.*;
 import javafx.util.Duration;
 import se.chalmers.cse.dat216.project.*;
 
-import javax.tools.Tool;
 import java.lang.reflect.Field;
 import java.net.URL;
 import java.util.*;
@@ -211,6 +209,7 @@ public class IMatController extends VBox implements Initializable {
         mainFlowPane.toFront();
         mainFlowPane.getChildren().clear();
         mainFlowPane.getChildren().add(myDetails);
+        myDetails.update();
         mainFlowPane.setAlignment(Pos.TOP_CENTER);
         myDetails.resetDetails();
         currentSiteLabel.setText("Mitt Konto");
@@ -350,6 +349,7 @@ public class IMatController extends VBox implements Initializable {
 
     private void toggleCheckoutMode() {
         myDetails.loadCheckoutVersion();
+        myDetails.update();
         toCheckout1();
     }
 
@@ -372,6 +372,7 @@ public class IMatController extends VBox implements Initializable {
         checkoutController2.update();
         bigHBox.toBack();
         displayPane.toFront();
+        myDetails.update();
     }
 
     public void toFinalPaymentStep() {
