@@ -117,7 +117,14 @@
     -fx-font-size: 28px;
 }
 .shoppingItem{
-
+    -fx-background-color: rgb(230,230,230);
+    -fx-border-width: 1px;
+    -fx-border-color: #999999;
+    -fx-border-radius: 1px;
+    -fx-background-radius: 1px;
+}
+.shoppingItem:hover{
+    -fx-background-color: rgb(235,235,235);
 }
 .backbutton{
     -fx-text-fill: #4141EF;
