@@ -65,7 +65,7 @@
             <Image url="@../layout/images/redCross.png" />
          </image>
       </ImageView>
-      <Label fx:id="deliveryError" layoutX="126.0" layoutY="751.0" prefHeight="90.0" prefWidth="370.0" text="Vänligen välj ett leveransdatum med hjälp av rullgardinsmenyerna ovan" wrapText="true">
+      <Label fx:id="deliveryError" layoutX="121.0" layoutY="748.0" prefHeight="90.0" prefWidth="369.0" text="Vänligen välj ett leveransdatum med hjälp av rullgardinsmenyerna ovan" wrapText="true">
          <styleClass>
             <String fx:value="borders" />
             <String fx:value="normal-text" />

@@ -28,6 +28,7 @@ public class MyDetails extends AnchorPane {
     private CreditCard creditCard = db.getCreditCard();
     private Image errorImage = new Image("imat/layout/images/redCross.png");
     boolean verified = false;
+    boolean shoppingVersion;
 
     @FXML
     Button backButton;
@@ -138,38 +139,50 @@ public class MyDetails extends AnchorPane {
 
     @FXML
     private void verifyCVC() {
-        System.out.println(creditCard.getVerificationCode());
-        if(verifyVerificationTextField.getText().equals(Integer.toString(creditCard.getVerificationCode()))) {
-            verifyVerificationTextField.setDisable(true);
-            verifyCardButton.setVisible(false);
-            removeError(verifyVerificationTextField, errorS1);
-            verified = true;
-        } else {
-            produceError(verifyVerificationTextField, errorS1);
+        if(!shoppingVersion){
+            System.out.println(creditCard.getVerificationCode());
+            if(verifyVerificationTextField.getText().equals(Integer.toString(creditCard.getVerificationCode()))) {
+                verifyVerificationTextField.setDisable(true);
+                verifyCardButton.setVisible(false);
+                removeError(verifyVerificationTextField, errorS1);
+                verified = true;
+            } else {
+                produceError(verifyVerificationTextField, errorS1);
 
+            }
         }
     }
 
 
     public void loadShoppingVersion() {
+        shoppingVersion = true;
         savedCardAnchorPane.setStyle("-fx-border-color: #d3d3d3");
         savedCardExtendedAnchorPane.setVisible(false);
         verifyVerificationLabel.setVisible(false);
         verifyVerificationTextField.setVisible(false);
         removeError(verifyVerificationTextField, errorS1);
         helpCVCS.setVisible(false);
-
-
     }
 
     public void loadCheckoutVersion() {
+        shoppingVersion = false;
         savedCardAnchorPane.setStyle("-fx-border-color: white");
         savedCardExtendedAnchorPane.setVisible(true);
         verifyVerificationLabel.setVisible(true);
         verifyVerificationTextField.setVisible(true);
         helpCVCS.setVisible(true);
-
         resetSavedCard();
+        System.out.println(db.getCreditCard().getHoldersName());
+    }
+
+    public void update(){
+        if (db.getCreditCard().getHoldersName().equals("")){
+            changeCardRadioButton.setSelected(true);
+            changeCard();
+            toggleCardEdit(true);
+        }
+        resetCardErrors();
+        resetDetailsErrors();
     }
 
     private void registerListener(TextField tf1, TextField tf2) {
@@ -367,6 +380,17 @@ public class MyDetails extends AnchorPane {
         toggleCardEdit(true);
     }
 
+    private void clearChangeCardFields(){
+        card1.clear();
+        card2.clear();
+        card3.clear();
+        card4.clear();
+        cardHolderTextField.clear();
+        cardValidMonthComboBox.getSelectionModel().clearSelection();
+        cardValidYearComboBox.getSelectionModel().clearSelection();
+        cardVerificationTextField.clear();
+    }
+
     private void toggleCardEdit(boolean b) {
         newCardAnchorPane.setVisible(b);
 
@@ -381,8 +405,7 @@ public class MyDetails extends AnchorPane {
         resetSavedCard();
         verifyVerificationTextField.setText(Integer.toString(creditCard.getVerificationCode()));
         verifyCVC();
-        System.out.println("yoooo");
-
+        clearChangeCardFields();
     }
 
 

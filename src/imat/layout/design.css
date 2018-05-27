@@ -269,3 +269,6 @@
 .text_opacity{
     -fx-opacity: 0.9;
 }
+.sequence_text{
+    -fx-font-size: 26px;
+}
