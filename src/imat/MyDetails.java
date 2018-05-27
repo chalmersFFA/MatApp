@@ -510,7 +510,8 @@ public class MyDetails extends AnchorPane {
             valid = false;
             produceError(postAddressTextField, errorD6);
         }
-        if(!isDigit(postCodeTextField.getText()) || postCodeTextField.getText().length() != 5) {
+        if((!isDigit(postCodeTextField.getText().substring(0,3)) || (!isDigit(postCodeTextField.getText().substring(postCodeTextField.getText().length()-2))))
+                || (postCodeTextField.getText().length() != 5 && postCodeTextField.getText().length() != 6)) {
             valid = false;
             produceError(postCodeTextField, errorD5);
         }
