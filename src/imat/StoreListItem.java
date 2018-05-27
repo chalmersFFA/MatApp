@@ -125,7 +125,7 @@ public class StoreListItem extends AnchorPane implements ShoppingCartListener {
         for(ShoppingItem s : shoppingCart.getItems()){
             if(s.getProduct().getName().equals(product.getName())){
                 if(s.getProduct().getUnitSuffix().equals("kg") || s.getProduct().getUnitSuffix().equals("l") ){
-                    s.setAmount(s.getAmount()+0.1);
+                    s.setAmount((double)(s.getAmount()*10+1.0)/10.0);
                 }
                 else{    
                     s.setAmount(s.getAmount()+1);
@@ -152,7 +152,7 @@ public class StoreListItem extends AnchorPane implements ShoppingCartListener {
         for(ShoppingItem s : shoppingCart.getItems()){
             if(s.getProduct().getName().equals(product.getName())){
                 if(s.getProduct().getUnitSuffix().equals("kg") || s.getProduct().getUnitSuffix().equals("l") ){
-                    s.setAmount(s.getAmount()-0.1);
+                    s.setAmount((double)(s.getAmount()*10-1.0)/10.0);
                 }
                 else{
                     s.setAmount(s.getAmount()-1);
