@@ -17,22 +17,12 @@ public class MainCategoryStrategy implements CategoryStrategy {
             parentController.collapseCategory(c);
             parentController.deSelectCategory(c);
             c.getArrowImageView().setImage(new Image("imat/layout/images/arrow_forward.png"));
-            //System.out.println("nu stänger jag");
         }
         else {
             c.setExpanded(true);
             parentController.expandCategory(c);
             parentController.selectCategory(c);
-            /*for(CategoryItem s : c.getSubCategories()) {
-                if(s == parentController.getCurrentExpandedSub()) {
-                    parentController.selectCategory(s);
-                }
-                else {
-                    parentController.deSelectCategory(s);
-                }
-            }*/
             c.getArrowImageView().setImage(new Image("imat/layout/images/arrow_downward.png"));
-            //System.out.println("nu öppnar jag");
             parentController.clearProductList();
 
             switch(c.getDisplayName()){
