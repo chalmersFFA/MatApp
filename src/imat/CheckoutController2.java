@@ -32,6 +32,8 @@ public class CheckoutController2 extends AnchorPane{
     ComboBox dayCombo, monthCombo, timeCombo;
     @FXML
     ImageView timeError, dayError, monthError;
+    @FXML
+    Label deliveryError;
     private Image errorImage = new Image("imat/layout/images/redCross.png");
 
     Tooltip dayErrorTooltip = new Tooltip("Välj en dag");
@@ -86,6 +88,8 @@ public class CheckoutController2 extends AnchorPane{
         timeError.setImage(errorImage);
         timeError.setVisible(false);
         timeCombo.getStyleClass().removeAll("badComboBox");
+
+        deliveryError.setVisible(false);
     }
 
     public void refreshSequenceMap() {
@@ -115,6 +119,7 @@ public class CheckoutController2 extends AnchorPane{
             if(dayCombo.getSelectionModel().getSelectedItem() == null){
                 dayError.setVisible(true);
                 dayCombo.getStyleClass().add("badComboBox");
+                deliveryError.setVisible(true);
             }else{
                 dayError.setVisible(false);
                 dayCombo.getStyleClass().removeAll("badComboBox");
@@ -122,6 +127,7 @@ public class CheckoutController2 extends AnchorPane{
             if(monthCombo.getSelectionModel().getSelectedItem() == null){
                 monthError.setVisible(true);
                 monthCombo.getStyleClass().add("badComboBox");
+                deliveryError.setVisible(true);
             }else{
                 monthError.setVisible(false);
                 monthCombo.getStyleClass().removeAll("badComboBox");
@@ -129,6 +135,7 @@ public class CheckoutController2 extends AnchorPane{
             if(timeCombo.getSelectionModel().getSelectedItem() == null){
                 timeError.setVisible(true);
                 timeCombo.getStyleClass().add("badComboBox");
+                deliveryError.setVisible(true);
             }else{
                 timeError.setVisible(false);
                 timeCombo.getStyleClass().removeAll("badComboBox");
