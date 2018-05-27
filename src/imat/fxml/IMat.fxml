@@ -1,5 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 <?import java.lang.String?>
 <?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Label?>
@@ -14,7 +20,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox stylesheets="@../layout/design.css" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="imat.IMatController">
+<VBox stylesheets="@../layout/design.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="imat.IMatController">
    <children>
       <AnchorPane id="headerStyle" fx:id="headerAnchorPane" prefHeight="75.0" prefWidth="1127.0" stylesheets="@../layout/design.css">
          <children>
@@ -22,7 +28,7 @@
                <font>
                   <Font size="20.0" />
                </font></TextField>
-            <ImageView fitHeight="24.0" fitWidth="26.0" layoutX="754.0" layoutY="29.0" onMouseClicked="#search" opacity="0.76" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="26.0" AnchorPane.rightAnchor="643.0">
+            <ImageView fitHeight="24.0" fitWidth="26.0" layoutX="754.0" layoutY="29.0" onMouseClicked="#search" opacity="0.76" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="26.0" AnchorPane.rightAnchor="651.0">
                <image>
                   <Image url="@../layout/images/search.png" />
                </image>
@@ -94,7 +100,7 @@
             </Label>
             <ImageView fx:id="logoImageView" fitHeight="57.0" fitWidth="109.0" layoutX="9.0" layoutY="17.0" onMouseClicked="#escapeHatch" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="13.25" AnchorPane.leftAnchor="7.0" AnchorPane.topAnchor="15.0">
                <image>
-                  <Image url="@../layout/images/iMat_logo_final.png" />
+                  <Image url="@../layout/images/iMat_logo_final_handicap_light.png" />
                </image>
                <cursor>
                   <Cursor fx:constant="HAND" />
