@@ -93,7 +93,7 @@ public class MyDetails extends AnchorPane {
 
     Tooltip errorCVCSaved = new Tooltip("Fältet måste enbart innehålla tre siffror och måste matcha det sparade kortets kod");
     Tooltip errorCardName = new Tooltip("Fältet får bara innehålla bokstäver, T.ex. Hjördis Svensson");
-    Tooltip errorCardNumber = new Tooltip("Varje ruta måste ernbart innehålla fyra siffror var, hittas på framsidan av ditt betalkort");
+    Tooltip errorCardNumber = new Tooltip("Varje ruta måste enbart innehålla fyra siffror var, hittas på framsidan av ditt betalkort");
     Tooltip errorExpiryMonth = new Tooltip("Månaden på året ditt kort går ut, hittas på framsidan av ditt betalkort");
     Tooltip errorExpiryYear = new Tooltip("Året ditt kort går ut, hittas på framsidan av ditt betalkort");
     Tooltip errorCVCNew = new Tooltip("Fältet måste enbart innehålla tre siffror");
