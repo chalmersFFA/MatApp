@@ -52,11 +52,7 @@
             <Font size="22.0" />
          </font>
       </Label>
-      <ImageView fx:id="ecoImageView" fitHeight="35.0" fitWidth="35.0" layoutX="46.0" layoutY="133.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../layout/images/svanen.png" />
-         </image>
-      </ImageView>
+      <ImageView fx:id="ecoImageView" fitHeight="35.0" fitWidth="35.0" layoutX="46.0" layoutY="133.0" pickOnBounds="true" preserveRatio="true" />
    </children>
    <styleClass>
       <String fx:value="static_object_hinting" />

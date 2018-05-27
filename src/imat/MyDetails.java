@@ -222,7 +222,6 @@ public class MyDetails extends AnchorPane {
         parentController.addToolTip(errorB3, errorExpiryMonth, tooltipDelay);
         parentController.addToolTip(errorB4, errorExpiryYear, tooltipDelay);
         parentController.addToolTip(errorB5, errorCVCNew, tooltipDelay);
-
     }
 
     public void resetDetails() {
@@ -361,7 +360,6 @@ public class MyDetails extends AnchorPane {
 
             @Override
             public void changed(ObservableValue<? extends Toggle> observable, Toggle oldValue, Toggle newValue) {
-
                 if (cardChoice.getSelectedToggle() != null) {
                     RadioButton selected = (RadioButton) cardChoice.getSelectedToggle();
                     if(selected.equals(changeCardRadioButton)) {
@@ -417,7 +415,7 @@ public class MyDetails extends AnchorPane {
         String tempCardNumber = "";
         for(int i = 0; i < creditCard.getCardNumber().length(); i++) {
             if(i < creditCard.getCardNumber().length() - 4)
-                tempCardNumber += "X";
+                tempCardNumber += "x";
             else
                 tempCardNumber += creditCard.getCardNumber().charAt(i);
         }

@@ -68,6 +68,7 @@ public class StoreListItem extends AnchorPane implements ShoppingCartListener {
         String ecoImagePath = "layout/images/svanen.png";
         if (product.isEcological()) {
             ecoImageView.setImage(new Image("imat/layout/images/svanen.png"));
+            ecoImageView.setVisible(true);
         }
 
         updateFavourite();
