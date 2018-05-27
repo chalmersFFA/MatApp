@@ -5,14 +5,14 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<fx:root id="Content" minHeight="-1.0" minWidth="-1.0" prefHeight="700.0" prefWidth="700.0" stylesheets="@../layout/design.css" type="AnchorPane" xmlns="http://javafx.com/javafx/9.0.4" xmlns:fx="http://javafx.com/fxml/1">
+<fx:root id="Content" minHeight="-1.0" minWidth="-1.0" prefHeight="700.0" prefWidth="700.0" stylesheets="@../layout/design.css" type="AnchorPane" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1">
     <children>
         <Label alignment="CENTER" layoutX="14.0" layoutY="14.0" style="&#10;" text="Livsmedel online" textAlignment="CENTER" textFill="#f50909" wrapText="false">
             <font>
                 <Font size="49.0" fx:id="x5" />
             </font>
         </Label>
-        <TextArea editable="false" layoutX="13.0" layoutY="69.0" prefHeight="463.0" prefWidth="538.0" styleClass="textFieldBackground" stylesheets="@../layout/design.css" text="Välkommen till iMat, en tjänst som tillåter dig att handla livsmedel online. Nedan följer lite information om hur du använder dig av sidan och du kan alltid återvända hit genom att klicka på [Hjälp] uppe i högra hörnet.&#10;&#10;Till vänster ser du kategorier, där kan du välja från ett urval inom samma kategori. Till höger ser du din varukorg som uppdateras under shoppingens gång och längst upp på sidan har du möjlighet att söka efter varor, se din orderhistorik, se och redigera uppgifter och se dina favoritmarkerade varor.&#10;&#10;Ha en trevlig dag och shoppingtur!" wrapText="true" AnchorPane.leftAnchor="13.0" AnchorPane.rightAnchor="13.0">
+        <TextArea editable="false" layoutX="13.0" layoutY="69.0" prefHeight="463.0" prefWidth="538.0" styleClass="textFieldBackground" stylesheets="@../layout/design.css" text="Välkommen till iMat, en tjänst som tillåter dig att handla livsmedel online. Nedan följer lite information om hur du använder dig av sidan och du kan alltid återvända hit genom att klicka på [Hjälp] uppe i högra hörnet.&#10;&#10;Till vänster ser du kategorier, där kan du välja från ett urval inom samma kategori. Till höger ser du din varukorg som uppdateras under shoppingens gång och längst upp på sidan har du möjlighet att söka efter varor via sökrutan. Längst upp på sidan kan du också klicka på [Orderhistorik] för att se din orderhistorik, se och redigera uppgifter genom att klicka på [Mitt konto] och se dina favoritmarkerade varor genom att klicka på [Favoritvaror].&#10;&#10;Ha en trevlig dag och shoppingtur!" wrapText="true" AnchorPane.leftAnchor="13.0" AnchorPane.rightAnchor="13.0">
          <font>
             <Font size="20.0" />
          </font></TextArea>
