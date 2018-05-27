@@ -17,7 +17,7 @@ public class MainCategoryStrategy implements CategoryStrategy {
             parentController.collapseCategory(c);
             parentController.deSelectCategory(c);
             c.getArrowImageView().setImage(new Image("imat/layout/images/arrow_forward.png"));
-            System.out.println("nu stänger jag");
+            //System.out.println("nu stänger jag");
         }
         else {
             c.setExpanded(true);
@@ -32,12 +32,15 @@ public class MainCategoryStrategy implements CategoryStrategy {
                 }
             }*/
             c.getArrowImageView().setImage(new Image("imat/layout/images/arrow_downward.png"));
-            System.out.println("nu öppnar jag");
+            //System.out.println("nu öppnar jag");
             parentController.clearProductList();
+
             switch(c.getDisplayName()){
                 case("Drycker"):
                     parentController.updateProductList(ProductCategory.COLD_DRINKS);
                     parentController.updateProductList(ProductCategory.HOT_DRINKS);
+
+                    parentController.setCurrentSiteLabel("Kategori: " + c.getDisplayName());
                     break;
                 case("Frukt och grönt"):
                     parentController.updateProductList(ProductCategory.VEGETABLE_FRUIT);
@@ -49,15 +52,21 @@ public class MainCategoryStrategy implements CategoryStrategy {
                     parentController.updateProductList(ProductCategory.CITRUS_FRUIT);
                     parentController.updateProductList(ProductCategory.BERRY);
                     parentController.updateProductList(ProductCategory.POD);
+
+                    parentController.setCurrentSiteLabel("Kategori: " + c.getDisplayName());
                     break;
                 case("Potatis, Ris och Pasta"):
                     parentController.updateProductList(ProductCategory.POTATO_RICE);
                     parentController.updateProductList(ProductCategory.PASTA);
+
+                    parentController.setCurrentSiteLabel("Kategori: " + c.getDisplayName());
                     break;
                 case("Skafferi"):
                     parentController.updateProductList(ProductCategory.HERB);
                     parentController.updateProductList(ProductCategory.NUTS_AND_SEEDS);
                     parentController.updateProductList(ProductCategory.FLOUR_SUGAR_SALT);
+
+                    parentController.setCurrentSiteLabel("Kategori: " + c.getDisplayName());
                     break;
             }
         }
