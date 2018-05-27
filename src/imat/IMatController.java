@@ -127,7 +127,6 @@ public class IMatController extends VBox implements Initializable {
         showShoppingCart();
         initProducts();
         initCategories();
-        db.reset();
         shoppingCart.clear();
         updateProductList(ProductCategory.BERRY);
         shoppingCart.fireShoppingCartChanged(null, false);

@@ -70,9 +70,9 @@ public class CheckoutController2 extends AnchorPane{
 
     private void comboRefresh(){
         dayCombo.getItems().clear();
-        dayCombo.getItems().addAll("30","31");
+        dayCombo.getItems().addAll("1","2","3","4","5","6","7","8","9");
         monthCombo.getItems().clear();
-        monthCombo.getItems().add("Maj");
+        monthCombo.getItems().add("Juni");
         timeCombo.getItems().clear();
         timeCombo.getItems().addAll("7:00","8:00","9:00","10:00","11:00","12:00","13:00","14:00","15:00","16:00","17:00");
     }

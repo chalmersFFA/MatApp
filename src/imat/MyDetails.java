@@ -136,7 +136,7 @@ public class MyDetails extends AnchorPane {
     @FXML
     private void verifyCVC() {
         if(!shoppingVersion){
-            System.out.println(creditCard.getVerificationCode());
+
             if(verifyVerificationTextField.getText().equals(Integer.toString(creditCard.getVerificationCode()))) {
                 verifyVerificationTextField.setDisable(true);
                 verifyCardButton.setVisible(false);
@@ -168,7 +168,7 @@ public class MyDetails extends AnchorPane {
         verifyVerificationTextField.setVisible(true);
         helpCVCS.setVisible(true);
         resetSavedCard();
-        System.out.println(db.getCreditCard().getHoldersName());
+
     }
 
     public void update(){
@@ -446,7 +446,7 @@ public class MyDetails extends AnchorPane {
             valid = false;
             produceError(cardVerificationTextField, errorB5);
         }
-        System.out.println(!isLetter(cardHolderTextField.getText()));
+
         if(cardHolderTextField.getText().length() <= 0 || !isLetter(cardHolderTextField.getText())) {
 
             valid = false;
@@ -523,7 +523,6 @@ public class MyDetails extends AnchorPane {
         if(customer.getFirstName().isEmpty() || customer.getLastName().isEmpty() || customer.getAddress().isEmpty() ||
                 customer.getEmail().isEmpty() || customer.getMobilePhoneNumber().isEmpty() || customer.getPostAddress().isEmpty()
                 || customer.getPostCode().isEmpty()) {
-            System.out.println("yo");
             editDetailsClick();
             saveDetailsClick();
             return false;
