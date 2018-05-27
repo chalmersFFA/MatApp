@@ -132,8 +132,10 @@ public class CheckoutController2 extends AnchorPane{
                 timeError.setVisible(false);
                 timeCombo.getStyleClass().removeAll("badComboBox");
             }
-            if(!myDetails.isVerified())
+            if(!myDetails.isVerified() && !myDetails.otherCardSelected())
                 myDetails.produceVerifyError();
+            else
+                myDetails.saveCardClick();
         }
 
     }

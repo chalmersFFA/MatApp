@@ -403,7 +403,7 @@ public class MyDetails extends AnchorPane {
     }
 
     @FXML
-    private void saveCardClick() {
+    public void saveCardClick() {
         if(cardInfoIsValid()) {
             saveCard();
             loadSavedCard();
@@ -590,5 +590,17 @@ public class MyDetails extends AnchorPane {
 
     public boolean isVerified() {
         return verified;
+    }
+
+    public boolean otherCardSelected(){
+        if (cardChoice.getSelectedToggle() != null) {
+            RadioButton selected = (RadioButton) cardChoice.getSelectedToggle();
+            if(selected.equals(changeCardRadioButton)) {
+                return true;
+            } else {
+                return false;
+            }
+        }
+        return false;
     }
 }
