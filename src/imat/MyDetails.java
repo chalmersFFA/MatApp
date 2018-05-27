@@ -80,6 +80,14 @@ public class MyDetails extends AnchorPane {
     @FXML
     Label errorLabelD, errorLabelB;
 
+    Tooltip errorFirstName = new Tooltip("Fältet får bara innehålla bokstäver, T.ex Hjördis");
+    Tooltip errorLastName = new Tooltip("Fältet får bara innehålla bokstäver, T.ex Svensson");
+    Tooltip errorEmail = new Tooltip("Skriv in din e-postadress, T.ex. hjordis@hotmail.com");
+    Tooltip errorAddress = new Tooltip("Skriv på formatet #####, bara siffror");
+    Tooltip errorCity = new Tooltip("Den ort du bor i, T.ex. Göteborg");
+    Tooltip errorPhoneNumber = new Tooltip("Fältet får bara innehålla siffror, T.ex 0701231234");
+
+
     public MyDetails(IMatController parentController) {
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("fxml/my_details_copy.fxml"));
         fxmlLoader.setRoot(this);
@@ -105,6 +113,7 @@ public class MyDetails extends AnchorPane {
         registerListener(card4, cardVerificationTextField);
         CVCinfo.setVisible(false);
         CVCinfoS.setVisible(false);
+
     }
 
     private void resetSavedCard() {

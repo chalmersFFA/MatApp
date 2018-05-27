@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
 <?import java.lang.String?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ComboBox?>
@@ -11,7 +15,7 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<fx:root maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseClicked="#mouseTrap" prefHeight="654.0" prefWidth="1100.0" stylesheets="@../layout/design.css" type="AnchorPane" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1">
+<fx:root maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseClicked="#mouseTrap" prefHeight="654.0" prefWidth="1100.0" stylesheets="@../layout/design.css" type="AnchorPane" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <AnchorPane layoutX="14.0" layoutY="50.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="0.0" minWidth="0.0" prefHeight="340.0" prefWidth="406.0" styleClass="normal-text" stylesheets="@../layout/design.css">
          <children>
@@ -26,8 +30,8 @@
             <Label layoutX="23.0" styleClass="big-text" text="Mina Uppgifter" AnchorPane.rightAnchor="141.0" />
             <TextField fx:id="firstNameTextField" minHeight="29.0" prefHeight="29.0" styleClass="textfield" AnchorPane.leftAnchor="155.0" AnchorPane.topAnchor="70.0" />
             <TextField fx:id="lastNameTextField" layoutX="180.0" layoutY="103.0" minHeight="29.0" prefHeight="29.0" styleClass="textfield" AnchorPane.leftAnchor="155.0" AnchorPane.topAnchor="100.0" />
-            <TextField fx:id="addressTextField" minHeight="29.0" prefHeight="29.0" styleClass="textfield" AnchorPane.leftAnchor="155.0" AnchorPane.topAnchor="160.0" />
             <TextField fx:id="emailTextField" minHeight="29.0" prefHeight="29.0" styleClass="textfield" AnchorPane.leftAnchor="155.0" AnchorPane.topAnchor="130.0" />
+            <TextField fx:id="addressTextField" minHeight="29.0" prefHeight="29.0" styleClass="textfield" AnchorPane.leftAnchor="155.0" AnchorPane.topAnchor="160.0" />
             <TextField fx:id="postCodeTextField" minHeight="29.0" prefHeight="29.0" styleClass="textfield" AnchorPane.leftAnchor="155.0" AnchorPane.topAnchor="200.0" />
             <TextField fx:id="postAddressTextField" minHeight="29.0" prefHeight="29.0" styleClass="textfield" AnchorPane.leftAnchor="155.0" AnchorPane.topAnchor="230.0" />
             <TextField fx:id="phoneNumberTextField" minHeight="29.0" prefHeight="29.0" styleClass="textfield" AnchorPane.leftAnchor="155.0" AnchorPane.topAnchor="260.0" />

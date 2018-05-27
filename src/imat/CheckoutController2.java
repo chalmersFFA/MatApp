@@ -5,6 +5,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.ComboBoxBase;
 import javafx.scene.control.Label;
+import javafx.scene.control.Tooltip;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
@@ -32,6 +33,7 @@ public class CheckoutController2 extends AnchorPane{
     @FXML
     ImageView timeError, dayError, monthError;
     private Image errorImage = new Image("imat/layout/images/redCross.png");
+
 
 
 
