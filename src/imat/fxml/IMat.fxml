@@ -114,7 +114,7 @@
                      <children>
                     <AnchorPane fx:id="categoriesAnchorPane" prefWidth="400.0" styleClass="categoriesAnchorPane">
                       <children>
-                        <Label id="kategorier" alignment="CENTER" layoutX="13.0" layoutY="10.0" minWidth="60.0" style="&#10;" styleClass="big-text" text="Kategorier" textAlignment="CENTER" textFill="WHITE" wrapText="false">
+                        <Label id="kategorier" alignment="CENTER" layoutX="13.0" layoutY="10.0" minWidth="60.0" style="&#10;" styleClass="big-text" text="Sortiment" textAlignment="CENTER" textFill="#cdcbcb" wrapText="false">
                           <font>
                             <Font size="10.0" fx:id="x1" />
                           </font>

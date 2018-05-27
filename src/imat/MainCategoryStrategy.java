@@ -40,7 +40,7 @@ public class MainCategoryStrategy implements CategoryStrategy {
                     parentController.updateProductList(ProductCategory.COLD_DRINKS);
                     parentController.updateProductList(ProductCategory.HOT_DRINKS);
 
-                    parentController.setCurrentSiteLabel("Kategori: " + c.getDisplayName());
+                    parentController.setCurrentSiteLabel(c.getDisplayName());
                     break;
                 case("Frukt och grönt"):
                     parentController.updateProductList(ProductCategory.VEGETABLE_FRUIT);
@@ -53,20 +53,20 @@ public class MainCategoryStrategy implements CategoryStrategy {
                     parentController.updateProductList(ProductCategory.BERRY);
                     parentController.updateProductList(ProductCategory.POD);
 
-                    parentController.setCurrentSiteLabel("Kategori: " + c.getDisplayName());
+                    parentController.setCurrentSiteLabel(c.getDisplayName());
                     break;
                 case("Potatis, Ris och Pasta"):
                     parentController.updateProductList(ProductCategory.POTATO_RICE);
                     parentController.updateProductList(ProductCategory.PASTA);
 
-                    parentController.setCurrentSiteLabel("Kategori: " + c.getDisplayName());
+                    parentController.setCurrentSiteLabel(c.getDisplayName());
                     break;
                 case("Skafferi"):
                     parentController.updateProductList(ProductCategory.HERB);
                     parentController.updateProductList(ProductCategory.NUTS_AND_SEEDS);
                     parentController.updateProductList(ProductCategory.FLOUR_SUGAR_SALT);
 
-                    parentController.setCurrentSiteLabel("Kategori: " + c.getDisplayName());
+                    parentController.setCurrentSiteLabel(c.getDisplayName());
                     break;
             }
         }
