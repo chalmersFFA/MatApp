@@ -448,7 +448,7 @@ public class MyDetails extends AnchorPane {
             produceError(cardVerificationTextField, errorB5);
         }
         System.out.println(!isLetter(cardHolderTextField.getText()));
-        if(cardHolderTextField.getText().length() <= 0 && !isLetter(cardHolderTextField.getText())) {
+        if(cardHolderTextField.getText().length() <= 0 || !isLetter(cardHolderTextField.getText())) {
 
             valid = false;
             produceError(cardHolderTextField, errorB1);
