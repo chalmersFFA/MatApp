@@ -533,7 +533,6 @@ public class MyDetails extends AnchorPane {
         return true;
     }
 
-
     private boolean isDigit(String s) {
         boolean b = true;
         for(int i = 0; i < s.length(); i++) {
@@ -602,8 +601,6 @@ public class MyDetails extends AnchorPane {
     public void mouseTrap(Event event){
         parentController.mouseTrap(event);
     }
-
-
 
     @FXML
     public void showCVC() {

@@ -1,5 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 <?import java.lang.String?>
 <?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
@@ -9,7 +14,7 @@
 <?import javafx.scene.layout.FlowPane?>
 <?import javafx.scene.text.Font?>
 
-<fx:root maxWidth="-Infinity" minHeight="850.0" minWidth="1200.0" prefHeight="800.0" prefWidth="1200.0" styleClass="white" stylesheets="@../layout/design.css" type="AnchorPane" xmlns="http://javafx.com/javafx/9.0.4" xmlns:fx="http://javafx.com/fxml/1">
+<fx:root maxWidth="-Infinity" minHeight="850.0" minWidth="1200.0" prefHeight="800.0" prefWidth="1200.0" styleClass="white" stylesheets="@../layout/design.css" type="AnchorPane" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <Label alignment="CENTER" contentDisplay="CENTER" layoutX="190.0" layoutY="103.0" styleClass="big-text" stylesheets="@../layout/design.css" text="Här kan du granska din order innan du går vidare till betalningssätt" AnchorPane.leftAnchor="200.0" AnchorPane.rightAnchor="200.0" />
       <Label layoutX="751.0" layoutY="725.0" styleClass="normal-text" text="Totalt:" AnchorPane.leftAnchor="751.0" />
@@ -25,7 +30,7 @@
       </ScrollPane>
       <AnchorPane layoutY="780.0" prefHeight="70.0" prefWidth="1100.0" styleClass="checkoutTopAndBottom" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
          <children>
-            <Button mnemonicParsing="false" onAction="#backButton" prefHeight="45.0" prefWidth="275.0" text="Tillbaka till shopping" AnchorPane.bottomAnchor="12.0" AnchorPane.leftAnchor="15.0">
+            <Button mnemonicParsing="false" onAction="#backButton" prefHeight="45.0" prefWidth="275.0" text="Tillbaka till Shopping" AnchorPane.bottomAnchor="12.0" AnchorPane.leftAnchor="15.0">
                <styleClass>
                   <String fx:value="backbutton" />
                   <String fx:value="big-text" />
