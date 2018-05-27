@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
 <?import java.lang.String?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ComboBox?>
@@ -11,7 +15,7 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<fx:root maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseClicked="#mouseTrap" prefHeight="654.0" prefWidth="1100.0" stylesheets="@../layout/design.css" type="AnchorPane" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1">
+<fx:root maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseClicked="#mouseTrap" prefHeight="654.0" prefWidth="1100.0" stylesheets="@../layout/design.css" type="AnchorPane" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <AnchorPane layoutX="14.0" layoutY="50.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="0.0" minWidth="0.0" prefHeight="340.0" prefWidth="406.0" styleClass="normal-text" stylesheets="@../layout/design.css">
          <children>
@@ -26,8 +30,8 @@
             <Label layoutX="23.0" styleClass="big-text" text="Mina Uppgifter" AnchorPane.rightAnchor="141.0" />
             <TextField fx:id="firstNameTextField" minHeight="29.0" prefHeight="29.0" styleClass="textfield" AnchorPane.leftAnchor="155.0" AnchorPane.topAnchor="70.0" />
             <TextField fx:id="lastNameTextField" layoutX="180.0" layoutY="103.0" minHeight="29.0" prefHeight="29.0" styleClass="textfield" AnchorPane.leftAnchor="155.0" AnchorPane.topAnchor="100.0" />
-            <TextField fx:id="addressTextField" minHeight="29.0" prefHeight="29.0" styleClass="textfield" AnchorPane.leftAnchor="155.0" AnchorPane.topAnchor="160.0" />
             <TextField fx:id="emailTextField" minHeight="29.0" prefHeight="29.0" styleClass="textfield" AnchorPane.leftAnchor="155.0" AnchorPane.topAnchor="130.0" />
+            <TextField fx:id="addressTextField" minHeight="29.0" prefHeight="29.0" styleClass="textfield" AnchorPane.leftAnchor="155.0" AnchorPane.topAnchor="160.0" />
             <TextField fx:id="postCodeTextField" minHeight="29.0" prefHeight="29.0" styleClass="textfield" AnchorPane.leftAnchor="155.0" AnchorPane.topAnchor="200.0" />
             <TextField fx:id="postAddressTextField" minHeight="29.0" prefHeight="29.0" styleClass="textfield" AnchorPane.leftAnchor="155.0" AnchorPane.topAnchor="230.0" />
             <TextField fx:id="phoneNumberTextField" minHeight="29.0" prefHeight="29.0" styleClass="textfield" AnchorPane.leftAnchor="155.0" AnchorPane.topAnchor="260.0" />
@@ -86,17 +90,17 @@
             <Label layoutX="56.0" layoutY="8.0" styleClass="big-text" text="Mitt Betalkort" />
             <AnchorPane fx:id="newCardAnchorPane" layoutY="204.0" prefHeight="443.0" prefWidth="761.0">
                <children>
-                  <Label alignment="CENTER_RIGHT" layoutX="-56.0" layoutY="111.0" prefHeight="17.0" prefWidth="133.0" styleClass="text_opacity" text="Kortnummer:" textAlignment="RIGHT" AnchorPane.rightAnchor="567.0" AnchorPane.topAnchor="115.0" />
-                  <Label alignment="CENTER_RIGHT" layoutY="82.0" styleClass="text_opacity" text="Kortets innehavare:" AnchorPane.rightAnchor="567.0" AnchorPane.topAnchor="82.0" />
+                  <Label alignment="CENTER_RIGHT" layoutX="-56.0" layoutY="111.0" prefHeight="17.0" prefWidth="133.0" text="Kortnummer:" textAlignment="RIGHT" AnchorPane.rightAnchor="567.0" AnchorPane.topAnchor="115.0" />
+                  <Label alignment="CENTER_RIGHT" layoutY="82.0" text="Kortets innehavare:" AnchorPane.rightAnchor="567.0" AnchorPane.topAnchor="82.0" />
                   <TextField fx:id="cardHolderTextField" layoutX="83.0" layoutY="81.0" minHeight="29.0" prefHeight="29.0" prefWidth="264.0" AnchorPane.leftAnchor="210.0" AnchorPane.topAnchor="81.0" />
                   <TextField fx:id="card1" layoutX="83.0" layoutY="111.0" minHeight="29.0" prefHeight="29.0" prefWidth="64.0" AnchorPane.leftAnchor="210.0" AnchorPane.topAnchor="115.0" />
                   <TextField fx:id="card2" layoutX="286.0" layoutY="111.0" minHeight="29.0" prefHeight="29.0" prefWidth="64.0" AnchorPane.leftAnchor="277.0" AnchorPane.topAnchor="115.0" />
                   <TextField fx:id="card3" layoutX="357.0" layoutY="111.0" minHeight="29.0" prefHeight="29.0" prefWidth="64.0" AnchorPane.leftAnchor="344.0" AnchorPane.topAnchor="115.0" />
                   <TextField fx:id="card4" layoutX="428.0" layoutY="111.0" minHeight="29.0" prefHeight="29.0" prefWidth="64.0" AnchorPane.leftAnchor="410.0" AnchorPane.rightAnchor="287.0" AnchorPane.topAnchor="115.0" />
-                  <Label fx:id="cardValidLabel" layoutX="-16.0" layoutY="154.0" styleClass="text_opacity" text="Giltig t.o.m:" AnchorPane.rightAnchor="567.0" AnchorPane.topAnchor="154.0" />
-                  <ComboBox fx:id="cardValidYearComboBox" layoutX="356.0" layoutY="150.0" prefHeight="35.0" prefWidth="120.0" AnchorPane.leftAnchor="356.0" AnchorPane.rightAnchor="287.0" AnchorPane.topAnchor="150.0" />
+                  <Label fx:id="cardValidLabel" layoutX="-16.0" layoutY="154.0" text="Giltig t.o.m:" AnchorPane.rightAnchor="567.0" AnchorPane.topAnchor="154.0" />
                   <ComboBox fx:id="cardValidMonthComboBox" layoutX="182.0" layoutY="150.0" prefHeight="35.0" prefWidth="120.0" AnchorPane.leftAnchor="210.0" AnchorPane.topAnchor="150.0" />
-                  <Label fx:id="cardVerificationLabel" layoutX="118.0" layoutY="205.0" styleClass="text_opacity" text="CCV/CVC:" AnchorPane.rightAnchor="565.0" AnchorPane.topAnchor="204.0" />
+                  <ComboBox fx:id="cardValidYearComboBox" layoutX="356.0" layoutY="150.0" prefHeight="35.0" prefWidth="120.0" AnchorPane.leftAnchor="356.0" AnchorPane.rightAnchor="287.0" AnchorPane.topAnchor="150.0" />
+                  <Label fx:id="cardVerificationLabel" layoutX="118.0" layoutY="205.0" text="CCV/CVC:" AnchorPane.rightAnchor="565.0" AnchorPane.topAnchor="204.0" />
                   <TextField fx:id="cardVerificationTextField" layoutX="83.0" layoutY="201.0" minHeight="29.0" prefHeight="29.0" prefWidth="52.0" AnchorPane.leftAnchor="210.0" AnchorPane.topAnchor="201.0" />
                   <Button fx:id="saveCardButton" layoutX="210.0" layoutY="244.0" mnemonicParsing="false" onAction="#saveCardClick" styleClass="nextButton" text="Spara kort" AnchorPane.rightAnchor="453.0" />
                   <ImageView fx:id="errorB1" fitHeight="17.0" fitWidth="15.0" layoutX="474.0" layoutY="88.0" pickOnBounds="true" preserveRatio="true" styleClass="red_border" AnchorPane.leftAnchor="480.0" AnchorPane.topAnchor="88.0">
@@ -129,8 +133,8 @@
                         <Image url="@../layout/images/help.png" />
                      </image>
                   </ImageView>
-                  <Label fx:id="errorLabelB" layoutX="210.0" layoutY="315.0" prefHeight="82.0" prefWidth="332.0" styleClass="borders" text="Rödmarkerade fällt är ej korrekt angivna. Rätta till dem och spara sedan." wrapText="true" AnchorPane.leftAnchor="210.0" />
-                  <AnchorPane fx:id="CVCinfo" layoutX="317.0" layoutY="201.0" prefHeight="114.0" prefWidth="229.0" styleClass="borders">
+                  <Label fx:id="errorLabelB" layoutX="210.0" layoutY="301.0" prefHeight="114.0" prefWidth="332.0" styleClass="borders" text="Rödmarkerade fält är ej korrekt angivna. Rätta till dem och spara sedan. Håll muspekaren över de röda kryssen för hjälp." wrapText="true" AnchorPane.leftAnchor="210.0" />
+                  <AnchorPane fx:id="CVCinfo" layoutX="313.0" layoutY="187.0" prefHeight="114.0" prefWidth="229.0" styleClass="borders">
                      <children>
                         <TextArea layoutX="12.0" layoutY="14.0" prefHeight="82.0" prefWidth="172.0" text="Den tresiffriga koden på kortets baksida" wrapText="true" AnchorPane.leftAnchor="9.0">
                            <styleClass>
@@ -154,8 +158,8 @@
                         <Button fx:id="verifyCardButton" layoutX="290.0" layoutY="109.0" mnemonicParsing="false" onAction="#verifyCVC" styleClass="nextButton" text="Bekräfta" />
                      </children>
                   </AnchorPane>
-                  <Label alignment="CENTER_RIGHT" layoutX="46.0" layoutY="81.0" prefHeight="17.0" prefWidth="133.0" styleClass="text_opacity" text="Kortnummer:" textAlignment="RIGHT" AnchorPane.leftAnchor="44.0" AnchorPane.rightAnchor="358.0" AnchorPane.topAnchor="81.0" />
-                  <Label alignment="CENTER_RIGHT" layoutX="26.0" layoutY="51.0" styleClass="text_opacity" text="Kortets innehavare:" AnchorPane.rightAnchor="358.0" AnchorPane.topAnchor="51.0" />
+                  <Label alignment="CENTER_RIGHT" layoutX="46.0" layoutY="81.0" prefHeight="17.0" prefWidth="133.0" text="Kortnummer:" textAlignment="RIGHT" AnchorPane.leftAnchor="44.0" AnchorPane.rightAnchor="358.0" AnchorPane.topAnchor="81.0" />
+                  <Label alignment="CENTER_RIGHT" layoutX="26.0" layoutY="51.0" text="Kortets innehavare:" AnchorPane.rightAnchor="358.0" AnchorPane.topAnchor="51.0" />
                   <Label fx:id="cardHolderLabel" layoutX="178.0" layoutY="9.0" styleClass="bold-text" text="Namn" AnchorPane.leftAnchor="185.0" AnchorPane.topAnchor="50.0" />
                   <Label fx:id="cardNumberLabel" layoutX="178.0" layoutY="39.0" styleClass="bold-text" text="Nummer" AnchorPane.leftAnchor="185.0" AnchorPane.topAnchor="80.0" />
                   <Label fx:id="verifyVerificationLabel" layoutX="100.0" layoutY="117.0" text="CCV/CVC:" AnchorPane.rightAnchor="358.0" AnchorPane.topAnchor="111.0" />
@@ -176,7 +180,7 @@
             <RadioButton fx:id="changeCardRadioButton" layoutX="20.0" layoutY="222.0" mnemonicParsing="false" text="Byt till ett annat kort" AnchorPane.leftAnchor="20.0" />
          </children>
       </AnchorPane>
-      <Label fx:id="errorLabelD" layoutX="167.0" layoutY="404.0" prefHeight="82.0" prefWidth="332.0" styleClass="borders" text="Rödmarkerade fällt är ej korrekt angivna. Rätta till dem och spara sedan." wrapText="true" />
+      <Label fx:id="errorLabelD" layoutX="167.0" layoutY="404.0" prefHeight="114.0" prefWidth="332.0" styleClass="borders" text="Rödmarkerade fält är ej korrekt angivna. Rätta till dem och spara sedan. Håll muspekaren över de röda kryssen för hjälp." wrapText="true" />
       <AnchorPane fx:id="CVCinfoS" layoutX="458.0" layoutY="252.0" prefHeight="114.0" prefWidth="229.0" styleClass="borders" AnchorPane.leftAnchor="860.0" AnchorPane.topAnchor="270.0">
          <children>
             <TextArea layoutX="12.0" layoutY="14.0" prefHeight="82.0" prefWidth="172.0" text="Den tresiffriga koden på kortets baksida" wrapText="true" AnchorPane.leftAnchor="9.0">

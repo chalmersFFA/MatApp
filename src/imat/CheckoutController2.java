@@ -5,6 +5,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.ComboBoxBase;
 import javafx.scene.control.Label;
+import javafx.scene.control.Tooltip;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
@@ -33,6 +34,12 @@ public class CheckoutController2 extends AnchorPane{
     ImageView timeError, dayError, monthError;
     private Image errorImage = new Image("imat/layout/images/redCross.png");
 
+    Tooltip dayErrorTooltip = new Tooltip("Välj en dag");
+    Tooltip monthErrorTooltip = new Tooltip("Välj en månad");
+    Tooltip timeErrorTooltip = new Tooltip("Välj en tid");
+    private static final int tooltipDelay = 500;
+
+
 
 
     public CheckoutController2(IMatController parentController, ShoppingCartController shoppingCartController) {
@@ -54,6 +61,9 @@ public class CheckoutController2 extends AnchorPane{
         comboRefresh();
         errorRefresh();
 
+        parentController.addToolTip(dayError, dayErrorTooltip, tooltipDelay);
+        parentController.addToolTip(monthError, monthErrorTooltip, tooltipDelay);
+        parentController.addToolTip(timeError, timeErrorTooltip, tooltipDelay);
     }
 
     private void comboRefresh(){
