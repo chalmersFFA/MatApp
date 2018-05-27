@@ -591,6 +591,7 @@ public class MyDetails extends AnchorPane {
     public void resetCard() {
         resetCardErrors();
         toggleCardEdit(false);
+        useSavedCardRadioButton.setSelected(true);
     }
 
     @FXML

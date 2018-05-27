@@ -33,20 +33,20 @@
             <Label alignment="CENTER_RIGHT" layoutX="86.0" layoutY="295.0" prefHeight="17.0" prefWidth="94.0" text="Postort:" AnchorPane.rightAnchor="270.0" AnchorPane.topAnchor="195.0" />
             <Label alignment="CENTER_RIGHT" layoutX="47.0" layoutY="340.0" prefHeight="27.0" prefWidth="133.0" text="Telefonnummer:" AnchorPane.rightAnchor="270.0" AnchorPane.topAnchor="220.0" />
             <Label alignment="CENTER_RIGHT" layoutX="47.0" layoutY="160.0" prefHeight="27.0" prefWidth="133.0" text="E-postadress:" AnchorPane.rightAnchor="270.0" AnchorPane.topAnchor="120.0" />
-            <Label fx:id="firstNameLabel" layoutX="206.0" layoutY="84.0" styleClass="bold-text" AnchorPane.leftAnchor="180.0" AnchorPane.topAnchor="70.0" />
-            <Label fx:id="lastNameLabel" layoutX="213.0" layoutY="120.0" styleClass="bold-text" AnchorPane.leftAnchor="180.0" AnchorPane.topAnchor="95.0" />
-            <Label fx:id="emailLabel" layoutX="227.0" layoutY="165.0" styleClass="bold-text" AnchorPane.leftAnchor="180.0" AnchorPane.topAnchor="120.0" />
-            <Label fx:id="addressLabel" layoutX="227.0" layoutY="230.0" styleClass="bold-text" AnchorPane.leftAnchor="180.0" AnchorPane.topAnchor="145.0" />
-            <Label fx:id="postCodeLabel" layoutX="227.0" layoutY="275.0" styleClass="bold-text" AnchorPane.leftAnchor="180.0" AnchorPane.topAnchor="170.0" />
-            <Label fx:id="postAddressLabel" layoutX="234.0" layoutY="320.0" styleClass="bold-text" AnchorPane.leftAnchor="180.0" AnchorPane.topAnchor="195.0" />
-            <Label fx:id="phoneNumberLabel" layoutX="220.0" layoutY="365.0" styleClass="bold-text" AnchorPane.leftAnchor="180.0" AnchorPane.topAnchor="220.0" />
+            <Label fx:id="firstNameLabel" layoutX="206.0" layoutY="84.0" maxHeight="27.0" maxWidth="216.0" styleClass="bold-text" AnchorPane.leftAnchor="180.0" AnchorPane.topAnchor="70.0" />
+            <Label fx:id="lastNameLabel" layoutX="213.0" layoutY="120.0" maxHeight="27.0" maxWidth="216.0" styleClass="bold-text" AnchorPane.leftAnchor="180.0" AnchorPane.topAnchor="95.0" />
+            <Label fx:id="emailLabel" layoutX="227.0" layoutY="165.0" maxHeight="27.0" maxWidth="216.0" styleClass="bold-text" AnchorPane.leftAnchor="180.0" AnchorPane.topAnchor="120.0" />
+            <Label fx:id="addressLabel" layoutX="227.0" layoutY="230.0" maxHeight="27.0" maxWidth="216.0" styleClass="bold-text" AnchorPane.leftAnchor="180.0" AnchorPane.topAnchor="145.0" />
+            <Label fx:id="postCodeLabel" layoutX="227.0" layoutY="275.0" maxHeight="27.0" maxWidth="216.0" styleClass="bold-text" AnchorPane.leftAnchor="180.0" AnchorPane.topAnchor="170.0" />
+            <Label fx:id="postAddressLabel" layoutX="234.0" layoutY="320.0" maxHeight="27.0" maxWidth="216.0" styleClass="bold-text" AnchorPane.leftAnchor="180.0" AnchorPane.topAnchor="195.0" />
+            <Label fx:id="phoneNumberLabel" layoutX="220.0" layoutY="365.0" maxHeight="27.0" maxWidth="216.0" styleClass="bold-text" AnchorPane.leftAnchor="180.0" AnchorPane.topAnchor="220.0" />
             <Line endX="110.0" layoutX="315.0" layoutY="221.0" opacity="0.1" startX="-280.0" AnchorPane.topAnchor="270.0" />
             <AnchorPane layoutY="484.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="198.0" prefWidth="441.0" styleClass="normal-text" stylesheets="@../layout/design.css" AnchorPane.topAnchor="290.0">
                <children>
                   <Label alignment="CENTER_RIGHT" layoutX="47.0" layoutY="70.0" prefHeight="17.0" prefWidth="133.0" text="Kortnummer:" textAlignment="RIGHT" AnchorPane.rightAnchor="270.0" AnchorPane.topAnchor="115.0" />
                   <Label alignment="CENTER_RIGHT" layoutX="94.0" layoutY="115.0" text="Kortets innehavare:" AnchorPane.rightAnchor="270.0" AnchorPane.topAnchor="70.0" />
-                  <Label fx:id="cardNumber" layoutX="215.0" layoutY="77.0" styleClass="bold-text" AnchorPane.leftAnchor="180.0" AnchorPane.topAnchor="115.0" />
-                  <Label fx:id="cardHolderName" layoutX="215.0" layoutY="120.0" styleClass="bold-text" AnchorPane.leftAnchor="180.0" AnchorPane.topAnchor="70.0" />
+                  <Label fx:id="cardNumber" layoutX="215.0" layoutY="77.0" maxHeight="27.0" maxWidth="216.0" styleClass="bold-text" AnchorPane.leftAnchor="180.0" AnchorPane.topAnchor="115.0" />
+                  <Label fx:id="cardHolderName" layoutX="215.0" layoutY="120.0" maxHeight="27.0" maxWidth="216.0" styleClass="bold-text" AnchorPane.leftAnchor="180.0" AnchorPane.topAnchor="70.0" />
                   <ImageView fitHeight="56.0" fitWidth="57.0" layoutX="38.0" layoutY="1.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../layout/images/payment.png" />
@@ -73,10 +73,10 @@
             <Label layoutX="14.0" styleClass="big-text" text="Produkter" />
          </children>
       </AnchorPane>
-      <Label layoutX="980.0" layoutY="601.0" styleClass="big-text" text="Totalt:" />
-      <Label fx:id="totalPriceLabel" layoutX="1077.0" layoutY="601.0" styleClass="big-text" text="555kr" />
-      <Label layoutX="42.0" layoutY="597.0" styleClass="big-text" text="Levereras:" />
-      <Label fx:id="deliveryTime" layoutX="165.0" layoutY="601.0" styleClass="big-text" text="TIDEN SOM DU HAR VALT" />
+      <Label layoutX="949.0" layoutY="601.0" styleClass="big-text" text="Totalt:" />
+      <Label fx:id="totalPriceLabel" layoutX="1049.0" layoutY="601.0" styleClass="big-text" text="555kr" />
+      <Label layoutX="50.0" layoutY="601.0" styleClass="big-text" text="Levereras:" />
+      <Label fx:id="deliveryTime" layoutX="194.0" layoutY="601.0" styleClass="big-text" text="TIDEN SOM DU HAR VALT" />
       <AnchorPane layoutY="788.0" prefHeight="70.0" prefWidth="1100.0" styleClass="checkoutTopAndBottom" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
          <children>
             <Button layoutX="14.0" layoutY="13.0" mnemonicParsing="false" onAction="#backButton" prefHeight="45.0" prefWidth="292.0" text="Tillbaka till betalningssätt" AnchorPane.bottomAnchor="12.0" AnchorPane.leftAnchor="15.0">

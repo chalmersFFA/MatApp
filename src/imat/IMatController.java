@@ -143,7 +143,7 @@ public class IMatController extends VBox implements Initializable {
 
     private void initProducts() {
         ShoppingCartItem s;
-        for (Product p : db.getProducts(ProductCategory.BERRY)) {
+        for (Product p : db.getProducts()) {
             //ItemHandler itemHandler = new ItemHandler(new ShoppingItem(p,0));
             storeListItemMap.put(p.getName(), new StoreListItem(p, this));
             shoppingCartController.addToHashMap(new ShoppingCartItem(p, shoppingCartController));
@@ -171,7 +171,7 @@ public class IMatController extends VBox implements Initializable {
     }
 
     private void updateProductListLoop(List<Product> products) {
-       // mainFlowPane.getChildren().clear();
+       // mainFlowPane.getChildren().clear();v
         for(Product p : products) {
             mainFlowPane.setHgap(30);
             mainFlowPane.setVgap(10);
@@ -350,6 +350,8 @@ public class IMatController extends VBox implements Initializable {
 
     private void toggleCheckoutMode() {
         myDetails.loadCheckoutVersion();
+        myDetails.resetCard();
+        myDetails.resetDetails();
         myDetails.update();
         toCheckout1();
     }
