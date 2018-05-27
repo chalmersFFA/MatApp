@@ -97,10 +97,6 @@ public class MyDetails extends AnchorPane {
     Tooltip errorExpiryMonth = new Tooltip("Månaden på året ditt kort går ut, hittas på framsidan av ditt betalkort");
     Tooltip errorExpiryYear = new Tooltip("Året ditt kort går ut, hittas på framsidan av ditt betalkort");
     Tooltip errorCVCNew = new Tooltip("Fältet måste enbart innehålla tre siffror");
-    //Tooltip errorCVCWrong = new Tooltip("Fältet måste enbart innehålla tre siffror och måste matcha det sparade kortets kod");
-
-
-
 
     public MyDetails(IMatController parentController) {
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("fxml/my_details_copy.fxml"));
@@ -576,7 +572,6 @@ public class MyDetails extends AnchorPane {
         removeError(card3, errorB2);
         removeError(card4, errorB2);
         errorLabelB.setVisible(false);
-        //removeError(cardNumberTextField, errorB2);
     }
     private void resetDetailsErrors() {
         removeError(firstNameTextField, errorD1);
