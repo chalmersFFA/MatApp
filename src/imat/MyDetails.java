@@ -90,13 +90,13 @@ public class MyDetails extends AnchorPane {
     Tooltip errorCity = new Tooltip("Den ort du bor i, T.ex. Göteborg");
     Tooltip errorPhoneNumber = new Tooltip("Fältet får bara innehålla siffror, T.ex. 0701231234");
 
-    Tooltip errorCVCSaved = new Tooltip("Fältet måste enbart innehålla tre siffror");
+    Tooltip errorCVCSaved = new Tooltip("Fältet måste enbart innehålla tre siffror och måste matcha det sparade kortets kod");
     Tooltip errorCardName = new Tooltip("Fältet får bara innehålla bokstäver, T.ex. Hjördis Svensson");
     Tooltip errorCardNumber = new Tooltip("Varje ruta måste ernbart innehålla fyra siffror var, hittas på framsidan av ditt betalkort");
     Tooltip errorExpiryMonth = new Tooltip("Månaden på året ditt kort går ut, hittas på framsidan av ditt betalkort");
     Tooltip errorExpiryYear = new Tooltip("Året ditt kort går ut, hittas på framsidan av ditt betalkort");
     Tooltip errorCVCNew = new Tooltip("Fältet måste enbart innehålla tre siffror");
-
+    //Tooltip errorCVCWrong = new Tooltip("Fältet måste enbart innehålla tre siffror och måste matcha det sparade kortets kod");
 
 
 
@@ -146,6 +146,7 @@ public class MyDetails extends AnchorPane {
             verified = true;
         } else {
             produceError(verifyVerificationTextField, errorS1);
+
         }
     }
 
@@ -292,6 +293,7 @@ public class MyDetails extends AnchorPane {
 
     @FXML
     private void editDetailsClick() {
+        System.out.println("yes");
         toggleDetailsEdit(true);
     }
 
@@ -428,7 +430,7 @@ public class MyDetails extends AnchorPane {
             valid = false;
             produceError(cardVerificationTextField, errorB5);
         }
-        if(cardHolderTextField.getText().length() <= 0) {
+        if(cardHolderTextField.getText().length() <= 0 && isLetter(cardHolderTextField.getText())) {
             valid = false;
             produceError(cardHolderTextField, errorB1);
         }
@@ -463,14 +465,14 @@ public class MyDetails extends AnchorPane {
         return valid;
     }
 
-    private boolean detailsInfoIsValid() {
+    public boolean detailsInfoIsValid() {
         resetDetailsErrors();
         boolean valid = true;
-        if(firstNameTextField.getText().length() == 0) {
+        if(firstNameTextField.getText().length() == 0 && isLetter(firstNameTextField.getText())) {
             valid = false;
             produceError(firstNameTextField, errorD1);
         }
-        if(lastNameTextField.getText().length() == 0) {
+        if(lastNameTextField.getText().length() == 0 && isLetter(lastNameTextField.getText())) {
             valid = false;
             produceError(lastNameTextField, errorD2);
         }
@@ -497,6 +499,17 @@ public class MyDetails extends AnchorPane {
         if(!valid)
             errorLabelD.setVisible(true);
         return valid;
+    }
+
+    public boolean detailsIsValid() {
+        if(customer.getFirstName().isEmpty() || customer.getLastName().isEmpty() || customer.getAddress().isEmpty() ||
+                customer.getEmail().isEmpty() || customer.getPhoneNumber().isEmpty() || customer.getPostAddress().isEmpty()
+                || customer.getPostCode().isEmpty()) {
+            editDetailsClick();
+            detailsInfoIsValid();
+            return false;
+        }
+        return true;
     }
 
 
