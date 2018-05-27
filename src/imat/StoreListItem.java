@@ -65,9 +65,9 @@ public class StoreListItem extends AnchorPane implements ShoppingCartListener {
         //TODO fixa så att textfältet tar in hur många det finns av den i varukorgen ifrån varukorgen
         //amountTextField.textProperty().addListener(itemHandler.getChangeListener());
 
-        String ecoImagePath = "layout/images/svanen.png";
+        String ecoImagePath = "imat/layout/images/ecological.png";
         if (product.isEcological()) {
-            ecoImageView.setImage(new Image("imat/layout/images/svanen.png"));
+            ecoImageView.setImage(new Image(ecoImagePath));
             ecoImageView.setVisible(true);
         }
 
