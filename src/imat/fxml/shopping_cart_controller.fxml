@@ -12,7 +12,7 @@
 <?import javafx.scene.layout.FlowPane?>
 <?import javafx.scene.text.Font?>
 
-<fx:root fx:id="shoppingCartAnchorPane" onMouseExited="#emptyCartToBack" prefHeight="930.0" prefWidth="400.0" stylesheets="@../layout/design.css" type="AnchorPane" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1">
+<fx:root fx:id="shoppingCartAnchorPane" onMouseExited="#emptyCartToBack" prefHeight="930.0" prefWidth="400.0" styleClass="shoppingCart" stylesheets="@../layout/design.css" type="AnchorPane" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <AnchorPane fx:id="emptyCartAnchorPane" layoutX="115.0" layoutY="71.0" prefHeight="160.0" prefWidth="291.0" stylesheets="@../layout/design.css" AnchorPane.rightAnchor="1.0" AnchorPane.topAnchor="70.0">
          <children>
@@ -94,8 +94,4 @@
          </cursor>
       </Label>
    </children>
-   <styleClass>
-      <String fx:value="shoppingCart" />
-      <String fx:value="borderForShoppingCart" />
-   </styleClass>
 </fx:root>

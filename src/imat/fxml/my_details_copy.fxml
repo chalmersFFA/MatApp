@@ -1,9 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.image.*?>
-<?import javafx.scene.layout.*?>
 <?import java.lang.String?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ComboBox?>
@@ -15,7 +11,7 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<fx:root maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseClicked="#mouseTrap" prefHeight="654.0" prefWidth="1100.0" stylesheets="@../layout/design.css" type="AnchorPane" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+<fx:root maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseClicked="#mouseTrap" prefHeight="654.0" prefWidth="1100.0" stylesheets="@../layout/design.css" type="AnchorPane" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <AnchorPane layoutX="14.0" layoutY="50.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="0.0" minWidth="0.0" prefHeight="340.0" prefWidth="406.0" styleClass="normal-text" stylesheets="@../layout/design.css">
          <children>
@@ -26,7 +22,7 @@
             <Label alignment="CENTER_RIGHT" prefHeight="17.0" prefWidth="94.0" styleClass="text_opacity" text="Postort:" AnchorPane.rightAnchor="250.0" AnchorPane.topAnchor="230.0" />
             <Label alignment="CENTER_RIGHT" prefHeight="27.0" prefWidth="133.0" styleClass="text_opacity" text="Telefonnummer:" AnchorPane.rightAnchor="250.0" AnchorPane.topAnchor="260.0" />
             <Label alignment="CENTER_RIGHT" prefHeight="27.0" prefWidth="133.0" styleClass="text_opacity" text="E-postadress:" AnchorPane.rightAnchor="250.0" AnchorPane.topAnchor="130.0" />
-            <Button fx:id="editDetailsButton" layoutX="156.0" layoutY="298.0" mnemonicParsing="false" onAction="#editDetailsClick" styleClass="backbutton" text="Redigera Uppgifter" AnchorPane.rightAnchor="82.0" AnchorPane.topAnchor="298.0" />
+            <Button fx:id="editDetailsButton" layoutX="156.0" layoutY="298.0" mnemonicParsing="false" onAction="#editDetailsClick" styleClass="backbutton" text="Redigera Uppgifter" AnchorPane.leftAnchor="156.0" AnchorPane.topAnchor="298.0" />
             <Label layoutX="23.0" styleClass="big-text" text="Mina Uppgifter" AnchorPane.rightAnchor="141.0" />
             <TextField fx:id="firstNameTextField" minHeight="29.0" prefHeight="29.0" styleClass="textfield" AnchorPane.leftAnchor="155.0" AnchorPane.topAnchor="70.0" />
             <TextField fx:id="lastNameTextField" layoutX="180.0" layoutY="103.0" minHeight="29.0" prefHeight="29.0" styleClass="textfield" AnchorPane.leftAnchor="155.0" AnchorPane.topAnchor="100.0" />
@@ -42,7 +38,7 @@
             <Label fx:id="postCodeLabel" focusTraversable="false" styleClass="bold-text" wrapText="true" AnchorPane.leftAnchor="160.0" AnchorPane.topAnchor="200.0" />
             <Label fx:id="postAddressLabel" focusTraversable="false" styleClass="bold-text" wrapText="true" AnchorPane.leftAnchor="160.0" AnchorPane.topAnchor="230.0" />
             <Label fx:id="phoneNumberLabel" focusTraversable="false" styleClass="bold-text" wrapText="true" AnchorPane.leftAnchor="160.0" AnchorPane.topAnchor="260.0" />
-            <Button fx:id="saveDetailsButton" layoutX="155.0" layoutY="298.0" mnemonicParsing="false" onAction="#saveDetailsClick" styleClass="nextButton" text="Spara Uppgifter" />
+            <Button fx:id="saveDetailsButton" layoutX="155.0" layoutY="298.0" mnemonicParsing="false" onAction="#saveDetailsClick" styleClass="nextButton" text="Spara Uppgifter" AnchorPane.leftAnchor="156.0" />
             <ImageView fx:id="errorD1" fitHeight="17.0" fitWidth="15.0" layoutX="351.0" layoutY="76.0" pickOnBounds="true" preserveRatio="true" styleClass="red_border" AnchorPane.leftAnchor="380.0" AnchorPane.topAnchor="76.0">
                <image>
                   <Image url="@../layout/images/redCross.png" />
@@ -102,7 +98,7 @@
                   <ComboBox fx:id="cardValidYearComboBox" layoutX="356.0" layoutY="150.0" prefHeight="35.0" prefWidth="120.0" AnchorPane.leftAnchor="356.0" AnchorPane.rightAnchor="287.0" AnchorPane.topAnchor="150.0" />
                   <Label fx:id="cardVerificationLabel" layoutX="118.0" layoutY="205.0" styleClass="text_opacity" text="CVC/CVV:" AnchorPane.rightAnchor="565.0" AnchorPane.topAnchor="204.0" />
                   <TextField fx:id="cardVerificationTextField" layoutX="83.0" layoutY="201.0" minHeight="29.0" prefHeight="29.0" prefWidth="52.0" AnchorPane.leftAnchor="210.0" AnchorPane.topAnchor="201.0" />
-                  <Button fx:id="saveCardButton" layoutX="210.0" layoutY="244.0" mnemonicParsing="false" onAction="#saveCardClick" styleClass="nextButton" text="Spara kort" AnchorPane.rightAnchor="453.0" />
+                  <Button fx:id="saveCardButton" layoutX="213.0" layoutY="244.0" mnemonicParsing="false" onAction="#saveCardClick" prefHeight="34.0" prefWidth="118.0" styleClass="nextButton" text="Spara kort" AnchorPane.leftAnchor="210.0" />
                   <ImageView fx:id="errorB1" fitHeight="17.0" fitWidth="15.0" layoutX="474.0" layoutY="88.0" pickOnBounds="true" preserveRatio="true" styleClass="red_border" AnchorPane.leftAnchor="480.0" AnchorPane.topAnchor="88.0">
                      <image>
                         <Image url="@../layout/images/redCross.png" />
