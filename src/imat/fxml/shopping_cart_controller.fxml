@@ -1,5 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 <?import java.lang.String?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.Cursor?>
@@ -12,7 +19,7 @@
 <?import javafx.scene.layout.FlowPane?>
 <?import javafx.scene.text.Font?>
 
-<fx:root fx:id="shoppingCartAnchorPane" onMouseExited="#emptyCartToBack" prefHeight="930.0" prefWidth="400.0" style="-fx-background-color: #d2d0d0;" styleClass="borderForShoppingCart" stylesheets="@../layout/design.css" type="AnchorPane" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1">
+<fx:root fx:id="shoppingCartAnchorPane" onMouseExited="#emptyCartToBack" prefHeight="930.0" prefWidth="400.0" stylesheets="@../layout/design.css" type="AnchorPane" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <AnchorPane fx:id="emptyCartAnchorPane" layoutX="115.0" layoutY="71.0" prefHeight="160.0" prefWidth="291.0" stylesheets="@../layout/design.css" AnchorPane.rightAnchor="1.0" AnchorPane.topAnchor="70.0">
          <children>
@@ -50,7 +57,7 @@
             <String fx:value="static_object_hinting" />
          </styleClass>
       </AnchorPane>
-      <Label alignment="CENTER" layoutX="2.0" layoutY="2.0" prefHeight="62.0" prefWidth="213.0" style="&#10;" styleClass="bigger_text" text="Kundvagn" textAlignment="CENTER" wrapText="false" AnchorPane.leftAnchor="1.0" AnchorPane.topAnchor="1.0">
+      <Label alignment="CENTER" layoutX="2.0" layoutY="2.0" prefHeight="62.0" prefWidth="213.0" style="&#10;" styleClass="bigger_text" text="Kundvagn" textAlignment="CENTER" textFill="WHITE" wrapText="false" AnchorPane.leftAnchor="1.0" AnchorPane.topAnchor="1.0">
          <font>
             <Font size="18.0" fx:id="x7" />
          </font>
@@ -75,17 +82,17 @@
             <FlowPane fx:id="shoppingCartFlowPane" prefHeight="452.0" prefWidth="200.0" />
          </content>
       </ScrollPane>
-      <Label layoutX="100.0" layoutY="910.0" styleClass="big-text" text="Totalt:" AnchorPane.bottomAnchor="105.0" AnchorPane.leftAnchor="50.0" />
-      <Label fx:id="totalLabel" layoutX="190.0" layoutY="910.0" text="35 Spänn" AnchorPane.bottomAnchor="105.0" AnchorPane.rightAnchor="50.0">
+      <Label layoutX="100.0" layoutY="910.0" styleClass="big-text" text="Totalt:" textFill="WHITE" AnchorPane.bottomAnchor="105.0" AnchorPane.leftAnchor="50.0" />
+      <Label fx:id="totalLabel" layoutX="190.0" layoutY="910.0" text="35 Spänn" textFill="WHITE" AnchorPane.bottomAnchor="105.0" AnchorPane.rightAnchor="50.0">
          <styleClass>
             <String fx:value="big-text" />
             <String fx:value="bold-text" />
          </styleClass></Label>
-      <Label id="empy_cart" fx:id="emptyCartLabel" layoutX="232.0" layoutY="16.0" onContextMenuRequested="#changePliancyCart" onMouseClicked="#emptyCartToFront" styleClass="smaller-normal-text" text="Töm Kundvagn">
+      <Label id="empy_cart" fx:id="emptyCartLabel" layoutX="232.0" layoutY="16.0" onContextMenuRequested="#changePliancyCart" onMouseClicked="#emptyCartToFront" style="-fx-text-fill: #ffffff;" styleClass="smaller-normal-text" text="Töm Kundvagn" textFill="WHITE">
          <graphic>
             <ImageView fitHeight="33.0" fitWidth="37.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../layout/images/ThrashBin_Icon.png" />
+                  <Image url="@../layout/images/ThrashBin_Icon_white.png" />
                </image>
             </ImageView>
          </graphic>
@@ -94,4 +101,8 @@
          </cursor>
       </Label>
    </children>
+   <styleClass>
+      <String fx:value="shoppingCart" />
+      <String fx:value="borderForShoppingCart" />
+   </styleClass>
 </fx:root>
