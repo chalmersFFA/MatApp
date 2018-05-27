@@ -435,11 +435,11 @@ public class MyDetails extends AnchorPane {
     private boolean cardInfoIsValid() {
         resetCardErrors();
         boolean valid = true;
-        if(cardValidYearComboBox.getSelectionModel().getSelectedItem() == "År") {
+        if(cardValidYearComboBox.getSelectionModel().getSelectedItem() == "År" || cardValidYearComboBox.getSelectionModel().getSelectedItem() == null) {
             valid = false;
             produceError(cardValidYearComboBox, errorB4);
         }
-        if(cardValidMonthComboBox.getSelectionModel().getSelectedItem() == "Månad") {
+        if(cardValidMonthComboBox.getSelectionModel().getSelectedItem() == "Månad" || cardValidMonthComboBox.getSelectionModel().getSelectedItem() == null) {
             valid = false;
             produceError(cardValidMonthComboBox, errorB3);
         }
@@ -447,7 +447,9 @@ public class MyDetails extends AnchorPane {
             valid = false;
             produceError(cardVerificationTextField, errorB5);
         }
-        if(cardHolderTextField.getText().length() <= 0 && isLetter(cardHolderTextField.getText())) {
+        System.out.println(!isLetter(cardHolderTextField.getText()));
+        if(cardHolderTextField.getText().length() <= 0 && !isLetter(cardHolderTextField.getText())) {
+
             valid = false;
             produceError(cardHolderTextField, errorB1);
         }
@@ -485,11 +487,11 @@ public class MyDetails extends AnchorPane {
     public boolean detailsInfoIsValid() {
         resetDetailsErrors();
         boolean valid = true;
-        if(firstNameTextField.getText().length() == 0 && isLetter(firstNameTextField.getText())) {
+        if(firstNameTextField.getText().length() == 0 || !isLetter(firstNameTextField.getText())) {
             valid = false;
             produceError(firstNameTextField, errorD1);
         }
-        if(lastNameTextField.getText().length() == 0 && isLetter(lastNameTextField.getText())) {
+        if(lastNameTextField.getText().length() == 0 || !isLetter(lastNameTextField.getText())) {
             valid = false;
             produceError(lastNameTextField, errorD2);
         }
@@ -541,8 +543,9 @@ public class MyDetails extends AnchorPane {
     }
     private boolean isLetter(String s) {
         boolean b = true;
+        String alfabetet = "abcdefghijklmnopqrstuvwxyzåäöABCDEFGHIJKLMNOPQRSTUVWXYZÅÄÖ ";
         for(int i = 0; i < s.length(); i++) {
-            if(!Character.isLetter(s.charAt(i))) {
+            if(!alfabetet.contains(Character.toString(s.charAt(i)))) {
                 b = false;
             }
         }
