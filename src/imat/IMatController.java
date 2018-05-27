@@ -141,6 +141,9 @@ public class IMatController extends VBox implements Initializable {
 
         setGlobalEventHandler(searchTextField);
 
+        db.reset();
+
+
     }
 
     private void initProducts() {
