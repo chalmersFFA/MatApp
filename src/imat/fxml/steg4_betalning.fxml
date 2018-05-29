@@ -30,7 +30,7 @@
                   <String fx:value="big-text" />
                </styleClass>
             </Button>
-            <Label fx:id="deliveryTime" alignment="CENTER" layoutX="142.0" layoutY="217.0" prefHeight="27.0" prefWidth="187.0" styleClass="normal-text" text="Label" AnchorPane.leftAnchor="150.0" AnchorPane.rightAnchor="150.0" />
+            <Label fx:id="deliveryTime" alignment="CENTER" layoutX="142.0" layoutY="217.0" prefHeight="27.0" prefWidth="187.0" styleClass="shopping_steg_4" text="Label" AnchorPane.leftAnchor="100.0" AnchorPane.rightAnchor="100.0" />
          </children>
       </AnchorPane>
       <AnchorPane layoutX="433.0" layoutY="-14.0" prefHeight="90.0" styleClass="checkoutTopAndBottom" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />

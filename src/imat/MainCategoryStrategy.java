@@ -21,6 +21,8 @@ public class MainCategoryStrategy implements CategoryStrategy {
         else {
             c.setExpanded(true);
             parentController.expandCategory(c);
+            parentController.deSelectCategory(parentController.getCurrentExpandedSub());
+            parentController.setCurrentExpandedSub(null);
             parentController.selectCategory(c);
             c.getArrowImageView().setImage(new Image("imat/layout/images/arrow_downward.png"));
             parentController.clearProductList();
