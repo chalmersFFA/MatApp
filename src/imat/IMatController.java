@@ -127,8 +127,6 @@ public class IMatController extends VBox implements Initializable {
         showShoppingCart();
         initProducts();
         initCategories();
-        shoppingCart.clear();
-        db.reset();
         shoppingCart.fireShoppingCartChanged(null, false);
         orderHistoryController.createHistory();
 
@@ -141,7 +139,6 @@ public class IMatController extends VBox implements Initializable {
         setGlobalEventHandler(searchTextField);
 
         updateProductListWithAllProducts();
-
     }
 
     private void initProducts() {
